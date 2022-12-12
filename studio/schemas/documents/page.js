@@ -20,13 +20,8 @@ export default {
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
         { type: 'smallInfoRowsSection' },
-        { type: 'ctaColumnsSection' },
-        { type: 'interiorMenuSection' },
-        { type: 'statsSection' },
-        { type: 'blogPreviewSection' },
-        { type: 'mapSection' },
-        { type: 'eligibilitySection' },
-        { type: 'volunteerSection' }
+        { type: 'ctaRowSection' },
+        { type: 'blogPreviewSection' }
       ]
     }
   ]

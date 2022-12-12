@@ -13,15 +13,6 @@ export default {
       title: 'Heading'
     },
     {
-      name: 'id',
-      type: 'string',
-      title: 'ID'
-    },
-    {
-      name: 'tagline',
-      type: 'simpleBlockContent'
-    },
-    {
       name: 'heroImage',
       type: 'heroImage'
     },

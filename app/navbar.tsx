@@ -6,71 +6,16 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
 
+
 export default function Navbar() {
 	return (
 		<>
-			{/* <div className="z-30 m-0 flex h-[160px] w-screen flex-col bg-[url('/menuBackground.png')] bg-cover bg-no-repeat p-0">
-				<div className='absolute top-0 m-0 md:ml-12 '>
-					<Link href='/'>
-						<Image
-							src='/logoRibbon.png'
-							alt='Logo Image'
-							height='245'
-							width='220'
-						/>
-					</Link>
-				</div>
-				<div className='mr-4 mb-4 flex justify-end md:mr-12'>
-					<div className='hidden flex-col sm:flex sm:w-8/12 lg:w-7/12 xl:w-5/12'>
-						<button className='mt-6 w-auto self-end rounded-lg bg-[#A73D1C] px-8 py-2 font-serif font-medium tracking-wider text-white shadow-xl'>
-							Donate
-						</button>
-						<ul className='mt-6 flex h-1/3 justify-between'>
-							<li>
-								<Link href='/lodging'>
-									<p className='font-serif text-sm font-semibold text-white md:text-xl'>
-										Lodging
-									</p>
-								</Link>
-							</li>
-							<li>
-								<Link href='/visit'>
-									<p className='font-serif text-sm font-semibold text-white md:text-xl'>
-										Visit
-									</p>
-								</Link>
-							</li>
-							<li>
-								<Link href='/about'>
-									<p className='font-serif text-sm font-semibold text-white md:text-xl'>
-										About
-									</p>
-								</Link>
-							</li>
-							<li>
-								<Link href='/support'>
-									<p className='font-serif text-sm font-semibold text-white md:text-xl'>
-										Support Us
-									</p>
-								</Link>
-							</li>
-							<li>
-								<Link href='/blog'>
-									<p className='font-serif text-sm font-semibold text-white md:text-xl'>
-										Blog
-									</p>
-								</Link>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div> */}
 			<Disclosure
 				as='nav'
 				className="z-30 m-0 flex h-[160px] w-screen flex-col bg-[url('/menuBackground.png')] bg-cover bg-no-repeat p-0">
 				{({ open }) => (
 					<>
-						<div className='absolute top-0 m-0 md:ml-12 z-20'>
+						<div className='absolute top-0 m-0 md:ml-12 z-30'>
 							<Link href='/'>
 								<Image
 									src='/logoRibbon.png'
@@ -102,7 +47,7 @@ export default function Navbar() {
 									</Disclosure.Button>
 								</div>
 								<div className='hidden flex-col sm:flex sm:w-8/12 lg:w-7/12 xl:w-5/12'>
-									<button className='mt-6 w-auto self-end rounded-lg bg-[#A73D1C] px-8 py-2 font-serif font-medium tracking-wider text-white shadow-xl'>
+									<button className='mt-6 w-auto self-end rounded-lg bg-pa-red-4 px-8 py-2 font-serif font-medium tracking-wider text-white shadow-xl'>
 										Donate
 									</button>
 									<ul className='mt-6 flex h-1/3 justify-between'>

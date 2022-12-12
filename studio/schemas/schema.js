@@ -8,21 +8,15 @@ import category from "./documents/category";
 import page from "./documents/page";
 import post from "./documents/post";
 import blogPreviewSection from './sections/blogPreviewSection';
-import ctaColumnsSection from './sections/ctaColumnsSection';
-import eligibilitySection from './sections/eligibilitySection';
+import ctaRowSection from './sections/ctaRowSection';
 import heroSection from './sections/heroSection';
 import infoRowsSection from './sections/infoRowsSection';
 import interiorMenuSection from './sections/interiorMenuSection';
-import mapSection from './sections/mapSection';
 import smallInfoRowsSection from './sections/smallInfoRowsSection';
-import statsSection from './sections/statsSection';
-import volunteerSection from './sections/volunteerSection';
 import cta from './components/cta';
 import ctaPlug from './components/ctaPlug';
 import heroImage from './components/heroImage';
-import mapListItems from './components/mapListItems';
 import simpleBlockContent from './components/simpleBlockContent';
-import statsWithIcon from './components/statsWithIcon';
 import textWithIllustration from './components/textWithIllustration';
 import mainImage from './components/mainImage';
 import excerptPortableText from './components/excerptPortableText';
@@ -45,15 +39,11 @@ export default createSchema({
     page,
     post,
     blogPreviewSection,
-    ctaColumnsSection,
-    eligibilitySection,
+    ctaRowSection,
     heroSection,
     infoRowsSection,
     interiorMenuSection,
-    mapSection,
     smallInfoRowsSection,
-    statsSection,
-    volunteerSection,
     authorReference,
     categoryReference,
     bodyPortableText,
@@ -63,12 +53,10 @@ export default createSchema({
     heroImage,
     link,
     mainImage,
-    mapListItems,
     menuLink,
     navMenu,
     route,
     simpleBlockContent,
-    statsWithIcon,
     textWithIllustration
   ]),
 })

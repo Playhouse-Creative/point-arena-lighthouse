@@ -28,7 +28,7 @@ function RenderSections(props: any) {
 	}
 
 	return (
-		<div className="bg-[url('/topography-background.svg')] h-auto w-screen bg-cover p-0">
+		<div className="bg-[url('/topography-background.svg')] h-auto w-screen bg-fill p-0">
 		
 			{sections.map((section:any, i: number) => {
 				const Section = resolveSections(section)

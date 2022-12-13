@@ -4,11 +4,17 @@ import Cta from './Cta'
 import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
 
-type Props = {}
+type Props = {
+    bannerColor: string
+    title: string
+    body: any[]
+    cta: any[]
+    image: string
+}
 
 export default function CtaRow(props: Props) {
 	return (
-		<div className='mt-24'>
+		<div className='my-20'>
 			<div className='relative mx-auto flex justify-center'>
 				<div
 					className='absolute right-0 top-10 z-20 w-[60vw] py-[5px] pl-8'

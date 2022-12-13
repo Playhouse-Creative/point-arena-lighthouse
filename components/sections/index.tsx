@@ -1,7 +1,9 @@
 export {default as HeroSection} from './HeroSection'
+export {default as CtaRowSection} from './CtaRowSection'
+export {default as FunFactsSection} from './FunFactsSection'
 // export {default as BlogHeroSection} from './BlogHeroSection'
 // export {default as BlogPreviewSection} from './BlogPreviewSection'
-export {default as CtaRowSection} from './CtaRowSection'
+
 // export {default as InfoRowsSection} from './InfoRowsSection'
 // export {default as InteriorMenuSection} from './InteriorMenuSection'
 // export {default as MapSection} from './MapSection'

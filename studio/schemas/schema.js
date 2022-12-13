@@ -11,7 +11,6 @@ import blogPreviewSection from './sections/blogPreviewSection';
 import ctaRowSection from './sections/ctaRowSection';
 import heroSection from './sections/heroSection';
 import infoRowsSection from './sections/infoRowsSection';
-import interiorMenuSection from './sections/interiorMenuSection';
 import smallInfoRowsSection from './sections/smallInfoRowsSection';
 import cta from './components/cta';
 import ctaPlug from './components/ctaPlug';
@@ -27,6 +26,7 @@ import link from './components/link'
 import route from './components/route';
 import navMenu from './components/navMenu';
 import menuLink from './components/menuLink';
+import funFactsSection from './sections/funFactsSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -42,7 +42,6 @@ export default createSchema({
     ctaRowSection,
     heroSection,
     infoRowsSection,
-    interiorMenuSection,
     smallInfoRowsSection,
     authorReference,
     categoryReference,
@@ -57,6 +56,7 @@ export default createSchema({
     navMenu,
     route,
     simpleBlockContent,
-    textWithIllustration
+    textWithIllustration,
+    funFactsSection
   ]),
 })

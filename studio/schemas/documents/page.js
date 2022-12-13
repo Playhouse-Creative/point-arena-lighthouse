@@ -21,6 +21,7 @@ export default {
         { type: 'infoRowsSection' },
         { type: 'smallInfoRowsSection' },
         { type: 'ctaRowSection' },
+        { type: 'funFactsSection'},
         { type: 'blogPreviewSection' }
       ]
     }

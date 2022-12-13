@@ -1,13 +1,14 @@
 import CtaRow from './sectionComponents/CtaRow'
 
 type Props = {
-	props: [rows: any]
+    rows: any[]
+	props: any
 }
 
 export default function CtaRowSection(props: Props) {
 	const { rows } = props
 	return (
-		<div className='h-full'>
+		<div className='h-full my-24'>
 			{rows.map((row: any, i: number) => (
 				<CtaRow
 					key={i}

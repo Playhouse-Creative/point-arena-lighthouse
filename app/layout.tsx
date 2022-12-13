@@ -1,4 +1,5 @@
 import Navbar from './navbar'
+import Footer from './footer'
 import './globals.css'
 
 export default function RootLayout({
@@ -12,6 +13,7 @@ export default function RootLayout({
 			<body className='overflow-x-hidden h-full'>
 				<Navbar />
 				{children}
+				<Footer/>
 			</body>
 		</html>
 	)

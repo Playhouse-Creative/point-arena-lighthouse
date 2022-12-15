@@ -27,6 +27,8 @@ import route from './components/route';
 import navMenu from './components/navMenu';
 import menuLink from './components/menuLink';
 import funFactsSection from './sections/funFactsSection';
+import lodgingHeroSection from './sections/lodgingHeroSection';
+import datePickerSection from './sections/datePickerSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -57,6 +59,8 @@ export default createSchema({
     route,
     simpleBlockContent,
     textWithIllustration,
-    funFactsSection
+    funFactsSection,
+    lodgingHeroSection,
+    datePickerSection
   ]),
 })

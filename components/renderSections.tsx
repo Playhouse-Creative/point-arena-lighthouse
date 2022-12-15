@@ -19,8 +19,8 @@ function resolveSections(section: any) {
 	return null
 }
 
-function RenderSections(props: any) {
-	const { sections } = props
+function RenderSections({sections}: any, posts: any) {
+	
 
 	if (!sections) {
 		console.error('Missing section')
@@ -35,11 +35,11 @@ function RenderSections(props: any) {
 				if (!Section) {
 					return <div key={i}>Missing section {section._type}</div>
 				}
-				return (
+				return (<>
 					
 						
 						<Section {...section} key={section._key} />
-					
+						</>
 				)
 			})}
 		</div>

@@ -22,7 +22,9 @@ export default {
         { type: 'smallInfoRowsSection' },
         { type: 'ctaRowSection' },
         { type: 'funFactsSection'},
-        { type: 'blogPreviewSection' }
+        { type: 'blogPreviewSection' },
+        { type: 'lodgingHeroSection'},
+        { type: 'datePickerSection'}
       ]
     }
   ]

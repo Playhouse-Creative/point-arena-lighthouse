@@ -3,6 +3,10 @@ const postFields = `
   title,
   date,
   mainImage,
+  excerpt,
+  authors,
+  categories,
+  body,
   "slug": slug.current,
 `
 const pageFields = `
@@ -21,6 +25,13 @@ export const pageQuery = `
     "page": *[_type == "page" && title == $title] {
         ...${pageFields}
       }
+}`
+
+export const postPreviewsQuery = `
+{
+  "posts": *[_type == "post"] | order(_updatedAt desc) [0..2] {
+    ${postFields}
+  }
 }`
 
 export const postQuery = `

@@ -1,8 +1,6 @@
 import { getClient, sanityClient } from '@/lib/sanity-server'
-import { postQuery, postSlugsQuery, pageQuery } from '@/lib/queries'
+import { indexQuery, postSlugsQuery, pageQuery } from '@/lib/queries'
 import type { Post } from '@/lib/types'
-import Image from 'next/image'
-import { urlForImage } from '@/lib/sanity'
 import RenderSections from '../components/renderSections'
 
 export const generateStaticParams = async () => {
@@ -20,21 +18,20 @@ const getPage = async (title: string, preview = false) => {
   )
 }
 
-const getPost = async (slug: string, preview = false) => {
-  const { post } = await getClient(preview).fetch(postQuery, {
-    slug
-  })
+const getPostPreviews = async (preview = false) => {
+  const  posts  = await getClient(preview).fetch(indexQuery)
   return {
-    ...post,
+    posts
   }
 }
 
-export default async function Page({params}: any) {
-  const slug = "placeholder"
+export default async function Page() {
+  const categories = ["Announcements"]
   const title = "Home"
-  const post: Post = await getPost(slug)
+  const posts = await getPostPreviews()
   const sections = await getPage(title)
     return <div className='overflow-hidden'>
-    <RenderSections sections={sections} />
+      
+    <RenderSections sections={sections} posts={posts}/>
     </div>
   }

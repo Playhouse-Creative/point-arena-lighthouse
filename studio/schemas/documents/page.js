@@ -24,7 +24,8 @@ export default {
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
         { type: 'lodgingHeroSection'},
-        { type: 'datePickerSection'}
+        { type: 'datePickerSection'},
+        { type: 'roomCardsSection'}
       ]
     }
   ]

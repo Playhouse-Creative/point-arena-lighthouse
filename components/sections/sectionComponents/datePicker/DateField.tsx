@@ -4,18 +4,18 @@ import { useDateField, useDateSegment, useLocale } from "react-aria";
 import { createCalendar } from "@internationalized/date";
 
 export function DateField(props) {
-  let { locale } = useLocale();
-  let state = useDateFieldState({
+  const { locale } = useLocale();
+  const state = useDateFieldState({
     ...props,
     locale,
     createCalendar
   });
 
-  let ref = useRef();
-  let { fieldProps } = useDateField(props, state, ref);
+  const ref = useRef();
+  const { fieldProps } = useDateField(props, state, ref);
 
   return (
-    <div {...fieldProps} ref={ref} className="flex">
+    <div {...fieldProps} ref={ref} className="flex ">
       {state.segments.map((segment, i) => (
         <DateSegment key={i} segment={segment} state={state} />
       ))}
@@ -24,8 +24,8 @@ export function DateField(props) {
 }
 
 function DateSegment({ segment, state }) {
-  let ref = useRef();
-  let { segmentProps } = useDateSegment(segment, state, ref);
+  const ref = useRef();
+  const { segmentProps } = useDateSegment(segment, state, ref);
 
   return (
     <div
@@ -33,20 +33,20 @@ function DateSegment({ segment, state }) {
       ref={ref}
       style={{
         ...segmentProps.style,
-        minWidth:
-          segment.maxValue != null && String(segment.maxValue).length + "ch"
+        // minWidth:
+        //   segment.maxValue != null && String(segment.maxValue).length + "ch",
+
       }}
-      className={`px-0.5 box-content tabular-nums text-right outline-none  focus:bg-violet-600 focus:text-white group ${
+      className={` outline-none  focus:bg-pa-teal-4 focus:text-white group ${
         !segment.isEditable ? "text-gray-500" : "text-gray-800"
       }`}
     >
       {/* Always reserve space for the placeholder, to prevent layout shift when editing. */}
       <span
         aria-hidden="true"
-        className="block w-full text-center italic text-gray-500 group-focus:text-white"
         style={{
-          visibility: segment.isPlaceholder ? "" : "hidden",
-          height: segment.isPlaceholder ? "" : 0,
+          display: segment.isPlaceholder ? "block" : "none",
+           height: 0,
           pointerEvents: "none"
         }}
       >

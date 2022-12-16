@@ -7,7 +7,7 @@ type Props = {
 	_id: string
 	slug: any
 	current: any
-	image: any
+	mainImage: any
 	title: string
 	category: any
     excerpt: any
@@ -21,7 +21,7 @@ const BlogPostPreview = (props: Props) => {
 			<div className='group cursor-pointer overflow-hidden rounded-lg border bg-white'>
 				<div className='relative h-72 w-full transition-transform duration-200 ease-in-out group-hover:scale-105'>
 					<Image
-						src={urlForImage(props.image).url()}
+						src={urlForImage(props.mainImage).url()}
 						alt='placeholder'
 						fill={true}
 						style={{ objectFit: 'cover' }}
@@ -47,7 +47,7 @@ const BlogPostPreview = (props: Props) => {
 					<div>
 						{post.excerpt &&
 							post.excerpt.map((e: any, i: number) => (
-								<PortableText content={e} key={i} />
+								<PortableText content={[e]} key={i} />
 							))}
 					</div>
 				</div>

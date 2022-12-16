@@ -1,4 +1,4 @@
-import DatePickerSection from './DatePickerSection';
+export { default as RoomCardsSection } from './RoomCardsSection'
 export {default as HeroSection} from './HeroSection'
 export {default as CtaRowSection} from './CtaRowSection'
 export {default as FunFactsSection} from './FunFactsSection'

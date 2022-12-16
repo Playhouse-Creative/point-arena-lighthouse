@@ -7,15 +7,15 @@ import { CalendarGrid } from "./CalendarGrid";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export function Calendar(props) {
-  let { locale } = useLocale();
-  let state = useCalendarState({
+  const { locale } = useLocale();
+  const state = useCalendarState({
     ...props,
     locale,
     createCalendar
   });
 
-  let ref = useRef();
-  let { calendarProps, prevButtonProps, nextButtonProps, title } = useCalendar(
+  const ref = useRef();
+  const { calendarProps, prevButtonProps, nextButtonProps, title } = useCalendar(
     props,
     state,
     ref

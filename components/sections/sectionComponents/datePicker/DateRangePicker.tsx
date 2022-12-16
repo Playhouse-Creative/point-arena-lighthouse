@@ -12,9 +12,9 @@ import {
 } from '@heroicons/react/24/outline'
 
 export function DateRangePicker(props) {
-	let state = useDateRangePickerState(props)
-	let ref = useRef()
-	let {
+	const state = useDateRangePickerState(props)
+	const ref = useRef()
+	const {
 		groupProps,
 		labelProps,
 		startFieldProps,
@@ -25,14 +25,14 @@ export function DateRangePicker(props) {
 	} = useDateRangePicker(props, state, ref)
 
 	return (
-		<div className='relative inline-flex flex-col text-left'>
-			<span {...labelProps} className='text-lg text-gray-800'>
+		<div className='relative inline-flex flex-col text-center'>
+			<span {...labelProps} className='text-lg text-gray-800 mb-1'>
 				{props.label}
 			</span>
-			<div {...groupProps} ref={ref} className='group flex'>
-				<div className='relative flex  border border-gray-300 bg-white p-1 pr-10 transition-colors group-focus-within:border-violet-600 group-hover:border-gray-400 group-focus-within:group-hover:border-violet-600'>
+			<div {...groupProps} ref={ref} className='group flex shadow-lg'>
+				<div className='relative flex w-full justify-center border text-center border-pa-navy-4 bg-white p-4 transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 					<DateField {...startFieldProps} />
-					<span aria-hidden='true' className='px-2'>
+					<span aria-hidden='true' className='px-2 flex'>
 						–
 					</span>
 					<DateField {...endFieldProps} />
@@ -41,7 +41,7 @@ export function DateRangePicker(props) {
 					)}
 				</div>
 				<FieldButton {...buttonProps} isPressed={state.isOpen}>
-					<CalendarIcon className='h-5 w-5 text-gray-700 group-focus-within:text-violet-700' />
+					<CalendarIcon className='h-5 w-5 text-gray-700 group-focus-within:text-pa-navy-4' />
 				</FieldButton>
 			</div>
 			{state.isOpen && (

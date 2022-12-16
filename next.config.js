@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
-  experimental: {  transpilePackages: ["ui"], appDir: true },
   images: {
     domains: ['cdn.sanity.io'],
     dangerouslyAllowSVG: true,

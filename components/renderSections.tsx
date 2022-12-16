@@ -1,4 +1,4 @@
-const Section = require('./sections')
+const SectionComponents = require('./sections')
 
 
 
@@ -9,18 +9,18 @@ function resolveSections(section: any) {
 		return str.charAt(0).toUpperCase() + str.slice(1)
 	}
 	// eslint-disable-next-line import/namespace
-	const currentSection = Section[capitalizeString(section._type)]
+	const Section = SectionComponents[capitalizeString(section._type)]
 
-	if (currentSection) {
-		return currentSection
+	if (Section) {
+		return Section
 	}
 
 	console.error('Cant find section', section) // eslint-disable-line no-console
 	return null
 }
 
-function RenderSections({sections}: any, posts: any) {
-	
+function RenderSections(props: any) {
+	const { sections } = props
 
 	if (!sections) {
 		console.error('Missing section')
@@ -28,21 +28,20 @@ function RenderSections({sections}: any, posts: any) {
 	}
 
 	return (
-		<div className="bg-[url('/topography-background.svg')] h-auto w-screen bg-fill p-0">
-		
-			{sections.map((section:any, i: number) => {
-				const Section = resolveSections(section)
-				if (!Section) {
+		<>
+			{sections.map((section: any, i: number) => {
+				const SectionComponent = resolveSections(section)
+				if (!SectionComponent) {
 					return <div key={i}>Missing section {section._type}</div>
 				}
-				return (<>
+				return (
 					
-						
-						<Section {...section} key={section._key} />
-						</>
+						<div key={section._key}>
+						<SectionComponent {...section}  />
+					</div>
 				)
 			})}
-		</div>
+		</>
 	)
 }
 

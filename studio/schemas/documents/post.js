@@ -20,7 +20,7 @@ export default {
       },
     },
     {
-      name: 'date',
+      name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
       description: 'This can be used to schedule post for publishing',

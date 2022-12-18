@@ -10,12 +10,13 @@ type Props = {
 	value: number
 	maxValue: number
 	minValue: number
+  onChange: (value: number) => void
 }
 
 const GuestPicker = (props: Props) => {
 	const { locale } = useLocale()
 	const state = useNumberFieldState({ ...props, locale })
-	const inputRef = useRef()
+	const inputRef = useRef<HTMLInputElement>(null)
 	const {
 		labelProps,
 		groupProps,
@@ -33,9 +34,9 @@ const GuestPicker = (props: Props) => {
 			</label>
 			<div {...groupProps} className='group flex shadow-lg'>
 				<div className='relative flex justify-center border border-pa-navy-4 bg-white p-4 text-center transition-colors group-focus:border-pa-navy-4 group-hover:border-gray-400 group-focus:group-hover:border-pa-navy-4'>
-					<Button {...decrementButtonProps} className=' text-gray-700'>-</Button>
+					<Button {...decrementButtonProps} >-</Button>
 					<input {...inputProps} ref={inputRef} className='text-center w-8 outline-none'/>
-					<Button {...incrementButtonProps} className=' text-gray-700'>+</Button>
+					<Button {...incrementButtonProps} >+</Button>
 				</div>
 			</div>
 		</div>

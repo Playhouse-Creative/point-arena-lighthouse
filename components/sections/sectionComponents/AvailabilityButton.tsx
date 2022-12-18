@@ -1,8 +1,18 @@
+
 import { useButton } from 'react-aria'
 import { useRef } from 'react'
 
-const AvailabilityButton = (props) => {
-	const ref = useRef()
+
+type Props = {
+    ref:  any
+    AriaButtonProps: any
+    isPressed: any
+    children: any
+    button: React.ReactElement
+}
+
+const AvailabilityButton = (props: Props) => {
+	const ref = useRef<HTMLButtonElement>(null)
 	const { buttonProps, isPressed } = useButton(props, ref)
 	return (
 		<button

@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import { useButton, useFocusRing, mergeProps } from "react-aria";
 
-export function CalendarButton(props) {
-  const ref = useRef();
+type Props ={
+    isDisabled: boolean
+    children: any
+}
+
+export function CalendarButton(props: Props) {
+  const ref = useRef<HTMLButtonElement>(null);
   const { buttonProps } = useButton(props, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
   return (
@@ -20,15 +25,15 @@ export function CalendarButton(props) {
   );
 }
 
-export function FieldButton(props) {
-  const ref = useRef();
+export function FieldButton(props: Props) {
+  const ref = useRef<HTMLButtonElement>(null);
   const { buttonProps, isPressed } = useButton(props, ref);
   return (
     <button
       {...buttonProps}
       ref={ref}
       className={`px-2  -ml-px border transition-colors group-focus-within:border-pa-navy-4 group-focus-within:group-hover:border-pa-navy-4 outline-none ${
-        isPressed || props.isPressed
+        isPressed 
           ? "bg-gray-200 border-pa-navy-4"
           : "bg-gray-50 border-pa-navy-4 group-hover:border-gray-400"
       }`}

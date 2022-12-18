@@ -7,11 +7,12 @@ import  AvailabilityButton  from './sectionComponents/AvailabilityButton'
 
 type Props = {
     title: string
+    
 }
 
 export default function DatePickerSection( props : Props) {
-    const [adultValue, setAdultValue] = useState(1)
-    const [childValue, setChildValue] = useState(1)
+    const [adultValue, setAdultValue] = useState<number>(1)
+    const [childValue, setChildValue] = useState<number>(1)
 	return (
 		<SSRProvider>
 			<div className='h-[500px]'>

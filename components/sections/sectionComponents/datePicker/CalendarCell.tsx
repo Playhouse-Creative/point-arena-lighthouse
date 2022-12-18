@@ -8,7 +8,7 @@ import {
 import { isSameDay, getDayOfWeek } from "@internationalized/date";
 
 export function CalendarCell({ state, date }) {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const {
     cellProps,
     buttonProps,

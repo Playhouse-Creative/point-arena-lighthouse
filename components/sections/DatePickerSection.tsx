@@ -15,7 +15,7 @@ export default function DatePickerSection( props : Props) {
     const [childValue, setChildValue] = useState<number>(1)
 	return (
 		<SSRProvider>
-			<div className='h-[500px]'>
+			<div className='mb-20'>
 				<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
 					{props.title}
 				</h2>

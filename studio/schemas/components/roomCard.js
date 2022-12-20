@@ -17,4 +17,10 @@ export default {
 		},
 		{ name: 'price', title: 'Price per night', type: 'number' },
 	],
+    preview: {
+        select: {
+          imageUrl: 'asset.url',
+          title: 'title'
+        }
+      }
 }

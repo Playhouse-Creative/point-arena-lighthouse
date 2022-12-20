@@ -6,4 +6,5 @@ export default {
 		{ name: 'title', type: 'string' },
 		{ name: 'icon', type: 'image' },
 	],
+    
 }

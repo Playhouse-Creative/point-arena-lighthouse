@@ -12,7 +12,7 @@ type Props = {
 
 export default function RoomCarousel(props: Props) {
       return (
-        <Carousel autoPlay showStatus={false} infiniteLoop showIndicators={false}>
+        <Carousel autoPlay showStatus={false} infiniteLoop showIndicators={false} showThumbs={false}>
           {props.images.map((image: any)=>
           
             <div key={image._key} className='relative w-full h-96'>

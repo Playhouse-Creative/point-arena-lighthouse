@@ -11,7 +11,7 @@ type Props = {
 export default function FunFactsSection(props: Props) {
 	return (
 		<div className='mb-24 h-full w-screen'>
-			<div className='mx-auto grid w-full max-w-[1400px] grid-cols-4 grid-rows-2 gap-6 '>
+			<div className='mx-auto grid w-full max-w-[1600px] grid-cols-4 grid-rows-2 gap-4 '>
 				<div className='relative row-span-2 col-span-2'>
                 <Image
 							src={urlForImage(props.heroImage).url()}

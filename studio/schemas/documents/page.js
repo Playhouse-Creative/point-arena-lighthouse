@@ -19,14 +19,15 @@ export default {
       of: [
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
-        { type: 'smallInfoRowsSection' },
         { type: 'ctaRowSection' },
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
         { type: 'lodgingHeroSection'},
         { type: 'datePickerSection'},
         { type: 'roomCardsSection'},
-        { type: 'listSection'}
+        { type: 'listSection'},
+        { type: 'tableSection'},
+        { type: 'articleSection'}
       ]
     }
   ]

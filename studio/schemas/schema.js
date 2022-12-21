@@ -36,6 +36,9 @@ import gridListItem from './components/gridListItem';
 import listSection from './sections/listSection';
 import reviewListItem from './components/reviewListItem';
 import infoListItem from './components/infoListItem';
+import tableSection from './sections/tableSection';
+import tableColumn from './components/tableColumn';
+import articleSection from './sections/articleSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -43,6 +46,9 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    tableColumn,
+    articleSection,
+    tableSection,
     infoListItem,
     gridListItem,
     reviewListItem,

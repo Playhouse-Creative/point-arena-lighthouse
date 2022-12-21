@@ -12,7 +12,7 @@ export default function Navbar() {
 		<>
 			<Disclosure
 				as='nav'
-				className="z-30 m-0 flex h-[160px] w-screen flex-col bg-[url('/menuBackground.png')] bg-cover bg-no-repeat p-0">
+				className="fixed z-30 m-0 flex h-[160px] w-screen flex-col bg-[url('/menuBackground.png')] bg-cover bg-no-repeat p-0">
 				{({ open }) => (
 					<>
 						<div className='absolute top-0 m-0 md:ml-12 z-30'>

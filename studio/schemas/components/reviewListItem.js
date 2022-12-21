@@ -3,7 +3,7 @@ export default {
 	type: 'object',
 	title: 'Review List Item',
 	fields: [
-		{ name: 'title', type: 'string' },
+		{ name: 'heading', type: 'string' },
 		{
 			name: 'stars',
 			type: 'number',

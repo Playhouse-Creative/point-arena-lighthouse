@@ -5,7 +5,10 @@ import ReviewListSection from './ReviewListSection'
 import _ from 'lodash'
 
 type Props = {
-	listType: any
+	title: string
+	listType: string
+	gridList: any
+	infoList: any
 }
 
 export default function ListSection(props: Props) {
@@ -13,11 +16,11 @@ export default function ListSection(props: Props) {
 		<div>
 			{' '}
 			{_.has(props.listType, 'gridList') ? (
-				<GridListSection {...props.listType} />
+				<GridListSection {...props} />
 			) : _.has(props.listType, 'infoList') ? (
-				<InfoListSection {...props.listType} />
+				<InfoListSection {...props} />
 			) : _.has(props.listType, 'reviewList') ? (
-				<ReviewListSection {...props.listType} />
+				<ReviewListSection {...props} />
 			) : null}
 		</div>
 	)

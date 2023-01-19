@@ -14,7 +14,7 @@ const Button = (props: Props) => {
 		<button
     {...buttonProps}
       ref={ref}
-      className={`text-gray-700 px-2 -ml-px h-full transition-colors group-focus-within:border-pa-navy-4 group-focus-within:group-hover:border-pa-navy-4 outline-none ${
+      className={`text-gray-700  px-2 -ml-px transition-colors group-focus-within:border-pa-navy-4 group-focus-within:group-hover:border-pa-navy-4 outline-none ${
         isPressed
           ? "bg-gray-200 border-pa-navy-4"
           : "bg-white border-pa-navy-4 group-hover:border-gray-400"

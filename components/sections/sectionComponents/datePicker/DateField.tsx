@@ -1,9 +1,9 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useDateFieldState } from "react-stately";
 import { useDateField, useDateSegment, useLocale } from "react-aria";
 import { createCalendar } from "@internationalized/date";
 
-export function DateField(props) {
+export function DateField(props: any) {
   const { locale } = useLocale();
   const state = useDateFieldState({
     ...props,
@@ -11,8 +11,8 @@ export function DateField(props) {
     createCalendar
   });
 
-  const ref = useRef();
-  const { fieldProps } = useDateField(props, state, ref);
+  const ref = useRef<HTMLDivElement>(null);;
+  const {  fieldProps } = useDateField(props, state, ref);
 
   return (
     <div {...fieldProps} ref={ref} className="flex ">
@@ -23,8 +23,8 @@ export function DateField(props) {
   );
 }
 
-function DateSegment({ segment, state }) {
-  const ref = useRef();
+function DateSegment({ segment, state }: any) {
+  const ref = useRef<HTMLDivElement>(null);
   const { segmentProps } = useDateSegment(segment, state, ref);
 
   return (
@@ -33,20 +33,21 @@ function DateSegment({ segment, state }) {
       ref={ref}
       style={{
         ...segmentProps.style,
-        // minWidth:
-        //   segment.maxValue != null && String(segment.maxValue).length + "ch",
+        minWidth:
+          segment.maxValue && String(segment.maxValue).length + "ch",
 
       }}
-      className={` outline-none  focus:bg-pa-teal-4 focus:text-white group ${
+      className={` outline-none box-content focus:bg-pa-teal-4 focus:text-white group ${
         !segment.isEditable ? "text-gray-500" : "text-gray-800"
       }`}
     >
       {/* Always reserve space for the placeholder, to prevent layout shift when editing. */}
       <span
         aria-hidden="true"
+        className="block w-full text-center italic text-gray-500 group-focus:text-white"
         style={{
-          display: segment.isPlaceholder ? "block" : "none",
-           height: 0,
+          visibility: segment.isPlaceholder ? "visible" : "hidden",
+          height: 0,
           pointerEvents: "none"
         }}
       >

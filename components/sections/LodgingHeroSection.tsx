@@ -10,9 +10,9 @@ type Props = {
 
 export default function FunFactsSection(props: Props) {
 	return (
-		<div className='mb-24 h-full w-screen'>
-			<div className='mx-auto grid w-full max-w-[1600px] grid-cols-4 grid-rows-2 gap-4 '>
-				<div className='relative row-span-2 col-span-2'>
+		<div className='mb-24 w-screen px-4'>
+			<div className='mx-auto pt-4 grid max-w-[1600px] grid-cols-4 grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4 '>
+				<div className='relative row-span-3 col-span-4 md:row-span-2 md:col-span-2 aspect-square'>
                 <Image
 							src={urlForImage(props.heroImage).url()}
 							alt='placeholder'
@@ -31,7 +31,7 @@ export default function FunFactsSection(props: Props) {
 				{props.gridImages.map((image: any, i: number) => (
 					<div
 						key={i}
-						className='relative row-span-1 aspect-square bg-pa-green-3'>
+						className='relative row-span-1 col-span-1 aspect-square '>
 						<Image
 							src={urlForImage(image).url()}
 							alt='placeholder'

@@ -6,7 +6,7 @@ import { CalendarButton } from "./Button";
 import { CalendarGrid } from "./CalendarGrid";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-export function Calendar(props) {
+export function Calendar(props: any) {
   const { locale } = useLocale();
   const state = useCalendarState({
     ...props,
@@ -14,11 +14,10 @@ export function Calendar(props) {
     createCalendar
   });
 
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const { calendarProps, prevButtonProps, nextButtonProps, title } = useCalendar(
     props,
     state,
-    ref
   );
 
   return (

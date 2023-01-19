@@ -7,7 +7,7 @@ import {
 } from "react-aria";
 import { isSameDay, getDayOfWeek } from "@internationalized/date";
 
-export function CalendarCell({ state, date }) {
+export function CalendarCell({ state, date }: any) {
   const ref = useRef<HTMLDivElement>(null);
   const {
     cellProps,

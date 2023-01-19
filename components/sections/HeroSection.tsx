@@ -15,21 +15,23 @@ const HeroSection = (props: any) => {
 					quality={100}
 					style={{ zIndex: 0, objectFit: 'cover' }}
 				/>
-				<div className='absolute z-20 flex h-[50vh] w-screen flex-col bg-black/25 md:h-[80vh] '>
-					<div className='flex w-1/2 flex-col justify-end ml-[15vw] md:pt-[35vh] md:text-left'>
-						<h2 className='mt-4 font-serif text-xl font-semibold uppercase leading-tight text-white md:text-[4rem]'>
+				<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[80vh] '>
+					<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[5vw] sm:w-1/2 md:pt-[35vh] md:text-right lg:w-1/2 xl:w-5/12 '>
+						<h2 className='bg-gray-900/30  p-3 mt-4 font-serif text-[2.3rem] font-semibold uppercase leading-tight text-white sm:text-[3rem] lg:text-[3.3rem] 2xl:text-[4rem]'>
 							{props.heading}
 						</h2>
-						<h3 className='text-md leading-4 text-white md:text-xl'>
+						<h3 className='bg-gray-900/30  p-3 text-md md:leading-4 text-white text-xl md:text-xl'>
 							{props.subheading}
 						</h3>
-						<div className='flex w-full justify-center'>
-							{props.cta && props.cta.title && (
-								<Cta
-									{...props.cta}
-                                buttonActionClass='w-auto mt-4 self-end rounded-lg bg-pa-red-4 px-8 py-4 font-serif font-medium tracking-wider text-2xl text-white shadow-xl'
-								/>
-							)}
+						<div className='flex sm:w-full sm:justify-end flex-row mr-6'>
+							{props.cta &&
+								props.cta.map((cta: any, i: number) => (
+									<Cta
+										key={i}
+										{...cta}
+										buttonActionClass='inline-flex items-center justify-center mt-4 ml-8 border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-2xl text-white shadow-xl'
+									/>
+								))}
 						</div>
 					</div>
 

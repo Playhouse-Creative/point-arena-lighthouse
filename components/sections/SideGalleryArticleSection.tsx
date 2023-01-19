@@ -37,7 +37,10 @@ export default function SideGalleryArticleSection(props: Props) {
 					<h3 className='mb-4 font-serif text-3xl font-semibold'>
 						{article.title}
 					</h3>
-					<PortableText content={article.body} />
+					<PortableText content={article.body} serializers={{
+        link: ({ href , children }: any) => <a className='text-pa-teal-4 underline' href={href}>{children}</a>
+        
+      }}/>
 				</div>
 			</div>
 		</div>

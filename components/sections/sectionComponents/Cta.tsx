@@ -16,7 +16,7 @@ const Cta = (props: any) => {
 
 	if (props.kind === 'button') {
 		return (
-			<Link href={link} passHref><button
+			<Link href={link} passHref legacyBehavior><button
 				className={props.buttonActionClass || ''}>
 				{props.title}
 			</button></Link>
@@ -33,7 +33,7 @@ const Cta = (props: any) => {
 	}
 
 	return (
-		<Link className='mr-3' href={link}>
+		<Link className='mr-3' href={link} passHref legacyBehavior>
 			{props.title}
 		</Link>
 	)

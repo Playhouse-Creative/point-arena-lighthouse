@@ -2,7 +2,7 @@ import React from 'react'
 import PortableText from 'react-portable-text'
 
 type Props = {
-	infoList: any
+	infoList: string
 	listType: any
 	title: string
 }
@@ -10,13 +10,14 @@ type Props = {
 export default function InfoListSection(props: Props) {
 	const list = props.listType.infoList
 	return (
-		<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-16 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
+		<div className='mx-4 my-12'>
+		<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white text-center shadow-lg '>
 			<h3
 				className='mt-8
-        ml-6 text-left font-serif text-3xl font-semibold text-pa-navy-4'>
+        sm:ml-6 mx-auto w-full text-center sm:text-left font-serif text-3xl font-semibold text-pa-navy-4'>
 				{props.title}
 			</h3>
-			<ul className='mx-12 my-8 flex flex-col'>
+			<ul className='mx-2 sm:mx-12 my-8 flex flex-col'>
 				{list.map((listSection: any, i: number) => (
 					<li key={i} className='mt-2 mb-6 flex flex-col'>
 						<div className='flex'>
@@ -35,6 +36,6 @@ export default function InfoListSection(props: Props) {
 					</li>
 				))}
 			</ul>
-		</div>
+		</div></div>
 	)
 }

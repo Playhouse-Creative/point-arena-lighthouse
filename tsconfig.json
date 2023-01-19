@@ -19,6 +19,7 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "downlevelIteration": true,
     "paths": {
       "@/*": ["./*"]
     },
@@ -33,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "components/sections/sectionComponents/datePicker/Calendar.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -19,7 +19,8 @@ export default {
 		},
 		{
 			name: 'cta',
-			type: 'cta',
+			type: 'array',
+			of: [	{ type: 'cta' } ]
 		},
 	],
 	preview: {

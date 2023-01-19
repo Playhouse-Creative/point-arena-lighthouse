@@ -5,8 +5,8 @@ type Props = {}
 export default function Footer({}: Props) {
 	return (
 		<div>
-			<div className="z-30 m-0 flex h-full w-screen py-12 bg-[url('/footer-circle-pattern.svg')] bg-cover bg-no-repeat p-0">
-				<div className=' ml-24 w-60'>
+			<div className="z-30 m-0 flex md:flex-row flex-col h-full w-screen py-12 bg-[url('/footer-circle-pattern.svg')] bg-cover bg-no-repeat p-0">
+				<div className='mx-10 md:ml-24 w-screen md:w-60'>
 					<h4 className='text-xl text-white underline underline-offset-2'>
 						Hours:
 					</h4>
@@ -35,7 +35,7 @@ export default function Footer({}: Props) {
 						<p className='text-lg text-white'>$5</p>
 					</div>
 				</div>
-				<div className=' ml-24 w-60'>
+				<div className='mx-10 md:ml-24 w-screen md:w-60 mt-10'>
 					<h4 className='text-xl text-white underline underline-offset-2'>
 						Phone:
 					</h4>
@@ -57,7 +57,7 @@ export default function Footer({}: Props) {
 					</p>
 					<p className=' text-lg text-white'>Point Arena, CA 95468</p>
 				</div>
-				<div className=' ml-24 w-60'>
+				<div className='mx-10 md:ml-24 w-screen md:w-60 mt-10'>
 					<Link href='/lodging'><h4 className='mb-4 text-xl text-white'>Lodging</h4></Link>
 					<Link href='/visit'><h4 className='mb-4 text-xl text-white'>Visit</h4></Link>
 					<Link href='/about'><h4 className='mb-4 text-xl text-white'>About</h4></Link>

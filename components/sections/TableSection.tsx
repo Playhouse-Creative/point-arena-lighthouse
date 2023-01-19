@@ -9,7 +9,7 @@ type Props = {
 
 export default function TableSection(props: Props) {
 	return (
-		<div>
+		<div className='mx-4 my-12'>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>
@@ -28,7 +28,7 @@ export default function TableSection(props: Props) {
 				</thead>
 				<tbody>
 					<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-						<td className='mx-10 flex w-1/2 flex-col flex-wrap text-left'>
+						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
 							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 								{props.columns.columnOne.columnCells[0].heading}
 							</h3>
@@ -38,7 +38,7 @@ export default function TableSection(props: Props) {
 								}
 							/>
 						</td>
-						<td className='mx-10 flex w-1/2 flex-col flex-wrap text-left'>
+						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
 							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 								{props.columns.columnTwo.columnCells[0].heading}
 							</h3>
@@ -50,7 +50,7 @@ export default function TableSection(props: Props) {
 						</td>
 					</tr>
 					<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-						<td className='mx-10 flex w-1/2 flex-col flex-wrap text-left'>
+						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
 							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 								{props.columns.columnOne.columnCells[1].heading}
 							</h3>
@@ -60,7 +60,7 @@ export default function TableSection(props: Props) {
 								}
 							/>
 						</td>
-						<td className='mx-10 flex w-1/2 flex-col flex-wrap text-left'>
+						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
 							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 								{props.columns.columnTwo.columnCells[1].heading}
 							</h3>

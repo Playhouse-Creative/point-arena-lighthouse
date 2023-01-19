@@ -36,7 +36,7 @@ function RenderSections(props: any) {
 				}
 				return (
 					
-						<div key={section._key}>
+						<div key={i}>
 						<SectionComponent {...section}  />
 					</div>
 				)

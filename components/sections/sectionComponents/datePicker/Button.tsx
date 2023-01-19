@@ -4,9 +4,10 @@ import { useButton, useFocusRing, mergeProps } from "react-aria";
 type Props ={
     isDisabled: boolean
     children: any
+    isPressed: boolean
 }
 
-export function CalendarButton(props: Props) {
+export function CalendarButton(props: any) {
   const ref = useRef<HTMLButtonElement>(null);
   const { buttonProps } = useButton(props, ref);
   const { focusProps, isFocusVisible } = useFocusRing();
@@ -25,7 +26,7 @@ export function CalendarButton(props: Props) {
   );
 }
 
-export function FieldButton(props: Props) {
+export function FieldButton(props: any) {
   const ref = useRef<HTMLButtonElement>(null);
   const { buttonProps, isPressed } = useButton(props, ref);
   return (

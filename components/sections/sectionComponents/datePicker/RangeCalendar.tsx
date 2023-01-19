@@ -6,7 +6,7 @@ import { CalendarButton } from "./Button";
 import { CalendarGrid } from "./CalendarGrid";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-export function RangeCalendar(props) {
+export function RangeCalendar(props: any) {
   const { locale } = useLocale();
   const state = useRangeCalendarState({
     ...props,
@@ -14,7 +14,7 @@ export function RangeCalendar(props) {
     createCalendar
   });
 
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const {
     calendarProps,
     prevButtonProps,

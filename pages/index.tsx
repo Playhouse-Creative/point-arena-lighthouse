@@ -24,7 +24,7 @@ const Home = ({ pageData }: Props) => {
 		<PageLayout
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
-			<main className=''>
+			<main>
 				<RenderSections sections={sections} />
 			</main>
 		</PageLayout>

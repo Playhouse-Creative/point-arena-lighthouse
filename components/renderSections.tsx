@@ -14,9 +14,6 @@ function resolveSections(section: any) {
 	if (Section) {
 		return Section
 	}
-
-	console.error('Cant find section', section) // eslint-disable-line no-console
-	return null
 }
 
 function RenderSections(props: any) {
@@ -36,7 +33,7 @@ function RenderSections(props: any) {
 				}
 				return (
 					
-						<div key={i}>
+						<div key={section._key}>
 						<SectionComponent {...section}  />
 					</div>
 				)

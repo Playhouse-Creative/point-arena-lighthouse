@@ -23,7 +23,7 @@ export default function SideGalleryArticleSection(props: Props) {
 						article.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 aspect-square h-full bg-black sm:h-96'>
+								className='relative col-span-1 aspect-square w-full bg-black sm:w-[30vw]'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}

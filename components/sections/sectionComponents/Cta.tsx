@@ -3,7 +3,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-
 const Cta = (props: any) => {
 	let link = props.route || props.link || '#'
 	if (
@@ -16,10 +15,11 @@ const Cta = (props: any) => {
 
 	if (props.kind === 'button') {
 		return (
-			<Link href={link} passHref legacyBehavior><button
-				className={props.buttonActionClass || ''}>
-				{props.title}
-			</button></Link>
+			<Link href={link}>
+				<button className={props.buttonActionClass || ''}>
+					{props.title}
+				</button>
+			</Link>
 		)
 	}
 
@@ -33,7 +33,7 @@ const Cta = (props: any) => {
 	}
 
 	return (
-		<Link className='mr-3' href={link} passHref legacyBehavior>
+		<Link className='mr-3' href={link}>
 			{props.title}
 		</Link>
 	)

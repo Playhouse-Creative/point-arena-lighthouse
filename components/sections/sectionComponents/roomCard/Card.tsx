@@ -9,15 +9,16 @@ type Props = {
 	subHeading: string
 	price: string
 	bannerColor: string
+	children: any
 }
 
 export default function Card(props: Props) {
 	return (
 		<div className='relative mb-12 border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
-			<RoomCarousel {...props}/>
+			<RoomCarousel  {...props}/>
 			<div className='absolute top-0 aspect-square w-full'>
 			<div
-				className='absolute left-0 -bottom-5 w-11/12 py-[5px] '
+				className='absolute left-0 z-40 -bottom-5 w-11/12 py-[5px] '
 				style={{
 					backgroundColor: props.bannerColor,
 					boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',

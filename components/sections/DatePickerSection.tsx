@@ -22,7 +22,7 @@ export default function DatePickerSection(props: Props) {
 						label='Stay dates'
 						minValue={today(getLocalTimeZone())}
 					/>
-					<div className='flex items-end mt-2 justify-center ml-4'>
+					<div className='flex items-end mt-2 justify-center sm:ml-4'>
 						<GuestPicker
 							label='# of Adults'
 							value={adultValue}

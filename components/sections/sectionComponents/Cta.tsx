@@ -15,11 +15,9 @@ const Cta = (props: any) => {
 
 	if (props.kind === 'button') {
 		return (
-			<Link href={link}>
-				<button className={props.buttonActionClass}>
-					{props.title}
-				</button>
-			</Link>
+			<button className={props.buttonActionClass}>
+				<Link href={link}>{props.title}</Link>
+			</button>
 		)
 	}
 

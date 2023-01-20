@@ -1,5 +1,5 @@
 import { sanityClient } from '@/lib/sanity-server'
-import RenderSections from '../components/RenderSections'
+import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 

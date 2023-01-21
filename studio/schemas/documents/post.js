@@ -38,14 +38,13 @@ export default {
         'This ends up on summary pages, on Google, when people share your post in social media.',
     },
     {
-      name: 'authors',
-      title: 'Authors',
-      type: 'array',
-      of: [
+      name: 'author',
+      type: 'reference',
+      to: [
         {
-          type: 'authorReference',
-        },
-      ],
+          type: 'author'
+        }
+      ]
     },
     {
       name: 'categories',
@@ -53,8 +52,13 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'categoryReference',
-          
+          name: 'category',
+          type: 'reference',
+          to: [
+            {
+              type: 'category'
+            }
+          ]
         }
       ]
     },

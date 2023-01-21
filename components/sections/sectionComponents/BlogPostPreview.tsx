@@ -17,8 +17,8 @@ type Props = {
 const BlogPostPreview = (props: Props) => {
 	const post = props
 	return (
-		<Link href={`/posts/${post.slug.current}`} key={post._id}>
-			<div className='group cursor-pointer overflow-hidden bg-white'>
+		<div>
+			<div className='group overflow-hidden bg-white'>
 				
 				<div className='relative aspect-square w-full mb-12 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 					<Image
@@ -27,7 +27,7 @@ const BlogPostPreview = (props: Props) => {
 						fill={true}
 						style={{ objectFit: 'cover' }}
 					/>
-					<div
+					<Link href={`/posts/${post.slug.current}`} key={post._id}><div
 				className='absolute left-0 -bottom-5 w-11/12 py-[5px] bg-pa-teal-4'
 				style={{
 					
@@ -39,7 +39,7 @@ const BlogPostPreview = (props: Props) => {
 				<h2 className='font-serif text-2xl font-semibold text-white'>
 					{props.title}
 				</h2>
-			</div>
+			</div></Link>
 				</div>
 				<div className='mx-6 mb-12'>
 					
@@ -52,10 +52,10 @@ const BlogPostPreview = (props: Props) => {
 								<PortableText content={[e]} key={i} />
 							))}
 					</div>
-					<p className='underline underline-offset-2 text-pa-blue-4'>Read More</p>
+					<Link href={`/posts/${post.slug.current}`} key={post._id}><p className='underline underline-offset-2 text-pa-blue-4'>Read More</p></Link>
 				</div>
 			</div>
-		</Link>
+		</div>
 	)
 }
 

@@ -1,27 +1,32 @@
-import Image from 'next/image'
-import PortableText from 'react-portable-text'
-import { urlForImage } from '@/lib/sanity'
+import Img from 'next/image'
 import Cta from './sectionComponents/Cta'
+import { useNextSanityImage } from 'next-sanity-image'
+import { sanityClient } from '@/lib/sanity-server'
+
+
 
 const HeroSection = (props: any) => {
+	const imageProps: any = useNextSanityImage(sanityClient, props.heroImage.image) 
+
 	return (
 		<>
 			<div>
-				<div className='relative z-0 mx-auto h-[50vh] md:h-[80vh]'>
-					<Image
+				<div className='relative z-0 mx-auto h-[50vh] md:h-[60vh]'>
+					{props.heroImage && <Img
 						alt={props.heading}
-						src={urlForImage(props.heroImage.image).url()}
+						src={imageProps.src}
+						loader={imageProps.loader}
 						fill={true}
 						priority={true}
-						quality={100}
-						object-fit='cover'
-					/>
-					<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[80vh] '>
-						<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[5vw] sm:w-1/2 md:pt-[35vh] md:text-right lg:w-1/2 xl:w-5/12 '>
+						quality={80}
+						style={{ objectFit: 'cover' }}
+					/>}
+					<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[60vh] '>
+						<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[5vw] sm:w-1/2 md:pt-[25vh] md:text-right lg:w-1/2 xl:w-5/12 '>
 							<h2 className='mt-4 font-serif text-[2.3rem] font-semibold uppercase leading-tight text-white sm:text-[3rem] lg:text-[3.3rem] 2xl:text-[4rem]'>
 								{props.heading}
 							</h2>
-							<h3 className='text-md  text-xl text-white md:text-xl md:leading-4'>
+							<h3 className='text-md text-xl text-white md:text-xl'>
 								{props.subheading}
 							</h3>
 							<div className='mr-6 flex flex-row sm:w-full sm:justify-end'>

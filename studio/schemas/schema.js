@@ -5,6 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import author from "./documents/author";
 import category from "./documents/category";
+import categoryReference from './components/categoryReference';
 import page from "./documents/page";
 import post from "./documents/post";
 import blogPreviewSection from './sections/blogPreviewSection';
@@ -20,7 +21,6 @@ import textWithIllustration from './components/textWithIllustration';
 import mainImage from './components/mainImage';
 import excerptPortableText from './components/excerptPortableText';
 import authorReference from './components/authorReference';
-import categoryReference from './components/categoryReference';
 import bodyPortableText from './components/bodyPortableText';
 import link from './components/link'
 import route from './components/route';
@@ -55,6 +55,7 @@ export default createSchema({
     listSection,
     author,
     category,
+    categoryReference,
     page,
     post,
     blogPreviewSection,
@@ -63,7 +64,6 @@ export default createSchema({
     infoRowsSection,
     smallInfoRowsSection,
     authorReference,
-    categoryReference,
     bodyPortableText,
     cta,
     ctaPlug,

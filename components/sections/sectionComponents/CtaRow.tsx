@@ -40,7 +40,7 @@ export default function CtaRow(props: Props) {
 						{props.body && <PortableText content={props.body} />}
 						<Cta
 							{...props.cta}
-							buttonActionClass='w-auto self-end rounded-lg bg-pa-blue-4 hover:bg-pa-blue-3 px-6 py-3 mt-4 font-serif font-medium tracking-wider text-xl text-white shadow-xl'
+							buttonActionClass='w-auto self-start rounded-lg bg-pa-blue-4 hover:bg-pa-blue-3 px-6 py-3 mt-4 font-serif font-medium tracking-wider text-xl text-white shadow-xl'
 						/>
 					</div>
 				</div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
 import fiveStar from '../../public/5-star.svg'
 import fourStar from '../../public/4-star.svg'
@@ -39,7 +38,7 @@ export default function ReviewListSection(props: Props) {
 									<h3 className='text-left text-2xl font-semibold text-pa-navy-4'>
 										{listSection.heading}
 									</h3>
-									<div className='relative h-8 w-24'>
+									<div className='relative h-8 w-24 sm:hidden'>
 										<Image
 											src={starsIcon(listSection)}
 											alt={`${listSection.stars} stars`}
@@ -49,7 +48,7 @@ export default function ReviewListSection(props: Props) {
 									</div>
 								</div>
 								<ul className='flex items-start'>
-									<div className='relative h-10 w-36 hidden sm:block'>
+									<div className='relative h-10 w-36 hidden sm:block -scale-x-100'>
 										<Image
 											src={starsIcon(listSection)}
 											alt={`${listSection.stars} stars`}

@@ -17,7 +17,7 @@ type Props = {
 const BlogPostPreview = (props: Props) => {
 	const post = props
 	return (
-		<div>
+		<div className='group'><Link href={`/post/${post.slug.current}`} key={post._id}>
 			<div className='group overflow-hidden bg-white'>
 				
 				<div className='relative aspect-square w-full mb-12 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
@@ -27,34 +27,35 @@ const BlogPostPreview = (props: Props) => {
 						fill={true}
 						style={{ objectFit: 'cover' }}
 					/>
-					<Link href={`/posts/${post.slug.current}`} key={post._id}><div
-				className='absolute left-0 -bottom-5 w-11/12 py-[5px] bg-pa-teal-4'
+					<div
+				className='absolute left-0 -bottom-5 w-11/12 py-[5px] '
 				style={{
-					
+					backgroundColor: `${props.category[0].color.value}`,
 					boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',
 					clipPath:
 						'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
 				}}>
 				{' '}
-				<h2 className='font-serif text-2xl font-semibold text-white'>
-					{props.title}
-				</h2>
-			</div></Link>
+				<h3 className='font-serif text-2xl font-semibold text-white '>
+					{props.category[0].title}
+				</h3>
+			</div>
 				</div>
 				<div className='mx-6 mb-12'>
 					
-					<div className='mb-1 text-sm text-gray-700'>
+					<h2 className='text-lg font-semibold group-hover:underline underline-offset-4 mb-1'>{props.title}</h2>
+					<div className='mb-1 text-sm text-gray-700 '>
 						{post.publishedAt.replace(/-/g, '/').replace(/T.+/, '')}
 					</div>
 					<div>
 						{post.excerpt &&
 							post.excerpt.map((e: any, i: number) => (
-								<PortableText content={[e]} key={i} />
+								<PortableText content={[e]} key={i} className='font-light' />
 							))}
 					</div>
-					<Link href={`/posts/${post.slug.current}`} key={post._id}><p className='underline underline-offset-2 text-pa-blue-4'>Read More</p></Link>
+					
 				</div>
-			</div>
+			</div></Link>
 		</div>
 	)
 }

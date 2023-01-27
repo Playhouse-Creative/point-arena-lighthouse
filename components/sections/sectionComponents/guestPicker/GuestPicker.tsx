@@ -26,7 +26,7 @@ const GuestPicker = (props: Props) => {
 	} = useNumberField(props, state, inputRef)
 
 	return (
-		<div className='relative inline-flex flex-col text-center ml-4'>
+		<div className='relative inline-flex flex-col text-center sm:ml-4'>
 			<label
 				{...labelProps}
 				className='mx-auto mb-1 w-full text-center text-lg text-gray-800'>

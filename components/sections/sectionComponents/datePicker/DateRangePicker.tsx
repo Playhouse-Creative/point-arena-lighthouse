@@ -29,7 +29,7 @@ export function DateRangePicker(props: any) {
 	
 
 	return (
-		<div className='relative inline-flex flex-col text-left sm:mx-0 w-9/12 sm:w-80 mx-auto'>
+		<div className='relative inline-flex flex-col text-left sm:mx-0 w-full sm:w-80 '>
 			<span
 				{...labelProps}
 				className='mx-auto mb-1 w-full text-center text-lg text-gray-800'>

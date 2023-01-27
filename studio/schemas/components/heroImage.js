@@ -6,8 +6,8 @@ export default {
     {
       title: 'Image',
       name: 'image',
-      type: 'mainImage'
-    }
+      type: 'mainImage',
+      }
   ],
   preview: {
     select: {

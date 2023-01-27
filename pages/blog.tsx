@@ -22,9 +22,9 @@ const Blog = ({ postData }: Props) => {
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
-				<div className='mx-auto mb-24 flex max-w-[1600px] justify-center'>
+				<div className='mx-auto mb-24 flex flex-col md:flex-row max-w-[1600px] justify-center'>
 					
-					<div className='group m-12 w-5/12 cursor-pointer border-[2px] border-pa-navy-4 bg-white p-10 pb-16'>
+					<div className='group md:m-4 lg:m-12 w-full lg:w-5/12 md:w-6/12 cursor-pointer md:border-[2px] md:border-pa-navy-4 bg-white p-4 lg:p-10 pb-16'>
 					<Link href={`/post/${posts[0].slug.current}`} key={posts[0]._id}>
 						<div className='relative aspect-square w-full'>
 							<Img

@@ -29,13 +29,13 @@ const HeroSection = (props: any) => {
 							<h3 className='text-md text-xl text-white md:text-xl'>
 								{props.subheading}
 							</h3>
-							<div className='mr-6 flex flex-row sm:w-full sm:justify-end'>
+							<div className=' flex flex-row sm:w-full space-x-4 sm:justify-end'>
 								{props.cta &&
 									props.cta.map((cta: any, i: number) => (
 										<Cta
 											key={i}
 											{...cta}
-											buttonActionClass='inline-flex items-center justify-center mt-4 ml-8 border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-lg md:text-2xl text-white shadow-xl'
+											buttonActionClass='inline-flex items-center justify-center mt-4  border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-lg md:text-2xl text-white shadow-xl'
 										/>
 									))}
 							</div>

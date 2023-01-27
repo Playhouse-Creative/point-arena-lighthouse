@@ -3,7 +3,6 @@ import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 
-
 type Props = {
 	pageData: any
 	posts: any
@@ -32,7 +31,11 @@ const Lodging = ({ pageData }: Props) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && title == "Lodging"] ,
+const query = `{"pageSections": *[_type == "page"  && title == "Lodging"]{
+	...,
+	heroImage{ asset->
+}
+} ,
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 

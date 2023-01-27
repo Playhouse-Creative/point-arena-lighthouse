@@ -13,12 +13,12 @@ export default function BlogFeaturedPosts({ posts }: any) {
 	)
 
 	return (
-		<div>
+		<div className='w-auto self-center md:self-start mx-4'>
 			<div className=' flex w-full flex-col border-b-2 border-b-pa-navy-3 bg-white p-4 pb-2 '>
 				<h2 className='mb-2 text-2xl'>Featured Posts</h2>
 				<div className='-ml-2 flex w-full justify-start'>
 					<button
-						className={`m-2 px-3 py-1 font-light  ${
+						className={`m-1 sm:m-2 px-3 py-1 font-light  ${
 							selectedCategory === 'all'
 								? 'bg-pa-navy-4 text-white'
 								: 'bg-gray-200'
@@ -28,7 +28,7 @@ export default function BlogFeaturedPosts({ posts }: any) {
 					</button>
 					{uniqueCategories.map((category: any, i: number) => (
 						<button
-							className='m-2 px-3 py-1 font-light '
+							className='m-1 sm:m-2 px-3 py-1 font-light '
 							style={{
 								color:
 									selectedCategory === category.title

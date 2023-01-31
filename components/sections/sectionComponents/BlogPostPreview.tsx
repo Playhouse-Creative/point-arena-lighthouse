@@ -41,17 +41,14 @@ const BlogPostPreview = (props: Props) => {
 				</h3>
 			</div>
 				</div>
-				<div className='mx-6 mb-12'>
+				<div className='mx-6 mb-12 h-full'>
 					
 					<h2 className='text-lg font-semibold group-hover:underline underline-offset-4 mb-1'>{props.title}</h2>
 					<div className='mb-1 text-sm text-gray-700 '>
 						{post.publishedAt.replace(/-/g, '/').replace(/T.+/, '')}
 					</div>
 					<div>
-						{post.excerpt &&
-							post.excerpt.map((e: any, i: number) => (
-								<PortableText content={[e]} key={i} className='font-light' />
-							))}
+						<p>{post.excerpt}</p>
 					</div>
 					
 				</div>

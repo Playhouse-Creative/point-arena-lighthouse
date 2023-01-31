@@ -32,10 +32,12 @@ export default {
     },
     {
       name: 'excerpt',
-      type: 'excerptPortableText',
+      type: 'text',
       title: 'Excerpt',
+      rows: 4,
       description:
-        'This ends up on summary pages, on Google, when people share your post in social media.',
+        'This ends up on summary pages, on Google, and when people share your post in social media. Maximum 250 characters.',
+        validation: Rule => Rule.required().max(250).error('Please keep character count under 250'),
     },
     {
       name: 'author',

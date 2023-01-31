@@ -12,13 +12,13 @@ export default function GridListSection(props: Props) {
 	const list = props.listType.gridList
 	return (
 		<div className='mx-4 my-12'>
-			<div className='relative mx-auto mb-12 max-w-[1600px] place-self-center border border-pa-navy-4 bg-white px-2 sm:px-16 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
+			<div className='relative mx-auto mb-12 max-w-[1600px] place-self-center border border-pa-navy-4 bg-white px-2 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16'>
 				<h3
-					className='mt-8
-        sm:ml-6 mx-auto w-full text-center sm:text-left font-serif text-3xl font-semibold text-pa-navy-4'>
+					className='mx-auto
+        mt-8 w-full text-center font-serif text-3xl font-semibold text-pa-navy-4 sm:ml-6 sm:text-left'>
 					{props.title}
 				</h3>
-				<ul className='mx-2 sm:mx-12 my-8 grid grid-cols-1 sm:grid-cols-2 gap-4'>
+				<ul className='mx-2 my-8 grid grid-cols-1 gap-4 sm:mx-12 sm:grid-cols-2'>
 					{list.map((listSection: any, i: number) => (
 						<li key={i} className='flex flex-col '>
 							<div className='flex'>

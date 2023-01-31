@@ -62,7 +62,7 @@ const Blog = ({ postData }: Props) => {
 									alt={posts[0].author.name}
 								/>
 							</div>
-							<p className='text-sm font-light'>
+							<p className='text-sm font-light mb-2'>
 								Blog post by{' '}
 								<span className='text-pa-green-4'>
 									{posts[0].author.name}
@@ -75,128 +75,11 @@ const Blog = ({ postData }: Props) => {
 							</p>
 						</div>
 						<div>
-							{posts[0].excerpt.map((e: any, i: number) => (
-								<PortableText
-									content={[e]}
-									key={i}
-									className='mt-10 h-auto font-light truncate-3-lines'
-								/>
-							))}
+							<p>{posts[0].excerpt}</p>		
 						</div><p className='underline underline-offset-2 text-pa-blue-4 mt-2'>Read full story</p>
 						</Link></div>
 					<BlogFeaturedPosts posts={posts} />
-					{/* <div className=' h-full mt-12'>
-						<div className=' flex w-full flex-col border-b-2 border-b-pa-navy-3 p-4 pb-2 bg-white '>
-							<h2 className='text-2xl mb-2'>Featured Posts</h2>
-							<div className='-ml-2 flex w-full justify-start'>
-								<button
-									className={`m-2 px-3 py-1 font-light  ${
-										selectedCategory === 'all'
-											? 'bg-pa-navy-4 text-white'
-											: 'bg-gray-200'
-									}`}
-									onClick={() => setSelectedCategory('all')}>
-									All
-								</button>
-								{uniqueCategories.map(
-									(category: any, i: number) => (
-										<button
-											className='m-2 px-3 py-1 font-light '
-											style={{
-												color:
-													selectedCategory ===
-													category.title
-														? 'white'
-														: 'black',
-												backgroundColor:
-													selectedCategory ===
-													category.title
-														? category.color.value
-														: '#e5e7eb',
-											}}
-											key={i}
-											onClick={() =>
-												setSelectedCategory(
-													category.title
-												)
-											}>
-											{category.title}
-										</button>
-									)
-								)}
-							</div>
-						</div>
-						<div className='flex w-full flex-col divide-y overflow-hidden bg-white '>
-							{selectedCategory === 'all'
-								? firstEightPosts.slice(1).map((post: any, i: number) => (
-										<Link href={`/post/${post.slug.current}`} key={post._id} className=' p-4 pl-2 group cursor-pointer'>
-											<div className=' flex w-full justify-between'>
-												<h3 className='mb-3 w-full text-xl group-hover:underline'>
-													{post.title}
-												</h3>
-												{post.category.map(
-													(c: any, i: number) => (
-														<p
-															key={i}
-															style={{
-																color: `${c.color.value}`,
-															}}>
-															{c.title}
-														</p>
-													)
-												)}
-											</div>
-											<div className='flex w-full justify-between'>
-												<p className='text-sm text-gray-700'>
-													{post.author.name}
-												</p>
-												<p className='text-sm text-gray-700'>
-													{post.publishedAt
-														.replace(/-/g, '/')
-														.replace(/T.+/, '')}
-												</p>
-											</div>
-										</Link>
-								  ))
-								: firstEightPosts
-										.slice(1)
-										.filter(
-											(post: any) =>
-												post.category[0].title ===
-												selectedCategory
-										)
-										.map((post: any, i: number) => (
-											<Link href={`/post/${post.slug.current}`} key={post._id} className=' p-4 pl-2 group cursor-pointer'>
-												<div className=' flex w-full justify-between'>
-													<h3 className='mb-3 w-full text-xl group-hover:underline'>
-														{post.title}
-													</h3>
-													{post.category.map(
-														(c: any, i: number) => (
-															<p
-																key={i}
-																style={{
-																	color: `${c.color.value}`,
-																}}>
-																{c.title}
-															</p>
-														)
-													)}
-												</div>
-												<div className='flex w-full justify-between'>
-													<p className='text-sm text-gray-700'>
-														{post.author.name}
-													</p>
-													<p className='text-sm text-gray-700'>
-														{post.publishedAt
-															.replace(/-/g, '/')
-															.replace(/T.+/, '')}
-													</p>
-												</div>
-											</Link>
-										))}
-						</div>
-					</div> */}
+					
 				</div>
 
 				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-4xl text-white'>

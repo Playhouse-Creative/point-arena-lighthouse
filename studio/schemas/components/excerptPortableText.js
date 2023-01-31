@@ -2,6 +2,7 @@ export default {
   name: 'excerptPortableText',
   type: 'array',
   title: 'Excerpt',
+  
   of: [
     {
       title: 'Block',
@@ -15,7 +16,8 @@ export default {
           {title: 'Code', value: 'code'}
         ],
         annotations: []
-      }
+      },
+      
     }
   ]
 }

@@ -27,7 +27,8 @@ export default {
         { type: 'roomCardsSection'},
         { type: 'listSection'},
         { type: 'tableSection'},
-        { type: 'articleSection'}
+        { type: 'articleSection'},
+        { type: 'portraitSection'}
       ]
     }
   ]

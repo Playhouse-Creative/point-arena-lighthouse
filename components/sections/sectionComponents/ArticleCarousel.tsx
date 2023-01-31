@@ -11,20 +11,23 @@ type Props = {
 
 
 export default function ArticleCarousel(props: Props) {
-	const [currentSlide, setCurrentSlide] = useState(0)
-    const [currentSlides, setCurrentSlides] = useState([0, 1, 2, 3])
+	const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentSlides, setCurrentSlides] = useState(props.images.slice(0,4))
 
-	const handleNextSlide = useCallback(() => {
-		let newSlide =
-			currentSlide === props.images.length - 1 ? 0 : currentSlide + 1
-		setCurrentSlide(newSlide)
-	}, [currentSlide, props.images.length])
+	const handleNextSlide = () => {
+		let newIndex;
+		newIndex = currentIndex + 1 
+		if(newIndex + 4 > props.images.length) {
+			newIndex = 0
+		}
+		setCurrentIndex(newIndex)
+	}
 
 	const handlePrevSlide = () => {
-		let newSlide =
-			currentSlide === 0 ? props.images.length - 1 : currentSlide - 1
-		setCurrentSlide(newSlide)
-	}
+		let newIndex;
+		newIndex = currentIndex - 1
+		if(newIndex < 0) { newIndex = props.images.length - 4 }
+		setCurrentIndex(newIndex)}
 
 	const swipeHandlers = useSwipeable({
 		onSwipedLeft: handleNextSlide,
@@ -34,12 +37,9 @@ export default function ArticleCarousel(props: Props) {
 		delta: 10,
 	})
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			handleNextSlide()
-		}, 3000)
-		return () => clearInterval(interval)
-	}, [handleNextSlide])
+	useEffect (() => {
+		
+		setCurrentSlides(props.images.slice(currentIndex, currentIndex + 4))}, [currentIndex, props.images])
 
 	return (
 		<div className='w-full relative mx-auto'>
@@ -50,7 +50,7 @@ export default function ArticleCarousel(props: Props) {
 				viewBox='0 0 24 24'
 				strokeWidth={2.5}
 				stroke='currentColor'
-				className='absolute inset-y-1/2 left-0 z-20 m-auto h-14 w-14 cursor-pointer text-pa-navy-2'>
+				className='absolute inset-y-1/2 left-0 z-20 m-auto h-14 w-14 cursor-pointer text-white shadow-xl'>
 				<path
 					strokeLinecap='round'
 					strokeLinejoin='round'
@@ -58,21 +58,21 @@ export default function ArticleCarousel(props: Props) {
 				/>
 			</svg>
 
-			<div {...swipeHandlers} className='grid grid-cols-4 grid-rows-1 h-[25vh] w-full justify-evenly overflow-hidden'>
-				
-					{props.images && props.images.map((image: any, i: number) => {
+			<div {...swipeHandlers} className='grid grid-cols-4 grid-rows-1 h-[25vh] gap-2 w-full justify-evenly overflow-hidden'>
+				{console.log(currentSlides)}
+					{currentSlides && currentSlides.map((image: any, i: number) => {
 						
 							return (
 								<Transition
                                 key={i}
-                                show={currentSlides.includes(i) ? true : false}
+                                show={true}
                                 enter='transition-opacity duration-500'
                                 enterFrom='opacity-0'
                                 enterTo='opacity-100'
                                 leave='transition-opacity duration-500'
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
-                                className='relative z-10 aspect-square h-full'>
+                                className='relative z-10 aspect-square w-full h-full'>
 									<Image
 										alt=''
 										src={urlForImage(image).url()}
@@ -92,7 +92,7 @@ export default function ArticleCarousel(props: Props) {
 				viewBox='0 0 24 24'
 				strokeWidth={2.5}
 				stroke='currentColor'
-				className='absolute inset-y-1/2 right-0 z-20 m-auto h-14 w-14 cursor-pointer text-pa-navy-2'>
+				className='absolute inset-y-1/2 right-0 z-20 m-auto h-14 w-14 cursor-pointer text-white shadow-xl'>
 				<path
 					strokeLinecap='round'
 					strokeLinejoin='round'
@@ -105,13 +105,13 @@ export default function ArticleCarousel(props: Props) {
 					return (
 						<div
 							className={
-								index === currentSlide
+								index === currentIndex
 									? 'mx-2 mb-2 h-4 w-4 cursor-pointer rounded-full bg-gray-700 transition duration-300 ease-in-out'
 									: 'mx-2 mb-2 h-4 w-4 cursor-pointer rounded-full bg-gray-300 transition duration-300 ease-in-out '
 							}
 							key={index}
 							onClick={() => {
-								setCurrentSlide(index)
+								setCurrentIndex(index)
 							}}
 						/>
 					)

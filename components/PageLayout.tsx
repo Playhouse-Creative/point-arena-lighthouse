@@ -2,6 +2,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
+import ContactForm from './sections/sectionComponents/ContactForm'
 
 type Props = {
 	title: string
@@ -40,6 +41,7 @@ const PageLayout = (props: Props) => {
 				<Navbar />
 				<div className="mt-[160px]  bg-[url('/topography-background.svg')]">
 					{props.children}
+					<ContactForm/>
 				</div>
 				<Footer />
 			</div>

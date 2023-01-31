@@ -40,6 +40,8 @@ import tableSection from './sections/tableSection';
 import tableColumn from './components/tableColumn';
 import articleSection from './sections/articleSection';
 import color from './components/color';
+import portraitImage from './components/portraitImage';
+import portraitSection from './sections/portraitSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -83,6 +85,8 @@ export default createSchema({
     roomCardSection,
     iconListItem,
     roomCard, 
-    color
+    color,
+    portraitImage,
+    portraitSection
   ]),
 })

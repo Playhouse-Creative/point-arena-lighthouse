@@ -18,7 +18,7 @@ export default function Card(props: Props) {
 			<RoomCarousel  {...props}/>
 			<div className='absolute top-0 aspect-square w-full'>
 			<div
-				className='absolute left-0 z-40 -bottom-5 w-11/12 py-[5px] '
+				className='absolute left-0 z-10 -bottom-5 w-11/12 py-[5px] '
 				style={{
 					backgroundColor: props.bannerColor,
 					boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',

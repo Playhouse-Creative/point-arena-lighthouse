@@ -1,7 +1,7 @@
-import {DefaultDocumentNodeResolver} from 'sanity/desk'
+
 import Iframe from 'sanity-plugin-iframe-pane'
 
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, {schemaType}) => {
+export const defaultDocumentNode = (S, {schemaType}) => {
   switch (schemaType) {
     case `movie`:
       return S.document().views([

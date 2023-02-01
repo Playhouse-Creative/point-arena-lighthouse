@@ -15,15 +15,23 @@ export default function ContactForm() {
 				<div className='w-full text-center'>
 					<h2
 						className='
-        mt-8  font-serif text-4xl font-semibold text-pa-navy-4 '>
+        mt-8 font-serif text-4xl font-semibold text-pa-navy-4 '>
 						Get in Touch
 					</h2>
 				</div>
 				<div className='mt-12'>
 					<form
-						action='#'
+						name='contact'
 						method='POST'
+						data-netlify='true'
+						netlify-honeypot='bot-field'
+						action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
+						<input type='hidden' name='form-name' value='contact' />
+						<label className='hidden'>
+							Don’t fill this out if you’re human:
+							<input name='bot-field' />
+						</label>
 						<div>
 							<label
 								htmlFor='first-name'
@@ -144,35 +152,45 @@ export default function ContactForm() {
 					</form>
 				</div>
 			</div>
-			<div className='relative mt-36 h-36 w-full'>
-      <div className='absolute left-0 top-1/2'>
-				<svg
-					version='1.1'
-					id='line_2'
-					xmlns='http://www.w3.org/2000/svg'
-					x='0px'
-					y='0px'
-					width='42vw'
-					height='10px'>
-					<path stroke-width='8' stroke='#A98551' d='M0 0 l1120 0' />
-				</svg></div>
+			<div className='relative mt-36 h-24 md:h-36 w-full'>
+				<div className='absolute left-0 top-1/2  w-[15vw] sm:w-[30vw] xl:w-[35vw] 2xl:w-[40vw]'>
+					<svg
+						version='1.1'
+						id='line_2'
+						xmlns='http://www.w3.org/2000/svg'
+						x='0px'
+						y='0px'
+						width='100%'
+						height='10px'>
+						<path
+							stroke-width='6'
+							stroke='#A98551'
+							d='M0 0 l1120 0'
+						/>
+					</svg>
+				</div>
 				<Img
 					src='/dogAndCatIcons.png'
 					alt='Dog and Cat Icons'
 					fill={true}
 					style={{ objectFit: 'contain' }}
 				/>
-        <div className='absolute right-0 top-1/2'>
-				<svg
-					version='1.1'
-					id='line_2'
-					xmlns='http://www.w3.org/2000/svg'
-					x='0px'
-					y='0px'
-					width='42vw'
-					height='10px'>
-					<path stroke-width='8' stroke='#A98551' d='M0 0 l1120 0' />
-				</svg></div>
+				<div className='absolute right-0 top-1/2 w-[15vw] sm:w-[30vw] xl:w-[35vw] 2xl:w-[40vw]'>
+					<svg
+						version='1.1'
+						id='line_2'
+						xmlns='http://www.w3.org/2000/svg'
+						x='0px'
+						y='0px'
+						width='100%'
+						height='10px'>
+						<path
+							stroke-width='6'
+							stroke='#A98551'
+							d='M0 0 l1120 0'
+						/>
+					</svg>
+				</div>
 			</div>
 		</div>
 	)

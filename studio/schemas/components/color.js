@@ -1,7 +1,8 @@
 export default {
 	title: 'Color',
 	name: 'color',
-	type: 'colorlist',
+	type: 'array',
+	of: [{type: 'string'}],
 	options: {
 		list: [
 			{ title: 'Red', value: '#A73D1C' },

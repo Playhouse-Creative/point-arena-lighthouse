@@ -3,8 +3,8 @@ import React from 'react'
 import {
   mathInlineIcon,
   mathIcon,
-  highlightIcon,
-  highlightRender,
+  HighlightIcon,
+  HighlightRender,
 } from './PortableTextEditorComponents'
 
 export default {
@@ -41,10 +41,9 @@ export default {
           {
             title: 'Highlight',
             value: 'highlight',
-            blockEditor: {
-              icon: highlightIcon,
-              render: highlightRender
-            }
+            icon: HighlightIcon,
+            component: HighlightRender
+            
           }
 
           /*

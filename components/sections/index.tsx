@@ -1,3 +1,4 @@
+import BannerSection from './BannerSection';
 export { default as RoomCardsSection } from './RoomCardsSection'
 export { default as HeroSection } from './HeroSection'
 export { default as CtaRowSection } from './CtaRowSection'
@@ -15,5 +16,6 @@ export { default as CarouselArticleSection } from './CarouselArticleSection'
 export { default as InfoListSection } from './InfoListSection'
 export { default as ReviewListSection } from './ReviewListSection'
 export { default as PortraitSection } from './PortraitSection' 
+export { default as BannerSection } from './BannerSection'
 // export {default as SmallInfoRowsSection} from './SmallInfoRowsSection'
 // export {default as BlogHeroSection} from './BlogHeroSection'

@@ -17,6 +17,7 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
+        { type: 'bannerSection' },
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
         { type: 'ctaRowSection' },

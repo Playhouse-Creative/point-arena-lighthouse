@@ -1,8 +1,3 @@
-// First, we must import the schema creator
-import createSchema from 'part:@sanity/base/schema-creator'
-
-// Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
 import author from "./documents/author";
 import category from "./documents/category";
 import categoryReference from './components/categoryReference';
@@ -24,7 +19,7 @@ import authorReference from './components/authorReference';
 import bodyPortableText from './components/bodyPortableText';
 import link from './components/link'
 import route from './components/route';
-import navMenu from './components/navMenu';
+
 import menuLink from './components/menuLink';
 import funFactsSection from './sections/funFactsSection';
 import lodgingHeroSection from './sections/lodgingHeroSection';
@@ -39,16 +34,12 @@ import infoListItem from './components/infoListItem';
 import tableSection from './sections/tableSection';
 import tableColumn from './components/tableColumn';
 import articleSection from './sections/articleSection';
-import color from './components/color';
+import bannerSection from './sections/bannerSection';
+// import color from './components/color';
 import portraitImage from './components/portraitImage';
 import portraitSection from './sections/portraitSection';
 // Then we give our schema to the builder and provide the result to Sanity
-export default createSchema({
-  // We name our schema
-  name: 'point-arena-lighthouse-schema',
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
+export default  [
     tableColumn,
     articleSection,
     tableSection,
@@ -75,7 +66,6 @@ export default createSchema({
     link,
     mainImage,
     menuLink,
-    navMenu,
     route,
     simpleBlockContent,
     textWithIllustration,
@@ -85,8 +75,8 @@ export default createSchema({
     roomCardSection,
     iconListItem,
     roomCard, 
-    color,
+    // color,
     portraitImage,
-    portraitSection
-  ]),
-})
+    portraitSection,
+    bannerSection
+  ]

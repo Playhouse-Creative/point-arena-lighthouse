@@ -45,7 +45,7 @@ export default (S: any) => S.list().title('Content').items([
                 S.document()
                   .documentId(documentId)
                   .schemaType('post')
-                  .views([S.view.form(), PreviewIFrame()])
+                  
               )
           ),
         S.documentTypeListItem('post').title('All posts').icon(AllIcon),

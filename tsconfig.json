@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/sections/sectionComponents/datePicker/Calendar.js"  ],
+, "components/sections/sectionComponents/datePicker/Calendar.js", "studio/sanity.cli.js"  ],
   "exclude": [
     "node_modules"
   ]

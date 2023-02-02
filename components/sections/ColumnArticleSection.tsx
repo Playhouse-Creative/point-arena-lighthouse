@@ -4,12 +4,12 @@ import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
 
 type Props = {
-	articleType: any
+	columnArticle: any
 	title: string
 }
 
-export default function SideGalleryArticleSection(props: Props) {
-	const article = props.articleType.sideGalleryArticle
+export default function ColumnArticleSection(props: Props) {
+	const article = props.columnArticle
 	return (
 		<div className='relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  sm:px-16 2xl:mx-auto'>
 			<h3
@@ -17,23 +17,23 @@ export default function SideGalleryArticleSection(props: Props) {
         mt-8 text-center font-serif text-4xl font-semibold text-pa-navy-4 sm:ml-6'>
 				{props.title}
 			</h3>
-			<div className='mb-6 mt-12 flex w-full flex-col justify-around sm:flex-row'>
-				<div className=' grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-1'>
-					{article.images && article.images &&
+			<div className={`my-12 flex w-full flex-col justify-center items-center ${article.images && 'sm:flex-row items-stretch'} `}>
+				<div className='grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-1'>
+					{ article.images &&
 						article.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 aspect-square w-full sm:max-w-2xl sm:w-[30vw]'>
+								className='relative col-span-1 h-96 w-full sm:max-w-2xl sm:w-[30vw] sm:h-full'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}
 									fill={true}
-									style={{ objectFit: 'cover' }}
+									style={{ objectFit: 'contain' }}
 								/>
 							</div>
 						))}
 				</div>
-				<div className='text-left text-pa-navy-4 sm:pl-8 sm:w-1/2'>
+				<div className={`${article.images ? 'text-left': 'text-center'} text-pa-navy-4 sm:pl-8 sm:w-1/2`}>
 					<h3 className='my-4 font-serif text-3xl font-semibold'>
 						{article.title}
 					</h3>

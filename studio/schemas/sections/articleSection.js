@@ -1,8 +1,4 @@
-import { min } from "lodash"
 
-const shouldShow = (field) => {
-  return field.conditionField === 'show'
-}
 export default {
   type: 'object',
   name: 'articleSection',
@@ -21,19 +17,19 @@ export default {
       name: 'articleType',
       type: 'string',
       title: 'Article Type',
-      initialValue: 'sideGalleryArticle',
+      initialValue: 'columnArticle',
       options: {
         layout: 'radio',
         list: [
-          {title: 'Side Gallery Article', value: 'sideGalleryArticle'},
+          {title: 'Column Article', value: 'columnArticle'},
           {title: 'Carousel Article', value: 'carouselArticle'},
         ],
       },
     },
 
     {
-      name: 'sideGalleryArticle',
-      title: 'Side Gallery Article',
+      name: 'columnArticle',
+      title: 'Column Article',
       type: 'object',
       fields: [
         {type: 'string', name: 'title'},
@@ -44,7 +40,7 @@ export default {
           of: [{type: 'mainImage'}],
         },
       ],
-      hidden: ({parent}) => parent?.articleType !== 'sideGalleryArticle',
+      hidden: ({parent}) => parent?.articleType !== 'columnArticle',
     },
     {
       name: 'carouselArticle',

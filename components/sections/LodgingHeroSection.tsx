@@ -48,13 +48,13 @@ export default function FunFactsSection(props: Props) {
 							loader={heroImageProps.loader}
 							fill={true}
 							priority={true}
-							quality={20}
+							quality={40}
 							style={{ objectFit: 'cover' }}
 							
 						/>
 					)}
 					<div
-						className='absolute left-0 bottom-10 z-20 w-8/12 py-[5px] pl-8'
+						className='absolute left-0 bottom-10 z-20 w-10/12 sm:w-8/12 py-[5px] pl-8'
 						style={{
 							backgroundColor: '#0088A7',
 							clipPath:

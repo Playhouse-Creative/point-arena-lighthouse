@@ -19,7 +19,7 @@ export default function SideGalleryArticleSection(props: Props) {
 			</h3>
 			<div className='mb-6 mt-12 flex w-full flex-col justify-around sm:flex-row'>
 				<div className=' grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-1'>
-					{article.images &&
+					{article.images && article.images &&
 						article.images.map((image: any, i: number) => (
 							<div
 								key={i}

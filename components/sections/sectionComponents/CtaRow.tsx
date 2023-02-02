@@ -14,9 +14,9 @@ type Props = {
 
 export default function CtaRow(props: Props) {
 	return (
-		<div className='my-20 mx-4  '>
+		<div className='my-20 mx-4'>
 			<div className='relative mx-auto flex justify-center'>
-				<div className='flex w-full max-w-[1400px] flex-col border-2 border-pa-navy-1 bg-white pb-10 md:flex-row md:pb-0'>
+				<div className='flex w-full max-w-[1400px] flex-col border-2 border-pa-navy-1 bg-white pb-4 lg:p-10 sm:p-4 md:flex-row '>
 					<div className='relative aspect-square w-full md:w-1/2'>
 						<div
 							className='absolute -bottom-4 right-0 z-20 flex w-[80vw] items-center justify-center py-[5px] md:bottom-4 lg:bottom-20 md:right-0 md:h-14 md:w-11/12 lg:w-3/4'
@@ -29,12 +29,12 @@ export default function CtaRow(props: Props) {
 								{props.title}
 							</h2>
 						</div>
-						<Image
+						{props.image && <Image
 							src={urlForImage(props.image).url()}
 							alt='placeholder'
 							fill={true}
 							style={{ objectFit: 'cover' }}
-						/>
+						/>}
 					</div>
 					<div className='mx-12 mt-8 md:mt-4 lg:text-xl text-base flex flex-col items-center justify-center md:justify-start lg:mt-24 md:w-1/2'>
 						{props.body && <PortableText content={props.body} />}

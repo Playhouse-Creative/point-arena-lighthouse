@@ -60,7 +60,7 @@ export default function RoomCarousel(props: Props) {
 					</Transition.Child>
 
 					<div className='fixed inset-0 z-10 overflow-y-auto'>
-						<div className='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'>
+						<div className='flex min-h-full items-end justify-center  text-center sm:items-center sm:p-0'>
 							<Transition.Child
 								as={Fragment}
 								enter='ease-out duration-300'
@@ -69,7 +69,7 @@ export default function RoomCarousel(props: Props) {
 								leave='ease-in duration-200'
 								leaveFrom='opacity-100 translate-y-0 sm:scale-100'
 								leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'>
-								<Dialog.Panel className='relative w-11/12 transform overflow-hidden p-12 transition-all sm:my-8 sm:w-full sm:max-w-4xl'>
+								<Dialog.Panel className='relative w-full transform overflow-hidden p-12 transition-all sm:my-8 sm:max-w-4xl'>
 									<div className='relative m-auto flex h-full w-full overflow-hidden'>
 										<div
 											{...swipeHandlers}
@@ -119,8 +119,8 @@ export default function RoomCarousel(props: Props) {
 														key={i}
 														className={`relative z-10 trasition duration-500 ease-in-out  ${i ===
 															currentSlide
-																? 'w-48 h-48'
-																: 'w-36 h-36'} m-2`}>
+																? 'w-48 aspect-square'
+																: 'w-36 aspect-square'} m-2`}>
 														
 															<Image
 																alt=''

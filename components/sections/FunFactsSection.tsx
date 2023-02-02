@@ -11,7 +11,7 @@ export default function FunFactsSection(props: Props) {
 	return (
 		<>
 			<div className='my-24 h-full  px-4'>
-				<div className='mx-auto grid w-full max-w-[1400px] grid-cols-2 lg:grid-cols-3 grid-rows-4 lg:grid-rows-2 gap-4 '>
+				<div className='mx-auto grid w-full max-w-[1400px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-4 lg:grid-rows-2 gap-4 '>
 					<div className='row-span-4 lg:row-span-2 bg-pa-green-3 py-10 px-8 md:px-12'>
 						<h3 className='text-3xl font-semibold text-white'>
 							{props.title}
@@ -27,7 +27,7 @@ export default function FunFactsSection(props: Props) {
 					{props.images.map((image: any, i: number) => (
 						<div
 							key={i}
-							className='relative row-span-1 aspect-square '>
+							className='relative row-span-1 aspect-square hidden sm:block'>
 							<Image
 								src={urlForImage(image).url()}
 								alt='placeholder'

@@ -20,7 +20,7 @@ export default function CarouselArticleSection(props: Props) {
         ml-6 text-center font-serif text-4xl font-semibold text-pa-navy-4'>
 				{props.title}
 			</h3>
-			<ArticleCarousel images={article.images} />
+			{article.images && <ArticleCarousel images={article.images} />}
 			<div className='w-full py-8 text-left text-pa-navy-4 sm:columns-2'>
 				<h3 className='mb-4 font-serif text-3xl font-semibold'>
 					{article.title}

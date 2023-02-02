@@ -13,5 +13,5 @@ export type Post = {
   body: any
   publishedAt: string
   author: { name: string; image: any }
-  categories: { title: string }[]
+  categories: { title: string; color:{title: string; value: string} }[]
 }

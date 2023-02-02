@@ -29,7 +29,7 @@ const Blog = ({ postData }: Props) => {
 						<div className='relative aspect-square w-full'>
 							<Img
 								src={urlForImage(posts[0].mainImage).url()}
-								alt='placeholder'
+								alt={posts[0].title}
 								fill={true}
 								style={{ objectFit: 'cover' }}
 							/>
@@ -82,7 +82,7 @@ const Blog = ({ postData }: Props) => {
 					
 				</div>
 
-				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-4xl text-white'>
+				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-2xl sm:text-4xl text-white'>
 					You might also like...
 				</h2>
 				<BlogPreviewSection posts={firstThreePosts} title='' />

@@ -35,7 +35,7 @@ import tableSection from './sections/tableSection';
 import tableColumn from './components/tableColumn';
 import articleSection from './sections/articleSection';
 import bannerSection from './sections/bannerSection';
-// import color from './components/color';
+import colorlist from './components/colorlist';
 import portraitImage from './components/portraitImage';
 import portraitSection from './sections/portraitSection';
 // Then we give our schema to the builder and provide the result to Sanity
@@ -75,7 +75,7 @@ export default  [
     roomCardSection,
     iconListItem,
     roomCard, 
-    // color,
+    colorlist,
     portraitImage,
     portraitSection,
     bannerSection

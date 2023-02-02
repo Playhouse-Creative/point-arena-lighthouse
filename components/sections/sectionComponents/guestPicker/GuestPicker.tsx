@@ -33,9 +33,9 @@ const GuestPicker = (props: Props) => {
 				{props.label}
 			</label>
 			<div {...groupProps} className='group flex shadow-lg'>
-				<div className='relative flex justify-center border border-pa-navy-4 bg-white p-4 text-center transition-colors group-focus:border-pa-navy-4 group-hover:border-gray-400 group-focus:group-hover:border-pa-navy-4'>
+				<div className='relative flex justify-center border border-pa-navy-4 bg-white py-2 p-4 text-center transition-colors '>
 					<Button {...decrementButtonProps} >-</Button>
-					<input {...inputProps} ref={inputRef} className='text-center w-8 outline-none'/>
+					<input {...inputProps} ref={inputRef} className='text-center w-10 focus:ring-white' style={{border: 'white', outline: 'white' }} />
 					<Button {...incrementButtonProps} >+</Button>
 				</div>
 			</div>

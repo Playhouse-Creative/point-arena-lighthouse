@@ -50,7 +50,7 @@ const BlogPostPreview = (props: Props) => {
 					<div>
 						<p>{post.excerpt}</p>
 					</div>
-					
+					<p className='text-pa-blue-4'>Read more...</p>
 				</div>
 			</div></Link>
 		</div>

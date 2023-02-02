@@ -163,7 +163,7 @@ export default function ContactForm() {
 						width='100%'
 						height='10px'>
 						<path
-							stroke-width='6'
+							strokeWidth='6'
 							stroke='#A98551'
 							d='M0 0 l1120 0'
 						/>
@@ -185,7 +185,7 @@ export default function ContactForm() {
 						width='100%'
 						height='10px'>
 						<path
-							stroke-width='6'
+							strokeWidth='6'
 							stroke='#A98551'
 							d='M0 0 l1120 0'
 						/>

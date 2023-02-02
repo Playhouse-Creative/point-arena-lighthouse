@@ -40,10 +40,9 @@ const Post = ( { post, previews }: Props) => {
 
 				<article className='mx-auto max-w-4xl p-5'>
 					<h1 className='mt-10 mb-1 text-3xl'>{post.title}</h1>
-
 					{post.categories &&
 						post.categories.map((category, i: number) => (
-							<p className='text-md text-pa-teal-4' key={i}>
+							<p className='text-md' style={{color: category.color.value}} key={i}>
 								{category.title}
 							</p>
 						))}
@@ -143,7 +142,7 @@ const postQuery = `
         author->{name, image},
       publishedAt,
       excerpt,
-      categories[]-> { title },
+      categories[]-> { title, color },
       mainImage,
       description,
       body, 

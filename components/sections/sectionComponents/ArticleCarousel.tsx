@@ -12,7 +12,7 @@ type Props = {
 
 export default function ArticleCarousel(props: Props) {
 	const [currentIndex, setCurrentIndex] = useState(0)
-    const [currentSlides, setCurrentSlides] = useState(props.images.slice(0,4))
+    const [currentSlides, setCurrentSlides] = useState([])
 
 	const handleNextSlide = () => {
 		let newIndex;
@@ -59,7 +59,6 @@ export default function ArticleCarousel(props: Props) {
 			</svg>
 
 			<div {...swipeHandlers} className='grid grid-cols-4 grid-rows-1 h-[25vh] gap-2 w-full justify-evenly overflow-hidden'>
-				{console.log(currentSlides)}
 					{currentSlides && currentSlides.map((image: any, i: number) => {
 						
 							return (
@@ -101,7 +100,7 @@ export default function ArticleCarousel(props: Props) {
 			</svg>
 
 			<div className='absolute bottom-1 right-1 left-1 z-30 flex justify-center p-2'>
-				{props.images.map((_: any, index: number) => {
+				{props.images && props.images.map((_: any, index: number) => {
 					return (
 						<div
 							className={

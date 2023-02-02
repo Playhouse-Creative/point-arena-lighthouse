@@ -16,5 +16,5 @@
     "incremental": true
   },
   "include": ["**/*.ts", "**/*.tsx", "sanity.cli.js", "sanity.config.js", "src/defaultDocumentNode.js", "schemas/components/colorlist.jsx"],
-  "exclude": ["node_modules", "schemas/components/colorListComponents/ColorListInput.tsx"]
+  "exclude": ["node_modules"]
 }

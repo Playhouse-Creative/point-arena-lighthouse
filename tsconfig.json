@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "components/sections/sectionComponents/datePicker/Calendar.js", "studio/sanity.cli.js", "studio/sanity.config.js", "studio/src/defaultDocumentNode.js", "studio/schemas/components/colorlist.jsx", "studio/schemas/components/colorListComponents/ColorInner.tsx"  ],
+, "components/sections/sectionComponents/datePicker/Calendar.js", "studio/sanity.cli.js", "studio/sanity.config.js", "studio/src/defaultDocumentNode.js", "studio/schemas/components/colorlist.jsx"  ],
   "exclude": [
     "node_modules"
   ]

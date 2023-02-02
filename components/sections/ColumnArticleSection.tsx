@@ -18,7 +18,7 @@ export default function ColumnArticleSection(props: Props) {
 				{props.title}
 			</h3>
 			<div className={`my-12 flex w-full flex-col justify-center items-center ${article.images && 'sm:flex-row items-stretch'} `}>
-				<div className='grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-1'>
+				<div className='grid gap-4 sm:gap-6 sm:grid-cols-1'>
 					{ article.images &&
 						article.images.map((image: any, i: number) => (
 							<div

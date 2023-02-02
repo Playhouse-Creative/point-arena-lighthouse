@@ -30,6 +30,9 @@ export default {
         { title: 'Bullet', value: 'bullet' },
         { title: 'Number', value: 'number' }
       ],
+      options: {
+        spellCheck: false,
+      },
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic

@@ -50,7 +50,7 @@ export default function ArticleCarousel(props: Props) {
 				viewBox='0 0 24 24'
 				strokeWidth={2.5}
 				stroke='currentColor'
-				className='absolute inset-y-1/2 left-0 z-20 m-auto h-14 w-14 cursor-pointer text-white shadow-xl'>
+				className='absolute inset-y-1/2 left-0 z-20 m-auto h-14 w-14 cursor-pointer text-white '>
 				<path
 					strokeLinecap='round'
 					strokeLinejoin='round'
@@ -58,7 +58,7 @@ export default function ArticleCarousel(props: Props) {
 				/>
 			</svg>
 
-			<div {...swipeHandlers} className='grid grid-cols-4 grid-rows-1 h-[25vh] gap-2 w-full justify-evenly overflow-hidden'>
+			<div {...swipeHandlers} className='flex  h-full sm:h-[25vh] gap-4 items-center justify-between overflow-hidden'>
 					{currentSlides && currentSlides.map((image: any, i: number) => {
 						
 							return (
@@ -71,7 +71,7 @@ export default function ArticleCarousel(props: Props) {
                                 leave='transition-opacity duration-500'
                                 leaveFrom='opacity-100'
                                 leaveTo='opacity-0'
-                                className='relative z-10 aspect-square w-full h-full'>
+                                className='relative z-10 aspect-square sm:w-full w-screen'>
 									<Image
 										alt=''
 										src={urlForImage(image).url()}
@@ -91,7 +91,7 @@ export default function ArticleCarousel(props: Props) {
 				viewBox='0 0 24 24'
 				strokeWidth={2.5}
 				stroke='currentColor'
-				className='absolute inset-y-1/2 right-0 z-20 m-auto h-14 w-14 cursor-pointer text-white shadow-xl'>
+				className='absolute inset-y-1/2 right-0 z-20 m-auto h-14 w-14 cursor-pointer text-white '>
 				<path
 					strokeLinecap='round'
 					strokeLinejoin='round'

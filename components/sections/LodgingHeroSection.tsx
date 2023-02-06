@@ -39,7 +39,7 @@ export default function FunFactsSection(props: Props) {
 
 	return (
 		<div className='mb-4 md:mb-24 w-screen px-4'>
-			<div className='mx-auto grid max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 '>
+			<div className='mx-auto grid w-screen lg:w-3/4 max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 '>
 				<div className='relative col-span-4 row-span-3 aspect-square md:col-span-2 md:row-span-2'>
 					{props.heroImage && (
 						<Img

@@ -11,7 +11,7 @@ const HeroSection = (props: any) => {
 	return (
 		<>
 			<div>
-				<div className='relative z-0 mx-auto h-[50vh] md:h-[60vh]'>
+				<div className='relative z-0 mx-auto h-[50vh] md:h-[60vh] 2xl:h-[75vh]'>
 					{props.heroImage && <Img
 						alt={props.heading}
 						src={imageProps.src}
@@ -21,7 +21,7 @@ const HeroSection = (props: any) => {
 						quality={80}
 						style={{ objectFit: 'cover' }}
 					/>}
-					<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[60vh] '>
+					<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[60vh] 2xl:h-[75vh]'>
 						<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[5vw] sm:w-1/2 md:pt-[25vh] md:text-right lg:w-1/2 xl:w-5/12 '>
 							<h2 className='mt-4 font-serif text-[2.3rem] font-semibold uppercase leading-tight text-white sm:text-[3rem] lg:text-[3.3rem] 2xl:text-[4rem]'>
 								{props.heading}

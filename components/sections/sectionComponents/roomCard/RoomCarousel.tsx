@@ -56,11 +56,11 @@ export default function RoomCarousel(props: Props) {
 						leave='ease-in duration-200'
 						leaveFrom='opacity-100'
 						leaveTo='opacity-0'>
-						<div className='fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity' />
+						<div className='fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity h-screen' />
 					</Transition.Child>
 
-					<div className='fixed inset-0 z-10 overflow-y-auto'>
-						<div className='flex min-h-full items-end justify-center  text-center sm:items-center sm:p-0'>
+					<div className='fixed inset-0 z-10 overflow-y-auto '>
+						<div className='flex h-screen items-end justify-center text-center sm:items-center sm:p-0'>
 							<Transition.Child
 								as={Fragment}
 								enter='ease-out duration-300'
@@ -69,7 +69,7 @@ export default function RoomCarousel(props: Props) {
 								leave='ease-in duration-200'
 								leaveFrom='opacity-100 translate-y-0 sm:scale-100'
 								leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'>
-								<Dialog.Panel className='relative w-full transform overflow-hidden p-12 transition-all sm:my-8 sm:max-w-4xl'>
+								<Dialog.Panel className='relative w-full transform overflow-hidden p-12 transition-all sm:my-8 sm:max-w-3xl'>
 									<div className='relative m-auto flex h-full w-full overflow-hidden'>
 										<div
 											{...swipeHandlers}
@@ -111,28 +111,31 @@ export default function RoomCarousel(props: Props) {
 											)}
 										</div>
 									</div>
-									<div className='flex justify-center h-48 items-center  mt-4'>
+									<div className='mt-4 flex h-48 items-center  justify-center'>
 										{props.images.map(
 											(image: any, i: number) => {
 												return (
 													<div
 														key={i}
-														className={`relative z-10 trasition duration-500 ease-in-out  ${i ===
-															currentSlide
-																? 'w-48 aspect-square'
-																: 'w-36 aspect-square'} m-2`}>
-														
-															<Image
-																alt=''
-																src={urlForImage(
-																	image
-																).url()}
-																fill={true}
-																object-fit='cover'
-																onClick={() => { setCurrentSlide(i) }}
-																className='cursor-pointer'
-															/>
-													
+														className={`trasition relative z-10 duration-500 ease-in-out  ${
+															i === currentSlide
+																? 'aspect-square w-48'
+																: 'aspect-square w-36'
+														} m-2`}>
+														<Image
+															alt=''
+															src={urlForImage(
+																image
+															).url()}
+															fill={true}
+															object-fit='cover'
+															onClick={() => {
+																setCurrentSlide(
+																	i
+																)
+															}}
+															className='cursor-pointer'
+														/>
 													</div>
 												)
 											}
@@ -186,7 +189,7 @@ export default function RoomCarousel(props: Props) {
 				<div className='relative m-auto flex h-full w-full overflow-hidden'>
 					<div
 						{...swipeHandlers}
-						className='relative z-10 aspect-square w-full'>
+						className='relative z-10 aspect-square w-full '>
 						{props.images.map((image: any, i: number) => {
 							return (
 								<Transition

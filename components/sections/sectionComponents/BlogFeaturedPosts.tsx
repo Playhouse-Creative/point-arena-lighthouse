@@ -54,7 +54,7 @@ export default function BlogFeaturedPosts({ posts }: any) {
 								key={post._id}
 								className=' group cursor-pointer p-4 pl-2'>
 								<div className=' flex w-full justify-between'>
-									<h3 className='mb-3 w-full text-xl group-hover:underline'>
+									<h3 className='mb-3 w-8/12 text-xl group-hover:underline'>
 										{post.title}
 									</h3>
 									{post.category.map((c: any, i: number) => (

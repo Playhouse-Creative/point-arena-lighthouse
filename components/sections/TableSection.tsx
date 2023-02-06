@@ -5,9 +5,14 @@ type Props = {
 	columns: any
 	listType: any
 	title: string
+	cell: { heading: string; text: any}[]
+	heading: string
+	text: any
 }
 
 export default function TableSection(props: Props) {
+const columnRows = props.columns.columnOne.columnCells
+
 	return (
 		<div className='mx-4 my-12'>
 			<h3
@@ -26,63 +31,23 @@ export default function TableSection(props: Props) {
 						</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
-							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-								{props.columns.columnOne.columnCells[0].heading}
-							</h3>
-							<PortableText
-								content={
-									props.columns.columnOne.columnCells[0].text
-								}
-							/>
-						</td>
-						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
-							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-								{props.columns.columnTwo.columnCells[0].heading}
-							</h3>
-							<PortableText
-								content={
-									props.columns.columnTwo.columnCells[0].text
-								}
-							/>
-						</td>
-					</tr>
-					<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
-							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-								{props.columns.columnOne.columnCells[1].heading}
-							</h3>
-							<PortableText
-								content={
-									props.columns.columnOne.columnCells[1].text
-								}
-							/>
-						</td>
-						<td className='mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left'>
-							<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-								{props.columns.columnTwo.columnCells[1].heading}
-							</h3>
-							<PortableText
-								content={
-									props.columns.columnTwo.columnCells[1].text
-								}
-							/>
-						</td>
-					</tr>
-				</tbody>
-				{/* {console.log(props)} */}
-				{/* {props.columns.map((section: any, i: number) => (
-						<li key={i} className='mt-2 mb-6 flex flex-col'>
-							<h3 className='text-center font-serif text-2xl font-semibold text-pa-red-4 underline'>
-								{section.title}
-							</h3>
-							<div className='text-center text-lg text-pa-navy-4'>
-								<PortableText content={section.text} key={i} />
-							</div>
-						</li>
-					))} */}
+				{props.columns.columnOne.columnCells.map((cell: Props, i: number) => (
+    <tbody key={i}><tr  className="flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4">
+      <td className="mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left">
+        <h3 className="font-serif text-lg font-semibold text-pa-red-4">
+          {cell.heading}
+        </h3>
+        {props.columns.columnOne.columnCells[i].text && <PortableText content={props.columns.columnOne.columnCells[i].text} />}
+      </td>
+      <td className="mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left">
+        <h3 className="font-serif text-lg font-semibold text-pa-red-4">
+          {props.columns.columnTwo.columnCells[i].heading}
+        </h3>
+        { props.columns.columnTwo.columnCells[i].text && <PortableText content={props.columns.columnTwo.columnCells[i].text} />}
+      </td>
+    </tr></tbody>
+  ))}
+				
 			</table>
 		</div>
 	)

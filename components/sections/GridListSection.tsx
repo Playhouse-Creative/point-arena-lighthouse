@@ -21,7 +21,7 @@ export default function GridListSection(props: Props) {
 				<ul className='mx-2 my-8 grid grid-cols-1 gap-4 sm:mx-12 sm:grid-cols-2'>
 					{list.map((listSection: any, i: number) => (
 						<li key={i} className='flex flex-col '>
-							<div className='flex'>
+							<div className='flex text-pa-navy-4'>
 								<Image
 									src={urlForImage(
 										listSection.heading.icon
@@ -29,6 +29,7 @@ export default function GridListSection(props: Props) {
 									alt={listSection.heading.title}
 									width={35}
 									height={35}
+									
 								/>
 								<h3 className='ml-4 text-2xl font-semibold text-pa-navy-4'>
 									{listSection.heading.title}

@@ -23,7 +23,7 @@ export default function ColumnArticleSection(props: Props) {
 						article.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 h-96 w-full sm:max-w-2xl sm:w-[30vw] sm:h-full'>
+								className='relative col-span-1 h-96 w-full sm:max-w-2xl sm:w-[30vw] sm:h-full min-h-[400px]'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}

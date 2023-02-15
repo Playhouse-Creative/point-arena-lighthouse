@@ -1,7 +1,10 @@
+import FunFactsSectionIcon from '/static/funFactsSectionIcon'
+
 export default {
 	type: 'object',
 	name: 'funFactsSection',
-	title: 'Fun Facts Section',
+	title: 'Fun Facts',
+	icon: FunFactsSectionIcon,
 	fields: [
 		{
 			type: 'string',

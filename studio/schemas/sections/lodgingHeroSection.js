@@ -1,7 +1,10 @@
+import LodgingHeroSectionIcon from '/static/lodgingHeroSectionIcon'
+
 export default {
     type: 'object',
     name: 'lodgingHeroSection',
-    title: 'Lodging Hero Section',
+    title: 'Lodging Hero',
+    icon: LodgingHeroSectionIcon,
     fields: [
       {
         name: 'label',

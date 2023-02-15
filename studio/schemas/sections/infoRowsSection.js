@@ -1,7 +1,10 @@
+import  InfoRowsSectionIcon  from '/static/infoRowsSectionIcon'
+
 export default {
 	type: 'object',
 	name: 'infoRowsSection',
-	title: 'Info Rows Section',
+	title: 'Info Rows',
+	icon: InfoRowsSectionIcon,
 	fields: [
 		{
 			type: 'string',

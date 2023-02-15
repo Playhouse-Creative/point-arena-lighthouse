@@ -1,8 +1,10 @@
+import ListSectionIcon from '/static/listSectionIcon'
+
 export default {
 	type: 'object',
 	name: 'listSection',
 	title: 'List Section',
-
+icon: ListSectionIcon,
 	fields: [
 		{
 			name: 'title',

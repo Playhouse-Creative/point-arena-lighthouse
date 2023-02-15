@@ -22,67 +22,71 @@ const Blog = ({ postData }: Props) => {
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
-				<div className='mx-auto mb-24 flex flex-col md:flex-row max-w-[1600px] justify-center'>
-					
-					<div className='group md:m-4 lg:m-12 w-full lg:w-5/12 md:w-6/12 cursor-pointer md:border-[2px] md:border-pa-navy-4 bg-white p-4 lg:p-10 pb-16'>
-					<Link href={`/post/${posts[0].slug.current}`} key={posts[0]._id}>
-						<div className='relative aspect-square w-full'>
-							<Img
-								src={urlForImage(posts[0].mainImage).url()}
-								alt={posts[0].title}
-								fill={true}
-								style={{ objectFit: 'cover' }}
-							/>
-						</div>
-						<h1 className='mt-10 mb-1 text-3xl group-hover:underline'>
-							{posts[0].title}
-						</h1>
-
-						{posts[0].category.map((c: any, i: number) => (
-							<p
-								className='text-md'
-								style={{
-									color: `${c.color.value}`,
-								}}
-								key={i}>
-								{c.title}
-							</p>
-						))}
-						<div className='mt-4 flex flex-col items-start space-x-2 '>
-							<div className='relative h-16 w-16 space-x-2 rounded-full'>
+				<div className='mx-auto mb-24 flex max-w-[1600px] flex-col justify-center md:flex-row'>
+					<div className='group w-full cursor-pointer bg-white p-4 pb-16 md:m-4 md:w-6/12 md:border-[2px] md:border-pa-navy-4 lg:m-12 lg:w-5/12 lg:p-10'>
+						<Link
+							href={`/post/${posts[0].slug.current}`}
+							key={posts[0]._id}>
+							<div className='relative aspect-square w-full'>
 								<Img
+									src={urlForImage(posts[0].mainImage).url()}
+									alt={posts[0].title}
 									fill={true}
-									style={{ objectFit: 'contain' }}
-									className=''
-									src={
-										urlForImage(
-											posts[0].author.image
-										).url()!
-									}
-									alt={posts[0].author.name}
+									style={{ objectFit: 'cover' }}
 								/>
 							</div>
-							<p className='text-sm font-light mb-2'>
-								Blog post by{' '}
-								<span className='text-pa-green-4'>
-									{posts[0].author.name}
-								</span>{' '}
-								<br />
-								published at{' '}
-								{new Date(
-									posts[0].publishedAt
-								).toLocaleString()}
+							<h1 className='mt-10 mb-1 text-3xl group-hover:underline'>
+								{posts[0].title}
+							</h1>
+
+							{posts[0].category.map((c: any, i: number) => (
+								<p
+									className='text-md'
+									style={{
+										color: `${c.color.value}`,
+									}}
+									key={i}>
+									{c.title}
+								</p>
+							))}
+							<div className='mt-4 flex flex-col items-start space-x-2 '>
+								<div className='relative h-16 w-16 space-x-2 rounded-full'>
+									<Img
+										fill={true}
+										style={{ objectFit: 'contain' }}
+										className=''
+										src={
+											urlForImage(
+												posts[0].author.image
+											).url()!
+										}
+										alt={posts[0].author.name}
+									/>
+								</div>
+								<p className='mb-2 text-sm font-light'>
+									Blog post by{' '}
+									<span className='text-pa-green-4'>
+										{posts[0].author.name}
+									</span>{' '}
+									<br />
+									published at{' '}
+									{new Date(
+										posts[0].publishedAt
+									).toLocaleString()}
+								</p>
+							</div>
+							<div>
+								<p>{posts[0].excerpt}</p>
+							</div>
+							<p className='mt-2 text-pa-blue-4 underline underline-offset-2'>
+								Read full story
 							</p>
-						</div>
-						<div>
-							<p>{posts[0].excerpt}</p>		
-						</div><p className='underline underline-offset-2 text-pa-blue-4 mt-2'>Read full story</p>
-						</Link></div>
+						</Link>
+					</div>
 					<BlogFeaturedPosts posts={posts} />
-					
 				</div>
 
-				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-2xl sm:text-4xl text-white'>
+				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-2xl text-white sm:text-4xl'>
 					You might also like...
 				</h2>
 				<BlogPreviewSection posts={firstThreePosts} title='' />

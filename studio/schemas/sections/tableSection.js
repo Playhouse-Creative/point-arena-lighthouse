@@ -1,9 +1,10 @@
-import infoListItem from '../components/infoListItem'
+import TableSectionIcon from '/static/tableSectionIcon'
 
 export default {
 	type: 'object',
 	name: 'tableSection',
 	title: 'Table Section',
+	icon: TableSectionIcon,
 	fields: [
 		{
 			type: 'string',

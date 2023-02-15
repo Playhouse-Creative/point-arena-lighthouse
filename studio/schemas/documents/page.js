@@ -20,6 +20,7 @@ export default {
         { type: 'bannerSection' },
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
+        { type: 'articleSection'},
         { type: 'ctaRowSection' },
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
@@ -28,7 +29,6 @@ export default {
         { type: 'roomCardsSection'},
         { type: 'listSection'},
         { type: 'tableSection'},
-        { type: 'articleSection'},
         { type: 'portraitSection'}
       ]
     }

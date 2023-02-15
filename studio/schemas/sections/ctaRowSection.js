@@ -1,7 +1,10 @@
+import CTARowsSectionIcon from '/static/ctaRowsSectionIcon'
+
 export default {
   type: 'object',
   name: 'ctaRowSection',
-  title: 'CTA Rows Section',
+  title: 'CTA Rows',
+  icon: CTARowsSectionIcon,
   fields: [
     {
       type: 'string',

@@ -13,8 +13,8 @@ export default function BlogFeaturedPosts({ posts }: any) {
 	)
 
 	return (
-		<div className='w-auto self-center md:self-start mx-4'>
-			<div className=' flex w-full flex-col border-b-2 border-b-pa-navy-3 bg-white p-4 pb-2 '>
+		<div className=' w-full md:w-6/12 lg:w-4/12 self-center md:self-start mx-4'>
+			<div className=' flex flex-col border-b-2 border-b-pa-navy-3 bg-white p-4 pb-2 '>
 				<h2 className='mb-2 text-2xl'>Featured Posts</h2>
 				<div className='-ml-2 flex w-full justify-start'>
 					<button

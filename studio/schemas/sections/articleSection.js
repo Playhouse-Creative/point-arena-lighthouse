@@ -1,8 +1,10 @@
+import ColumnArticleSectionIcon from '/static/columnArticleSectionIcon'
 
 export default {
   type: 'object',
   name: 'articleSection',
-  title: 'Article Section',
+  title: 'Article',
+  icon: ColumnArticleSectionIcon,
   fields: [
     {
       type: 'string',
@@ -21,7 +23,7 @@ export default {
       options: {
         layout: 'radio',
         list: [
-          {title: 'Column Article', value: 'columnArticle'},
+          {title: 'Column Article', value: 'columnArticle', icon: ColumnArticleSectionIcon},
           {title: 'Carousel Article', value: 'carouselArticle'},
         ],
       },
@@ -31,6 +33,7 @@ export default {
       name: 'columnArticle',
       title: 'Column Article',
       type: 'object',
+      icon: ColumnArticleSectionIcon,
       fields: [
         {type: 'string', name: 'title'},
         {type: 'bodyPortableText', name: 'body'},

@@ -1,7 +1,10 @@
+import  HeroSectionIcon  from '/static/heroSectionIcon'
+
 export default {
 	type: 'object',
 	name: 'heroSection',
-	title: 'Hero Section',
+	title: 'Hero',
+	icon: HeroSectionIcon,
 	fields: [
 		{
 			name: 'label',

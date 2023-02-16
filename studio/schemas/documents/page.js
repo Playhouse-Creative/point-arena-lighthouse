@@ -21,15 +21,15 @@ export default {
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
         { type: 'articleSection'},
+        { type: 'listSection'},
+        { type: 'tableSection'},
+        { type: 'portraitSection'},
         { type: 'ctaRowSection' },
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
         { type: 'lodgingHeroSection'},
         { type: 'datePickerSection'},
-        { type: 'roomCardsSection'},
-        { type: 'listSection'},
-        { type: 'tableSection'},
-        { type: 'portraitSection'}
+        { type: 'roomCardsSection'}
       ]
     }
   ]

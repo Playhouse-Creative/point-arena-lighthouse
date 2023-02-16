@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect, useCallback } from 'react'
 import { useSwipeable } from 'react-swipeable'
-import Image from 'next/image'
+import Img from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 import { Dialog, Transition } from '@headlessui/react'
 
@@ -56,7 +56,7 @@ export default function RoomCarousel(props: Props) {
 						leave='ease-in duration-200'
 						leaveFrom='opacity-100'
 						leaveTo='opacity-0'>
-						<div className='fixed inset-0 bg-gray-600 bg-opacity-75 transition-opacity h-screen' />
+						<div className='fixed inset-0 h-screen bg-gray-600 bg-opacity-75 transition-opacity' />
 					</Transition.Child>
 
 					<div className='fixed inset-0 z-10 overflow-y-auto '>
@@ -91,13 +91,16 @@ export default function RoomCarousel(props: Props) {
 															leave='transition-opacity duration-500'
 															leaveFrom='opacity-100'
 															leaveTo='opacity-0'>
-															<Image
+															<Img
 																alt=''
 																src={urlForImage(
 																	image
 																).url()}
 																fill={true}
-																object-fit='cover'
+																style={{
+																	objectFit:
+																		'cover',
+																}}
 																onClick={() =>
 																	setLightBoxOpen(
 																		true
@@ -122,13 +125,16 @@ export default function RoomCarousel(props: Props) {
 																? 'aspect-square w-48'
 																: 'aspect-square w-36'
 														} m-2`}>
-														<Image
+														<Img
 															alt=''
 															src={urlForImage(
 																image
 															).url()}
 															fill={true}
-															object-fit='cover'
+															style={{
+																objectFit:
+																	'cover',
+															}}
 															onClick={() => {
 																setCurrentSlide(
 																	i
@@ -201,11 +207,11 @@ export default function RoomCarousel(props: Props) {
 									leave='transition-opacity duration-500'
 									leaveFrom='opacity-100'
 									leaveTo='opacity-0'>
-									<Image
+									<Img
 										alt=''
 										src={urlForImage(image).url()}
 										fill={true}
-										object-fit='cover'
+										style={{ objectFit: 'cover' }}
 										onClick={() => setLightBoxOpen(true)}
 										className='cursor-pointer'
 									/>

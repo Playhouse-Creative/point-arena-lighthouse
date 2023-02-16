@@ -12,6 +12,12 @@ export default {
       title: 'Title'
     },
     {
+      name: 'slug',
+      type: 'string',
+      title: 'Slug', 
+      hidden: true
+    },
+    {
       name: 'content',
       type: 'array',
       title: 'Page sections',

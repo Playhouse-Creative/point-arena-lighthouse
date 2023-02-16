@@ -8,7 +8,7 @@ type Props = {
 export default function RoomCardsSection(props: Props) {
 	return (
 		<div className='my-12 px-4'>
-		<div className='lg:mx-auto grid max-w-[1400px] grid-flow-row lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
+		<div className='lg:mx-auto grid max-w-[1400px]  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
 			{props.cards.map((card: any, i: number) => (
 				<Card key={i} {...card} bannerColor={i % 2 == 0 ? '#0088A7' : '#054F73'}/>
 			))}

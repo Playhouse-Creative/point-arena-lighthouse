@@ -15,7 +15,7 @@ export default {
 			type: 'array',
 			of: [{ type: 'iconListItem' }],
 		},
-		{ name: 'price', title: 'Price per night', type: 'number' },
+		{ name: 'price', title: 'Price per night', type: 'string' },
 	],
     preview: {
         select: {

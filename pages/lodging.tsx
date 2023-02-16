@@ -31,7 +31,7 @@ const Lodging = ({ pageData }: Props) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && title == "Lodging"]{
+const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]{
 	...,
 	heroImage{ asset->
 }

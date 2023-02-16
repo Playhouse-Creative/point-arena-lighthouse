@@ -31,7 +31,7 @@ const Home = ({ pageData }: Props) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && title == "Home"] ,
+const query = `{"pageSections": *[_type == "page"  && slug == "home"] ,
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {_id,
 	_createdAt,

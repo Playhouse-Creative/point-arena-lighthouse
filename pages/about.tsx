@@ -31,7 +31,7 @@ const About = ({ pageData }: Props) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && title == "About"] ,
+const query = `{"pageSections": *[_type == "page"  && slug == "about"] ,
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 

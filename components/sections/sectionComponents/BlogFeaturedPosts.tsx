@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import _ from 'lodash'
+import { PostData } from '../../../lib/types'
+
+type Props = { posts: PostData[] }
 
 
 
-export default function BlogFeaturedPosts({ posts }: any) {
+export default function BlogFeaturedPosts({ posts }: Props) {
 	const [selectedCategory, setSelectedCategory] = useState('all')
 	const firstEightPosts = posts.slice(0, 8)
 	const uniqueCategories = _.uniqBy(

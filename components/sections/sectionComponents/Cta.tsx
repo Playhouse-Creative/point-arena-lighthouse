@@ -2,8 +2,9 @@
 
 import React from 'react'
 import Link from 'next/link'
+import {CTA} from '../../../lib/types'
 
-const Cta = (props: any) => {
+const Cta = (props: CTA) => {
 	let link = props.route || props.link || '#'
 	if (
 		props.landingPageRoute &&

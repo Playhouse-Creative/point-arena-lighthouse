@@ -2,13 +2,10 @@ import { sanityClient } from '@/lib/sanity-server'
 import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
+import { PageData } from '@/lib/types'
 
-type Props = {
-	pageData: any
-	posts: any
-}
 
-const Visit = ({ pageData }: Props) => {
+const Visit = ({ pageData }: PageData) => {
 	const sections = pageData.pageSections //flatten pageData and add posts to the blogPreviewSection object
 		.map((data: any) => data.content)
 		.flat(1)

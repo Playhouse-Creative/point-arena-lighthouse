@@ -2,7 +2,7 @@ import React from 'react'
 import ColumnArticleSection from './ColumnArticleSection'
 import CarouselArticleSection from './CarouselArticleSection'
 import _ from 'lodash'
-import { Carousel } from 'react-responsive-carousel';
+
 
 type Props = {
 	title: string

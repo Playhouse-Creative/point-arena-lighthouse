@@ -3,13 +3,20 @@ import Image from 'next/image'
 import Cta from './Cta'
 import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
+import { CTA } from '@/lib/types'
+
 
 type Props = {
 	bannerColor: string
 	title: string
-	body: any[]
-	cta: any[]
-	image: string
+	body: any
+	cta: CTA
+	image: {
+		asset: {
+			_id: string
+			url: string
+		}
+	}
 }
 
 export default function CtaRow(props: Props) {

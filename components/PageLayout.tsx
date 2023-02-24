@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
@@ -7,7 +8,7 @@ import ContactForm from './sections/sectionComponents/ContactForm'
 type Props = {
 	title: string
 	description: string
-	children: any
+	children: ReactNode
 }
 
 const PageLayout = (props: Props) => {

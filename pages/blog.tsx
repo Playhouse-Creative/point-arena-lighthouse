@@ -5,16 +5,17 @@ import BlogPreviewSection from '../components/sections/BlogPreviewSection'
 import { urlForImage } from '@/lib/sanity'
 import Img from 'next/image'
 import Link from 'next/link'
-import PortableText from 'react-portable-text'
 import BlogFeaturedPosts from '@/components/sections/sectionComponents/BlogFeaturedPosts'
+import { Post } from '@/lib/types'
+import { PostData } from '../lib/types';
 
 type Props = {
-	posts: any
-	postData: any
+	
+	 postData: PostData[]
 }
 
 const Blog = ({ postData }: Props) => {
-	const { postData: posts } = postData
+	const  posts  = _.flatMap(postData)
 	const firstThreePosts = posts.slice(0, 3)
 
 	return (

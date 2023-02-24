@@ -4,8 +4,8 @@ import { useNextSanityImage } from 'next-sanity-image'
 import { sanityClient } from '@/lib/sanity-server'
 
 type Props = {
-	gridImages: any
-	heroImage: any
+	gridImages: { asset: { _id: string; url: string } }[]
+	heroImage: { asset: { _id: string; url: string } }
 	listItems: string[]
 	heading: string
 }

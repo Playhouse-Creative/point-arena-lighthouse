@@ -1,7 +1,6 @@
-import { GetStaticProps } from 'next'
 import React from 'react'
 import PortableText from 'react-portable-text'
-import { Post } from '../../lib/types'
+import { PostData, Post } from '../../lib/types'
 import Img from 'next/image'
 import { sanityClient } from '../../lib/sanity-server'
 import { useNextSanityImage } from 'next-sanity-image'
@@ -11,8 +10,8 @@ import { urlForImage } from '../../lib/sanity'
 import _ from 'lodash'
 
 interface Props {
-	post: Post
-	previews: Post | any
+	post: PostData
+	previews: PostData | any
 }
 const Post = ( { post, previews }: Props) => {
 	const {previews: posts} = previews
@@ -36,8 +35,6 @@ const Post = ( { post, previews }: Props) => {
 						/>
 					)}
 				</div>
-				{/* <Img className='w-full h-40 object-cover' src={urlForImage(post.mainImage).url()!} alt='' /> */}
-
 				<article className='mx-auto max-w-4xl p-5'>
 					<h1 className='mt-10 mb-1 text-3xl'>{post.title}</h1>
 					{post.categories &&

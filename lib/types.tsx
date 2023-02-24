@@ -1,30 +1,30 @@
 import { Slug, PortableTextBlock } from '@sanity/types'
 
 export type PostData = {
-	
-		
+	_id: string
+	slug: Slug
+	title: string
+	date: string
+	img: string
+	mainImage: {
+		asset: {
 			_id: string
-			slug: Slug
-			title: string
-			date: string
-			img: string
-			mainImage: {
-				asset: {
-					_id: string
-					url: string
-				}
-			}
-			description: string
-			body: PortableTextBlock
-			publishedAt: string
-			author: { name: string; image: any }
-			excerpt: string
-			category: {
-				title: string
-				color: { title: string; value: string }
-			}[]
-		
-	
+			url: string
+		}
+	}
+	description: string
+	body: PortableTextBlock[]
+	publishedAt: string
+	author: { name: string; image: any }
+	excerpt: string
+	category: {
+		title: string
+		color: { title: string; value: string }
+	}[]
+	categories: {
+		title: string
+		color: { title: string; value: string }
+	}[]
 }
 
 export type Post = {

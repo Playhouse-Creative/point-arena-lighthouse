@@ -22,6 +22,7 @@ const colorTypeName = 'colorlist'
 export default {
   name: colorTypeName,
   type: 'object',
+  
   title: 'Color',
   ...({ components: { input: ColorListInput } }
     //  as {}

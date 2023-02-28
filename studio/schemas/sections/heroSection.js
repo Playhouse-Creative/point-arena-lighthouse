@@ -7,10 +7,6 @@ export default {
 	icon: HeroSectionIcon,
 	fields: [
 		{
-			name: 'label',
-			type: 'string',
-		},
-		{
 			name: 'heading',
 			type: 'string',
 			title: 'Heading',

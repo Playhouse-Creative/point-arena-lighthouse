@@ -11,11 +11,6 @@ export default {
       name: 'title'
     },
     {
-      name: 'id',
-      type: 'string',
-      title: 'ID'
-    },
-    {
       type: 'array',
       name: 'rows',
       of: [{ type: 'ctaPlug' }]

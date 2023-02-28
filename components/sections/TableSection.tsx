@@ -8,13 +8,14 @@ type Props = {
 	cell: { heading: string; text: any}[]
 	heading: string
 	text: any
+	id: {id: string}
 }
 
 export default function TableSection(props: Props) {
 const columnRows = props.columns.columnOne.columnCells
 
 	return (
-		<div className='mx-4 my-12'>
+		<div id={`${props.id ? props.id.id : null}`} className='mx-4 my-12'>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>

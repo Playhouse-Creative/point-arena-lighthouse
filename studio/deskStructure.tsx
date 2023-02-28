@@ -74,7 +74,7 @@ export default (S: any) => S.list().title('Content').items([
   ),
   S.listItem()
 	.title('Page Builder')
-	.icon(PageIcon)
+	.icon('PageIcon')
 	.child(
 		S.documentList('page')
 			.title('Pages')

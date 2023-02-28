@@ -28,7 +28,10 @@ const Support = ({ pageData }: PageData) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && slug == "support"] ,
+const query = `{"pageSections": *[_type == "page"  && slug == "support"]
+{...,
+	content[] {..., id->{..., id}}
+   } ,
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 

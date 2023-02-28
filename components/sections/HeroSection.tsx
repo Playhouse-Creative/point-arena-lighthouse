@@ -35,7 +35,7 @@ const HeroSection = (props: any) => {
 										<Cta
 											key={i}
 											{...cta}
-											buttonActionClass='inline-flex items-center justify-center mt-4  border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-lg md:text-2xl text-white shadow-xl'
+											buttonActionClass='inline-flex items-center text-center justify-center mt-4  border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-lg md:text-2xl text-white shadow-xl'
 										/>
 									))}
 							</div>

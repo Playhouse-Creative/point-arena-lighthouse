@@ -5,12 +5,13 @@ type Props = {
 	infoList: string
 	listType: any
 	title: string
+	id: {id: string}
 }
 
 export default function InfoListSection(props: Props) {
 	const list = props.listType.infoList
 	return (
-		<div className='mx-4 my-12'>
+		<div id={`${props.id ? props.id.id : null}`} className='mx-4 my-12'>
 		<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white text-center shadow-lg '>
 			<h3
 				className='mt-8

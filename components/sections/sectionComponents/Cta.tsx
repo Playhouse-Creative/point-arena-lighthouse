@@ -12,29 +12,26 @@ const Cta = (props: CTA) => {
 		props.landingPageRoute.slug.current
 	) {
 		link = props.landingPageRoute.slug.current
-	}
-
-	if (props.kind === 'button') {
 		return (
 			<button className={props.buttonActionClass}>
 				<Link href={link}>{props.title}</Link>
 			</button>
 		)
 	}
-
 	// External
 	if (props.link) {
 		return (
-			<a href={props.link} target='_blank' rel='noopener noreferrer'>
+			<button className={props.buttonActionClass}><a href={props.link} target='_blank' rel='noopener noreferrer'>
 				{props.title}
-			</a>
+			</a></button>
 		)
 	}
 
 	return (
+		<button className={props.buttonActionClass}>
 		<Link className='mr-3' href={link}>
 			{props.title}
-		</Link>
+		</Link></button>
 	)
 }
 

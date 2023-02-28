@@ -60,7 +60,8 @@ export default {
             {
               type: 'category'
             }
-          ]
+          ], 
+          
         }
       ]
     },

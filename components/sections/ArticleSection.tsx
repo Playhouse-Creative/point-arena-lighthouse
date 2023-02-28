@@ -9,12 +9,12 @@ type Props = {
 	articleType: string
 	columnArticle: any
 	carouselArticle: any
-	
+	id: {id: string}
 }
 
 export default function ArticleSection(props: Props) {
 	return (
-		<div>
+		<div id={`${props.id ? props.id.id : null}`}>
 			{' '}
 			{(props.articleType === 'columnArticle') ? (
 				<ColumnArticleSection {...props} />

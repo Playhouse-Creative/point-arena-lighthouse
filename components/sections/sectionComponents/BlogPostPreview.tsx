@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { urlForImage } from '@/lib/sanity'
-import Image from 'next/image'
+import Img from 'next/image'
 import { Post } from '@/lib/types'
 
 
@@ -11,7 +11,7 @@ const BlogPostPreview = (post: Post) => {
 			<div className='group overflow-hidden bg-white'>
 				
 				<div className='relative aspect-square w-full mb-12 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
-					<Image
+					<Img
 						src={urlForImage(post.mainImage).url()}
 						alt='placeholder'
 						fill={true}

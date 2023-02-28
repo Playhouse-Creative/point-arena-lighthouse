@@ -13,20 +13,15 @@ export default {
     {
       title: 'Title',
       name: 'title',
-      type: 'string'
-    },
-    {
-      title: 'Landing page',
-      name: 'landingPageRoute',
-      type: 'reference',
-      fieldset: 'link',
-      to: [{type: 'route'}]
+      type: 'string', 
+      description: 'This will appear on the button. Keep it short and acitve. Example: Book a room',
+      validation: Rule => Rule.required().max(20)
     },
     {
       title: 'Path',
       name: 'route',
       fieldset: 'link',
-      description: 'Example: /blog',
+      description: 'Example: /blog or /visit#fees',
       type: 'string'
     },
     {
@@ -35,15 +30,6 @@ export default {
       type: 'string',
       description: 'Example: https://www.sanity.io',
       fieldset: 'link'
-    },
-    {
-      title: 'Kind',
-      name: 'kind',
-      type: 'string',
-      options: {
-        layout: 'radio',
-        list: ['button', 'link']
-      }
     }
   ],
   preview: {

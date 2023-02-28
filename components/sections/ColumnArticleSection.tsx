@@ -6,12 +6,13 @@ import PortableText from 'react-portable-text'
 type Props = {
 	columnArticle: any
 	title: string
+	id: {id: string}
 }
 
 export default function ColumnArticleSection(props: Props) {
 	const article = props.columnArticle
 	return (
-		<div className='relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
+		<div id={`${props.id ? props.id.id : null}`} className='relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
 			<h3
 				className='mx-2
         mt-8 text-center font-serif text-4xl font-semibold text-pa-navy-4 sm:ml-6'>

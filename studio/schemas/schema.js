@@ -19,6 +19,7 @@ import authorReference from './components/authorReference';
 import bodyPortableText from './components/bodyPortableText';
 import link from './components/link'
 import route from './components/route';
+import id from './components/id';
 
 import menuLink from './components/menuLink';
 import funFactsSection from './sections/funFactsSection';
@@ -78,5 +79,6 @@ export default  [
     colorlist,
     portraitImage,
     portraitSection,
-    bannerSection
+    bannerSection,
+    id
   ]

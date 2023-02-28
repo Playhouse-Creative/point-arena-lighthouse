@@ -32,6 +32,9 @@ const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]{
 	...,
 	heroImage{ asset->
 }
+{...,
+	content[] {..., id->{..., id}}
+   },
 } ,
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`

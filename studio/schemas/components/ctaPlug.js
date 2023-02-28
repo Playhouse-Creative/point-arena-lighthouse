@@ -3,21 +3,16 @@ export default {
 	name: 'ctaPlug',
 	title: 'Call to action',
 	fields: [
-		{
-			name: 'label',
-			type: 'string',
-		},
+		
 		{
 			name: 'title',
 			type: 'string',
 			title: 'Title',
-		},
-		{
-			name: 'id',
-			type: 'string',
-			title: 'ID',
+			description:'This is the title that will be displayed in the ribbon. It should be short and to the point',
+			validation: Rule => Rule.required().max(25) 
 		},
 		{ name: 'image', type: 'mainImage', title: 'Image' },
+		{ name:'bodyHeader', type: 'string', title: 'Body Header'},
 		{
 			name: 'body',
 			type: 'simpleBlockContent',

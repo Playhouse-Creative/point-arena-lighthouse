@@ -13,6 +13,7 @@ export default {
       title: 'Color',
       description:'Choose a color for for the category banner color.',
       type: 'colorlist',
+      
       options: { list:[
           { title: 'Red', value: '#A73D1C' },
           { title: 'Teal', value: '#0088A7' },

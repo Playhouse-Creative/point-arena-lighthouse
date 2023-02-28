@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Img from 'next/image'
 import Cta from './Cta'
 import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
@@ -36,7 +36,7 @@ export default function CtaRow(props: Props) {
 								{props.title}
 							</h2>
 						</div>
-						{props.image && <Image
+						{props.image && <Img
 							src={urlForImage(props.image).url()}
 							alt='placeholder'
 							fill={true}
@@ -47,7 +47,7 @@ export default function CtaRow(props: Props) {
 						{props.body && <PortableText content={props.body} />}
 						<Cta
 							{...props.cta}
-							buttonActionClass='w-auto self-start rounded-lg bg-pa-blue-4 hover:bg-pa-blue-3 px-6 py-3 mt-4 font-serif font-medium tracking-wider text-xl text-white shadow-xl'
+							buttonActionClass='w-auto self-start rounded-lg bg-pa-blue-4 hover:bg-pa-blue-3 px-6 py-3 mt-4 text-center font-serif font-medium tracking-wider text-xl text-white shadow-xl'
 						/>
 					</div>
 				</div>

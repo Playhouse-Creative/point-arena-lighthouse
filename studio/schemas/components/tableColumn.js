@@ -20,6 +20,7 @@ export default {
 								name: 'text',
 								type: 'simpleBlockContent',
 							},
+							{name: 'link', type: 'link'}
 						],
 					},
 				

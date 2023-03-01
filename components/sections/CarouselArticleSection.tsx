@@ -1,8 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
-import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
-import { Carousel } from 'react-responsive-carousel'
 import ArticleCarousel from './sectionComponents/ArticleCarousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 

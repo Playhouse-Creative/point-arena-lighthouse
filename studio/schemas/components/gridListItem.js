@@ -4,7 +4,7 @@ export default {
 	title: 'Grid List Item',
 	fields: [
 		{ name: 'heading', type: 'iconListItem' },
-		{ name: 'items', type: 'array', of:[{type: 'string'}] },
+		{ name: 'items', type: 'array', of:[{type: 'string'}]},
 	],
   preview: {
     select: {

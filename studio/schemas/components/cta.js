@@ -14,8 +14,8 @@ export default {
       title: 'Title',
       name: 'title',
       type: 'string', 
-      description: 'This will appear on the button. Keep it short and acitve. Example: Book a room',
-      validation: Rule => Rule.required().max(20)
+      description: 'This will appear on the button. Keep it short and acitve. Example: Book a room!',
+      validation: Rule => Rule.required().max(20).warning('Keep it under 20 characters')
     },
     {
       title: 'Path',

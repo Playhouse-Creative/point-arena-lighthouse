@@ -9,7 +9,7 @@ export default {
 			type: 'string',
 			title: 'Title',
 			description:'This is the title that will be displayed in the ribbon. It should be short and to the point',
-			validation: Rule => Rule.required().max(25) 
+			validation: Rule => Rule.required().max(25).warning('Title must be short enough to fit in the ribbon') 
 		},
 		{ name: 'image', type: 'mainImage', title: 'Image' },
 		{ name:'bodyHeader', type: 'string', title: 'Body Header'},
@@ -17,6 +17,7 @@ export default {
 			name: 'body',
 			type: 'simpleBlockContent',
 			title: 'Body',
+			validation: Rule => Rule.required().max(500)
 		},
 		{
 			name: 'cta',

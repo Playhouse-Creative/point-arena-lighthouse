@@ -6,7 +6,7 @@ export default {
   type: 'object',
   icon: PortraitSectionIcon,
   fields: [
-    {name: 'heading', title: 'Section Heading', type: 'string'},
+    {name: 'heading', title: 'Section Heading', type: 'string', validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')},
     {
         name: 'id',
         type: 'reference',

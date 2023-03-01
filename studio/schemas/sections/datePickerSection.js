@@ -5,7 +5,9 @@ export default {
     fields: [
       {
         type: 'string',
-        name: 'title'
+        name: 'title',
+        title: 'Section Title',
+        validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')
       },
       {
         name: 'id',

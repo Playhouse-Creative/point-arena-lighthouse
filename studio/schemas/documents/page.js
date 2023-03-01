@@ -23,6 +23,7 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
+        { type: 'neoArticleSection' },
         { type: 'bannerSection' },
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
@@ -34,7 +35,6 @@ export default {
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
         { type: 'lodgingHeroSection'},
-        { type: 'datePickerSection'},
         { type: 'roomCardsSection'}
       ]
     }

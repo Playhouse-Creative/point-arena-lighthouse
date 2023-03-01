@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Image from 'next/image'
 import { urlForImage } from '@/lib/sanity'
@@ -23,7 +24,7 @@ export default function GridListSection(props: Props) {
 					{list.map((listSection: any, i: number) => (
 						<li key={i} className='flex flex-col '>
 							<div className='flex text-pa-navy-4'>
-								<Image
+								<img
 									src={urlForImage(
 										listSection.heading.icon
 									).url()}

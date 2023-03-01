@@ -6,7 +6,7 @@ export default {
     title: 'Room Cards',
     icon: RoomCardsSectionIcon,
     fields: [
-      {name: 'title', type: 'string', title: 'Title'},
+      {name: 'title', type: 'string', title: 'Section Title', validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')},
       {
         name: 'id',
         type: 'reference',

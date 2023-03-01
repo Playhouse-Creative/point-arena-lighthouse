@@ -9,6 +9,8 @@ export default {
 		{
 			type: 'string',
 			name: 'title',
+			title: 'Section Title',
+			validation: (Rule) => Rule.required().max(100).warning('Shorter titles are usually better'),
 		},
 		{
 			name: 'id',
@@ -32,7 +34,7 @@ export default {
 				Rule.required()
 					.min(4)
 					.max(4)
-					.error('4 images are required for this section type.'),
+					.error('Exactly 4 images are required for this section type.'),
 		},
 	],
 }

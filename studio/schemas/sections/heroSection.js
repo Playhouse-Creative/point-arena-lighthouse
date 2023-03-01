@@ -10,8 +10,9 @@ export default {
 			name: 'heading',
 			type: 'string',
 			title: 'Heading',
+			validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')
 		},
-		{ name: 'subheading', type: 'string', title: 'Subheading' },
+		{ name: 'subheading', type: 'string', title: 'Subheading', validation: Rule => Rule.max(150) },
 		{
 			name: 'heroImage',
 			type: 'heroImage',

@@ -31,7 +31,7 @@ export default function Card(props: Props) {
 					</h2>
 				</div>
 			</div>
-			<h3 className='mx-8 mt-8 text-left text-lg'>{props.subHeading}</h3>
+			<h3 className='mx-8 mt-8 text-left text-lg text-pa-navy-4'>{props.subHeading}</h3>
 			<div className='flex flex-col h-full justify-between'>
 				<ul className='mx-8 mt-6'>
 					{props.featuresList.map((item: any, i: number) => (

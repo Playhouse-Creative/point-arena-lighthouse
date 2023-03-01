@@ -85,7 +85,9 @@ icon: ListSectionIcon,
 					],
 					hidden: ({ parent }) => !parent?.reviewListSwitch,
 				},
+				{ name: 'finePrint', type: 'simpleBlockContent', title: 'Fine Print'}
 			],
+			
 		},
 	],
 }

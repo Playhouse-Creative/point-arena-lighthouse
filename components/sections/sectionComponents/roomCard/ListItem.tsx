@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Image from 'next/image'
+import Img from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 
 type Props = {
@@ -10,13 +11,12 @@ type Props = {
 export default function ListItem(props: Props) {
 	return (
 		<li className='mb-4 flex w-full items-center justify-start'>
-			<Image
+			<img
 				src={urlForImage(props.icon).url()}
 				alt={props.title}
-				width={35}
-				height={35}
+				className='h-12 w-12'
 			/>
-			<p className='ml-4 text-left text-lg font-light'>{props.title}</p>
+			<p className='ml-4 text-left text-lg font-regular text-pa-navy-4'>{props.title}</p>
 		</li>
 	)
 }

@@ -9,6 +9,8 @@ export default {
 		{
 			type: 'string',
 			name: 'title',
+			title: 'Section Title',
+			validation: (Rule) => Rule.required().max(75).warning('Shorter titles are usually better'),
 		},
 		{
 			name: 'id',
@@ -27,14 +29,17 @@ export default {
 						{
 							type: 'string',
 							name: 'title',
+							validation: (Rule) => Rule.required().max(40),
 						},
 						{
 							type: 'simpleBlockContent',
 							name: 'text',
+							validation: (Rule) => Rule.required().max(200),
 						},
 					],
 				},
 			],
 		},
+		{ name: 'finePrint', type: 'simpleBlockContent', title: 'Fine Print'}
 	],
 }

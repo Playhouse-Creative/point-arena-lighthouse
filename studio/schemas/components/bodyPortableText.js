@@ -1,8 +1,4 @@
-import React from 'react'
-
 import {
-  mathInlineIcon,
-  mathIcon,
   HighlightIcon,
   HighlightRender,
 } from './PortableTextEditorComponents'
@@ -37,7 +33,6 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          { title: 'Code', value: 'code' },
           {
             title: 'Highlight',
             value: 'highlight',

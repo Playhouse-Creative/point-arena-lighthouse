@@ -39,10 +39,12 @@ import bannerSection from './sections/bannerSection';
 import colorlist from './components/colorlist';
 import portraitImage from './components/portraitImage';
 import portraitSection from './sections/portraitSection';
+import neoArticleSection from './sections/neoArticleSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default  [
     tableColumn,
     articleSection,
+    neoArticleSection,
     tableSection,
     infoListItem,
     gridListItem,

@@ -127,13 +127,13 @@ export default function ContactForm() {
 									<p className='text-base text-gray-500'>
 										By selecting this, you agree to the{' '}
 										<a
-											href='#'
+											href='/policies#privacy'
 											className='font-medium text-pa-navy-4 underline'>
 											Privacy Policy
 										</a>{' '}
 										and{' '}
 										<a
-											href='#'
+											href='/policies#cookies'
 											className='font-medium text-pa-navy-4 underline'>
 											Cookie Policy
 										</a>

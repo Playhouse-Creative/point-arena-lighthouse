@@ -20,7 +20,6 @@ import bodyPortableText from './components/bodyPortableText';
 import link from './components/link'
 import route from './components/route';
 import id from './components/id';
-
 import menuLink from './components/menuLink';
 import funFactsSection from './sections/funFactsSection';
 import lodgingHeroSection from './sections/lodgingHeroSection';
@@ -39,12 +38,14 @@ import bannerSection from './sections/bannerSection';
 import colorlist from './components/colorlist';
 import portraitImage from './components/portraitImage';
 import portraitSection from './sections/portraitSection';
-import neoArticleSection from './sections/neoArticleSection';
+import articlesSection from './sections/articlesSection';
+import newArticleSection from './sections/newArticleSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default  [
     tableColumn,
     articleSection,
-    neoArticleSection,
+    articlesSection,
+    newArticleSection,
     tableSection,
     infoListItem,
     gridListItem,

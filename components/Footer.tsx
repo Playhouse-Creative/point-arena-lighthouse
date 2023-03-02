@@ -64,6 +64,7 @@ export default function Footer({}: Props) {
 					<Link href='/support'><h4 className='mb-4 text-xl text-white'>Support</h4></Link>
 					<Link href='/blog'><h4 className='mb-4 text-xl text-white'>Blog</h4></Link>
 					<Link href='/about/#careers'><h4 className='mb-4 text-xl text-white'>Careers</h4></Link>
+					<Link href='/policies'><h4 className='mb-4 text-xl text-white'>Policies</h4></Link>
 				</div>
 			</div>
             <div className="w-screen h-10 bg-pa-teal-4"></div>

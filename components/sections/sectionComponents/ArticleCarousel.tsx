@@ -60,39 +60,41 @@ const ArticleCarousel = (props: Props) => {
 	const settings = {
 		dots: true,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 4,
+		className: "center",	
+		slidesToShow: 1,
+		centerMode: true,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 		responsive: [
 			{
 				breakpoint: 640,
 				settings: {
+					centerMode: true,
 					slidesToShow: 1,
-					slidesToScroll: 1,
+					
 				},
 			},
 		],
 	}
 
 	return (
-		<div className='w-full'>
+		
 			<Slider {...settings}>
 				{props.images.map((image: any, index: number) => (
 					<div
 						key={index}
-						className='relative z-10 aspect-square h-[300px] w-full'>
+						className='relative z-10 h-[400px] xl:h-[600px] w-screen sm:w-[500px] bg-slate-800'>
 						<Img
-							alt={`Slide ${index}`}
+							alt={`Slide for ${image.alt}`}
 							src={urlForImage(image).url()}
 							fill={true}
-							style={{ objectFit: 'cover' }}
+							style={{ objectFit: 'contain', padding: '8px' }}
 						/>
+						<p className='absolute bottom-0 md:mx-48 mx-2 right-0 left-0 mb-1 bg-pa-blue-1/80 p-1 text-xs'>{image.alt}</p>
 					</div>
 				))}
 			</Slider>
-		</div>
+		
 	)
 }
 

@@ -23,7 +23,7 @@ export default {
       title: 'Page sections',
       description: 'Add, edit, and reorder sections',
       of: [
-        { type: 'neoArticleSection' },
+        { type: 'articlesSection' },
         { type: 'bannerSection' },
         { type: 'heroSection' },
         { type: 'infoRowsSection' },

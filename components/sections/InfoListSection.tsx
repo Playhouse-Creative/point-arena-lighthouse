@@ -31,6 +31,20 @@ export default function InfoListSection(props: Props) {
 								<PortableText
 									content={listSection.body}
 									key={i}
+									serializers={{
+										
+											
+											li: ({children}: any) => <li className='list-disc list-inside'>{children}</li>,
+											ol: ({children}: any) => <ol className="mt-lg">{children}</ol>,
+										 
+										link: ({ href, children }: any) => (
+											<a
+												className='text-pa-teal-4 underline'
+												href={href}>
+												{children}
+											</a>
+										),
+									}}
 								/>
 							</li>
 						</ul>

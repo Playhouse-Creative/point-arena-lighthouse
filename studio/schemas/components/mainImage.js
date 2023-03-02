@@ -11,7 +11,7 @@ export default {
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessibility.',
-      validation: Rule => Rule.error('You have to fill out the alternative text.').required(),
+      validation: Rule => Rule.error('You have to fill out the alternative text.').required(). max(75).warning('Shorter alt texts are usually better.'),
       
     }
   ],

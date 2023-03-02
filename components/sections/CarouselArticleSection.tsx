@@ -2,6 +2,7 @@ import React from 'react'
 import PortableText from 'react-portable-text'
 import ArticleCarousel from './sectionComponents/ArticleCarousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import serializers from '@/lib/portableText-serializers'
 
 type Props = {
 	carouselArticle: any
@@ -23,7 +24,7 @@ export default function CarouselArticleSection(props: Props) {
 				<h3 className='mb-4 font-serif text-3xl font-semibold'>
 					{article.title}
 				</h3>
-				<PortableText content={article.body} />
+				<PortableText content={article.body} serializers={serializers()} />
 			</div>
 		</div>
 	)

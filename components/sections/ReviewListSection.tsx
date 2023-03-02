@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import PortableText from 'react-portable-text'
+import serializers from '@/lib/portableText-serializers'
 import fiveStar from '../../public/5-star.svg'
 import fourStar from '../../public/4-star.svg'
 import threeStar from '../../public/3-star.svg'
@@ -61,28 +62,7 @@ export default function ReviewListSection(props: Props) {
 										<PortableText
 											content={listSection.body}
 											key={i}
-											serializers={{
-												li: ({ children }: any) => (
-													<li className='list-inside list-disc'>
-														{children}
-													</li>
-												),
-												ol: ({ children }: any) => (
-													<ol className='mt-lg'>
-														{children}
-													</ol>
-												),
-												link: ({
-													href,
-													children,
-												}: any) => (
-													<a
-														className='text-pa-teal-4 underline'
-														href={href}>
-														{children}
-													</a>
-												),
-											}}
+											serializers={serializers()}
 										/>
 									</li>
 								</ul>

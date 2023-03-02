@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
+import serializers from '@/lib/portableText-serializers'
 
 type Props = {
 	title: string
@@ -21,12 +22,12 @@ export default function ColumnArticle(props: Props) {
 				{props.title}
 			</h3>
 			<div className={`my-12 flex w-full flex-col justify-center ${props.images && 'sm:flex-row items-start'} `}>
-				<div className='grid gap-4 lg:gap-2 sm:grid-cols-1'>
+				<div className='grid gap-4 lg:gap-2 sm:grid-cols-1 mx-auto'>
 					{ props.images &&
 						props.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 h-full w-full sm:w-[40vw] lg:w-[35vw] sm:min-h-[400px]  overflow-hidden'>
+								className='relative col-span-1 h-full w-[80vw] sm:w-[40vw] lg:w-[35vw] min-h-[300px] sm:min-h-[400px] overflow-hidden'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}
@@ -37,27 +38,13 @@ export default function ColumnArticle(props: Props) {
 							</div>
 						))}
 				</div>
-				<div className={`${props.images ? 'text-left': 'text-center'} text-pa-navy-4 sm:mx-auto sm:pl-8 sm:w-1/2`}>
+				<div className={`${props.images ? 'text-left sm:w-1/2': 'text-center'} text-pa-navy-4 px-4 mx-auto sm:pl-8 `}>
 					<h3 className='my-4 font-serif text-3xl font-semibold text-pa-red-4'>
 						{props.heading}
 					</h3>
 					<PortableText
 						content={props.body}
-						serializers={{
-                            li: ({ children }: any) => (
-                                <li className='list-inside list-disc'>
-                                    {children}
-                                </li>
-                            ),
-                            ol: ({ children }: any) => (
-                                <ol className='mt-lg'>{children}</ol>
-                            ),
-                            link: ({ href, children }: any) => (
-                                <a className='text-pa-teal-4 underline' href={href}>
-                                    {children}
-                                </a>
-                            ),
-                        }}
+						serializers={serializers()}
 					/>
 				</div>
 			</div>

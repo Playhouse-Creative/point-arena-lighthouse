@@ -1,5 +1,6 @@
 import React from 'react'
 import PortableText from 'react-portable-text'
+import serializers from '../../lib/portableText-serializers'
 import { PostData, Post } from '../../lib/types'
 import Img from 'next/image'
 import { sanityClient } from '../../lib/sanity-server'
@@ -70,35 +71,7 @@ const Post = ( { post, previews }: Props) => {
 								process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 							}
 							content={post.body}
-							serializers={{
-								h1: (props: any) => (
-									<h1
-										className='my-5 text-2xl font-bold'
-										{...props}
-									/>
-								),
-								h2: (props: any) => (
-									<h2
-										className='my-5 text-xl font-bold'
-										{...props}
-									/>
-								),
-								p: (props: any) => (
-									<h2 className='my-5 text-lg' {...props} />
-								),
-								li: ({ children }: any) => (
-									<li className='ml-4 list-disc'>
-										{children}
-									</li>
-								),
-								link: ({ href, children }: any) => (
-									<a
-										href={href}
-										className='text-pa-blue-3 hover:underline'>
-										{children}
-									</a>
-								),
-							}}
+							serializers={serializers()}
 						/>
 					</div>
 				</article>

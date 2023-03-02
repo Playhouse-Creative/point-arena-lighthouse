@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 import PortableText from 'react-portable-text'
+import serializers from '@/lib/portableText-serializers'
 
 type Props = {
 	columnArticle: any
@@ -41,15 +42,7 @@ export default function ColumnArticleSection(props: Props) {
 					</h3>
 					<PortableText
 						content={article.body}
-						serializers={{
-							link: ({ href, children }: any) => (
-								<a
-									className='text-pa-teal-4 underline'
-									href={href}>
-									{children}
-								</a>
-							),
-						}}
+						serializers={serializers()}
 					/>
 				</div>
 			</div>

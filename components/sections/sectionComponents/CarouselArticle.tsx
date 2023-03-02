@@ -1,5 +1,6 @@
 import React from 'react'
 import PortableText from 'react-portable-text'
+import serializers from '@/lib/portableText-serializers'
 import ArticleCarousel from './ArticleCarousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
@@ -28,21 +29,7 @@ export default function CarouselArticle(props: Props) {
 				</h3>
 				<PortableText
 					content={props.body}
-					serializers={{
-						li: ({ children }: any) => (
-							<li className='list-inside list-disc'>
-								{children}
-							</li>
-						),
-						ol: ({ children }: any) => (
-							<ol className='mt-lg'>{children}</ol>
-						),
-						link: ({ href, children }: any) => (
-							<a className='text-pa-teal-4 underline' href={href}>
-								{children}
-							</a>
-						),
-					}}
+					serializers={serializers()}
 				/>
 			</div>
 		</div>

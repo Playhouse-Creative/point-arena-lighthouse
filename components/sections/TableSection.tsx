@@ -1,5 +1,6 @@
 import React from 'react'
 import PortableText from 'react-portable-text'
+import serializers from '../../lib/portableText-serializers'
 
 type Props = {
 	columns: any
@@ -47,28 +48,7 @@ export default function TableSection(props: Props) {
 												props.columns.columnOne
 													.columnCells[i].text
 											}
-											serializers={{
-												li: ({ children }: any) => (
-													<li className='list-inside list-disc'>
-														{children}
-													</li>
-												),
-												ol: ({ children }: any) => (
-													<ol className='mt-lg'>
-														{children}
-													</ol>
-												),
-												link: ({
-													href,
-													children,
-												}: any) => (
-													<a
-														className='text-pa-teal-4 underline'
-														href={href}>
-														{children}
-													</a>
-												),
-											}}
+											serializers={serializers()}
 										/>
 									)}
 								</td>
@@ -87,28 +67,8 @@ export default function TableSection(props: Props) {
 												props.columns.columnTwo
 													.columnCells[i].text
 											}
-											serializers={{
-												li: ({ children }: any) => (
-													<li className='list-inside list-disc'>
-														{children}
-													</li>
-												),
-												ol: ({ children }: any) => (
-													<ol className='mt-lg'>
-														{children}
-													</ol>
-												),
-												link: ({
-													href,
-													children,
-												}: any) => (
-													<a
-														className='text-pa-teal-4 underline'
-														href={href}>
-														{children}
-													</a>
-												),
-											}}
+											serializers={serializers()}
+											
 										/>
 									)}
 								</td>

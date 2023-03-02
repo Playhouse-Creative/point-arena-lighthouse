@@ -27,7 +27,6 @@ export default {
         { type: 'bannerSection' },
         { type: 'heroSection' },
         { type: 'infoRowsSection' },
-        { type: 'articleSection'},
         { type: 'listSection'},
         { type: 'tableSection'},
         { type: 'portraitSection'},

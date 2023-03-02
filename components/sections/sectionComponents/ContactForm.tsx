@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Img from 'next/image'
 import { Switch } from '@headlessui/react'
+import Link from 'next/link'
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
@@ -126,17 +127,17 @@ export default function ContactForm() {
 								<div className='ml-3'>
 									<p className='text-base text-gray-500'>
 										By selecting this, you agree to the{' '}
-										<a
+										<Link
 											href='/policies#privacy'
 											className='font-medium text-pa-navy-4 underline'>
 											Privacy Policy
-										</a>{' '}
+										</Link>{' '}
 										and{' '}
-										<a
+										<Link
 											href='/policies#cookies'
 											className='font-medium text-pa-navy-4 underline'>
 											Cookie Policy
-										</a>
+										</Link>
 										.
 									</p>
 								</div>

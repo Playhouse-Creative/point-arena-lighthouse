@@ -5,14 +5,14 @@ type Props = {
 	columns: any
 	listType: any
 	title: string
-	cell: { heading: string; text: any}[]
+	cell: { heading: string; text: any }[]
 	heading: string
 	text: any
-	id: {id: string}
+	id: { id: string }
 }
 
 export default function TableSection(props: Props) {
-const columnRows = props.columns.columnOne.columnCells
+	const columnRows = props.columns.columnOne.columnCells
 
 	return (
 		<div id={`${props.id ? props.id.id : null}`} className='mx-4 my-12'>
@@ -22,7 +22,7 @@ const columnRows = props.columns.columnOne.columnCells
 				{props.title}
 			</h3>
 			<table className='relative mx-auto mb-12 w-full max-w-[1400px] border border-pa-navy-4 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
-				<thead >
+				<thead>
 					<tr className='flex justify-start bg-pa-navy-4 py-1 font-serif text-lg uppercase text-white'>
 						<th className='ml-8 w-1/2 text-left'>
 							{props.columns.columnOne.columnHeader}
@@ -32,23 +32,90 @@ const columnRows = props.columns.columnOne.columnCells
 						</th>
 					</tr>
 				</thead>
-				{props.columns.columnOne.columnCells.map((cell: Props, i: number) => (
-    <tbody key={i}><tr  className="flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4">
-      <td className="mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left">
-        <h3 className="font-serif text-lg font-semibold text-pa-red-4">
-          {cell.heading}
-        </h3>
-        {props.columns.columnOne.columnCells[i].text && <PortableText content={props.columns.columnOne.columnCells[i].text} />}
-      </td>
-      <td className="mx-2 sm:mx-10 flex w-1/2 flex-col flex-wrap text-left">
-        <h3 className="font-serif text-lg font-semibold text-pa-red-4">
-          {props.columns.columnTwo.columnCells[i].heading}
-        </h3>
-        { props.columns.columnTwo.columnCells[i].text && <PortableText content={props.columns.columnTwo.columnCells[i].text} />}
-      </td>
-    </tr></tbody>
-  ))}
-				
+				{props.columns.columnOne.columnCells.map(
+					(cell: Props, i: number) => (
+						<tbody key={i}>
+							<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
+								<td className='mx-2 flex w-1/2 flex-col flex-wrap text-left sm:mx-10'>
+									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+										{cell.heading}
+									</h3>
+									{props.columns.columnOne.columnCells[i]
+										.text && (
+										<PortableText
+											content={
+												props.columns.columnOne
+													.columnCells[i].text
+											}
+											serializers={{
+												li: ({ children }: any) => (
+													<li className='list-inside list-disc'>
+														{children}
+													</li>
+												),
+												ol: ({ children }: any) => (
+													<ol className='mt-lg'>
+														{children}
+													</ol>
+												),
+												link: ({
+													href,
+													children,
+												}: any) => (
+													<a
+														className='text-pa-teal-4 underline'
+														href={href}>
+														{children}
+													</a>
+												),
+											}}
+										/>
+									)}
+								</td>
+								<td className='mx-2 flex w-1/2 flex-col flex-wrap text-left sm:mx-10'>
+									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+										{
+											props.columns.columnTwo.columnCells[
+												i
+											].heading
+										}
+									</h3>
+									{props.columns.columnTwo.columnCells[i]
+										.text && (
+										<PortableText
+											content={
+												props.columns.columnTwo
+													.columnCells[i].text
+											}
+											serializers={{
+												li: ({ children }: any) => (
+													<li className='list-inside list-disc'>
+														{children}
+													</li>
+												),
+												ol: ({ children }: any) => (
+													<ol className='mt-lg'>
+														{children}
+													</ol>
+												),
+												link: ({
+													href,
+													children,
+												}: any) => (
+													<a
+														className='text-pa-teal-4 underline'
+														href={href}>
+														{children}
+													</a>
+												),
+											}}
+										/>
+									)}
+								</td>
+							</tr>
+						</tbody>
+					)
+				)}
 			</table>
 		</div>
 	)

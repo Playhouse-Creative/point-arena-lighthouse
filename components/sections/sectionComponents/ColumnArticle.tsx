@@ -37,21 +37,27 @@ export default function ColumnArticle(props: Props) {
 							</div>
 						))}
 				</div>
-				<div className={`${props.images ? 'text-left': 'text-center'} text-pa-navy-4 sm:pl-8 sm:w-1/2`}>
-					<h3 className='my-4 font-serif text-3xl font-semibold'>
+				<div className={`${props.images ? 'text-left': 'text-center'} text-pa-navy-4 sm:mx-auto sm:pl-8 sm:w-1/2`}>
+					<h3 className='my-4 font-serif text-3xl font-semibold text-pa-red-4'>
 						{props.heading}
 					</h3>
 					<PortableText
 						content={props.body}
 						serializers={{
-							link: ({ href, children }: any) => (
-								<a
-									className='text-pa-teal-4 underline'
-									href={href}>
-									{children}
-								</a>
-							),
-						}}
+                            li: ({ children }: any) => (
+                                <li className='list-inside list-disc'>
+                                    {children}
+                                </li>
+                            ),
+                            ol: ({ children }: any) => (
+                                <ol className='mt-lg'>{children}</ol>
+                            ),
+                            link: ({ href, children }: any) => (
+                                <a className='text-pa-teal-4 underline' href={href}>
+                                    {children}
+                                </a>
+                            ),
+                        }}
 					/>
 				</div>
 			</div>

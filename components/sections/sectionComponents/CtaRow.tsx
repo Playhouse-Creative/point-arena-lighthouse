@@ -44,7 +44,21 @@ export default function CtaRow(props: Props) {
 						/>}
 					</div>
 					<div className='mx-12 mt-8 md:mt-4 lg:text-xl text-base flex flex-col items-center justify-center md:justify-start lg:mt-24 md:w-1/2'>
-						{props.body && <PortableText content={props.body} />}
+						{props.body && <PortableText content={props.body} serializers={{
+						li: ({ children }: any) => (
+							<li className='list-inside list-disc'>
+								{children}
+							</li>
+						),
+						ol: ({ children }: any) => (
+							<ol className='mt-lg'>{children}</ol>
+						),
+						link: ({ href, children }: any) => (
+							<a className='text-pa-teal-4 underline' href={href}>
+								{children}
+							</a>
+						),
+					}} />}
 						<Cta
 							{...props.cta}
 							buttonActionClass='w-auto self-start rounded-lg bg-pa-blue-4 hover:bg-pa-blue-3 px-6 py-3 mt-4 text-center font-serif font-medium tracking-wider text-xl text-white shadow-xl'

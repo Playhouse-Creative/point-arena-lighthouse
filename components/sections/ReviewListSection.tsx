@@ -11,20 +11,20 @@ type Props = {
 	gridList: any
 	title: string
 	listType: any
-	id: {id: string}
+	id: { id: string }
 }
 
 export default function ReviewListSection(props: Props) {
 	const list = props.listType.reviewList
 	return (
 		<div id={`${props.id ? props.id.id : null}`} className='mx-4 my-12'>
-			<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-2 sm:px-16 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
+			<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-2 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16'>
 				<h3
 					className='mt-8
         ml-6 text-left font-serif text-3xl font-semibold text-pa-navy-4'>
 					{props.title}
 				</h3>
-				<ul className='mx-2 sm:mx-12 my-8 flex h-[550px] flex-col overflow-y-auto overscroll-contain'>
+				<ul className='mx-2 my-8 flex h-[550px] flex-col overflow-y-auto overscroll-contain sm:mx-12'>
 					{list.map((listSection: any, i: number) => {
 						const starsIcon = (listSection: any) => {
 							if (listSection.stars === 5) return fiveStar
@@ -35,7 +35,7 @@ export default function ReviewListSection(props: Props) {
 						}
 						return (
 							<li key={i} className=' mt-2 mb-6 flex flex-col'>
-								<div className='flex flex-col mb-2'>
+								<div className='mb-2 flex flex-col'>
 									<h3 className='text-left text-2xl font-semibold text-pa-navy-4'>
 										{listSection.heading}
 									</h3>
@@ -49,7 +49,7 @@ export default function ReviewListSection(props: Props) {
 									</div>
 								</div>
 								<ul className='flex items-start'>
-									<div className='relative h-10 w-36 hidden sm:block -scale-x-100'>
+									<div className='relative hidden h-10 w-36 -scale-x-100 sm:block'>
 										<Image
 											src={starsIcon(listSection)}
 											alt={`${listSection.stars} stars`}
@@ -57,10 +57,32 @@ export default function ReviewListSection(props: Props) {
 											style={{ objectFit: 'contain' }}
 										/>
 									</div>
-									<li className='sm:ml-4 mr-10 w-full text-left text-lg text-pa-navy-4'>
+									<li className='mr-10 w-full text-left text-lg text-pa-navy-4 sm:ml-4'>
 										<PortableText
 											content={listSection.body}
 											key={i}
+											serializers={{
+												li: ({ children }: any) => (
+													<li className='list-inside list-disc'>
+														{children}
+													</li>
+												),
+												ol: ({ children }: any) => (
+													<ol className='mt-lg'>
+														{children}
+													</ol>
+												),
+												link: ({
+													href,
+													children,
+												}: any) => (
+													<a
+														className='text-pa-teal-4 underline'
+														href={href}>
+														{children}
+													</a>
+												),
+											}}
 										/>
 									</li>
 								</ul>

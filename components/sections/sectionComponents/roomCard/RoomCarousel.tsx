@@ -103,6 +103,9 @@ export default function RoomCarousel(props: Props) {
 									src={urlForImage(image).url()}
 									fill={true}
 									style={{ objectFit: 'cover' }}
+									sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
 									onClick={() => setLightBoxOpen(true)}
 									className='cursor-pointer'
 								/>
@@ -146,6 +149,9 @@ export default function RoomCarousel(props: Props) {
 																		objectFit:
 																			'cover',
 																	}}
+																	sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
 																	onClick={() =>
 																		setLightBoxOpen(
 																			true

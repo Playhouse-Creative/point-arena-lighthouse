@@ -30,7 +30,10 @@ const Lodging = ({ pageData }: PageData) => {
 
 const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]{
 	...,
-	heroImage{ asset->
+	heroImage{ asset->{...,
+		metadata{
+		  lqip
+		}}
 }
 {...,
 	content[] {..., id->{..., id}}

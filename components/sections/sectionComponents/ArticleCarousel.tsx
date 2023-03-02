@@ -6,14 +6,14 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 type Props = {
-	images:   {
-			_key: string
-			_type: string
-			alt: string
-			asset: {
-				_id: string
-				url: string
-			}
+	images: {
+		_key: string
+		_type: string
+		alt: string
+		asset: {
+			_id: string
+			url: string
+		}
 	}[]
 }
 function PrevArrow(props: any) {
@@ -60,7 +60,7 @@ const ArticleCarousel = (props: Props) => {
 	const settings = {
 		dots: true,
 		infinite: true,
-		className: "center",	
+		className: 'center',
 		slidesToShow: 1,
 		centerMode: true,
 		nextArrow: <NextArrow />,
@@ -71,30 +71,32 @@ const ArticleCarousel = (props: Props) => {
 				settings: {
 					centerMode: true,
 					slidesToShow: 1,
-					
 				},
 			},
 		],
 	}
 
 	return (
-		
-			<Slider {...settings}>
-				{props.images.map((image: any, index: number) => (
-					<div
-						key={index}
-						className='relative z-10 h-[400px] xl:h-[600px] w-screen sm:w-[500px] bg-slate-800'>
-						<Img
-							alt={`Slide for ${image.alt}`}
-							src={urlForImage(image).url()}
-							fill={true}
-							style={{ objectFit: 'contain', padding: '8px' }}
-						/>
-						<p className='absolute bottom-0 md:mx-48 mx-2 right-0 left-0 mb-1 bg-pa-blue-1/80 p-1 text-xs'>{image.alt}</p>
-					</div>
-				))}
-			</Slider>
-		
+		<Slider {...settings}>
+			{props.images.map((image: any, index: number) => (
+				<div
+					key={index}
+					className='relative z-10 h-[400px] w-screen bg-slate-800 sm:w-[500px] xl:h-[600px]'>
+					<Img
+						alt={`Slide for ${image.alt}`}
+						src={urlForImage(image).url()}
+						fill={true}
+						sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					33vw'
+						style={{ objectFit: 'contain', padding: '8px' }}
+					/>
+					<p className='absolute bottom-0 right-0 left-0 mx-2 mb-1 bg-pa-blue-1/80 p-1 text-xs md:mx-48'>
+						{image.alt}
+					</p>
+				</div>
+			))}
+		</Slider>
 	)
 }
 

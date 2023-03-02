@@ -15,7 +15,6 @@ const GridImage = (props: any) => {
 
 	return (
 		<div className='relative col-span-1 row-span-1 aspect-square '>
-			
 			{props.image && (
 				<Img
 					alt={props.image.alt}
@@ -25,36 +24,46 @@ const GridImage = (props: any) => {
 					priority={true}
 					quality={80}
 					style={{ objectFit: 'cover' }}
+					sizes="(max-width: 768px) 25vw,
+              (max-width: 1200px) 50vw,
+              33vw"
 				/>
 			)}
 		</div>
 	)
 }
 
-export default function FunFactsSection(props: Props) {
+export default function LodgingHeroSection(props: Props) {
 	const heroImageProps: any = useNextSanityImage(
 		sanityClient,
 		props.heroImage
 	)
 
 	return (
-		<div className='mb-4 md:mb-24 w-screen px-4'>
-			<div className='mx-auto grid w-screen lg:w-3/4 max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 '>
+		<div className='mb-4 w-screen px-4 md:mb-24'>
+			<div className='mx-auto grid w-screen max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 lg:w-3/4 '>
 				<div className='relative col-span-4 row-span-3 aspect-square md:col-span-2 md:row-span-2'>
 					{props.heroImage && (
-						<Img
+						<>
+							<Img
 							alt={props.heading}
 							src={heroImageProps.src}
 							loader={heroImageProps.loader}
 							fill={true}
 							priority={true}
-							quality={40}
+							quality={75}
 							style={{ objectFit: 'cover' }}
+							sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              50vw"
 							
 						/>
+							
+							
+						</>
 					)}
 					<div
-						className='absolute left-0 bottom-10 z-20 w-10/12 sm:w-8/12 py-[5px] pl-8'
+						className='absolute left-0 bottom-10 z-20 w-10/12 py-[5px] pl-8 sm:w-8/12'
 						style={{
 							backgroundColor: '#0088A7',
 							clipPath:
@@ -68,12 +77,7 @@ export default function FunFactsSection(props: Props) {
 				</div>
 				{props.gridImages &&
 					props.gridImages.map((image: any, i: number) => {
-						return (
-							<GridImage
-								key={i}
-								image={image}
-								></GridImage>
-						)
+						return <GridImage key={i} image={image}></GridImage>
 					})}
 			</div>
 		</div>

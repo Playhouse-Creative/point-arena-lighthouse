@@ -46,6 +46,9 @@ export default function ReviewListSection(props: Props) {
 											alt={`${listSection.stars} stars`}
 											fill={true}
 											style={{ objectFit: 'contain' }}
+											sizes="(max-width: 768px) 30vw,
+              					(max-width: 1200px) 25vw,
+              					15vw"
 										/>
 									</div>
 								</div>
@@ -56,6 +59,9 @@ export default function ReviewListSection(props: Props) {
 											alt={`${listSection.stars} stars`}
 											fill={true}
 											style={{ objectFit: 'contain' }}
+											sizes="(max-width: 768px) 30vw,
+              					(max-width: 1200px) 25vw,
+              					15vw"
 										/>
 									</div>
 									<li className='mr-10 w-full text-left text-lg text-pa-navy-4 sm:ml-4'>

@@ -17,6 +17,9 @@ const HeroSection = (props: any) => {
 						src={imageProps.src}
 						loader={imageProps.loader}
 						fill={true}
+						sizes="(max-width: 768px) 100vw,
+              					(max-width: 1200px) 100vw,
+              					100vw"
 						priority={true}
 						quality={80}
 						style={{ objectFit: 'cover', transformOrigin: 'top' }}

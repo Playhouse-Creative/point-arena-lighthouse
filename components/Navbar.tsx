@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import Image from 'next/image'
+import Img from 'next/image'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -51,13 +51,13 @@ export default function Navbar() {
 						<div
 							className={`${
 								open ? 'scale-50' : null
-							} lg:-24 absolute top-0 z-30 m-0 origin-top-left transition duration-200 ease-in-out md:ml-12 xl:ml-36`}>
+							}  absolute top-0 z-30 m-0 origin-top-left transition duration-200 ease-in-out md:ml-12 xl:ml-36`}>
 							<Link href='/'>
-								<Image
+								<Img
 									src='/logoRibbon.png'
 									alt='Logo Image'
-									height='245'
-									width='220'
+									height={245}
+									width={220}
 								/>
 							</Link>
 						</div>

@@ -33,6 +33,9 @@ const Post = ( { post, previews }: Props) => {
 							priority={true}
 							quality={80}
 							style={{ objectFit: 'cover' }}
+							sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					33vw'
 						/>
 					)}
 				</div>
@@ -52,6 +55,9 @@ const Post = ( { post, previews }: Props) => {
 								className=''
 								src={urlForImage(post.author.image).url()!}
 								alt={post.author.name}
+								sizes='(max-width: 768px) 15vw,
+              					(max-width: 1200px) 15vw,
+              					15vw'
 							/>
 						</div>
 						<p className='text-sm font-light'>

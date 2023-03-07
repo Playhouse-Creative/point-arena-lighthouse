@@ -12,6 +12,9 @@ const Portrait = (props: Props) => {
                     alt={props.name}
                     fill={true}
                     style={{ objectFit: 'cover' }}
+                    sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					33vw'
                 />
             </div>
             <h3 className="text-center font-semibold text-xl mt-2 text-pa-navy-4">

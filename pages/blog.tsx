@@ -34,6 +34,9 @@ const Blog = ({ postData }: Props) => {
 									alt={posts[0].title}
 									fill={true}
 									style={{ objectFit: 'cover' }}
+									sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					40vw'
 								/>
 							</div>
 							<h1 className='mt-10 mb-1 text-3xl group-hover:underline'>
@@ -62,6 +65,9 @@ const Blog = ({ postData }: Props) => {
 											).url()!
 										}
 										alt={posts[0].author.name}
+										sizes='(max-width: 768px) 15vw,
+              					(max-width: 1200px) 15vw,
+              					15vw'
 									/>
 								</div>
 								<p className='mb-2 text-sm font-light'>

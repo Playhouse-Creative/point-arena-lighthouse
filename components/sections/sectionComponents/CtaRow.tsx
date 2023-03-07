@@ -42,6 +42,9 @@ export default function CtaRow(props: Props) {
 							alt='placeholder'
 							fill={true}
 							style={{ objectFit: 'cover' }}
+							sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					50vw'
 						/>}
 					</div>
 					<div className='mx-12 mt-8 md:mt-4 lg:text-xl text-base flex flex-col items-center justify-center md:justify-start lg:my-auto md:w-1/2'>

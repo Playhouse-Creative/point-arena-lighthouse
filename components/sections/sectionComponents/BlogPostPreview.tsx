@@ -16,6 +16,9 @@ const BlogPostPreview = (post: Post) => {
 						alt='placeholder'
 						fill={true}
 						style={{ objectFit: 'cover' }}
+						sizes='(max-width: 768px) 100vw,
+              					(max-width: 1200px) 50vw,
+              					33vw'
 					/>
 					<div
 				className='absolute left-0 -bottom-5 w-11/12 py-[5px] '

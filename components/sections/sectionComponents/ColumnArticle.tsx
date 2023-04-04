@@ -24,7 +24,7 @@ export default function ColumnArticle(props: Props) {
 			</h3>
 			<div
 				className={`my-12 flex w-full flex-col justify-center ${
-					props.images[1] && 'items-start sm:flex-row'
+					props.images[0] && 'items-start sm:flex-row'
 				} `}>
 				<div className='mx-auto grid gap-4 sm:grid-cols-1 lg:gap-2'>
 					{props.images &&

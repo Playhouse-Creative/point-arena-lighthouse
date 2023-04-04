@@ -31,7 +31,7 @@ export default function ColumnArticle(props: Props) {
 						props.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 h-full min-h-[300px] w-[80vw] overflow-hidden sm:min-h-[500px] sm:w-[40vw] lg:w-[35vw]'>
+								className='relative col-span-1 h-full min-h-[300px] w-[80vw] overflow-hidden sm:min-h-[500px] sm:w-[40vw] lg:w-[35vw] max-w-[700px]'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}

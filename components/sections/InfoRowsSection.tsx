@@ -8,13 +8,13 @@ type Props = {
 		text: any
 	}[]
 	title: string
-	id: { id: string }
+	linkId: { linkId: {current: string} }
 	finePrint: any
 }
 
 export default function InfoRowsSection(props: Props) {
 	return (
-		<div className='mx-4 my-12' id={`${props.id ? props.id.id : null}`}>
+		<div className='mx-4 my-12 scroll-mt-96' id={`${props.linkId ? props.linkId.linkId.current : null}`}>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>

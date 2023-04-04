@@ -68,8 +68,10 @@ export type CTA = {
 	_id: string
 	_type: string
 	title: string
+	anchorLink: { linkId: { current: string } }
 	description: string
 	link: string
+	linkId: { linkId: { current: string }}
 	route: string
 	landingPageRoute: { slug: Slug }
 	slug: Slug

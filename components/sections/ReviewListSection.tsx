@@ -12,13 +12,13 @@ type Props = {
 	gridList: any
 	title: string
 	listType: any
-	id: { id: string }
+	linkId: { linkId: { current: string } }
 }
 
 export default function ReviewListSection(props: Props) {
 	const list = props.listType.reviewList
 	return (
-		<div id={`${props.id ? props.id.id : null}`} className='mx-4 my-12'>
+		<div id={`${props.linkId ? props.linkId.linkId.current : null}`} className='scroll-mt-96 mx-4 my-12'>
 			<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-2 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16'>
 				<h3
 					className='mt-8

@@ -2,37 +2,35 @@
 
 import React from 'react'
 import Link from 'next/link'
-import {CTA} from '../../../lib/types'
+import { CTA } from '../../../lib/types'
 
 const Cta = (props: CTA) => {
-	let link = props.route || props.link || '#'
-	if (
-		props.landingPageRoute &&
-		props.landingPageRoute.slug &&
-		props.landingPageRoute.slug.current
-	) {
-		link = props.landingPageRoute.slug.current
-		return (
-			<button className={props.buttonActionClass}>
-				<Link href={link}>{props.title}</Link>
-			</button>
-		)
-	}
-	// External
-	if (props.link) {
-		return (
-			<button className={props.buttonActionClass}><a href={props.link} target='_blank' rel='noopener noreferrer'>
-				{props.title}
-			</a></button>
-		)
-	}
 
+	const { title, route, link, anchorLink } = props
 	return (
-		<button className={props.buttonActionClass}>
-		<Link className='mr-3' href={link}>
-			{props.title}
-		</Link></button>
-	)
+		<>
+		  {route ? (
+			<button className={props.buttonActionClass}>
+			<Link href={route}>
+			  {title}
+			</Link></button>
+		  ) : anchorLink && anchorLink.linkId ? (
+			<button className={props.buttonActionClass}>
+			<Link href={`/${anchorLink.linkId.current}`}>
+			 {title}
+			</Link></button>
+		  ) : link ? (
+			<button className={props.buttonActionClass}>
+			<a href={link} className="cta">
+			  {title}
+			</a>
+			</button>
+		  ) : (
+			<p className="cta">{title}</p>
+		  )}
+		</>
+	  );
+	
 }
 
 export default Cta

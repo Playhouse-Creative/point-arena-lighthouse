@@ -33,7 +33,7 @@ export default function CtaRow(props: Props) {
 								clipPath:
 									'polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, calc(0% + 10px) 50%, 0% 0%)',
 							}}>
-							<h2 className='font-serif text-xl lg:text-2xl font-semibold text-white xl:text-3xl'>
+							<h2 className='font-serif text-xl lg:text-2xl font-semibold text-white '>
 								{props.title}
 							</h2>
 						</div>

@@ -19,7 +19,7 @@ import authorReference from './components/authorReference';
 import bodyPortableText from './components/bodyPortableText';
 import link from './components/link'
 import route from './components/route';
-import id from './components/id';
+import linkId from './documents/linkId';
 import menuLink from './components/menuLink';
 import funFactsSection from './sections/funFactsSection';
 import lodgingHeroSection from './sections/lodgingHeroSection';
@@ -83,5 +83,5 @@ export default  [
     portraitImage,
     portraitSection,
     bannerSection,
-    id
+    linkId
   ]

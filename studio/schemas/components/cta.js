@@ -1,3 +1,5 @@
+
+
 export default {
   title: 'Call to action',
   name: 'cta',
@@ -21,8 +23,15 @@ export default {
       title: 'Path',
       name: 'route',
       fieldset: 'link',
-      description: 'Example: /blog or /visit#fees',
+      description: 'Example: /blog',
       type: 'string'
+    },
+    {
+      name: 'anchorLink',
+      title: 'Anchor Link',
+      fieldset: 'link',
+      type: 'reference',
+      to: [{type: 'linkId'}]
     },
     {
       title: 'External link',
@@ -35,14 +44,14 @@ export default {
   preview: {
     select: {
       title: 'title',
-      landingPage: 'landingPageRoute.slug.current',
+      anchorLink: 'anchorLink.linkId.current',
       route: 'route',
       link: 'link'
     },
-    prepare ({title, landingPage, route, link}) {
+    prepare ({title, anchorLink, route, link}) {
       let subtitle = 'Not set'
-      if (landingPage) {
-        subtitle = `Route: /${landingPage}`
+      if (anchorLink) {
+        subtitle = `Route: /${anchorLink}`
       }
       if (route) {
         subtitle = `Route: ${route}`

@@ -5,16 +5,17 @@ import ReviewListSection from './ReviewListSection'
 import _ from 'lodash'
 
 type Props = {
+
 	title: string
 	listType: string
 	gridList: any
 	infoList: any
-	id: {id: string}
+	linkId: {linkId: {current: string}}
 }
 
 export default function ListSection(props: Props) {
 	return (
-		<div id={`${props.id ? props.id.id : null}`}>
+		<div id={`${props.linkId ? props.linkId.linkId.current : null}`}>
 			{' '}
 			{_.has(props.listType, 'gridList') ? (
 				<GridListSection {...props} />

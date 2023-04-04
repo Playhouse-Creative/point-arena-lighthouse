@@ -4,11 +4,17 @@ import "slick-carousel/slick/slick-theme.css";
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <>
     <Hydrated>
+       
         < Component {...pageProps}/>
+       
     </Hydrated>
+
+    </>
   );
 }
 export default MyApp;

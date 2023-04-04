@@ -8,7 +8,7 @@ type Props = {
 export default function CtaRowSection(props: Props) {
 	const { rows } = props
 	return (
-		<div className='h-full my-24'>
+		<div  className='h-full my-24'>
 			{rows.map((row: any, i: number) => (
 				<CtaRow
 					key={i}

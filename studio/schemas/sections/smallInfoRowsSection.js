@@ -8,9 +8,9 @@ export default {
       name: 'title'
     },
     {
-			name: 'id',
+			name: 'linkId',
 			type: 'reference',
-      to: [{type: 'id'}],
+      to: [{type: 'linkId'}],
 			title: 'Link ID',
 			description: 'This is the ID that will be used in the URL to link to this section. It must be unique.'
 		},

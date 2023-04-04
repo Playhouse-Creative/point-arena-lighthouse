@@ -30,7 +30,7 @@ const Visit = ({ pageData }: PageData) => {
 
 const query = `{"pageSections": *[_type == "page"  && slug == "visit"] 
 {...,
- content[] {..., id->{..., id}}
+ content[] {..., linkId->{..., linkId}}
 },
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`

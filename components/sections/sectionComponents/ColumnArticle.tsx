@@ -46,8 +46,8 @@ export default function ColumnArticle(props: Props) {
 				</div>
 				<div
 					className={`${
-						props.images ? 'text-left sm:w-1/2' : 'text-center'
-					} mx-auto px-4 text-center text-pa-navy-4 sm:pl-8 `}>
+						props.images[0] ? 'text-left sm:w-1/2' : 'text-center'
+					} mx-auto px-4 text-pa-navy-4 sm:pl-8 `}>
 					<h3 className='my-4 font-serif text-3xl font-semibold text-pa-red-4'>
 						{props.heading}
 					</h3>

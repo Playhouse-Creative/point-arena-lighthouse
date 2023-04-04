@@ -59,7 +59,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 								<div className=' flex w-full justify-between'>
 									<h3 className='mb-3 w-8/12 text-xl group-hover:underline'>
 										{post.title}
-									</h3>
+									</h3><div className='flex flex-col text-right'>
 									{post.category.map((c: any, i: number) => (
 										<p
 											key={i}
@@ -68,7 +68,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 											}}>
 											{c.title}
 										</p>
-									))}
+									))}</div>
 								</div>
 								<div className='flex w-full justify-between'>
 									<p className='text-sm text-gray-700'>
@@ -96,7 +96,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 									<div className=' flex w-full justify-between'>
 										<h3 className='mb-3 w-full text-xl group-hover:underline'>
 											{post.title}
-										</h3>
+										</h3><div className='flex flex-col text-right'>
 										{post.category.map(
 											(c: any, i: number) => (
 												<p
@@ -108,7 +108,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 												</p>
 											)
 										)}
-									</div>
+									</div></div>
 									<div className='flex w-full justify-between'>
 										<p className='text-sm text-gray-700'>
 											{post.author.name}

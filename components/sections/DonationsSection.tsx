@@ -28,6 +28,7 @@ export default function DonationsSection(props: Props) {
 							value='RNEJJEPWZJCRW'
 						/>
 						<table>
+							<tbody>
 							<tr>
 								<td>
 									<input
@@ -70,7 +71,7 @@ export default function DonationsSection(props: Props) {
 										</option>
 									</select>{' '}
 								</td>
-							</tr>
+							</tr></tbody>
 						</table><button
 							name='submit'
 							className='mt-4 self-end rounded-lg border border-transparent bg-pa-red-4 px-6 py-2 font-serif text-xl font-medium tracking-wider text-white shadow-xl hover:bg-pa-red-3'>
@@ -89,6 +90,7 @@ export default function DonationsSection(props: Props) {
 							value='7EVY4Z4D8TSX2'
 						/>
 						<table>
+							<tbody>
 							<tr>
 								<td>
 									<input
@@ -122,7 +124,7 @@ export default function DonationsSection(props: Props) {
 										</option>
 									</select>{' '}
 								</td>
-							</tr>
+							</tr></tbody>
 						</table>
 						<button
 							name='submit'

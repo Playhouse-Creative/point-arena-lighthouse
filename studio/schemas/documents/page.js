@@ -34,7 +34,8 @@ export default {
         { type: 'funFactsSection'},
         { type: 'blogPreviewSection' },
         { type: 'lodgingHeroSection'},
-        { type: 'roomCardsSection'}
+        { type: 'roomCardsSection'},
+        { type: 'donationsSection'},
       ]
     }
   ]

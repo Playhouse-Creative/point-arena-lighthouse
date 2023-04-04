@@ -40,6 +40,7 @@ import portraitImage from './components/portraitImage';
 import portraitSection from './sections/portraitSection';
 import articlesSection from './sections/articlesSection';
 import newArticleSection from './sections/newArticleSection';
+import donationsSection from './sections/donationsSection';
 // Then we give our schema to the builder and provide the result to Sanity
 export default  [
     tableColumn,
@@ -83,5 +84,6 @@ export default  [
     portraitImage,
     portraitSection,
     bannerSection,
-    linkId
+    linkId,
+    donationsSection
   ]

@@ -15,7 +15,7 @@ export default function TableSection(props: Props) {
 	const columnRows = props.columns.columnOne.columnCells
 
 	return (
-		<div id={`${props.linkId ? props.linkId.linkId.current : null}`} className='scroll-mt-96 mx-4 my-12'>
+		<div id={`${props.linkId ? props.linkId : null}`} className='scroll-mt-96 mx-4 my-12'>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>

@@ -15,7 +15,7 @@ type Props = {
 export default function ColumnArticle(props: Props) {
 
 	return (
-		<div id={`${props.linkId ? props.linkId.linkId.current : null}`} className='scroll-mt-96 relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
+		<div id={`${props.linkId ? props.linkId : null}`} className='scroll-mt-96 relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
 			<h3
 				className='mx-2
         mt-8 text-center font-serif text-4xl font-semibold text-pa-navy-4 sm:ml-6'>

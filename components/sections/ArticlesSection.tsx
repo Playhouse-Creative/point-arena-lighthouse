@@ -15,7 +15,7 @@ type Props = {
 
 export default function ArticlesSection(props: Props) {
 	return (
-		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId.linkId.current : null}`}>
+		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId : null}`}>
 			{' '}
 			{(props.articleType === 'columnArticle') ? (
 				<ColumnArticle {...props} />

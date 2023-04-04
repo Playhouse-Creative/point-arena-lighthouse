@@ -28,16 +28,17 @@ const Lodging = ({ pageData }: PageData) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]{
+const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]
+{
 	...,
 	heroImage{ asset->{...,
 		metadata{
 		  lqip
 		}}
-}
-{...,
-	content[] {..., linkId->{..., linkId}}
-   },
+},
+content[] {..., linkId->{..., linkId}}
+
+},
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 

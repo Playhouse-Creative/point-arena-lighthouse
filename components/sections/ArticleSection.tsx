@@ -9,12 +9,12 @@ type Props = {
 	articleType: string
 	columnArticle: any
 	carouselArticle: any
-	linkId: {linkId: {current: string}}
+	linkId: {slug: {current: string}}
 }
 
 export default function ArticleSection(props: Props) {
 	return (
-		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId.linkId.current : null}`}>
+		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId.slug.current : null}`} >
 			{' '}
 			{(props.articleType === 'columnArticle') ? (
 				<ColumnArticleSection {...props} />

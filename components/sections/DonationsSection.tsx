@@ -1,31 +1,143 @@
 import React from 'react'
 
+type Props = {
+	title: string
+	linkId: { slug: { current: string } }
+}
 
-
-export default function DonationsSection() {
+export default function DonationsSection(props: Props) {
 	return (
-		<div className='mx-4 my-12 scroll-mt-96' >
+		<div
+			className='mx-4 my-12 scroll-mt-96'
+			id={`${props.linkId ? props.linkId.slug.current : null}`}>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>
 				Donation Section
 			</h3>
 			<div className='relative mx-auto mb-12 max-w-[1400px] border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
-				<ul className='mx-2 my-8 flex flex-col justify-around sm:mx-12 sm:flex-row'>
-					
-						<li  className='mt-2 mb-6 '>
-							<h3 className='mb-2 text-center font-serif text-2xl font-semibold text-pa-red-4 underline'>
-								
-							</h3>
-							<div className='text-center text-pa-navy-4 '>
-								
-							</div>
-						</li>
-					
-				</ul>
-				<div className='mb-3 text-pa-navy-4 mx-4'>
-					
+				<div className='mx-2 my-8 flex flex-col justify-around sm:mx-12 sm:flex-row'>
+					<form
+						target='paypal'
+						action='https://www.paypal.com/cgi-bin/webscr'
+						method='post'>
+						<input type='hidden' name='cmd' value='_s-xclick' />
+						<input
+							type='hidden'
+							name='hosted_button_id'
+							value='RNEJJEPWZJCRW'
+						/>
+						<table>
+							<tr>
+								<td>
+									<input
+										type='hidden'
+										name='on0'
+										value='Select Sponsorship Level:'
+									/>
+									Select Sponsorship Level:
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<select name='os0'>
+										<option value='Apprentice Keeper'>
+											Apprentice Keeper $25.00 USD
+										</option>
+										<option value="Keeper's Assistant">
+											Keeper&apos;s Assistant $50.00 USD
+										</option>
+										<option value="Keeper's Assistant II">
+											Keeper&apos;s Assistant II $100.00
+											USD
+										</option>
+										<option value='Lighthouse Keeper'>
+											Lighthouse Keeper $200.00 USD
+										</option>
+										<option value='Head Lighthouse Keeper'>
+											Head Lighthouse Keeper $500.00 USD
+										</option>
+										<option value='Silver Lighthouse Keeper'>
+											Silver Lighthouse Keeper $1,000.00
+											USD
+										</option>
+										<option value='Gold Lighthouse Keeper'>
+											Gold Lighthouse Keeper $5,000.00 USD
+										</option>
+										<option value='Platinum Lighthouse Keeper'>
+											Platinum Lighthouse Keeper
+											$10,000.00 USD
+										</option>
+									</select>{' '}
+								</td>
+							</tr>
+						</table><button
+							name='submit'
+							className='mt-4 self-end rounded-lg border border-transparent bg-pa-red-4 px-6 py-2 font-serif text-xl font-medium tracking-wider text-white shadow-xl hover:bg-pa-red-3'>
+							Add to cart
+						<input type='hidden' name='currency_code' value='USD' />
+						</button>
+					</form>
+					<form
+						action='https://www.paypal.com/cgi-bin/webscr'
+						method='post'
+						target='_top'>
+						<input type='hidden' name='cmd' value='_s-xclick' />
+						<input
+							type='hidden'
+							name='hosted_button_id'
+							value='7EVY4Z4D8TSX2'
+						/>
+						<table>
+							<tr>
+								<td>
+									<input
+										type='hidden'
+										name='on0'
+										value='Select a Membership Level'
+									/>
+									Select a Membership Level
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<select name='os0'>
+										<option value='Individual'>
+											Individual $50.00 USD
+										</option>
+										<option value='Family'>
+											Family $75.00 USD
+										</option>
+										<option value='Business'>
+											Business $200.00 USD
+										</option>
+										<option value='Individual Lifetime'>
+											Individual Lifetime $500.00 USD
+										</option>
+										<option value='Family Lifetime'>
+											Family Lifetime $650.00 USD
+										</option>
+										<option value='In Memoriam'>
+											In Memoriam $150.00 USD
+										</option>
+									</select>{' '}
+								</td>
+							</tr>
+						</table>
+						<button
+							name='submit'
+							className='mt-4 self-end rounded-lg border border-transparent bg-pa-red-4 px-6 py-2 font-serif text-xl font-medium tracking-wider text-white shadow-xl hover:bg-pa-red-3'>
+							Donate
+							<input
+								type='hidden'
+								name='currency_code'
+								value='USD'
+							/>
+							
+						</button>
+					</form>
 				</div>
+				<div className='mx-4 mb-3 text-pa-navy-4'></div>
 			</div>
 		</div>
 	)

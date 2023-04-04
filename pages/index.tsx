@@ -28,25 +28,10 @@ const Home = ({ pageData }: PageData) => {
 }
 
 const query = `{
-	"pageSections": *[_type == "page" && slug == "home"] {
-		title,
-		"content": content[] {
-		  ...,
-		  ctaRowSection->{
-            title,
-            rows[]{
-                title,
-                cta->{
-                    title,
-                    route,
-                    'anchorLink': anchorLink->{_ref, title, 'linkId': linkId.slug.current},
-                    link
-                }
-            }
-        }
-	}
-}
-,
+	"pageSections": *[_type == "page" && slug == "home"] 
+	{...,
+		content[] {..., linkId->{..., linkId}}
+	   },
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {_id,
 	_createdAt,

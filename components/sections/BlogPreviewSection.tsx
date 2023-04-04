@@ -27,7 +27,9 @@ const BlogPreviewSection = (props: Props) => {
                             <BlogPostPreview key={i} className={"bg-white "} {...node} />
                        
                     ))}
+                    
             </div>
+            
         </div>
     );
 };

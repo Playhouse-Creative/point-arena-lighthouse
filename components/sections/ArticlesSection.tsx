@@ -10,7 +10,7 @@ type Props = {
 	heading: string
     images: any
     body: any
-	linkId: {linkId: {current: string}}
+	linkId: {slug: {current: string}}
 }
 
 export default function ArticlesSection(props: Props) {

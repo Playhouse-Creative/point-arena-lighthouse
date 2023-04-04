@@ -10,12 +10,12 @@ type Props = {
 	listType: string
 	gridList: any
 	infoList: any
-	linkId: {linkId: {current: string}}
+	linkId: {slug: {current: string}}
 }
 
 export default function ListSection(props: Props) {
 	return (
-		<div id={`${props.linkId ? props.linkId.linkId.current : null}`}>
+		<div id={`${props.linkId ? props.linkId.slug.current : null}`}>
 			{' '}
 			{_.has(props.listType, 'gridList') ? (
 				<GridListSection {...props} />

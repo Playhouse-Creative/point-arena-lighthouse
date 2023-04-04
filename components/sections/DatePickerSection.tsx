@@ -8,7 +8,7 @@ import Script from 'next/script'
 
 type Props = {
 	title: string
-	linkId: {linkId: {current: string}}
+	linkId: {slug: {current: string}}
 }
 
 export default function DatePickerSection(props: Props) {
@@ -16,7 +16,7 @@ export default function DatePickerSection(props: Props) {
 	return (
 		<>
 		<SSRProvider>
-			<div className='mx-4 mb-20 scroll-mt-96' id={`${props.linkId ? props.linkId.linkId.current : null}`} >
+			<div className='mx-4 mb-20 scroll-mt-96' id={`${props.linkId ? props.linkId.slug.current : null}`} >
 				<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
 					{props.title}
 				</h2>

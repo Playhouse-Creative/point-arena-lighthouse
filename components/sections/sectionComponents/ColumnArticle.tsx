@@ -9,13 +9,13 @@ type Props = {
     heading: string
     images: any
     body: any
-	linkId: {linkId: {current: string}}
+	linkId: {slug: {current: string}}
 }
 
 export default function ColumnArticle(props: Props) {
 
 	return (
-		<div id={`${props.linkId ? props.linkId : null}`} className='scroll-mt-96 relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
+		<div id={`${props.linkId ? props.linkId.slug.current : null}`} className='scroll-mt-96 relative mx-4 my-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
 			<h3
 				className='mx-2
         mt-8 text-center font-serif text-4xl font-semibold text-pa-navy-4 sm:ml-6'>
@@ -27,7 +27,7 @@ export default function ColumnArticle(props: Props) {
 						props.images.map((image: any, i: number) => (
 							<div
 								key={i}
-								className='relative col-span-1 h-full w-[80vw] sm:w-[40vw] lg:w-[35vw] min-h-[300px] sm:min-h-[400px] overflow-hidden'>
+								className='relative col-span-1 h-full w-[80vw] sm:w-[40vw] lg:w-[35vw] min-h-[300px] sm:min-h-[500px] overflow-hidden'>
 								<Image
 									src={urlForImage(image).url()}
 									alt={image.alt}

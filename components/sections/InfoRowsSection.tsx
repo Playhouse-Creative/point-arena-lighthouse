@@ -21,10 +21,10 @@ export default function InfoRowsSection(props: Props) {
 				{props.title}
 			</h3>
 			<div className='relative mx-auto mb-12 max-w-[1400px] border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
-				<ul className='mx-2 my-8 flex flex-col justify-around sm:mx-12 sm:flex-row'>
+				<ul className='mx-2 my-8 flex flex-wrap flex-col justify-around sm:mx-12 lg:flex-row'>
 					{props.rows.map((section, i: number) => (
-						<li key={i} className='mt-2 mb-6 '>
-							<h3 className='mb-2 text-center font-serif text-2xl font-semibold text-pa-red-4 underline'>
+						<li key={i} className='mt-2 mb-6 mx-2 '>
+							<h3 className='mb-2 text-center font-serif xl:text-2xl text-xl font-semibold text-pa-red-4 underline'>
 								{section.title}
 							</h3>
 							<div className='text-center text-pa-navy-4 '>
@@ -38,10 +38,10 @@ export default function InfoRowsSection(props: Props) {
 					))}
 				</ul>
 				<div className='mb-3 text-pa-navy-4 mx-4'>
-					<PortableText
+					{props.finePrint && <PortableText
 						content={props.finePrint}
 						serializers={serializers()}
-					/>
+					/>}
 				</div>
 			</div>
 		</div>

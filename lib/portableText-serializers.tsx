@@ -18,6 +18,9 @@ const serializers = () => {
 		ol: ({ children }: any) => (
 			<ol style={{listStyleType: 'decimal', listStylePosition:'inside', lineHeight:'1.75rem'}}>{children}</ol>
 		),
+		li: ({ children }: any) => (
+			<li style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem' }}>{children}</li>
+		),
 		blockquote: ({ children }: any) => (
 			<blockquote style={{borderLeftStyle: 'solid', borderLeftWidth: '4px', borderColor: '#0088A7', paddingLeft: '4px'}} className='italic'>&quot;{children}&quot;</blockquote>
 		),

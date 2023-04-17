@@ -8,39 +8,44 @@ import Script from 'next/script'
 
 type Props = {
 	title: string
-	linkId: {slug: {current: string}}
+	linkId: { slug: { current: string } }
 }
 
 export default function DatePickerSection(props: Props) {
 	const [adultValue, setAdultValue] = useState<number>(1)
 	return (
 		<>
-		<SSRProvider>
-			<div className='mx-4 mb-20 scroll-mt-96' id={`${props.linkId ? props.linkId.slug.current : null}`} >
-				<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
-					{props.title}
-				</h2>
-				<div className='flex flex-col sm:items-end justify-center sm:flex-row'>
-					<DateRangePicker
-						label='Stay dates'
-						minValue={today(getLocalTimeZone())}
-					/>
-					<div className='flex items-end mt-2 justify-around sm:ml-4'>
-						<GuestPicker
-							label='# of Adults'
-							value={adultValue}
-							maxValue={8}
-							minValue={1}
-							onChange={setAdultValue}
+			<SSRProvider>
+				<div
+					className='mx-4 mb-20 scroll-mt-96'
+					id={`${props.linkId ? props.linkId.slug.current : null}`}>
+					<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
+						{props.title}
+					</h2>
+					<div className='flex flex-col justify-center sm:flex-row sm:items-end'>
+						<DateRangePicker
+							label='Stay dates'
+							minValue={today(getLocalTimeZone())}
 						/>
-						<AvailabilityButton />
+						<div className='mt-2 flex items-end justify-around sm:ml-4'>
+							<GuestPicker
+								label='# of Adults'
+								value={adultValue}
+								maxValue={8}
+								minValue={1}
+								onChange={setAdultValue}
+							/>
+							<AvailabilityButton />
+						</div>
 					</div>
 				</div>
-			</div>
-			{/* <Script type="text/javascript" src="https://be-booking-engine-api.prodinnroad.com/widget/pointarenalighthouse"></Script>
-		<div id="innroad-widget"></div> */}
-		</SSRProvider>
-		
+				{/* <div className='mx-auto mb-12 flex justify-center'>
+					<Script
+						type='text/javascript'
+						src='https://be-booking-engine-api.prodinnroad.com/widget/pointarenalighthouse'></Script>
+					<div id='innroad-widget'></div>
+				</div> */}
+			</SSRProvider>
 		</>
 	)
 }

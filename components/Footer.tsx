@@ -11,9 +11,11 @@ export default function Footer({}: Props) {
 						Hours:
 					</h4>
 					<p className='text-lg text-white font-semibold'>Memorial Day through Labor Day</p>
-					<p className='text-lg text-white'>10am - 4pm</p>
+					<p className='text-lg text-white'>10am - 4:30pm</p>
 					<p className='text-lg text-white font-semibold'>Rest of the year</p>
 					<p className='text-lg text-white'>10am - 3:30pm</p>
+					<p className='text-lg text-white'>Closed Thanksgiving & Christmas Days</p>
+					<p className='text-lg text-white'>Closed at 1 p.m. Christmas Eve</p>
 					<h4 className=' mt-4 text-xl text-white underline underline-offset-2'>
 						Admission Prices:
 					</h4>
@@ -21,7 +23,7 @@ export default function Footer({}: Props) {
 						Site Visit
 					</p>
 					<div className='flex justify-between w-1/2'>
-						<p className='text-lg text-white'>Children under 12</p>
+						<p className='text-lg text-white'>Members and Children under 12</p>
 						<p className='text-lg text-white'>Free</p>
 					</div>
 					<div className='flex justify-between w-1/2'>
@@ -29,7 +31,7 @@ export default function Footer({}: Props) {
 						<p className='text-lg text-white'>$5</p>
 					</div>
 					<p className='mt-2 text-lg text-white underline'>
-						Tower Tour
+						Tower Tour(in addition to Site Visit fee)
 					</p>
 					<div className='flex justify-between w-1/2'>
 						<p className='text-lg text-white'>6 and over</p>
@@ -56,6 +58,7 @@ export default function Footer({}: Props) {
 					<p className='mt-2 text-lg text-white'>
 						45500 Lighthouse Road
 					</p>
+					<p className='mt-2 text-lg text-white'>P. O. Box 11</p>
 					<p className=' text-lg text-white'>Point Arena, CA 95468</p>
 				</div>
 				<div className='mx-10 md:ml-12 w-screen md:w-1/4 mt-10'>

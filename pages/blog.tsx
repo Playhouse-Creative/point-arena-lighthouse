@@ -29,7 +29,7 @@ const Blog = ({ postData }: Props) => {
 							href={`/post/${posts[0].slug.current}`}
 							key={posts[0]._id}>
 							<div className='relative aspect-square w-full'>
-								<Img
+							{posts[0].mainImage && (<Img
 									src={urlForImage(posts[0].mainImage).url()}
 									alt={posts[0].title}
 									fill={true}
@@ -38,6 +38,7 @@ const Blog = ({ postData }: Props) => {
               					(max-width: 1200px) 50vw,
               					40vw'
 								/>
+								)}
 							</div>
 							<h1 className='mt-10 mb-1 text-3xl group-hover:underline'>
 								{posts[0].title}
@@ -53,7 +54,7 @@ const Blog = ({ postData }: Props) => {
 									{c.title}
 								</p>
 							))}
-							<div className='mt-4 flex flex-col items-start space-x-2 '>
+							<div className='mt-4 flex flex-col items-start'>
 								<div className='relative h-16 w-16 space-x-2 rounded-full'>
 									<Img
 										fill={true}

@@ -31,7 +31,7 @@ export default function Footer({}: Props) {
 						<p className='text-lg text-white'>$5</p>
 					</div>
 					<p className='mt-2 text-lg text-white underline'>
-						Tower Tour(in addition to Site Visit fee)
+						Tower Tour (in addition to Site Visit fee)
 					</p>
 					<div className='flex justify-between w-1/2'>
 						<p className='text-lg text-white'>6 and over</p>

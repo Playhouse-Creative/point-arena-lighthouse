@@ -82,13 +82,14 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 								</div>
 							</Link>
 					  ))
-					: firstEightPosts
-							.slice(1)
-							.filter(
-								(posts: any) =>
-								posts.category.some( (category: any) => category.title === selectedCategory)
-							)
-							.map((post: any, i: number) => (
+					: posts
+					.filter((posts: any) =>
+					  posts.category.some(
+						(category: {title: string}) => category.title === selectedCategory
+					  )
+					)
+					.slice(0, 8)
+							.map((post: any) => (
 								<Link
 									href={`/post/${post.slug.current}`}
 									key={post._id}

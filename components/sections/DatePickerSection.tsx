@@ -13,6 +13,7 @@ type Props = {
 
 export default function DatePickerSection(props: Props) {
 	const [adultValue, setAdultValue] = useState<number>(1)
+	const [kidValue, setKidValue] = useState<number>(1)
 	return (
 		<>
 			<SSRProvider>
@@ -22,12 +23,13 @@ export default function DatePickerSection(props: Props) {
 					<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
 						{props.title}
 					</h2>
-					<div className='flex flex-col justify-center sm:flex-row sm:items-end'>
+					<div className='flex flex-col justify-center md:flex-row md:items-end'>
 						<DateRangePicker
 							label='Stay dates'
 							minValue={today(getLocalTimeZone())}
 						/>
-						<div className='mt-2 flex items-end justify-around sm:ml-4'>
+						<div className='mt-2 flex flex-col md:flex-row items-center md:items-end justify-around md:ml-4'>
+							<div className='flex gap-3 justify-center w-full mx-auto mb-4 md:mb-0'>
 							<GuestPicker
 								label='# of Adults'
 								value={adultValue}
@@ -35,6 +37,13 @@ export default function DatePickerSection(props: Props) {
 								minValue={1}
 								onChange={setAdultValue}
 							/>
+							<GuestPicker
+								label='# of Kids'
+								value={kidValue}
+								maxValue={8}
+								minValue={1}
+								onChange={setKidValue}
+							/></div>
 							<AvailabilityButton />
 						</div>
 					</div>

@@ -31,23 +31,24 @@ export default function Card(props: Props) {
 					</h2>
 				</div>
 			</div>
-			<h3 className='mx-8 mt-8 text-left text-lg text-pa-navy-4'>{props.subHeading}</h3>
-			<div className='flex flex-col h-full justify-between'>
+			<h3 className='mx-8 mt-8 text-left text-lg text-pa-navy-4'>
+				{props.subHeading}
+			</h3>
+			<div className='flex h-full flex-col justify-between'>
 				<ul className='mx-8 mt-6'>
 					{props.featuresList.map((item: any, i: number) => (
 						<ListItem key={i} {...item} />
 					))}
 				</ul>
-				
-					<h3 className='mx-8 mt-6 text-left font-serif text-2xl text-pa-green-4 '>
+				<div>
+					<h3 className='mx-8 mt-6 justify-self-end text-left font-serif text-2xl text-pa-green-4 '>
 						{props.price}
 					</h3>
-					
-						<button className='m-8 w-auto rounded-lg bg-pa-blue-4 px-8 py-4 font-serif text-2xl font-medium tracking-wider text-white shadow-xl outline-none ring-offset-2 transition-colors hover:bg-pa-blue-3 focus:ring-2 focus:ring-pa-navy-4 focus:hover:ring-pa-navy-4 active:scale-95'>
-							Reserve
-						</button>
-					
-				
+
+					<button className='m-8 w-auto rounded-lg bg-pa-blue-4 px-8 py-4 font-serif text-2xl font-medium tracking-wider text-white shadow-xl outline-none ring-offset-2 transition-colors hover:bg-pa-blue-3 focus:ring-2 focus:ring-pa-navy-4 focus:hover:ring-pa-navy-4 active:scale-95'>
+						Reserve
+					</button>
+				</div>
 			</div>
 		</div>
 	)

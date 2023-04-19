@@ -20,7 +20,7 @@ export default function Footer({}: Props) {
 						Admission Prices:
 					</h4>
 					<p className='mt-2 text-lg text-white underline'>
-						Site Visit
+						Site Visit Fee
 					</p>
 					<div className='flex justify-between w-1/2'>
 						<p className='text-lg text-white'>Members and Children under 12</p>

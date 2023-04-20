@@ -3,3 +3,153 @@
 @tailwind utilities;
 
 
+
+h1 {
+    margin-bottom: 0 !important;
+}
+h2 {
+    margin-bottom: 0 !important;
+}
+h3 {
+    margin-bottom: 0 !important;
+}
+h4 {
+    margin-bottom: 0 !important;
+}
+h5 {
+    margin-bottom: 0 !important;
+}
+h6 {
+    margin-bottom: 0 !important;
+}
+#innroad-widget label {
+    margin: 0;
+}             
+div#innroad-widget {
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-sizing: unset;
+}
+button a {
+    color: #fff !important;
+}
+#innroad-widget label {
+    margin: 0;
+}
+.Widget__widget___HtgAL {
+    background-color: transparent !important;
+}
+div#innroad-widget {
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 9;
+    box-sizing: unset;
+    text-align:center;
+}
+#innroad-widget .antd-widget-form-item-label {
+    text-align: center;
+}
+div#innroad-widget row {
+    margin-top: auto !important;
+}
+#innroad-widget td {
+    vertical-align: middle;
+}
+.Widget__widget___HtgAL.Widget__horizontal___OBncy {
+    width: auto !important;
+}
+.Widget__fieldGroup___I7uPi label,
+label.control-label {
+    text-align: left;
+}
+.Widget__dateRangePicker___3tR2J > div:first-child > div,
+.Widget__fieldGroup___I7uPi {
+    padding-bottom: 5px ;
+}
+.Widget__widget___HtgAL > span {
+    border-radius: 0 !important;
+}
+@media screen and (min-width: 800px) {
+    nav#nav.hidden {
+        display: block !important;
+    }
+}	
+#innroad-widget button.antd-widget-btn.antd-widget-btn-primary.antd-widget-btn-lg.antd-widget-btn-block {
+    background-color: #a73d1c;
+    border-color: #a73d1c;
+    border-radius: 0;
+    font-family: ui-sans-serif,Filson Soft;
+    font-size: 18px;
+}
+#innroad-widget label{
+    color:#000;
+    font-family: ui-sans-serif,Filson Soft;
+    font-size: 18px;
+}
+#innroad-widget input{
+    border:1px solid #0d3652;
+    font-family: ui-sans-serif,Filson Soft;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 0;
+}
+.antd-widget-input-number-input {
+    height: auto !important;
+}
+.Widget_widgetWrapper_ScT51.Widget_horizontalWrapper_VQUCW .antd-widget-btn-primary {
+    margin-top: 30px !important;
+}
+button.antd-widget-btn.antd-widget-btn-primary.antd-widget-btn-lg.antd-widget-btn-block {
+    height: 58px;
+    width: 180px;
+}
+.Widget_widgetBackground_mnA55, .Widget_widgetWrapper_ScT51 {
+    background-color: transparent !important;
+}
+.Month_header__2-9zu, .Grid_header_RTAhg, .Grid_btnSelectDate_KVvwr {
+    background-color: #a73d1c !important;
+    color: #fff !important;
+}
+.DateRangePickerController_controls__bIZ-U > button {
+    color: #fff !important;
+}
+.Grid_btnSelectDate_KVvwr {
+    border-color: #000 !important;
+}
+.Grid_header_RTAhg {
+    background-color: #a73d1c !important;
+    color: #000 !important;
+    border: 1px solid #f4f4f4 !important;
+    box-shadow: -1px -3px 5px 0px rgb(170 170 170 / 75%);
+    -webkit-box-shadow: -1px -3px 5px 0px rgb(170 170 170 / 75%);
+    -moz-box-shadow: -1px -3px 5px 0px rgba(170,170,170,0.75);
+}
+.Grid_navMonth_x7i3U {
+    border-bottom: 1px solid #eee !important;
+
+}
+.Grid_headerBtnWrap_REYMq {
+    border-right: 1px solid #eee !important;
+}
+.Day_day__1nzlU.Day_selected__suXEi, .Day_day__1nzlU:hover:not(.Day_disabled__20ZtW) {
+    background-color: #a73d1c !important;
+    border-color: #a73d1c !important;
+    color:#fff;
+}
+.Day_day__1nzlU {
+    color: #000000 !important;
+}
+:root {
+    --accent-text-color: #b65e38 !important;
+}
+.antd-widget-input-number-input, .antd-widget-input-number, .antd-widget-input {
+    color: #000000 !important;
+}
+.antd-widget-input-number-input, .antd-widget-input-number, .antd-widget-input {
+    background-color: transparent;
+}

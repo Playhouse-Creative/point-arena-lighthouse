@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import { DateRangePicker } from './sectionComponents/datePicker/DateRangePicker'
-import { today, getLocalTimeZone } from '@internationalized/date'
-import GuestPicker from './sectionComponents/guestPicker/GuestPicker'
-import { SSRProvider } from 'react-aria'
-import AvailabilityButton from './sectionComponents/AvailabilityButton'
-import Script from 'next/script'
+import { useRouter } from 'next/router';
+import { useEffect, useState  } from 'react';
+import  useExternalScript  from '../../lib/useExternalScript'
+
+
+
 
 type Props = {
 	title: string
@@ -12,18 +11,35 @@ type Props = {
 }
 
 export default function DatePickerSection(props: Props) {
-	const [adultValue, setAdultValue] = useState<number>(1)
-	const [kidValue, setKidValue] = useState<number>(1)
+	
+	const router = useRouter();
+	const [key, setKey] = useState(Date.now());
+  
+  useExternalScript('https://be-booking-engine-api.prodinnroad.com/widget/pointarenalighthouse');
+
+  // Force re-render and execute the script whenever the route changes
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setKey(Date.now());
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+	
 	return (
 		<>
-			<SSRProvider>
+			
 				<div
-					className='mx-4 mb-20 scroll-mt-96'
+					className='mx-4 mb-4 scroll-mt-96'
+					key={key}
 					id={`${props.linkId ? props.linkId.slug.current : null}`}>
-					<h2 className='mb-8 w-full text-center font-serif text-4xl font-semibold '>
+					<h2 className='w-full text-center font-serif text-4xl font-semibold '>
 						{props.title}
 					</h2>
-					<div className='flex flex-col justify-center md:flex-row md:items-end'>
+					{/* <div className='flex flex-col justify-center md:flex-row md:items-end'>
 						<DateRangePicker
 							label='Stay dates'
 							minValue={today(getLocalTimeZone())}
@@ -46,15 +62,12 @@ export default function DatePickerSection(props: Props) {
 							/></div>
 							<AvailabilityButton />
 						</div>
-					</div>
+					</div> */}
 				</div>
-				{/* <div className='mx-auto mb-12 flex justify-center'>
-					<Script
-						type='text/javascript'
-						src='https://be-booking-engine-api.prodinnroad.com/widget/pointarenalighthouse'></Script>
+				<div className='mx-auto mb-12 flex justify-center'>
 					<div id='innroad-widget'></div>
-				</div> */}
-			</SSRProvider>
+				</div>
+			
 		</>
 	)
 }

@@ -14,7 +14,7 @@ type Props = {
 
 export default function Card(props: Props) {
 	return (
-		<div className='relative mb-12 flex flex-col border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
+		<div className='z-0 relative mb-12 flex flex-col border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 			<RoomCarousel {...props} />
 			<div className='absolute top-0 aspect-square w-full'>
 				<div

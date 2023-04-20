@@ -12,6 +12,7 @@ const serializers = () => {
         h4: ({ children }: any) => (
 			<h4 className='text-xl font-medium'>{children}</h4>
 		),
+		p: ({ children }: any) => ( <p style={{lineHeight:'1.75rem'}} className='text-base'>{children}</p>),
 		ul: ({ children }: any) => (
 			<ul style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem' }}>{children}</ul>
 		),

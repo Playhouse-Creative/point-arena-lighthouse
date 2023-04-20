@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:global.body {
+    font-family: ui-sans-serif,Filson Soft;
+    font-size: null;
+    font-weight: null;
+}
 
 h1 {
     margin-bottom: 0 !important;
@@ -22,6 +26,10 @@ h5 {
 h6 {
     margin-bottom: 0 !important;
 }
+p {
+    margin-bottom: 0 !important;
+    font-size: 20px
+}
 #innroad-widget label {
     margin: 0;
 }             
@@ -33,9 +41,7 @@ div#innroad-widget {
     z-index: 1;
     box-sizing: unset;
 }
-button a {
-    color: #fff !important;
-}
+
 #innroad-widget label {
     margin: 0;
 }

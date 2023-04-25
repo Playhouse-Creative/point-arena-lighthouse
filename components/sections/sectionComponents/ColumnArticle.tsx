@@ -15,7 +15,7 @@ type Props = {
 export default function ColumnArticle(props: Props) {
 	return (
 		<div
-			id={`${props.linkId ? props.linkId.slug.current : null}`}
+			id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`}
 			className='relative mx-4 my-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
 			<h3
 				className='mx-2

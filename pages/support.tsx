@@ -30,7 +30,8 @@ const Support = ({ pageData }: PageData) => {
 
 const query = `{"pageSections": *[_type == "page"  && slug == "support"]
 {...,
-	content[] {..., linkId->{..., linkId}}
+	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
+	 
    },
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`

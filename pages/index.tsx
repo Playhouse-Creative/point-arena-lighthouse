@@ -22,6 +22,7 @@ const Home = ({ pageData }: PageData) => {
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
 				<RenderSections sections={sections} />
+				
 			</main>
 		</PageLayout>
 	)
@@ -30,7 +31,8 @@ const Home = ({ pageData }: PageData) => {
 const query = `{
 	"pageSections": *[_type == "page" && slug == "home"] 
 	{...,
-		content[] {..., linkId->{..., linkId}}
+		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
+		 
 	   },
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {_id,

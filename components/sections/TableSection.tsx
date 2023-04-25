@@ -9,13 +9,17 @@ type Props = {
 	cell: { heading: string; text: any }[]
 	heading: string
 	text: any
-	linkId: { linkId: { current: string } }}
+	linkId: {  slug: { current: string } } 
+}
 
 export default function TableSection(props: Props) {
 	const columnRows = props.columns.columnOne.columnCells
 
 	return (
-		<div id={`${props.linkId ? props.linkId : null}`} className='scroll-mt-96 mx-4 my-12'>
+		<div
+			id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`}
+			className='mx-4 my-12 scroll-mt-96'>
+			
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>
@@ -67,7 +71,6 @@ export default function TableSection(props: Props) {
 													.columnCells[i].text
 											}
 											serializers={serializers()}
-											
 										/>
 									)}
 								</td>

@@ -36,9 +36,10 @@ const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]
 		  lqip
 		}}
 },
-content[] {..., linkId->{..., linkId}}
-
-},
+{...,
+	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}}
+	 
+   },
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 

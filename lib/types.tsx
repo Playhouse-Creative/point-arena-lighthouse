@@ -68,7 +68,14 @@ export type CTA = {
 	_id: string
 	_type: string
 	title: string
-	anchorLink: { linkId: { current: string } }
+	anchorLink: {
+		slug: {
+			current: any
+			linkId: {
+				current: string
+			}
+		} linkId: { current: string } 
+}
 	description: string
 	link: string
 	linkId: { linkId: { current: string }}

@@ -9,7 +9,8 @@ export default function DonationsSection(props: Props) {
 	return (
 		<div
 			className='mx-4 my-12 scroll-mt-96'
-			id={`${props.linkId ? props.linkId.slug.current : null}`}>
+			id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`} 
+			>
 			<h3
 				className='mt-10
         ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>

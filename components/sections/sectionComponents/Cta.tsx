@@ -12,8 +12,8 @@ const Cta = (props: CTA) => {
 				<Link href={route}>
 					<button className={props.buttonActionClass}>{title}</button>
 				</Link>
-			) : anchorLink && anchorLink.linkId ? (
-				<Link href={`/${anchorLink.linkId.current}`}>
+			) : anchorLink && anchorLink.slug ? (
+				<Link href={`/${anchorLink.slug.current}`}>
 					<button className={props.buttonActionClass}>{title}</button>
 				</Link>
 			) : link ? (

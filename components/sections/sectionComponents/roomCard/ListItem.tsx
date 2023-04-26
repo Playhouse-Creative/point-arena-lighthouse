@@ -10,13 +10,13 @@ type Props = {
 
 export default function ListItem(props: Props) {
 	return (
-		<li className='mb-4 flex w-full items-center justify-start'>
+		<li className='mb-4 my-4 md:my-2 flex w-full items-center justify-start'>
 			<img
 				src={urlForImage(props.icon).url()}
 				alt={props.title}
-				className='h-12 w-12'
+				className='md:h-12 md:w-12 h-6 w-6'
 			/>
-			<p className='ml-4 text-left text-lg font-regular text-pa-navy-4'>{props.title}</p>
+			<p className='ml-4 text-left md:text-lg font-regular text-pa-navy-4'>{props.title}</p>
 		</li>
 	)
 }

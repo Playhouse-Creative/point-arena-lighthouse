@@ -28,20 +28,11 @@ const Lodging = ({ pageData }: PageData) => {
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && slug == "lodging"]
-{
-	...,
-	heroImage{ asset->{...,
-		metadata{
-		  lqip
-		}}
-},
+const query = `{"pageSections": *[_type == "page" && slug == "lodging"] 
 {...,
-	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}}
+	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
 	 
-   },
-"postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
-  }`
+   }}`
 
 export async function getStaticProps() {
 	const pageData = await sanityClient.fetch(query)

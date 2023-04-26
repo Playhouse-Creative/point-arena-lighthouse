@@ -41,7 +41,7 @@ const BlogPostPreview = (post: Post) => {
 						{post.publishedAt.replace(/-/g, '/').replace(/T.+/, '')}
 					</div>
 					<div>
-						<p>{post.excerpt}</p>
+						<p className='text-sm md:text-base'>{post.excerpt}</p>
 					</div>
 					<p className='text-pa-blue-4'>Read more...</p>
 				</div>

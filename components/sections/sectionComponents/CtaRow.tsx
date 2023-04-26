@@ -27,7 +27,7 @@ export default function CtaRow(props: Props) {
 				<div className='flex w-full max-w-[1400px] flex-col border-2 border-pa-navy-1 bg-white pb-4 lg:p-10 sm:p-4 md:flex-row '>
 					<div className='relative aspect-square w-full md:w-1/2'>
 						<div
-							className='absolute -bottom-4 right-0 z-20 flex w-[80vw] items-center justify-center py-[5px] md:bottom-4 lg:bottom-20 md:right-0 md:h-14 md:w-11/12 lg:w-3/4'
+							className='absolute -bottom-4 right-0 z-20 flex w-[85vw] items-center justify-center py-[5px] md:bottom-4 lg:bottom-20 md:right-0 md:h-14 md:w-11/12 lg:w-3/4'
 							style={{
 								backgroundColor: props.bannerColor,
 								clipPath:
@@ -47,7 +47,7 @@ export default function CtaRow(props: Props) {
               					50vw'
 						/>}
 					</div>
-					<div className='mx-12 mt-8 md:mt-4 lg:text-lg text-base flex flex-col items-center justify-center md:justify-start lg:my-auto md:w-1/2'>
+					<div className='mx-2 md:mx-12 mt-8 md:mt-4 lg:text-lg text-base flex flex-col items-center justify-center md:justify-start lg:my-auto md:w-1/2'>
 						{props.body && <PortableText content={props.body} serializers={serializers()} />}
 						<Cta
 							{...props.cta}

@@ -33,10 +33,10 @@ export default function DatePickerSection(props: Props) {
 		<>
 			
 				<div
-					className='mx-4 mb-4 scroll-mt-96'
+					className='lg:mx-4 mb-4 scroll-mt-96'
 					key={key}
 					id={`${props.linkId ? props.linkId.slug.current : null}`}>
-					<h2 className='w-full text-center font-serif text-4xl font-semibold '>
+					<h2 className='w-full text-center font-serif text-lg lg:text-4xl font-semibold '>
 						{props.title}
 					</h2>
 					{/* <div className='flex flex-col justify-center md:flex-row md:items-end'>
@@ -65,7 +65,7 @@ export default function DatePickerSection(props: Props) {
 					</div> */}
 				</div>
 				<div className='mx-auto mb-12 flex justify-center'>
-					<div id='innroad-widget'></div>
+					<div id='innroad-widget' className='max-w-[380px] lg:max-w-[1200px]'></div>
 				</div>
 			
 		</>

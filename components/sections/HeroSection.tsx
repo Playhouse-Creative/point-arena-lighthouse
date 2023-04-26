@@ -25,20 +25,20 @@ const HeroSection = (props: any) => {
 						style={{ objectFit: 'cover', transformOrigin: 'top' }}
 					/>}
 					<div className='absolute z-10 flex h-[50vh] w-screen flex-col bg-black/40 md:h-[60vh] lg:h-[70vh] 2xl:h-[75vh]'>
-						<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[5vw] sm:w-1/2 md:pt-[25vh] md:text-right lg:w-1/2 xl:w-5/12 '>
-							<h2 className='mt-4 font-serif text-[2.3rem] font-semibold uppercase leading-tight text-white sm:text-[3rem] lg:text-[3.3rem] 2xl:text-[4rem]'>
+						<div className='z-20 mx-auto flex w-[90vw] flex-col pt-[15vh] sm:ml-[3vw] sm:w-8/12 md:pt-[25vh] md:text-right lg:w-1/2 xl:w-6/12 '>
+							<h2 className='mt-4 font-serif text-[2rem] font-semibold uppercase leading-tight text-white sm:text-[3rem] lg:text-[3rem] 2xl:text-[4rem]'>
 								{props.heading}
 							</h2>
 							<h3 className='text-md text-xl text-white md:text-xl'>
 								{props.subheading}
 							</h3>
-							<div className=' flex flex-row sm:w-full space-x-4 sm:justify-end'>
+							<div className=' flex flex-row sm:w-full text-lg space-x-4 sm:justify-end'>
 								{props.cta &&
 									props.cta.map((cta: any, i: number) => (
 										<Cta
 											key={i}
 											{...cta}
-											buttonActionClass='inline-flex items-center text-center justify-center mt-4  border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 md:px-8 py-2 md:py-4 font-serif font-medium tracking-wider text-lg md:text-2xl text-white shadow-xl'
+											buttonActionClass='inline-flex items-center text-center justify-center mt-4  border border-transparent self-end rounded-lg bg-pa-red-4 hover:bg-pa-red-3 px-4 xl:px-8 py-2 xl:py-4 font-serif font-medium tracking-wider text-lg xl:text-2xl text-white shadow-xl'
 										/>
 									))}
 							</div>

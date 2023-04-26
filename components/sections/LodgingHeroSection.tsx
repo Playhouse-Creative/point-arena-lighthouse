@@ -24,9 +24,9 @@ const GridImage = (props: any) => {
 					priority={true}
 					quality={80}
 					style={{ objectFit: 'cover' }}
-					sizes="(max-width: 768px) 25vw,
+					sizes='(max-width: 768px) 25vw,
               (max-width: 1200px) 50vw,
-              33vw"
+              33vw'
 				/>
 			)}
 		</div>
@@ -41,25 +41,22 @@ export default function LodgingHeroSection(props: Props) {
 
 	return (
 		<div className='mb-4 w-screen px-4 md:mb-24'>
-			<div className='mx-auto grid w-screen max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 lg:w-3/4 '>
+			<div className='mx-auto grid w-[90vw] max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 lg:w-3/4 '>
 				<div className='relative col-span-4 row-span-3 aspect-square md:col-span-2 md:row-span-2'>
 					{props.heroImage && (
 						<>
 							<Img
-							alt={props.heading}
-							src={heroImageProps.src}
-							loader={heroImageProps.loader}
-							fill={true}
-							priority={true}
-							quality={75}
-							style={{ objectFit: 'cover' }}
-							sizes="(max-width: 768px) 100vw,
+								alt={props.heading}
+								src={heroImageProps.src}
+								loader={heroImageProps.loader}
+								fill={true}
+								priority={true}
+								quality={75}
+								style={{ objectFit: 'cover' }}
+								sizes='(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              50vw"
-							
-						/>
-							
-							
+              50vw'
+							/>
 						</>
 					)}
 					<div
@@ -70,7 +67,7 @@ export default function LodgingHeroSection(props: Props) {
 								'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
 						}}>
 						{' '}
-						<h2 className='font-serif text-2xl font-semibold text-white'>
+						<h2 className='font-serif text-lg md:text-2xl font-semibold text-white'>
 							{props.heading}
 						</h2>
 					</div>

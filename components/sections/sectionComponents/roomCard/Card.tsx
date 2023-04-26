@@ -26,7 +26,7 @@ export default function Card(props: Props) {
 							'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
 					}}>
 					{' '}
-					<h2 className='font-serif text-2xl font-semibold text-white'>
+					<h2 className='font-serif text-base md:text-2xl font-semibold text-white'>
 						{props.title}
 					</h2>
 				</div>
@@ -41,11 +41,11 @@ export default function Card(props: Props) {
 					))}
 				</ul>
 				<div>
-					<h3 className='mx-8 mt-6 justify-self-end text-left font-serif text-2xl text-pa-green-4 '>
+					<h3 className='mx-8 mt-6 justify-self-end text-left font-serif text-lg md:text-2xl text-pa-green-4 '>
 						{props.price}
 					</h3>
 
-					<button className='m-8 w-auto rounded-lg bg-pa-blue-4 px-8 py-4 font-serif text-2xl font-medium tracking-wider text-white shadow-xl outline-none ring-offset-2 transition-colors hover:bg-pa-blue-3 focus:ring-2 focus:ring-pa-navy-4 focus:hover:ring-pa-navy-4 active:scale-95'>
+					<button className='m-8 w-auto rounded-lg bg-pa-blue-4 px-8 py-4 font-serif text-base md:text-2xl font-medium tracking-wider text-white shadow-xl outline-none ring-offset-2 transition-colors hover:bg-pa-blue-3 focus:ring-2 focus:ring-pa-navy-4 focus:hover:ring-pa-navy-4 active:scale-95'>
 						Reserve
 					</button>
 				</div>

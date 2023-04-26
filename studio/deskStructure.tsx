@@ -72,7 +72,6 @@ export default (S: any) => S.list().title('Content').items([
         S.documentTypeListItem('category').title('Categories')
       ])
   ),
-  S.documentTypeListItem('linkId').title('Link IDs').icon(PageIcon),
   S.listItem()
 	.title('Page Builder')
 	.icon(PageIcon)

@@ -74,8 +74,9 @@ export type CTA = {
 			linkId: {
 				current: string
 			}
-		} linkId: { current: string } 
-}
+		} 
+	linkId: { current: string } 
+    }
 	description: string
 	link: string
 	linkId: { linkId: { current: string }}

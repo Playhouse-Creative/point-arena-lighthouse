@@ -28,7 +28,7 @@ const Blog = ({ postData }: Props) => {
 						<Link
 							href={`/post/${posts[0].slug.current}`}
 							key={posts[0]._id}>
-							<div className='relative aspect-square w-full'>
+							<div className='relative w-full aspect-square'>
 							{posts[0].mainImage && (<Img
 									src={urlForImage(posts[0].mainImage).url()}
 									alt={posts[0].title}
@@ -54,9 +54,9 @@ const Blog = ({ postData }: Props) => {
 									{c.title}
 								</p>
 							))}
-							<div className='mt-4 flex flex-col items-start'>
-								<div className='relative h-16 w-16 space-x-2 rounded-full'>
-									<Img
+							<div className='flex flex-col items-start mt-4'>
+								<div className='relative w-16 h-16 space-x-2 rounded-full'>
+									{posts[0].author.image && <Img
 										fill={true}
 										style={{ objectFit: 'contain' }}
 										className=''
@@ -69,9 +69,9 @@ const Blog = ({ postData }: Props) => {
 										sizes='(max-width: 768px) 15vw,
               					(max-width: 1200px) 15vw,
               					15vw'
-									/>
+									/>}
 								</div>
-								<p className='mb-2 text-sm font-light'>
+								{posts[0].author.name && <p className='mb-2 text-sm font-light'>
 									Blog post by{' '}
 									<span className='text-pa-green-4'>
 										{posts[0].author.name}
@@ -81,12 +81,12 @@ const Blog = ({ postData }: Props) => {
 									{new Date(
 										posts[0].publishedAt
 									).toLocaleString()}
-								</p>
+								</p>}
 							</div>
 							<div>
 								<p>{posts[0].excerpt}</p>
 							</div>
-							<p className='mt-2 text-pa-blue-4 underline underline-offset-2'>
+							<p className='mt-2 underline text-pa-blue-4 underline-offset-2'>
 								Read full story
 							</p>
 						</Link>
@@ -94,7 +94,7 @@ const Blog = ({ postData }: Props) => {
 					<BlogFeaturedPosts posts={posts} />
 				</div>
 
-				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-2xl text-white sm:text-4xl'>
+				<h2 className='pt-10 text-2xl text-center text-white text-bold bg-pa-blue-4 sm:text-4xl'>
 					You might also like...
 				</h2>
 				<BlogPreviewSection posts={firstThreePosts} title='' />

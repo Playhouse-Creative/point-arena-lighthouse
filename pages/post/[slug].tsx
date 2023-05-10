@@ -52,13 +52,13 @@ const Post = ( { post, previews }: Props) => {
 								style={{ objectFit: 'contain' }}
 								className=''
 								src={urlForImage(post.author.image).url()!}
-								alt={post.author.name}
+								alt={post.title}
 								sizes='(max-width: 768px) 15vw,
               					(max-width: 1200px) 15vw,
               					15vw'
 							/>
 						</div>
-						<p className='text-sm font-light'>
+						{post.author.name &&<p className='text-sm font-light'>
 							Blog post by{' '}
 							<span className='text-pa-green-4'>
 								{post.author.name}
@@ -66,7 +66,7 @@ const Post = ( { post, previews }: Props) => {
 							<br />
 							published at{' '}
 							{new Date(post.publishedAt).toLocaleString()}
-						</p>
+						</p>}
 					</div>
 					<div className='my-10'>
 						<PortableText

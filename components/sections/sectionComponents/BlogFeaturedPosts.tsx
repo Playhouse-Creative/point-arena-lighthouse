@@ -16,10 +16,10 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 	)
 
 	return (
-		<div className=' w-full md:w-6/12 lg:w-4/12 self-center md:self-start mx-4'>
-			<div className=' flex flex-col border-b-2 border-b-pa-navy-3 bg-white p-4 pb-2 '>
+		<div className='self-center w-full mx-4 md:w-6/12 lg:w-4/12 md:self-start'>
+			<div className='flex flex-col p-4 pb-2 bg-white border-b-2 border-b-pa-navy-3'>
 				<h2 className='mb-2 text-2xl'>Featured Posts</h2>
-				<div className='-ml-2 flex w-full justify-start'>
+				<div className='flex justify-start w-full -ml-2'>
 					<button
 						className={`m-1 sm:m-2 px-3 py-1 font-light  ${
 							selectedCategory === 'all'
@@ -31,7 +31,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 					</button>
 					{uniqueCategories.map((category: any, i: number) => (
 						<button
-							className='m-1 sm:m-2 px-3 py-1 font-light '
+							className='px-3 py-1 m-1 font-light sm:m-2 '
 							style={{
 								color:
 									selectedCategory === category.title
@@ -49,15 +49,15 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 					))}
 				</div>
 			</div>
-			<div className='flex w-full flex-col divide-y overflow-hidden bg-white '>
+			<div className='flex flex-col w-full overflow-hidden bg-white divide-y '>
 				{selectedCategory === 'all'
 					? firstEightPosts.slice(1).map((post: any, i: number) => (
 							<Link
 								href={`/post/${post.slug.current}`}
 								key={post._id}
-								className=' group cursor-pointer p-4 pl-2'>
-								<div className=' flex w-full justify-between'>
-									<h3 className='mb-3 w-8/12 text-xl group-hover:underline'>
+								className='p-4 pl-2 cursor-pointer group'>
+								<div className='flex justify-between w-full '>
+									<h3 className='w-8/12 mb-3 text-xl group-hover:underline'>
 										{post.title}
 									</h3><div className='flex flex-col text-right'>
 									{post.category.map((c: any, i: number) => (
@@ -70,10 +70,10 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										</p>
 									))}</div>
 								</div>
-								<div className='flex w-full justify-between'>
-									<p className='text-sm text-gray-700'>
+								<div className='flex justify-between w-full'>
+									{post.author.name && <p className='text-sm text-gray-700'>
 										{post.author.name}
-									</p>
+									</p>}
 									<p className='text-sm text-gray-700'>
 										{post.publishedAt
 											.replace(/-/g, '/')
@@ -93,9 +93,9 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 								<Link
 									href={`/post/${post.slug.current}`}
 									key={post._id}
-									className=' group cursor-pointer p-4 pl-2'>
-									<div className=' flex w-full justify-between'>
-										<h3 className='mb-3 w-full text-xl group-hover:underline'>
+									className='p-4 pl-2 cursor-pointer group'>
+									<div className='flex justify-between w-full '>
+										<h3 className='w-full mb-3 text-xl group-hover:underline'>
 											{post.title}
 										</h3><div className='flex flex-col text-right'>
 										{post.category.map(
@@ -110,10 +110,10 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 											)
 										)}
 									</div></div>
-									<div className='flex w-full justify-between'>
-										<p className='text-sm text-gray-700'>
+									<div className='flex justify-between w-full'>
+										{post.author.name && <p className='text-sm text-gray-700'>
 											{post.author.name}
-										</p>
+										</p>}
 										<p className='text-sm text-gray-700'>
 											{post.publishedAt
 												.replace(/-/g, '/')

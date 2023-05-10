@@ -3,6 +3,7 @@ import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 import { PageData } from '@/lib/types'
+import { PreviewSuspense } from "next-sanity/preview";
 
 const Home = ({ pageData }: PageData) => {
 	const sections = pageData.pageSections //flatten pageData and add posts to the blogPreviewSection object
@@ -22,7 +23,6 @@ const Home = ({ pageData }: PageData) => {
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
 				<RenderSections sections={sections} />
-				
 			</main>
 		</PageLayout>
 	)
@@ -32,21 +32,21 @@ const query = `{
 	"pageSections": *[_type == "page" && slug == "home"] 
 	{...,
 		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
-		 
-	   },
+	},
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {_id,
-	_createdAt,
-	title,
-	slug,
-	author->{name, image},
-  publishedAt,
-  excerpt,
-  'category': categories[]-> { title, color },
-  mainImage,
-  description,
-  body, }
-  }`
+_createdAt,
+title,
+slug,
+author->{name, image},
+publishedAt,
+excerpt,
+'category': categories[]-> { title, color },
+mainImage,
+description,
+body, 
+	}
+}`
 
 export async function getStaticProps() {
 	const pageData = await sanityClient.fetch(query)

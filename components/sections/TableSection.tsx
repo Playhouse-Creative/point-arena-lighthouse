@@ -1,6 +1,7 @@
 import React from 'react'
 import PortableText from 'react-portable-text'
 import serializers from '../../lib/portableText-serializers'
+import Link from 'next/link'
 
 type Props = {
 	columns: any
@@ -21,17 +22,16 @@ export default function TableSection(props: Props) {
 			className='mx-4 my-12 scroll-mt-96'>
 			
 			<h3
-				className='mt-10
-        ml-6 mb-8 text-center font-serif text-4xl font-semibold text-pa-navy-4'>
+				className='mt-10 mb-8 ml-6 font-serif text-4xl font-semibold text-center text-pa-navy-4'>
 				{props.title}
 			</h3>
 			<table className='relative mx-auto mb-12 w-full max-w-[1400px] border border-pa-navy-4 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 				<thead>
-					<tr className='flex justify-start bg-pa-navy-4 py-1 font-serif text-lg uppercase text-white'>
-						<th className='ml-8 w-1/2 text-left'>
+					<tr className='flex justify-start py-1 font-serif text-lg text-white uppercase bg-pa-navy-4'>
+						<th className='w-1/2 ml-8 text-left'>
 							{props.columns.columnOne.columnHeader}
 						</th>
-						<th className='ml-8 w-1/2 text-left'>
+						<th className='w-1/2 ml-8 text-left'>
 							{props.columns.columnTwo.columnHeader}
 						</th>
 					</tr>
@@ -40,10 +40,13 @@ export default function TableSection(props: Props) {
 					(cell: Props, i: number) => (
 						<tbody key={i}>
 							<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-								<td className='mx-2 flex w-1/2 flex-col flex-wrap text-left sm:mx-10'>
+								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
+									{cell.link ? <Link href={cell.link.href}>
 									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 										{cell.heading}
-									</h3>
+									</h3></Link>: <h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+										{cell.heading}
+									</h3>}
 									{props.columns.columnOne.columnCells[i]
 										.text && (
 										<PortableText
@@ -55,7 +58,7 @@ export default function TableSection(props: Props) {
 										/>
 									)}
 								</td>
-								<td className='mx-2 flex w-1/2 flex-col flex-wrap text-left sm:mx-10'>
+								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
 									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 										{
 											props.columns.columnTwo.columnCells[

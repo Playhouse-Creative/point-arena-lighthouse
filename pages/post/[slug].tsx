@@ -33,13 +33,11 @@ const Post = ( { post, previews }: Props) => {
 							priority={true}
 							quality={80}
 							style={{ objectFit: 'cover' }}
-							sizes='(max-width: 768px) 100vw,
-              					(max-width: 1200px) 50vw,
-              					33vw'
+							sizes='(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw'
 						/>
 					)}
 				</div>
-				<article className='mx-auto max-w-4xl p-5'>
+				<article className='max-w-4xl p-5 mx-auto'>
 					<h1 className='mt-10 mb-1 text-3xl'>{post.title}</h1>
 					{post.categories &&
 						post.categories.map((category, i: number) => (
@@ -47,8 +45,8 @@ const Post = ( { post, previews }: Props) => {
 								{category.title}
 							</p>
 						))}
-					<div className='mt-4 flex flex-col items-start space-x-2 '>
-						<div className='relative h-16 w-16 space-x-2 rounded-full'>
+					<div className='flex flex-col items-start mt-4 space-x-2 '>
+						<div className='relative w-16 h-16 space-x-2 rounded-full'>
 							<Img
 								fill={true}
 								style={{ objectFit: 'contain' }}
@@ -81,7 +79,7 @@ const Post = ( { post, previews }: Props) => {
 						/>
 					</div>
 				</article>
-				<h2 className='text-bold bg-pa-blue-4 pt-10 text-center text-4xl text-white'>
+				<h2 className='pt-10 text-4xl text-center text-white text-bold bg-pa-blue-4'>
 					You might also like...
 				</h2>
 				<BlogPreviewSection posts={posts} title=''/>
@@ -94,8 +92,8 @@ export async function getStaticPaths() {
         _id,
         slug  {
         current
-      }
-      }`
+		}
+    }`
 	const posts = await sanityClient.fetch(query)
 
 	const paths = posts.map((post: Post) => ({
@@ -105,40 +103,39 @@ export async function getStaticPaths() {
 	}))
 	return {
 		paths,
-		fallback: 'blocking', // false or 'blocking'
+		fallback: true
 	}
 }
 
 const postQuery = `
     *[_type == 'post' && slug.current == $slug][0]{
-        _id,
-        _createdAt,
-        title,
-        slug,
-        author->{name, image},
-      publishedAt,
-      excerpt,
-      categories[]-> { title, color },
-      mainImage,
-      description,
-      body, 
-      
-      }
-    `
+_id,
+_createdAt,
+title,
+slug,
+author->{name, image},
+publishedAt,
+excerpt,
+categories[]-> { title, color },
+mainImage,
+description,
+body, 
+}
+`
 
 	const previewQuery = `{"previews" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {	_id,
-	_createdAt,
-	title,
-	slug,
-	author->{name, image},
-  publishedAt,
-  excerpt,
-  'category': categories[]-> { title, color },
-  mainImage,
-  description,
-  body, }
-  }`
+_createdAt,
+title,
+slug,
+author->{name, image},
+publishedAt,
+excerpt,
+'category': categories[]-> { title, color },
+mainImage,
+description,
+body, }
+}`
 
 export async function getStaticProps({params}: any) {
 	

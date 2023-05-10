@@ -47,7 +47,7 @@ const Post = ( { post, previews }: Props) => {
 						))}
 					<div className='flex flex-col items-start mt-4 space-x-2 '>
 						<div className='relative w-16 h-16 space-x-2 rounded-full'>
-							{post.author.image &&<Img
+							{post.author &&<Img
 								fill={true}
 								style={{ objectFit: 'contain' }}
 								className=''
@@ -58,7 +58,7 @@ const Post = ( { post, previews }: Props) => {
               					15vw'
 							/>}
 						</div>
-						{post.author.name &&<p className='text-sm font-light'>
+						{post.author &&<p className='text-sm font-light'>
 							Blog post by{' '}
 							<span className='text-pa-green-4'>
 								{post.author.name}

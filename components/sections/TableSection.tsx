@@ -9,6 +9,7 @@ type Props = {
 	title: string
 	cell: { heading: string; text: any }[]
 	heading: string
+	link: { href: string; text: string }
 	text: any
 	linkId: {  slug: { current: string } } 
 }

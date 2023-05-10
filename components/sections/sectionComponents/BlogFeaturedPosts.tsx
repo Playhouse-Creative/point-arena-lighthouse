@@ -71,7 +71,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 									))}</div>
 								</div>
 								<div className='flex justify-between w-full'>
-									{post.author.name && <p className='text-sm text-gray-700'>
+									{post.author && <p className='text-sm text-gray-700'>
 										{post.author.name}
 									</p>}
 									<p className='text-sm text-gray-700'>
@@ -111,14 +111,14 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										)}
 									</div></div>
 									<div className='flex justify-between w-full'>
-										{post.author.name && <p className='text-sm text-gray-700'>
+										{post.author && <p className='text-sm text-gray-700'>
 											{post.author.name}
 										</p>}
-										<p className='text-sm text-gray-700'>
+										{post.poublishedAt &&<p className='text-sm text-gray-700'>
 											{post.publishedAt
 												.replace(/-/g, '/')
 												.replace(/T.+/, '')}
-										</p>
+										</p>}
 									</div>
 								</Link>
 							))}

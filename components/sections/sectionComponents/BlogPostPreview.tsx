@@ -8,9 +8,9 @@ import { Post } from '@/lib/types'
 const BlogPostPreview = (post: Post) => {
 	return (
 		<div className='group'><Link href={`/post/${post.slug.current}`} key={post._id}>
-			<div className='group overflow-hidden bg-white'>
+			<div className='overflow-hidden bg-white group'>
 				
-				<div className='relative aspect-square w-full mb-12 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
+				<div className='relative w-full mb-12 text-center transition-colors bg-white shadow-lg aspect-square group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 					<Img
 						src={urlForImage(post.mainImage).url()}
 						alt='placeholder'
@@ -36,9 +36,9 @@ const BlogPostPreview = (post: Post) => {
 				</div>
 				<div className='mx-6 mb-12 h-60'>
 					
-					<h2 className='text-lg font-semibold group-hover:underline underline-offset-4 mb-1'>{post.title}</h2>
+					<h2 className='mb-1 text-lg font-semibold group-hover:underline underline-offset-4'>{post.title}</h2>
 					<div className='mb-1 text-sm text-gray-700 '>
-						{post.publishedAt.replace(/-/g, '/').replace(/T.+/, '')}
+						{post.publishedAt && post.publishedAt.replace(/-/g, '/').replace(/T.+/, '')}
 					</div>
 					<div>
 						<p className='text-sm md:text-base'>{post.excerpt}</p>

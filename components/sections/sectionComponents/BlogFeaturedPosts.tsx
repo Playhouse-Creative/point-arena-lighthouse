@@ -75,7 +75,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										{post.author.name}
 									</p>}
 									<p className='text-sm text-gray-700'>
-										{post.publishedAt
+										{post.publishedAt && post.publishedAt
 											.replace(/-/g, '/')
 											.replace(/T.+/, '')}
 									</p>

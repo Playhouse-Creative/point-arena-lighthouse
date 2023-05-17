@@ -64,10 +64,12 @@ export default function TableSection(props: Props) {
 										{
 											props.columns.columnTwo.columnCells[
 												i
+											] && props.columns.columnTwo.columnCells[
+												i
 											].heading
 										}
 									</h3>
-									{props.columns.columnTwo.columnCells[i]
+									{props.columns.columnTwo.columnCells[i] && props.columns.columnTwo.columnCells[i]
 										.text && (
 										<PortableText
 											content={

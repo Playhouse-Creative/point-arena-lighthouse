@@ -22,7 +22,7 @@
     "react-hook-form": "^6.15.8",
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
-    "sanity": "^3.9.0",
+    "sanity": "^3.11.1",
     "sanity-plugin-iframe-pane": "^2.3.0",
     "sanity-plugin-media": "^2.0.5",
     "sanity-plugin-prefixed-slug": "^2.0.0",

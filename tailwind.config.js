@@ -8,8 +8,8 @@ module.exports = {
 	],
 	theme: {
 		fontFamily: {
-			serif: ['ui-serif', 'Kopius'],
-			sans: ['ui-sans-serif', 'Filson Soft'],
+			serif: ['Spectral', 'ui-serif'],
+			sans: ['Livvic', 'ui-sans-serif'],
 		},
 		extend: {
 			colors: {

@@ -4,7 +4,7 @@ const serializers = () => {
 			<h1 className='text-4xl font-bold'>{children}</h1>
 		),
         h2: ({ children }: any) => (
-			<h2 className='text-3xl font-semibold'>{children}</h2>
+			<h2 className='font-sans text-3xl font-semibold'>{children}</h2>
 		),
         h3: ({ children }: any) => (
 			<h3 className='text-2xl font-medium'>{children}</h3>
@@ -20,13 +20,13 @@ const serializers = () => {
 			<ol style={{listStyleType: 'decimal', listStylePosition:'inside', lineHeight:'1.75rem'}}>{children}</ol>
 		),
 		li: ({ children }: any) => (
-			<li style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem' }}>{children}</li>
+			<li style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem', marginLeft: '12px' }}>{children}</li>
 		),
 		blockquote: ({ children }: any) => (
 			<blockquote style={{borderLeftStyle: 'solid', borderLeftWidth: '4px', borderColor: '#0088A7', paddingLeft: '4px'}} className='italic'>&quot;{children}&quot;</blockquote>
 		),
 		link: ({ href, children }: any) => (
-			<a className='text-pa-teal-4 underline' href={href}>
+			<a className='underline text-pa-teal-4' href={href}>
 				{children}
 			</a>
 		),

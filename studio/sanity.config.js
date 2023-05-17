@@ -3,7 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import schemaTypes from './schemas/schema'
 import deskStructure from './deskStructure'
-import { defaultDocumentNode } from './src/defaultDocumentNode'
+// import { defaultDocumentNode } from './src/defaultDocumentNode'
 import {media} from 'sanity-plugin-media'
 
 
@@ -18,7 +18,7 @@ export default defineConfig({
 
   plugins: [deskTool({
     structure: deskStructure,
-    defaultDocumentNode,
+    // defaultDocumentNode,
   }), media()],
 
   schema: {

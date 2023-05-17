@@ -18,15 +18,14 @@ export default function ColumnArticle(props: Props) {
 			id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`}
 			className='relative mx-4 my-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
 			<h3
-				className='mx-2
-        mt-8 text-center font-serif text-4xl font-semibold text-pa-navy-4 sm:ml-6'>
+				className='mx-2 mt-8 font-serif text-4xl font-semibold text-center text-pa-navy-4 sm:ml-6'>
 				{props.title}
 			</h3>
 			<div
 				className={`my-12 flex w-full flex-col justify-center ${
 					props.images[0] && 'items-start sm:flex-row'
 				} `}>
-				<div className='mx-auto grid gap-4 sm:grid-cols-1 lg:gap-2'>
+				<div className='grid gap-4 mx-auto sm:grid-cols-1 lg:gap-2'>
 					{props.images &&
 						props.images.map((image: any, i: number) => (
 							<div
@@ -48,8 +47,8 @@ export default function ColumnArticle(props: Props) {
 					className={`${
 						props.images[0] ? 'text-left sm:w-1/2' : 'text-center'
 					} mx-auto px-4 text-pa-navy-4 sm:pl-8 `}>
-					<h3 className='my-4 font-serif text-3xl font-semibold text-pa-red-4'>
-						{props.heading}
+					<h3 className='mt-4 mb-8 font-serif text-3xl font-semibold text-pa-red-4'>
+						{props.heading && props.heading}
 					</h3>
 					<PortableText
 						content={props.body}

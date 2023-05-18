@@ -10,12 +10,12 @@ export default {
 			type: 'string',
 			name: 'title',
 			title: 'Section Title',
-			validation: (Rule) => Rule.required().max(75).warning('Shorter titles are usually better'),
+			validation: (Rule) => Rule.required().max(75).error('Shorter titles are usually better'),
 		},
 		{
 			name: 'linkId',
 			type: 'reference',
-      to: [{type: 'linkId'}],
+            to: [{type: 'linkId'}],
 			title: 'Link ID',
 			description: 'This is the ID that will be used in the URL to link to this section. It must be unique.'
 		},

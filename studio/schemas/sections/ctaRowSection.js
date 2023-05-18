@@ -10,7 +10,7 @@ export default {
       type: 'string',
       name: 'title', 
       title: 'Section Title',
-      validation: Rule => Rule.required().max(100).warning('Shorter titles are usually better')
+      validation: Rule => Rule.required().max(100).error('The title must be short enough to fit in the ribbon.')
     },
     {
       type: 'array',

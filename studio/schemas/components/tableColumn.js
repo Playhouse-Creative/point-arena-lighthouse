@@ -19,6 +19,7 @@ export default {
 							{
 								name: 'text',
 								type: 'simpleBlockContent',
+								validation: Rule => Rule.required().max(150)
 							},
 							{name: 'link', type: 'link'}
 						],

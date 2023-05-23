@@ -61,28 +61,28 @@ export default function Navbar() {
 								/>
 							</Link>
 						</div>
-						<div className='mr-4 mb-4 flex justify-end '>
-							<div className='mt-8 flex items-center justify-end sm:hidden'>
+						<div className='flex justify-end mb-4 mr-4 '>
+							<div className='flex items-center justify-end mt-8 sm:hidden'>
 								{/* Mobile menu button */}
-								<Disclosure.Button className='inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+								<Disclosure.Button className='inline-flex items-center justify-center p-2 text-white rounded-md hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
 									<span className='sr-only'>
 										Open main menu
 									</span>
 									{open ? (
 										<XMarkIcon
-											className='block h-8 w-8'
+											className='block w-8 h-8'
 											aria-hidden='true'
 										/>
 									) : (
 										<Bars3Icon
-											className='block h-8 w-8'
+											className='block w-8 h-8'
 											aria-hidden='true'
 										/>
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className='lg:-24 hidden flex-col sm:flex sm:w-8/12 md:mr-12 lg:w-7/12 xl:mr-36 xl:w-1/3'>
-								<div className='mt-4 flex items-center space-x-6 self-end'>
+							<div className='flex-col hidden lg:-24 sm:flex sm:w-8/12 md:mr-12 lg:w-7/12 xl:mr-36 xl:w-1/3'>
+								<div className='flex items-center self-end mt-4 space-x-6'>
 									{navigation.social.map((item) => (
 										<a
 											key={item.name}
@@ -92,7 +92,7 @@ export default function Navbar() {
 												{item.name}
 											</span>
 											<item.icon
-												className='h-6 w-6'
+												className='w-6 h-6'
 												aria-hidden='true'
 											/>
 										</a>
@@ -103,7 +103,7 @@ export default function Navbar() {
 										target='_top'>
 										<button
 											name='submit'
-											className=' self-end rounded-lg border border-transparent bg-pa-red-4 px-6 py-2 font-serif text-xl font-medium tracking-wider text-white shadow-xl hover:bg-pa-red-3'>
+											className='self-end px-6 py-2 font-serif text-xl font-medium tracking-wider text-white border border-transparent rounded-lg shadow-xl  bg-pa-red-4 hover:bg-pa-red-3'>
 											Donate
 											<input
 												type='hidden'
@@ -119,7 +119,7 @@ export default function Navbar() {
 									</form>
 								</div>
 
-								<ul className='z-40 mt-6 flex h-1/3 justify-between'>
+								<ul className='z-40 flex justify-between mt-6 h-1/3'>
 									{navigation.routes.map((link, i) => (
 										<li key={i}>
 											<Link href={link.href}>
@@ -141,12 +141,12 @@ export default function Navbar() {
 							leave='transition duration-150 transform'
 							leaveFrom='opacity-100 scale-x-100'
 							leaveTo='opacity-0 -scale-x-0'
-							className='z-40 mt-8 flex origin-right flex-col items-center bg-white md:hidden'>
+							className='z-40 flex flex-col items-center mt-8 origin-right bg-white md:hidden'>
 							<Disclosure.Panel>
 								<div className='space-y-4'>
 									{navigation.routes.map((link, i) => (
 										<Link key={i} href={link.href}>
-											<Disclosure.Button className='mx-auto block w-screen border-2 border-l-4 border-transparent border-b-gray-200 py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6'>
+											<Disclosure.Button className='block w-screen py-2 pl-3 pr-4 mx-auto text-base font-medium text-gray-500 border-2 border-l-4 border-transparent border-b-gray-200 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6'>
 												<p className='font-serif text-lg font-semibold md:text-xl '>
 													{link.name}
 												</p>

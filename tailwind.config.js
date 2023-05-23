@@ -4,12 +4,12 @@ module.exports = {
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
 		'./app/**/*.{js,ts,jsx,tsx}',
-		"./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
+		'./node_modules/react-tailwindcss-datepicker/dist/index.esm.js',
 	],
 	theme: {
 		fontFamily: {
-			serif: ['Spectral', 'ui-serif'],
-			sans: ['Livvic', 'ui-sans-serif'],
+			sans: ['var(--font-livvic)'],
+			serif: ['var(--font-spectral)'],
 		},
 		extend: {
 			colors: {
@@ -38,9 +38,7 @@ module.exports = {
 				'pa-gold-3': '#B6986C',
 				'pa-gold-4': '#A98551',
 			},
-		}
+		},
 	},
-	plugins: [
-		require('@tailwindcss/forms'),
-	],
+	plugins: [require('@tailwindcss/forms')],
 }

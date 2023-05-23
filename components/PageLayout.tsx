@@ -43,14 +43,14 @@ const PageLayout = (props: Props) => {
 				}}
 			/>
 			
-			<main className='h-full overflow-x-hidden'>
+			<div className='h-full overflow-x-hidden'>
 				<Navbar />
 				<div className="mt-[160px] -z-20  bg-[url('/topography-background.svg')]">
 					{props.children}
 					<ContactForm/>
 				</div>
 				<Footer />
-			</main>
+			</div>
 			
 		</>
 	)

@@ -10,7 +10,7 @@ export default {
       type: 'string',
       name: 'title',
       title: 'Section Title',
-      validation: (Rule) => Rule.required().max(75).warning('Shorter titles are usually better'),
+      validation: (Rule) => Rule.required().max(75).error('Shorter titles are usually better'),
     },
     {
       name: 'linkId',

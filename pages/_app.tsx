@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Hydrated>
-        <main className={`${livvic.variable} font-sans ${spectral.variable} font-serif`}>
+        <main className={` ${spectral.variable} ${livvic.variable}`}>
 				<Component {...pageProps} /></main>
 			</Hydrated>
 		</>

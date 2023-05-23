@@ -7,11 +7,12 @@ module.exports = {
 		'./node_modules/react-tailwindcss-datepicker/dist/index.esm.js',
 	],
 	theme: {
-		fontFamily: {
-			sans: ['var(--font-livvic)'],
-			serif: ['var(--font-spectral)'],
-		},
 		extend: {
+			fontFamily: {
+				sans: 'var(--font-livvic)',
+				serif: 'var(--font-spectral)',
+			},
+
 			colors: {
 				'pa-red-1': '#F7EDE8',
 				'pa-red-2': '#D6A287',

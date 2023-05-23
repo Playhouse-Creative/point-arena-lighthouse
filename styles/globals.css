@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :global.body {
-    font-family: ui-sans-serif, Livvic;
+    font-family: var(--font-livvic);
     font-size: null;
     font-weight: null;
 }
@@ -15,22 +15,28 @@ h2 {
     margin-bottom: 0 !important;
 }
 h3 {
+    font-family: var(--font-livvic);
     margin-bottom: 0;
 }
 h4 {
+    font-family: var(--font-livvic);
     margin-bottom: 0 !important;
 }
 h5 {
+    font-family: var(--font-livvic);
     margin-bottom: 0 !important;
 }
 h6 {
+    font-family: var(--font-livvic);
     margin-bottom: 0 !important;
 }
 p {
+    font-family: var(--font-livvic);
     margin-bottom: 0 !important;
     font-size: 20px
 }
 li {
+    font-family: var(--font-livvic);
     margin-bottom: 0 !important;
     font-size: 20px
 }

@@ -17,7 +17,7 @@ const Cta = (props: CTA) => {
 					<button className={props.buttonActionClass}>{title}</button>
 				</Link>
 			) : link ? (
-				<a href={link} className='cta'>
+				<a href={link} className='cta' target="_blank" rel="noopener noreferrer" >
 					<button className={props.buttonActionClass}>{title}</button>
 				</a>
 			) : (

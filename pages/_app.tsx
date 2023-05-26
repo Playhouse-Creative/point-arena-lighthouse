@@ -6,22 +6,23 @@ import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 
 const livvic = Livvic({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-livvic',
-});
+	weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
+	subsets: ['latin'],
+	variable: '--font-livvic',
+})
 const spectral = Spectral({
-  weight: [ '200', '300', '400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-spectral',
-});
+	weight: ['200', '300', '400', '500', '600', '700', '800'],
+	subsets: ['latin'],
+	variable: '--font-spectral',
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Hydrated>
-        <main className={` ${spectral.variable} ${livvic.variable}`}>
-				<Component {...pageProps} /></main>
+				<main className={` ${spectral.variable} ${livvic.variable}`}>
+					<Component {...pageProps} />
+				</main>
 			</Hydrated>
 		</>
 	)

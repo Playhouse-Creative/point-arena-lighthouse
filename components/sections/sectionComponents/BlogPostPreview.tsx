@@ -10,13 +10,13 @@ const BlogPostPreview = (post: Post) => {
 				<div className='overflow-hidden bg-white group'>
 					<div className='relative w-full mb-12 text-center transition-colors bg-white shadow-lg aspect-square group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 						<Img
-							src={urlForImage(post.mainImage).url()}
-							alt='placeholder'
-							fill={true}
-							style={{ objectFit: 'cover' }}
-							sizes='(max-width: 768px) 100vw,
-              					(max-width: 1200px) 50vw,
-              					33vw'
+							src={urlForImage(post.mainImage).width(500).height(500).fit('crop').url()}
+							width={500}
+							height={500}
+							alt={`${post.title} cover image`}
+							// fill={true}
+							// style={{ objectFit: 'cover'}}
+							sizes='(max-width: 768px) 100vw,(max-width: 1200px) 50vw, 33vw'
 						/>
 						<div
 							className='absolute left-0 -bottom-5 w-11/12 py-[5px] '

@@ -33,7 +33,7 @@ const Blog = ({ postData }: Props) => {
 									src={urlForImage(posts[0].mainImage).url()}
 									alt={posts[0].title}
 									fill={true}
-									style={{ objectFit: 'cover' }}
+									style={{ objectFit: 'contain' }}
 									sizes='(max-width: 768px) 100vw,
               					(max-width: 1200px) 50vw,
               					40vw'

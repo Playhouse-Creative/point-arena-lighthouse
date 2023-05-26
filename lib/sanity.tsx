@@ -11,4 +11,4 @@ type image = {
 export const imageBuilder = createImageUrlBuilder(sanityConfig)
 
 export const urlForImage = (source: image) =>
-  imageBuilder.image(source).fit('max')
+  imageBuilder.image(source)

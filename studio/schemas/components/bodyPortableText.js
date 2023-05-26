@@ -33,13 +33,7 @@ export default {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          {
-            title: 'Highlight',
-            value: 'highlight',
-            icon: HighlightIcon,
-            component: HighlightRender
-            
-          }
+          
 
           /*
           {
@@ -62,7 +56,10 @@ export default {
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url'
+                type: 'url',
+                validation: Rule => Rule.uri({
+                  scheme: ['http', 'https', 'mailto', 'tel']
+                })
               }
             ]
           }

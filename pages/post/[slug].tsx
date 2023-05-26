@@ -23,7 +23,7 @@ const Post = ( { post, previews }: Props) => {
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
-				<div className='top-4 relative z-0 mx-auto h-[50vh] max-w-[1600px] w-full md:h-[60vh]'>
+				<div className='top-4 relative z-0 mx-auto h-[50vh] aspect-[6/5] w-full max-w-4xl md:h-[60vh]'>
 					{post.mainImage && (
 						<Img
 							alt={post.title}
@@ -32,7 +32,7 @@ const Post = ( { post, previews }: Props) => {
 							fill={true}
 							priority={true}
 							quality={80}
-							style={{ objectFit: 'cover' }}
+							style={{ objectFit: 'contain' }}
 							sizes='(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw'
 						/>
 					)}

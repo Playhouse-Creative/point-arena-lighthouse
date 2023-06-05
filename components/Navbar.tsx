@@ -81,8 +81,8 @@ export default function Navbar() {
 									)}
 								</Disclosure.Button>
 							</div>
-							<div className='flex-col hidden lg:-24 sm:flex sm:w-8/12 md:mr-12 lg:w-7/12 xl:mr-36 xl:w-1/3'>
-								<div className='flex items-center self-end mt-4 space-x-6'>
+							<div className='flex-col hidden mr-2 sm:flex sm:w-8/12 md:w-7/12 md:mr-12 lg:w-7/12 xl:mr-36 xl:w-5/12'>
+								<div className='flex items-center self-end mt-4 space-x-4'>
 									{navigation.social.map((item) => (
 										<a
 											key={item.name}
@@ -103,7 +103,7 @@ export default function Navbar() {
 										target='_top'>
 										<button
 											name='submit'
-											className='self-end px-6 py-2 font-serif text-xl font-medium tracking-wider text-white border border-transparent rounded-lg shadow-xl  bg-pa-red-4 hover:bg-pa-red-3'>
+											className='self-end px-6 py-2 font-serif text-xl font-medium tracking-wider text-white border border-transparent rounded-lg shadow-xl bg-pa-red-4 hover:bg-pa-red-3'>
 											Donate
 											<input
 												type='hidden'
@@ -123,7 +123,7 @@ export default function Navbar() {
 									{navigation.routes.map((link, i) => (
 										<li key={i}>
 											<Link href={link.href}>
-												<p className='font-serif text-sm font-semibold text-white md:text-xl'>
+												<p className='font-serif text-sm font-semibold text-white lg:text-xl'>
 													{link.name}
 												</p>
 											</Link>

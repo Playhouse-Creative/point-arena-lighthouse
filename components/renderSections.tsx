@@ -25,7 +25,7 @@ function RenderSections(props: any) {
 
 	return (
 		<>
-			{sections && sections.map((section: any, i: number) => {
+			{sections?.map((section: any, i: number) => {
 				const SectionComponent = resolveSections(section)
 				
 				return (

@@ -3,11 +3,14 @@ import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 import { PageData } from '@/lib/types'
+import { PreviewSuspense } from "next-sanity/preview";
+import {lazy} from "react";
+
+const PreviewSections = lazy(() => import("../components/PreviewSections"));
 
 
-const Support = ({ pageData }: PageData) => {
-	const sections = pageData.pageSections //flatten pageData and add posts to the blogPreviewSection object
-		.map((data: any) => data.content)
+const Support = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
+	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
 		.flat(1)
 		.map((newSection: any) => {
 			const posts = { posts: pageData.postData }
@@ -22,7 +25,14 @@ const Support = ({ pageData }: PageData) => {
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
+				{ preview ? ( 
+				<PreviewSuspense fallback="Loading...">
+					<PreviewSections query={query} />
+				</PreviewSuspense>
+				):(
 				<RenderSections sections={sections} />
+				)
+			}
 			</main>
 		</PageLayout>
 	)
@@ -36,12 +46,15 @@ const query = `{"pageSections": *[_type == "page"  && slug == "support"]
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
   }`
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview = false }) {
+	
+if (preview) {
+	return { props: { preview} };
+	}
 	const pageData = await sanityClient.fetch(query)
-
 	return {
 		props: {
-			pageData,
+			pageData
 		},
 	}
 }

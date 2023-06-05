@@ -3,10 +3,13 @@ import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 import { PageData } from '@/lib/types'
+import { PreviewSuspense } from "next-sanity/preview";
+import {lazy} from "react";
 
-const Policies = ({ pageData }: PageData) => {
-	const sections = pageData.pageSections //flatten pageData and add posts to the blogPreviewSection object
-		.map((data: any) => data.content)
+const PreviewSections = lazy(() => import("../components/PreviewSections"));
+
+const Policies = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
+	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
 		.flat(1)
 		.map((newSection: any) => {
 			const posts = { posts: pageData.postData }
@@ -46,12 +49,15 @@ const query = `{"pageSections": *[_type == "page"  && slug == "policies"]
   body, }
   }`
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview = false }) {
+	
+if (preview) {
+	return { props: { preview} };
+	}
 	const pageData = await sanityClient.fetch(query)
-
 	return {
 		props: {
-			pageData,
+			pageData
 		},
 	}
 }

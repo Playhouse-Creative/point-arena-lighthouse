@@ -2,7 +2,7 @@ import Link from "next/link";
 import { usePreview } from "../lib/sanity.preview";
 import RenderSections from "./renderSections";
 
-export default function PreviewSections( {query} : {query: srting}) {
+export default function PreviewSections( {query} : {query: string}) {
     const previewSections = usePreview(null, query);
     const sections = previewSections.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
 		.flat(1)

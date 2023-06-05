@@ -71,15 +71,4 @@ const Home = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => 
 	)
 }
 
-
-// export const getStaticProps = async ({ preview = false }) => {
-	
-// 	if (preview) {
-// 	return { props: { preview } };
-// 	}
-
-// 	const pageData = await sanityClient.fetch(query)
-
-// 	return { props: { pageData } };
-// };
 export default Home

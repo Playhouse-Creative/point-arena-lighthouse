@@ -9,6 +9,8 @@ import PageLayout from '@/components/PageLayout'
 import BlogPreviewSection from '../../components/sections/BlogPreviewSection'
 import { urlForImage } from '../../lib/sanity'
 import _ from 'lodash'
+import { PreviewSuspense } from "next-sanity/preview";
+import { lazy } from "react";
 
 interface Props {
 	post: PostData

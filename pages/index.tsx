@@ -9,7 +9,7 @@ import {lazy} from "react";
 
 const PreviewSections = lazy(() => import("../components/PreviewSections"));
 const query = `{
-	"pageSections": *[_type == "page" && slug == "home"] 
+	"pageSections": *[_type == "page" && id == "home"] 
 	{...,
 		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
 	},
@@ -41,16 +41,7 @@ if (preview) {
 	}
 }
 
-const Home = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
-	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
-		.flat(1)
-		.map((newSection: any) => {
-			const posts = { posts: pageData.postData }
-			const addPostData = _.merge(newSection, posts)
-			return newSection._type === 'blogPreviewSection'
-				? addPostData
-				: newSection
-		}) 
+const Home = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => { 
 
 	return (
 		<PageLayout
@@ -62,7 +53,7 @@ const Home = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => 
 					<PreviewSections query={query} />
 				</PreviewSuspense>
 				):(
-				<RenderSections sections={sections} />
+				<RenderSections pageData={pageData} />
 				)
 			}
 				

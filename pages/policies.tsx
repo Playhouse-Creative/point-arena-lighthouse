@@ -9,28 +9,26 @@ import {lazy} from "react";
 const PreviewSections = lazy(() => import("../components/PreviewSections"));
 
 const Policies = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
-	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
-		.flat(1)
-		.map((newSection: any) => {
-			const posts = { posts: pageData.postData }
-			const addPostData = _.merge(newSection, posts)
-			return newSection._type === 'blogPreviewSection'
-				? addPostData
-				: newSection
-		})
-
+	
 	return (
 		<PageLayout
 			title='Point Arena Lighthouse'
 			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
-				<RenderSections sections={sections} />
+				{ preview ? ( 
+				<PreviewSuspense fallback="Loading...">
+					<PreviewSections query={query} />
+				</PreviewSuspense>
+				):(
+				<RenderSections pageData={pageData} />
+				)
+			}
 			</main>
 		</PageLayout>
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && slug == "policies"] 
+const query = `{"pageSections": *[_type == "page"  && id == "policies"] 
 {...,
 	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
 	 

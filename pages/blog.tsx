@@ -9,12 +9,8 @@ import BlogFeaturedPosts from '@/components/sections/sectionComponents/BlogFeatu
 import { Post } from '@/lib/types'
 import { PostData } from '../lib/types';
 
-type Props = {
-	
-	 postData: PostData[]
-}
 
-const Blog = ({ postData }: Props) => {
+const Blog = ({ postData }: PostData) => {
 	const  posts  = _.flatMap(postData)
 	const firstThreePosts = posts.slice(0, 3)
 
@@ -109,14 +105,14 @@ const query = `{"postData" :*[_type == "post"] | order(publishedAt desc)
 	title,
 	slug,
 	author->{name, image},
-  publishedAt,
-  excerpt,
-  'category': categories[]-> { title, color },
-  mainImage,
-  description,
-  body, }
-  }
-  `
+    publishedAt,
+	excerpt,
+	'category': categories[]-> { title, color },
+	mainImage,
+	description,
+	body, }
+}
+`
 
 export async function getStaticProps() {
 	const postData = await sanityClient.fetch(query)

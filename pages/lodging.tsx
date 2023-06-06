@@ -10,27 +10,18 @@ const PreviewSections = lazy(() => import("../components/PreviewSections"));
 
 
 const Lodging = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
-	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
-		.flat(1)
-		.map((newSection: any) => {
-			const posts = { posts: pageData.postData }
-			const addPostData = _.merge(newSection, posts)
-			return newSection._type === 'blogPreviewSection'
-				? addPostData
-				: newSection
-		})
-
+	
 	return (
 		<PageLayout
 			title='Point Arena Lighthouse'
-			description='Lodging at the Point Arena Lighthouse!'>
+			description='Come stay at the Point Arena Lighthouse!'>
 			<main>
 				{ preview ? ( 
 				<PreviewSuspense fallback="Loading...">
 					<PreviewSections query={query} />
 				</PreviewSuspense>
 				):(
-				<RenderSections sections={sections} />
+				<RenderSections pageData={pageData} />
 				)
 			}
 			</main>
@@ -38,7 +29,7 @@ const Lodging = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) 
 	)
 }
 
-const query = `{"pageSections": *[_type == "page" && slug == "lodging"] 
+const query = `{"pageSections": *[_type == "page" && id == "lodging"] 
 {...,
 	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
 	 

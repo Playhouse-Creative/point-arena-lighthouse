@@ -5,29 +5,33 @@ import PortableText from 'react-portable-text'
 import serializers from '@/lib/portableText-serializers'
 
 type Props = {
-	title: string
-	heading: string
-	images: any
-	body: any
-	linkId: { slug: { current: string } }
+	title?: string
+	heading?: string
+	images?: any
+	body?: any
+	linkId?: { slug?: { current?: string } }
 }
 
-export default function ColumnArticle(props: Props) {
+export default function ColumnArticle({title, heading, images, body, linkId}: Props) {
+	const id = linkId && linkId.slug && linkId.slug.current ? linkId.slug.current.split('#')[1] : null
+	const displayTitle = title ? title : `Placeholder title`
+	const displayHeading = heading ? heading : ``
+	
 	return (
 		<div
-			id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`}
-			className='relative mx-4 my-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 shadow-lg  lg:px-16 2xl:mx-auto'>
+			id={id}
+			className='relative mx-4 my-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 shadow-lg lg:px-16 2xl:mx-auto'>
 			<h3
 				className='mx-2 mt-8 font-serif text-4xl font-semibold text-center text-pa-navy-4 sm:ml-6'>
-				{props.title}
+				{displayTitle}
 			</h3>
 			<div
 				className={`my-12 flex w-full flex-col justify-center ${
-					props.images[0] && 'items-start sm:flex-row'
+					images && images[0] && 'items-start sm:flex-row'
 				} `}>
 				<div className='grid gap-4 mx-auto sm:grid-cols-1 lg:gap-2'>
-					{props.images &&
-						props.images.map((image: any, i: number) => (
+					{images && images.length > 0 ? 
+						images.map((image: any, i: number) => (
 							<div
 								key={i}
 								className='relative col-span-1 h-full min-h-[300px] w-[80vw] overflow-hidden sm:min-h-[500px] sm:w-[40vw] lg:w-[35vw] max-w-[700px]'>
@@ -41,21 +45,26 @@ export default function ColumnArticle(props: Props) {
               													33vw'
 								/>
 							</div>
-						))}
+						)) :
+						<div style={{ backgroundColor: 'grey', height: '300px', width: '100%' }}></div>
+					}
 				</div>
 				<div
 					className={`${
-						props.images[0] ? 'text-left sm:w-1/2' : 'text-center'
+						images && images[0] ? 'text-left sm:w-1/2' : 'text-center'
 					} mx-auto px-4 text-pa-navy-4 sm:pl-8 `}>
 					<h3 className='mt-4 mb-8 font-serif text-3xl font-semibold text-pa-red-4'>
-						{props.heading && props.heading}
+						{displayHeading}
 					</h3>
-					<PortableText
-						content={props.body}
-						serializers={serializers()}
-					/>
+					{body &&
+						<PortableText
+							content={body}
+							serializers={serializers()}
+						/>
+					}
 				</div>
 			</div>
 		</div>
 	)
 }
+

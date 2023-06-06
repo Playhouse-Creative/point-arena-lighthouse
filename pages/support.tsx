@@ -10,16 +10,7 @@ const PreviewSections = lazy(() => import("../components/PreviewSections"));
 
 
 const Support = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) => {
-	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
-		.flat(1)
-		.map((newSection: any) => {
-			const posts = { posts: pageData.postData }
-			const addPostData = _.merge(newSection, posts)
-			return newSection._type === 'blogPreviewSection'
-				? addPostData
-				: newSection
-		})
-
+	
 	return (
 		<PageLayout
 			title='Point Arena Lighthouse'
@@ -30,7 +21,7 @@ const Support = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) 
 					<PreviewSections query={query} />
 				</PreviewSuspense>
 				):(
-				<RenderSections sections={sections} />
+				<RenderSections pageData={pageData} />
 				)
 			}
 			</main>
@@ -38,7 +29,7 @@ const Support = ({ preview, pageData }: {preview: boolean, pageData: Pagedata}) 
 	)
 }
 
-const query = `{"pageSections": *[_type == "page"  && slug == "support"]
+const query = `{"pageSections": *[_type == "page"  && id == "support"]
 {...,
 	content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
 	 

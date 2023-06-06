@@ -13,10 +13,15 @@ export default {
     },
     {
       name: 'slug',
-      type: 'string',
+      type: 'slug',
       title: 'Slug', 
       hidden: true
     },
+    {name: 'id',
+  type: 'string',
+  title: 'ID',
+  hidden: true
+},
     {
       name: 'content',
       type: 'array',

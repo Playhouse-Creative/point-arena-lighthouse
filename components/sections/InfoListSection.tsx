@@ -2,44 +2,65 @@ import React from 'react'
 import PortableText from 'react-portable-text'
 import serializers from '../../lib/portableText-serializers';
 
-
-type Props = {
-	infoList: string
-	listType: any
-	title: string
-	linkId: {slug: {current: string}}
+interface LinkId {
+	slug: {
+		current: string;
+	};
 }
 
-export default function InfoListSection(props: Props) {
-	const list = props.listType.infoList
+interface ListSection {
+	heading: string;
+	body: string;
+}
+
+interface ListType {
+	infoList: ListSection[];
+}
+
+interface Props {
+	infoList?: string;
+	listType?: ListType;
+	title?: string;
+	linkId?: LinkId;
+}
+
+const InfoListSection: React.FC<Props> = ({
+	infoList = '',
+	listType = { infoList: [{ heading: '', body: '' }] },
+	title = '',
+	linkId = { slug: { current: '' } },
+}) => {
+	const list = listType.infoList;
 	return (
-		<div id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`} className='scroll-mt-96 mx-4 my-12'>
-		<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white text-center shadow-lg '>
-			<h3
-				className='mt-8
-        sm:ml-6 mx-auto w-full text-center sm:text-left font-serif text-3xl font-semibold text-pa-navy-4'>
-				{props.title}
-			</h3>
-			<ul className='mx-2 sm:mx-12 my-8 flex flex-col'>
-				{list.map((listSection: any, i: number) => (
-					<li key={i} className='mt-2 mb-6 flex flex-col'>
-						<div className='flex'>
-							<h3 className='ml-4 text-2xl font-semibold text-pa-navy-4'>
-								{listSection.heading}
-							</h3>
-						</div>
-						<ul>
-							<li className='ml-12 text-left text-lg text-pa-navy-4'>
-								<PortableText
-									content={listSection.body}
-									key={i}
-									serializers={serializers()}
-								/>
-							</li>
-						</ul>
-					</li>
-				))}
-			</ul>
-		</div></div>
+		<div id={linkId?.slug.current.split('#')[1] || null} className='mx-4 my-12 scroll-mt-96'>
+			<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white text-center shadow-lg '>
+				<h3
+					className='w-full mx-auto mt-8 font-serif text-3xl font-semibold text-center sm:ml-6 sm:text-left text-pa-navy-4'>
+					{title}
+				</h3>
+				<ul className='flex flex-col mx-2 my-8 sm:mx-12'>
+					{list.map((listSection: ListSection = { heading: '', body: '' }, i: number) => (
+						<li key={i} className='flex flex-col mt-2 mb-6'>
+							<div className='flex'>
+								<h3 className='ml-4 text-2xl font-semibold text-pa-navy-4'>
+									{listSection.heading}
+								</h3>
+							</div>
+							<ul>
+								<li className='ml-12 text-lg text-left text-pa-navy-4'>
+									<PortableText
+										content={listSection.body}
+										key={i}
+										serializers={serializers()}
+									/>
+								</li>
+							</ul>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
 	)
 }
+
+export default InfoListSection;

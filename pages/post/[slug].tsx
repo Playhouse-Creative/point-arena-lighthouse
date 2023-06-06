@@ -55,9 +55,7 @@ const Post = ( { post, previews }: Props) => {
 								className=''
 								src={urlForImage(post.author.image).url()!}
 								alt={post.title}
-								sizes='(max-width: 768px) 15vw,
-              					(max-width: 1200px) 15vw,
-              					15vw'
+								sizes='(max-width: 768px) 15vw,(max-width: 1200px) 15vw, 15vw'
 							/>}
 						</div>
 						{post.author &&<p className='text-sm font-light'>

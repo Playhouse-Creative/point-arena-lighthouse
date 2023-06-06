@@ -18,8 +18,16 @@ function resolveSections(section: any) {
 	return 'loading...'
 }
 
-function RenderSections(props: any) {
-	const { sections } = props
+function RenderSections({pageData}: any) {
+	const sections = pageData?.pageSections?.map((data: any) => data.content) //flatten pageData and add posts to the blogPreviewSection object
+		.flat(1)
+		.map((newSection: any) => {
+			const posts = { posts: pageData.postData }
+			const addPostData = _.merge(newSection, posts)
+			return newSection._type === 'blogPreviewSection'
+				? addPostData
+				: newSection
+		})
 
 	
 
@@ -31,7 +39,6 @@ function RenderSections(props: any) {
 				return (
 					
 						<div key={i}>
-							
 						<SectionComponent {...section}  />
 					</div>
 				)

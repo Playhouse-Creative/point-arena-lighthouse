@@ -5,31 +5,37 @@ import ArticleCarousel from './ArticleCarousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 type Props = {
-	images: any[]
-	title: string
-	heading: string
-	linkId: {slug: {current: string}}
-	body: any
+	images?: any[]
+	title?: string
+	heading?: string
+	linkId?: {slug?: {current?: string}}
+	body?: any
 }
 
-export default function CarouselArticle(props: Props) {
+export default function CarouselArticle({images, title, heading, linkId, body}: Props) {
+	const id = linkId && linkId.slug && linkId.slug.current ? linkId.slug.current.split('#')[1] : null
+	const displayTitle = title ? title : `Placeholder title`
+	const displayHeading = heading ? heading : null
+
 	return (
 		<div
-		id={`${props.linkId ? props.linkId.slug.current.split('#')[1] : null}`}
+			id={id}
 			className='scroll-mt-96 relative mx-4 mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16 2xl:mx-auto'>
 			<h3
 				className='mt-8 mb-12 ml-6 font-serif text-4xl font-semibold text-center text-pa-navy-4'>
-				{props.title}
+				{displayTitle}
 			</h3>
-			{props.images && <ArticleCarousel images={props.images} />}
+			{images && images.length > 0 ? <ArticleCarousel images={images} /> : null}
 			<div className='w-full py-8 text-left text-pa-navy-4 sm:columns-2'>
 				<h3 className='mb-4 font-serif text-3xl font-semibold'>
-					{props.heading && props.heading}
+					{displayHeading}
 				</h3>
-				<PortableText
-					content={props.body}
-					serializers={serializers()}
-				/>
+				{body &&
+					<PortableText
+						content={body}
+						serializers={serializers()}
+					/>
+				}
 			</div>
 		</div>
 	)

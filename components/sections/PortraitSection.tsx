@@ -9,7 +9,7 @@ interface LinkId {
 
 interface Image {
 	asset: {
-		_id: string | null
+		_id: string
 		url: string
 	}
 }
@@ -27,15 +27,15 @@ interface PortraitImage {
 interface Props {
 	heading?: string
 	linkId?: LinkId
-	portraitImage?: PortraitImage[] | null
+	portraitImage?: (PortraitImage & { key: number })[] | null
 }
 
 const PortraitSection: React.FC<Props> = ({
 	heading = '',
 	linkId = { slug: { current: '' } },
-	portraitImage = null,
+	portraitImage = [],
 }) => {
-	const portraitImages = portraitImage || null
+	const portraitImages = portraitImage || []
 	return (
 		<div
 			id={`${linkId?.slug.current.split('#')[1] || null}`}
@@ -46,11 +46,18 @@ const PortraitSection: React.FC<Props> = ({
 					{heading ? heading : 'Placeholder Heading'}
 				</h3>
 			</div>
+
 			<div className='flex flex-wrap justify-center w-full mx-auto mt-12 auto-rows-auto justify-items-center'>
-				{portraitImages?.map((portrait: PortraitImage, i: number) => (
+				{portraitImages?.map((portrait: PortraitImage & { key: number }) => (
 					<Portrait
-						key={i}
-						{...portrait}
+						key={portrait.key}
+						name={portrait.name}
+						title={portrait.title}
+						description={portrait.description}
+						_key={portrait._key}
+						_type={portrait._type}
+						_id={portrait._id}
+						image={portrait.image}
 					/>
 				))}
 			</div>

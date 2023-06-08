@@ -9,23 +9,21 @@ import PageLayout from '@/components/PageLayout'
 import BlogPreviewSection from '../../components/sections/BlogPreviewSection'
 import { urlForImage } from '../../lib/sanity'
 import _ from 'lodash'
-import { PreviewSuspense } from "next-sanity/preview";
-import { lazy } from "react";
+import { PreviewSuspense } from 'next-sanity/preview'
+import { lazy } from 'react'
 
 interface Props {
 	post: PostData
 	previews: PostData | any
 }
-const Post = ( { post, previews }: Props) => {
-	const {previews: posts} = previews
+const Post = ({ post, previews }: Props) => {
+	const { previews: posts } = previews
 	const imageProps: any = useNextSanityImage(sanityClient, post.mainImage)
 
 	return (
-		<PageLayout
-			title='Point Arena Lighthouse'
-			description='Come stay at the Point Arena Lighthouse!'>
+		<PageLayout title='Point Arena Lighthouse' description='Come stay at the Point Arena Lighthouse!'>
 			<main>
-				<div className='top-4 relative z-0 mx-auto h-[50vh] aspect-[6/5] w-full max-w-4xl md:h-[60vh]'>
+				<div className='relative top-4 z-0 mx-auto aspect-[6/5] h-[50vh] w-full max-w-4xl md:h-[60vh]'>
 					{post.mainImage && (
 						<Img
 							alt={post.title}
@@ -43,37 +41,34 @@ const Post = ( { post, previews }: Props) => {
 					<h1 className='mt-10 mb-1 text-3xl'>{post.title}</h1>
 					{post.categories &&
 						post.categories.map((category, i: number) => (
-							<p className='text-md' style={{color: category.color.value}} key={i}>
+							<p className='text-md' style={{ color: category.color.value }} key={i}>
 								{category.title}
 							</p>
 						))}
 					<div className='flex flex-col items-start mt-4 space-x-2 '>
 						<div className='relative w-16 h-16 space-x-2 rounded-full'>
-							{post.author &&<Img
-								fill={true}
-								style={{ objectFit: 'contain' }}
-								className=''
-								src={urlForImage(post.author.image).url()!}
-								alt={post.title}
-								sizes='(max-width: 768px) 15vw,(max-width: 1200px) 15vw, 15vw'
-							/>}
+							{post.author && (
+								<Img
+									fill={true}
+									style={{ objectFit: 'contain' }}
+									className=''
+									src={urlForImage(post.author.image).url()!}
+									alt={post.title}
+									sizes='(max-width: 768px) 15vw,(max-width: 1200px) 15vw, 15vw'
+								/>
+							)}
 						</div>
-						{post.author &&<p className='text-sm font-light'>
-							Blog post by{' '}
-							<span className='text-pa-green-4'>
-								{post.author.name}
-							</span>{' '}
-							<br />
-							published at{' '}
-							{new Date(post.publishedAt).toLocaleString()}
-						</p>}
+						{post.author && (
+							<p className='text-sm font-light'>
+								Blog post by <span className='text-pa-green-4'>{post.author.name}</span> <br />
+								published at {new Date(post.publishedAt).toLocaleString()}
+							</p>
+						)}
 					</div>
 					<div className='my-10'>
 						<PortableText
 							dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-							projectId={
-								process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-							}
+							projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
 							content={post.body}
 							serializers={serializers()}
 						/>
@@ -82,7 +77,7 @@ const Post = ( { post, previews }: Props) => {
 				<h2 className='pt-10 text-4xl text-center text-white text-bold bg-pa-blue-4'>
 					You might also like...
 				</h2>
-				<BlogPreviewSection posts={posts} title=''/>
+				<BlogPreviewSection posts={posts} title='' />
 			</main>
 		</PageLayout>
 	)
@@ -103,7 +98,7 @@ export async function getStaticPaths() {
 	}))
 	return {
 		paths,
-		fallback: true
+		fallback: true,
 	}
 }
 
@@ -123,7 +118,7 @@ body,
 }
 `
 
-	const previewQuery = `{"previews" :*[_type == "post"] | order(publishedAt desc)[0...3]
+const previewQuery = `{"previews" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {	_id,
 _createdAt,
 title,
@@ -137,8 +132,7 @@ description,
 body, }
 }`
 
-export async function getStaticProps({params}: any) {
-	
+export async function getStaticProps({ params }: any) {
 	const previews = await sanityClient.fetch(previewQuery)
 	const post = await sanityClient.fetch(postQuery, {
 		slug: params?.slug,

@@ -34,13 +34,10 @@ const GridImage = (props: any) => {
 }
 
 export default function LodgingHeroSection(props: Props) {
-	const heroImageProps: any = useNextSanityImage(
-		sanityClient,
-		props.heroImage
-	)
+	const heroImageProps: any = useNextSanityImage(sanityClient, props.heroImage)
 
 	return (
-		<div className='mb-4 w-screen px-4 md:mb-24'>
+		<div className='w-screen px-4 mb-4 md:mb-24'>
 			<div className='mx-auto grid w-[90vw] max-w-[1600px] grid-cols-4 grid-rows-4 gap-4 pt-4 md:grid-cols-4 md:grid-rows-2 lg:w-3/4 '>
 				<div className='relative col-span-4 row-span-3 aspect-square md:col-span-2 md:row-span-2'>
 					{props.heroImage && (
@@ -63,13 +60,11 @@ export default function LodgingHeroSection(props: Props) {
 						className='absolute left-0 bottom-10 z-20 w-10/12 py-[5px] pl-8 sm:w-8/12'
 						style={{
 							backgroundColor: '#0088A7',
-							clipPath:
-								'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
-						}}>
+							clipPath: 'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
+						}}
+					>
 						{' '}
-						<h2 className='font-serif text-lg md:text-2xl font-semibold text-white'>
-							{props.heading}
-						</h2>
+						<h2 className='font-serif text-lg font-semibold text-white md:text-2xl'>{props.heading}</h2>
 					</div>
 				</div>
 				{props.gridImages &&

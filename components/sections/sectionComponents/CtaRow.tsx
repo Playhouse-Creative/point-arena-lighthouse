@@ -22,7 +22,7 @@ type Props = {
 export default function CtaRow({bannerColor, title, body, cta, image}: Props) {
 	const displayTitle = title ? title : `Placeholder title`
 	const bannerBackground = bannerColor ? bannerColor : `#000000`
-	const imageURL = image && image.asset ? urlForImage(image).url() : "/logoRibbon.png"
+	const imageURL = image && image.asset ? urlForImage(image as any).url() : "/logoRibbon.png"
 
 	return (
 		<div className='mx-4 my-20'>

@@ -7,6 +7,10 @@ import serializers from '@/lib/portableText-serializers'
 type ImageProps = {
 	alt?: string
 	url?: string
+	asset?: {
+		_id: string
+		url: string
+	}
 }
 
 type Props = {
@@ -20,11 +24,11 @@ type Props = {
 export default function ColumnArticle({ title, heading, images, body, linkId }: Props) {
 	const id = linkId?.slug?.current ? linkId.slug.current.split('#')[1] : null
 	const displayTitle = title || `Placeholder title`
-	const displayHeading = heading || `Placeholder heading`
+	const displayHeading: string | undefined = heading || undefined;
 
 	return (
 		<div
-			id={id}
+			id={id || undefined}
 			className='relative mx-4 my-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 shadow-lg lg:px-16 2xl:mx-auto'
 		>
 			<h3 className='mx-2 mt-8 font-serif text-4xl font-semibold text-center text-pa-navy-4 sm:ml-6'>
@@ -43,7 +47,7 @@ export default function ColumnArticle({ title, heading, images, body, linkId }: 
 								className='relative col-span-1 h-full min-h-[300px] w-[80vw] max-w-[700px] overflow-hidden sm:min-h-[500px] sm:w-[40vw] lg:w-[35vw]'
 							>
 								<Image
-									src={urlForImage(image)?.url() || 'placeholder-image-url'}
+									src={urlForImage(image as any)?.url() || 'placeholder-image-url'}
 									alt={image.alt || 'Placeholder alt'}
 									fill={true}
 									style={{ objectFit: 'contain' }}
@@ -76,3 +80,4 @@ export default function ColumnArticle({ title, heading, images, body, linkId }: 
 		</div>
 	)
 }
+

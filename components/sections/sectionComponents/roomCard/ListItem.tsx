@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import Img from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 
 type Props = {
 	title: string
-	icon: string
+	icon: any
 }
 
 export default function ListItem(props: Props) {

@@ -2,7 +2,14 @@ import {DefaultDocumentNodeResolver} from 'sanity/desk'
 import Iframe from 'sanity-plugin-iframe-pane'
 import {SanityDocument} from 'sanity'
 
-function getPreviewUrl(doc: SanityDocument) {
+interface MySanityDocument extends SanityDocument {
+  slug?: {
+    current?: string;
+  };
+}
+
+
+function getPreviewUrl(doc: MySanityDocument) {
   return doc?.slug?.current
     ? `http://localhost:3000/${doc.slug.current}`
     : `${window.location.host}`

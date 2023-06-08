@@ -21,7 +21,7 @@ interface Props {
 	infoList?: string
 	listType?: ListType
 	title?: string
-	linkId?: LinkId
+	linkId?: LinkId | undefined
 }
 
 const InfoListSection: React.FC<Props> = ({
@@ -33,7 +33,7 @@ const InfoListSection: React.FC<Props> = ({
 	const list = listType.infoList
 	return (
 		<div
-			id={linkId?.slug.current.split('#')[1] || null}
+			id={linkId?.slug.current.split('#')[1] || undefined}
 			className='mx-4 my-12 scroll-mt-96'
 		>
 			<div className='relative mx-auto mb-12 max-w-[1600px] border border-pa-navy-4 bg-white text-center shadow-lg '>

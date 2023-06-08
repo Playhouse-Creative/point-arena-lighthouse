@@ -3,9 +3,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 function MyDocument() {
 	return (
 		<Html lang='en'>
-			<Head>
-				
-			</Head>
+			<Head></Head>
 			<body>
 				<Main />
 				<NextScript />

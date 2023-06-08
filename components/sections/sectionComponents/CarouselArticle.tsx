@@ -13,7 +13,7 @@ type Props = {
 }
 
 export default function CarouselArticle({images, title, heading, linkId, body}: Props) {
-	const id = linkId && linkId.slug && linkId.slug.current ? linkId.slug.current.split('#')[1] : null
+	const id = linkId && linkId.slug && linkId.slug.current ? linkId.slug.current.split('#')[1] : undefined
 	const displayTitle = title ? title : `Placeholder title`
 	const displayHeading = heading ? heading : null
 

@@ -88,7 +88,7 @@ const ArticleCarousel = ({ images = [] }: Props) => {
 				>
 					<Img
 						alt={`Slide for ${image.alt || 'Place holder alt'}`}
-						src={urlForImage(image).url() || ''}
+						src={urlForImage(image as any).url() || ''}
 						fill={true}
 						sizes='(max-width: 768px) 100vw,
                       (max-width: 1200px) 50vw,

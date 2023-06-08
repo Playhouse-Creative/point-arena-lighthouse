@@ -50,46 +50,51 @@ export default function TableSection({ columns = {}, title = 'Placeholder Title'
 						<th className='w-1/2 ml-8 text-left'>{columns.columnTwo?.columnHeader}</th>
 					</tr>
 				</thead>
-				{Array.from({ length: rowsCount }).map((_, i) => (
-					<tbody key={i}>
-						<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
-							<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
-								{columnOneCells[i]?.link ? (
-									<Link href={columnOneCells[i].link.href}>
+				{Array.from({ length: rowsCount }).map((_, i) => {
+					const cellOne = columnOneCells[i];
+					const cellTwo = columnTwoCells[i];
+
+					return (
+						<tbody key={i}>
+							<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
+								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
+									{cellOne?.link ? (
+										<Link href={cellOne.link.href}>
+											<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+												{cellOne.heading}
+											</h3>
+										</Link>
+									) : (
 										<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-											{columnOneCells[i].heading}
+											{cellOne?.heading}
 										</h3>
-									</Link>
-								) : (
+									)}
+									{cellOne?.text ? (
+										<PortableText
+											content={cellOne.text}
+											serializers={serializers()}
+										/>
+									) : (
+										null
+									)}
+								</td>
+								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
 									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-										{columnOneCells[i]?.heading}
+										{cellTwo?.heading}
 									</h3>
-								)}
-								{columnOneCells[i]?.text ? (
-									<PortableText
-										content={columnOneCells[i].text}
-										serializers={serializers()}
-									/>
-								) : (
-									null
-								)}
-							</td>
-							<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
-								<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-									{columnTwoCells[i]?.heading}
-								</h3>
-								{columnTwoCells[i]?.text ? (
-									<PortableText
-										content={columnTwoCells[i].text}
-										serializers={serializers()}
-									/>
-								) : (
-									null
-								)}
-							</td>
-						</tr>
-					</tbody>
-				))}
+									{cellTwo?.text ? (
+										<PortableText
+											content={cellTwo.text}
+											serializers={serializers()}
+										/>
+									) : (
+										null
+									)}
+								</td>
+							</tr>
+						</tbody>
+					)
+				})}
 			</table>
 		</div>
 	)

@@ -4,16 +4,9 @@ import InfoListSection from './InfoListSection'
 import ReviewListSection from './ReviewListSection'
 import _ from 'lodash'
 
-type Props = {
 
-	title: string
-	listType: string
-	gridList: any
-	infoList: any
-	linkId: {slug: {current: string}}
-}
 
-export default function ListSection(props: Props) {
+export default function ListSection(props: any) {
 	return (
 		<div id={`${props.linkId ? props.linkId.slug.current : null}`}>
 			{' '}

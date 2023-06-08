@@ -30,7 +30,7 @@ const InfoRowsSection: React.FC<Props> = ({
 	return (
 		<div
 			className='mx-4 my-12 scroll-mt-96'
-			id={linkId?.slug.current.split('#')[1] || null}
+			id={linkId?.slug.current.split('#')[1] || undefined}
 		>
 			<h3 className='mt-10 mb-8 ml-6 font-serif text-4xl font-semibold text-center text-pa-navy-4'>
 				{title}

@@ -1,6 +1,7 @@
 import { Slug, PortableTextBlock } from '@sanity/types'
 
 export type PostData = {
+	postData: PostData[]
 	_id: string
 	slug: Slug
 	title: string

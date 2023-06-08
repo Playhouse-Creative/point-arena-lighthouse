@@ -1,5 +1,4 @@
 import { Fragment, useState, useEffect, useCallback } from 'react'
-import { useSwipeable } from 'react-swipeable'
 import Img from 'next/image'
 import { urlForImage } from '@/lib/sanity'
 import { Dialog, Transition } from '@headlessui/react'

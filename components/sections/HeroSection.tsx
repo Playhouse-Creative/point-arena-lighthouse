@@ -52,7 +52,7 @@ const HeroSection = ({
                                 {subheading}
                             </h3>
                             <div className='flex flex-row space-x-4 text-lg sm:w-full sm:justify-end'>
-                                {cta.map((ctaItem = {}, i) => (
+                                {cta && cta.map((ctaItem = {}, i) => (
                                     <Cta
                                         key={i}
                                         {...ctaItem}

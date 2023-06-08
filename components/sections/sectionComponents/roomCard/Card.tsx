@@ -4,9 +4,18 @@ import ListItem from './ListItem'
 import Link from 'next/link'
 
 type Props = {
-	images: any
+	images: {
+		_key: string
+		_type: string
+		alt: string
+		asset: {
+			_id: string
+			url: string
+		}
+	}[]
 	title: string
-	featuresList: any
+	featuresList: {title: string
+	icon: string}[]
 	subHeading: string
 	price: string
 	bannerColor: string
@@ -23,22 +32,21 @@ export default function Card(props: Props) {
 					style={{
 						backgroundColor: props.bannerColor,
 						boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',
-						clipPath:
-							'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
-					}}>
+						clipPath: 'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
+					}}
+				>
 					{' '}
-					<h2 className='font-serif text-base font-semibold text-white md:text-2xl'>
-						{props.title}
-					</h2>
+					<h2 className='font-serif text-base font-semibold text-white md:text-2xl'>{props.title}</h2>
 				</div>
 			</div>
-			<h3 className='mx-8 mt-8 text-lg text-left text-pa-navy-4'>
-				{props.subHeading}
-			</h3>
+			<h3 className='mx-8 mt-8 text-lg text-left text-pa-navy-4'>{props.subHeading}</h3>
 			<div className='flex flex-col justify-between h-full'>
 				<ul className='mx-8 mt-6'>
-					{props.featuresList.map((item: any, i: number) => (
-						<ListItem key={i} {...item} />
+					{props.featuresList && props.featuresList.map((item: any, i: number) => (
+						<ListItem
+							key={i}
+							{...item}
+						/>
 					))}
 				</ul>
 				<div>
@@ -48,7 +56,8 @@ export default function Card(props: Props) {
 					<a
 						href='https://pointarenalighthouse.client.innroad.com/'
 						target='_blank'
-						rel='noreferrer'>
+						rel='noreferrer'
+					>
 						<button className='w-auto px-8 py-4 m-8 font-serif text-base font-medium tracking-wider text-white transition-colors rounded-lg shadow-xl outline-none bg-pa-blue-4 ring-offset-2 hover:bg-pa-blue-3 focus:ring-2 focus:ring-pa-navy-4 focus:hover:ring-pa-navy-4 active:scale-95 md:text-2xl'>
 							Reserve
 						</button>

@@ -31,7 +31,7 @@ function PrevArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute inset-y-1/2 left-2 z-20 m-auto h-8 w-8 cursor-pointer text-pa-teal-4 sm:h-14 sm:w-14 '>
+			className='absolute z-20 w-8 h-8 m-auto cursor-pointer inset-y-1/2 left-2 text-pa-teal-4 sm:h-14 sm:w-14 '>
 			<path
 				strokeLinecap='round'
 				strokeLinejoin='round'
@@ -51,7 +51,7 @@ function NextArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute inset-y-1/2 right-2 z-20 m-auto h-8 w-8 cursor-pointer text-pa-teal-4 sm:h-14 sm:w-14 '>
+			className='absolute z-20 w-8 h-8 m-auto cursor-pointer inset-y-1/2 right-2 text-pa-teal-4 sm:h-14 sm:w-14 '>
 			<path
 				strokeLinecap='round'
 				strokeLinejoin='round'
@@ -91,36 +91,40 @@ export default function RoomCarousel(props: Props) {
 	}
 	return (
 		<div className='z-30'>
-			<div className=' aspect-square w-full'>
+			<div className='w-full aspect-square'>
 				<Slider {...settings}>
-					{props.images.map((image: any, i: number) => {
-						return (
-							<div
-								key={i}
-								className='relative aspect-square h-full w-full'>
-								<Img
-									alt={`Slide ${i}`}
-									src={urlForImage(image).url()}
-									fill={true}
-									style={{ objectFit: 'cover' }}
-									sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-									onClick={() => setLightBoxOpen(true)}
-									className='cursor-pointer'
-								/>
-							</div>
-						)
-					})}
+					{props.images &&
+						props.images.map((image: any, i: number) => {
+							return (
+								<div
+									key={i}
+									className='relative w-full h-full aspect-square'
+								>
+									<Img
+										alt={`Slide ${i}`}
+										src={urlForImage(image).url()}
+										fill={true}
+										style={{ objectFit: 'cover' }}
+										sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+										onClick={() => setLightBoxOpen(true)}
+										className='cursor-pointer'
+									/>
+								</div>
+							)
+						})}
 				</Slider>
 			</div>
-			<Transition.Root show={lightBoxOpen} as={Fragment}>
+			<Transition.Root
+				show={lightBoxOpen}
+				as={Fragment}
+			>
 				<Dialog
 					as='div'
 					className='relative z-50 hidden md:block'
-					onClose={setLightBoxOpen!}>
+					onClose={setLightBoxOpen!}
+				>
 					<div className='fixed inset-0 z-10 overflow-y-auto '>
-						<div className='flex h-screen bg-gray-500/50 items-end justify-center text-center sm:items-center sm:p-0'>
+						<div className='flex items-end justify-center h-screen text-center bg-gray-500/50 sm:items-center sm:p-0'>
 							<Transition.Child
 								as={Fragment}
 								enter='ease-out duration-300'
@@ -128,58 +132,49 @@ export default function RoomCarousel(props: Props) {
 								enterTo='opacity-100 translate-y-0 sm:scale-100'
 								leave='ease-in duration-200'
 								leaveFrom='opacity-100 translate-y-0 sm:scale-100'
-								leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'>
-								<Dialog.Panel className='relative w-full transform overflow-hidden p-12 transition-all sm:my-8 sm:max-w-3xl'>
-									<div className='relative m-auto flex h-full w-full overflow-hidden'>
-										<div className='relative z-10 aspect-square w-full'>
+								leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+							>
+								<Dialog.Panel className='relative w-full p-12 overflow-hidden transition-all transform sm:my-8 sm:max-w-3xl'>
+									<div className='relative flex w-full h-full m-auto overflow-hidden'>
+										<div className='relative z-10 w-full aspect-square'>
 											<Slider {...modalSettings}>
-												{props.images.map(
-													(image: any, i: number) => {
-														return (
-															<div
+												{props.images && props.images.map((image: any, i: number) => {
+													return (
+														<div
 															key={i}
-															className={`trasition relative z-50  w-full aspect-square m-2`}>
-																<Img
-																	alt=''
-																	src={urlForImage(
-																		image
-																	).url()}
-																	fill={true}
-																	style={{
-																		objectFit:
-																			'cover',
-																	}}
-																	sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-																	onClick={() =>
-																		setLightBoxOpen(
-																			true
-																		)
-																	}
-																	className='cursor-pointer'
-																/>
+															className={`trasition relative z-50  m-2 aspect-square w-full`}
+														>
+															<Img
+																alt=''
+																src={urlForImage(image).url()}
+																fill={true}
+																style={{
+																	objectFit: 'cover',
+																}}
+																sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+																onClick={() => setLightBoxOpen(true)}
+																className='cursor-pointer'
+															/>
 														</div>
-														)
-													}
-												)}
+													)
+												})}
 											</Slider>
 										</div>
 									</div>
 									<div className='mt-5 sm:mt-6'>
 										<button
 											type='button'
-											className='absolute top-3 right-3 border border-transparent text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-pa-red-3 focus:ring-offset-2 sm:text-sm'
-											onClick={() =>
-												setLightBoxOpen(false)
-											}>
+											className='absolute text-base font-medium text-white border border-transparent shadow-sm top-3 right-3 focus:outline-none focus:ring-2 focus:ring-pa-red-3 focus:ring-offset-2 sm:text-sm'
+											onClick={() => setLightBoxOpen(false)}
+										>
 											<svg
 												xmlns='http://www.w3.org/2000/svg'
 												fill='none'
 												viewBox='0 0 24 24'
 												strokeWidth='1.5'
 												stroke='currentColor'
-												className='h-8 w-8'>
+												className='w-8 h-8'
+											>
 												<path
 													strokeLinecap='round'
 													strokeLinejoin='round'
@@ -189,16 +184,11 @@ export default function RoomCarousel(props: Props) {
 										</button>
 									</div>
 								</Dialog.Panel>
-								
 							</Transition.Child>
-							
 						</div>
-						
 					</div>
-					
 				</Dialog>
 			</Transition.Root>
-			
 		</div>
 	)
 }

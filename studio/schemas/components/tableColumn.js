@@ -19,7 +19,7 @@ export default {
 							{
 								name: 'text',
 								type: 'simpleBlockContent',
-								validation: Rule => Rule.max(150)
+								validation: Rule => Rule.max(150).error('150 characters max')
 							},
 							{name: 'link', type: 'link'}
 						],

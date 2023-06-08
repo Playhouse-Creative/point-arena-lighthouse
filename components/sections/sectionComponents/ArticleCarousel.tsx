@@ -5,17 +5,20 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-type Props = {
-	images: {
-		_key: string
-		_type: string
-		alt: string
-		asset: {
-			_id: string
-			url: string
-		}
-	}[]
+type Image = {
+	_key?: string
+	_type?: string
+	alt?: string
+	asset?: {
+		_id?: string
+		url?: string
+	}
 }
+
+type Props = {
+	images?: Image[]
+}
+
 function PrevArrow(props: any) {
 	const { onClick } = props
 	return (
@@ -26,7 +29,7 @@ function PrevArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute inset-y-1/2 left-2 z-20 m-auto h-8 w-8 cursor-pointer text-gray-300 sm:h-14 sm:w-14 '>
+			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 left-2 sm:h-14 sm:w-14 '>
 			<path
 				strokeLinecap='round'
 				strokeLinejoin='round'
@@ -46,7 +49,7 @@ function NextArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute inset-y-1/2 right-2 z-20 m-auto h-8 w-8 cursor-pointer text-gray-300 sm:h-14 sm:w-14 '>
+			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 right-2 sm:h-14 sm:w-14 '>
 			<path
 				strokeLinecap='round'
 				strokeLinejoin='round'
@@ -56,7 +59,7 @@ function NextArrow(props: any) {
 	)
 }
 
-const ArticleCarousel = (props: Props) => {
+const ArticleCarousel = ({ images = [] }: Props) => {
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -78,21 +81,22 @@ const ArticleCarousel = (props: Props) => {
 
 	return (
 		<Slider {...settings}>
-			{props.images.map((image: any, index: number) => (
+			{images.map((image = {} as Image, index: number) => (
 				<div
 					key={index}
-					className='relative z-10 h-[400px] w-screen bg-slate-800 sm:w-[500px] xl:h-[600px]'>
+					className='relative z-10 h-[400px] w-screen bg-slate-800 sm:w-[500px] xl:h-[600px]'
+				>
 					<Img
-						alt={`Slide for ${image.alt}`}
-						src={urlForImage(image).url()}
+						alt={`Slide for ${image.alt || 'Place holder alt'}`}
+						src={urlForImage(image).url() || ''}
 						fill={true}
 						sizes='(max-width: 768px) 100vw,
-              					(max-width: 1200px) 50vw,
-              					33vw'
+                      (max-width: 1200px) 50vw,
+                      33vw'
 						style={{ objectFit: 'contain', padding: '8px' }}
 					/>
-					<p className='absolute bottom-0 right-0 left-0 mx-2 mb-1 bg-pa-blue-1/80 p-1 text-xs md:mx-48'>
-						{image.alt}
+					<p className='absolute bottom-0 left-0 right-0 p-1 mx-2 mb-1 text-xs bg-pa-blue-1/80 md:mx-48'>
+						{image.alt || 'Place holder alt'}
 					</p>
 				</div>
 			))}

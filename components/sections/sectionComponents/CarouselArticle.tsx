@@ -20,22 +20,20 @@ export default function CarouselArticle({images, title, heading, linkId, body}: 
 	return (
 		<div
 			id={id}
-			className='scroll-mt-96 relative mx-4 mb-12 max-w-[1600px] border border-pa-navy-4 bg-white px-4 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16 2xl:mx-auto'>
-			<h3
-				className='mt-8 mb-12 ml-6 font-serif text-4xl font-semibold text-center text-pa-navy-4'>
+			className='relative my-12 mx-4 mb-12 max-w-[1600px] scroll-mt-96 border border-pa-navy-4 bg-white px-4 text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4 sm:px-16 2xl:mx-auto'
+		>
+			<h3 className='mt-8 mb-12 ml-6 font-serif text-4xl font-semibold text-center text-pa-navy-4'>
 				{displayTitle}
 			</h3>
 			{images && images.length > 0 ? <ArticleCarousel images={images} /> : null}
+			<h3 className='mb-4 font-serif text-3xl font-semibold'>{displayHeading}</h3>
 			<div className='w-full py-8 text-left text-pa-navy-4 sm:columns-2'>
-				<h3 className='mb-4 font-serif text-3xl font-semibold'>
-					{displayHeading}
-				</h3>
-				{body &&
+				{body && (
 					<PortableText
 						content={body}
 						serializers={serializers()}
 					/>
-				}
+				)}
 			</div>
 		</div>
 	)

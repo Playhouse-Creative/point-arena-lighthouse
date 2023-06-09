@@ -16,7 +16,7 @@ export const icons = {
 	AllIcon,
 }
 
-export default (S: any) =>
+export default (S) =>
 	S.list()
 		.title('Content')
 		.items([
@@ -37,7 +37,7 @@ export default (S: any) =>
 										.menuItems(S.documentTypeList('post').getMenuItems())
 										// Only show posts with publish date earlier than now and that is not drafts
 										.filter('_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))')
-										.child((documentId: any) => S.document().documentId(documentId).schemaType('post'))
+										.child((documentId) => S.document().documentId(documentId).schemaType('post'))
 								),
 							S.documentTypeListItem('post').title('All posts').icon(AllIcon),
 							S.listItem()
@@ -46,7 +46,7 @@ export default (S: any) =>
 									// List out all categories
 									S.documentTypeList('category')
 										.title('Posts by category')
-										.child((catId: string) =>
+										.child((catId) =>
 											// List out project documents where the _id for the selected
 											// category appear as a _ref in the project’s categories array
 											S.documentList()

@@ -23,7 +23,7 @@ export default function ContactForm() {
 					<form
 						name='contact-form'
 						id='contact-form'
-						method='POST'
+						method='post'
 						data-netlify='true'
 						netlify-honeypot='bot-field'
 						// action='/'
@@ -98,7 +98,7 @@ export default function ContactForm() {
 								/>
 							</div>
 						</div>
-						<div className='sm:col-span-2'>
+						{/* <div className='sm:col-span-2'>
 							<div className='flex items-start'>
 								<div className='flex-shrink-0'>
 									<Switch
@@ -142,7 +142,7 @@ export default function ContactForm() {
 									</p>
 								</div>
 							</div>
-						</div>
+						</div> */}
 						<div className='sm:col-span-2'>
 							<button
 								type='submit'

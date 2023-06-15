@@ -21,14 +21,14 @@ export default function ContactForm() {
 				</div>
 				<div className='mt-12'>
 					<form
-						name='contact'
-						id='contact'
+						name='contact-form'
+						id='contact-form'
 						method='POST'
 						data-netlify='true'
 						netlify-honeypot='bot-field'
 						// action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
-						<input type='hidden' name='form-name' value='contact' />
+						<input type='hidden' name='form-name' value='contact-form' />
 						<label className='hidden'>
 							Don’t fill this out if you’re human:
 							<input name='bot-field' />

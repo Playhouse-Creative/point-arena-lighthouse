@@ -29,12 +29,9 @@ function PrevArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 left-2 sm:h-14 sm:w-14 '>
-			<path
-				strokeLinecap='round'
-				strokeLinejoin='round'
-				d='M15.75 19.5L8.25 12l7.5-7.5'
-			/>
+			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 left-2 sm:h-14 sm:w-14 '
+		>
+			<path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
 		</svg>
 	)
 }
@@ -49,12 +46,9 @@ function NextArrow(props: any) {
 			viewBox='0 0 24 24'
 			strokeWidth={2.5}
 			stroke='currentColor'
-			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 right-2 sm:h-14 sm:w-14 '>
-			<path
-				strokeLinecap='round'
-				strokeLinejoin='round'
-				d='M8.25 4.5l7.5 7.5-7.5 7.5'
-			/>
+			className='absolute z-20 w-8 h-8 m-auto text-gray-300 cursor-pointer inset-y-1/2 right-2 sm:h-14 sm:w-14 '
+		>
+			<path strokeLinecap='round' strokeLinejoin='round' d='M8.25 4.5l7.5 7.5-7.5 7.5' />
 		</svg>
 	)
 }
@@ -66,6 +60,8 @@ const ArticleCarousel = ({ images = [] }: Props) => {
 		className: 'center',
 		slidesToShow: 1,
 		centerMode: true,
+		autoplay: true,
+		autoplaySpeed: 3000,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 		responsive: [

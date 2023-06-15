@@ -33,7 +33,7 @@ export default {
             value: 'https://github.com/Jeremy-Logan/point-arena-lighthouse',
             category: 'Code'
           },
-          {title: 'Frontend', value: 'https://fort-bragg-food-bank.netlify.app', category: 'apps'}
+          {title: 'Frontend', value: 'https://pointarenalighthouse.com', category: 'apps'}
         ]
       }
     },

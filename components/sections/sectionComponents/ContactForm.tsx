@@ -11,19 +11,18 @@ export default function ContactForm() {
 	const [agreed, setAgreed] = useState(false)
 
 	return (
-		<div className='overflow-hidden py-16'>
-			<div className='relative mx-auto max-w-xl px-6'>
+		<div className='py-16 overflow-hidden'>
+			<div className='relative max-w-xl px-6 mx-auto'>
 				<div className='w-full text-center'>
 					<h2
-						className='
-        mt-8 font-serif text-4xl font-semibold text-pa-navy-4 '>
+						className='mt-8 font-serif text-4xl font-semibold  text-pa-navy-4'>
 						Get in Touch
 					</h2>
 				</div>
 				<div className='mt-12'>
 					<form
 						name='contact'
-						method='POST'
+						method='post'
 						data-netlify='true'
 						netlify-honeypot='bot-field'
 						action='/'
@@ -45,7 +44,7 @@ export default function ContactForm() {
 									name='first-name'
 									id='first-name'
 									autoComplete='given-name'
-									className='block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
+									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 								/>
 							</div>
 						</div>
@@ -61,7 +60,7 @@ export default function ContactForm() {
 									name='last-name'
 									id='last-name'
 									autoComplete='family-name'
-									className='block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
+									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 								/>
 							</div>
 						</div>
@@ -78,7 +77,7 @@ export default function ContactForm() {
 									name='email'
 									type='email'
 									autoComplete='email'
-									className='block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
+									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 								/>
 							</div>
 						</div>
@@ -93,7 +92,7 @@ export default function ContactForm() {
 									id='message'
 									name='message'
 									rows={4}
-									className='block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
+									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 									defaultValue={''}
 								/>
 							</div>
@@ -129,13 +128,13 @@ export default function ContactForm() {
 										By selecting this, you agree to the{' '}
 										<Link
 											href='/policies#privacy'
-											className='font-medium text-pa-navy-4 underline'>
+											className='font-medium underline text-pa-navy-4'>
 											Privacy Policy
 										</Link>{' '}
 										and{' '}
 										<Link
 											href='/policies#cookies'
-											className='font-medium text-pa-navy-4 underline'>
+											className='font-medium underline text-pa-navy-4'>
 											Cookie Policy
 										</Link>
 										.
@@ -146,14 +145,14 @@ export default function ContactForm() {
 						<div className='sm:col-span-2'>
 							<button
 								type='submit'
-								className='inline-flex w-full items-center justify-center rounded-md border border-transparent bg-pa-blue-3 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'>
+								className='inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-pa-blue-3 hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'>
 								Let{`'`}s talk
 							</button>
 						</div>
 					</form>
 				</div>
 			</div>
-			<div className='relative mt-36 h-24 md:h-36 w-full'>
+			<div className='relative w-full h-24 mt-36 md:h-36'>
 				<div className='absolute left-0 top-1/2  w-[15vw] sm:w-[30vw] xl:w-[35vw] 2xl:w-[40vw]'>
 					<svg
 						version='1.1'

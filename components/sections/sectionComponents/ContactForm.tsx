@@ -25,7 +25,6 @@ export default function ContactForm() {
 						id='contact-form'
 						method='post'
 						data-netlify='true'
-						netlify
 						netlify-honeypot='bot-field'
 						// action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
@@ -36,7 +35,7 @@ export default function ContactForm() {
 						</label>
 						<div>
 							<label
-								htmlFor='first-name'
+								// htmlFor='first-name'
 								className='block text-sm font-medium text-pa-navy-4'>
 								First name
 							</label>
@@ -52,7 +51,7 @@ export default function ContactForm() {
 						</div>
 						<div>
 							<label
-								htmlFor='last-name'
+								// htmlFor='last-name'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Last name
 							</label>
@@ -69,7 +68,7 @@ export default function ContactForm() {
 
 						<div className='sm:col-span-2'>
 							<label
-								htmlFor='email'
+								// htmlFor='email'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Email
 							</label>
@@ -85,7 +84,7 @@ export default function ContactForm() {
 						</div>
 						<div className='sm:col-span-2'>
 							<label
-								htmlFor='message'
+								// htmlFor='message'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Message
 							</label>

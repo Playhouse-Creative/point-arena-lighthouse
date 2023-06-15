@@ -21,14 +21,14 @@ export default function ContactForm() {
 				</div>
 				<div className='mt-12'>
 					<form
-						name='contact-form'
+						name='contactForm'
 						id='contact-form'
 						method='post'
 						data-netlify='true'
 						netlify-honeypot='bot-field'
 						// action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
-						<input type='hidden' name='form-name' value='contact-form' />
+						<input type='hidden' name='form-name' value='contactForm' />
 						<label className='hidden'>
 							Don’t fill this out if you’re human:
 							<input name='bot-field' />
@@ -42,7 +42,7 @@ export default function ContactForm() {
 							<div className='mt-1'>
 								<input
 									type='text'
-									name='first-name'
+									name='firstName'
 									id='first-name'
 									autoComplete='given-name'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
@@ -58,7 +58,7 @@ export default function ContactForm() {
 							<div className='mt-1'>
 								<input
 									type='text'
-									name='last-name'
+									name='lastName'
 									id='last-name'
 									autoComplete='family-name'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'

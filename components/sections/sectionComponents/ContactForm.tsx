@@ -21,7 +21,7 @@ export default function ContactForm() {
 				</div>
 				<div className='mt-12'>
 					<form
-						name='contact-form'
+						name='contact'
 						id='contact'
 						method='POST'
 						data-netlify="true"

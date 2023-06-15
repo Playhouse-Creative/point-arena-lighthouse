@@ -15,7 +15,7 @@ export default function ContactForm() {
 			<div className='relative max-w-xl px-6 mx-auto'>
 				<div className='w-full text-center'>
 					<h2
-						className='mt-8 font-serif text-4xl font-semibold  text-pa-navy-4'>
+						className='mt-8 font-serif text-4xl font-semibold text-pa-navy-4'>
 						Get in Touch
 					</h2>
 				</div>
@@ -25,7 +25,7 @@ export default function ContactForm() {
 						method='post'
 						data-netlify='true'
 						netlify-honeypot='bot-field'
-						action='/'
+						// action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
 						<input type='hidden' name='form-name' value='contact' />
 						<label className='hidden'>

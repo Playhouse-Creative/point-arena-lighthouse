@@ -21,28 +21,28 @@ export default function ContactForm() {
 				</div>
 				<div className='mt-12'>
 					<form
-						name='contactForm'
-						id='contact-form'
-						method='post'
-						data-netlify='true'
+						name='contact-form'
+						id='contact'
+						method='POST'
+						data-netlify="true"
+						action="/"
 						netlify-honeypot='bot-field'
-						// action='/'
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
-						<input type='hidden' name='form-name' value='contactForm' />
+						<input type="hidden" name="form-name" value="contact" />
 						<label className='hidden'>
 							Don’t fill this out if you’re human:
 							<input name='bot-field' />
 						</label>
 						<div>
 							<label
-								// htmlFor='first-name'
+								htmlFor='first-name'
 								className='block text-sm font-medium text-pa-navy-4'>
 								First name
 							</label>
 							<div className='mt-1'>
 								<input
 									type='text'
-									name='firstName'
+									name='first-name'
 									id='first-name'
 									autoComplete='given-name'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
@@ -51,14 +51,14 @@ export default function ContactForm() {
 						</div>
 						<div>
 							<label
-								// htmlFor='last-name'
+								htmlFor='last-name'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Last name
 							</label>
 							<div className='mt-1'>
 								<input
 									type='text'
-									name='lastName'
+									name='last-name'
 									id='last-name'
 									autoComplete='family-name'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
@@ -68,7 +68,7 @@ export default function ContactForm() {
 
 						<div className='sm:col-span-2'>
 							<label
-								// htmlFor='email'
+								htmlFor='email'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Email
 							</label>
@@ -84,7 +84,7 @@ export default function ContactForm() {
 						</div>
 						<div className='sm:col-span-2'>
 							<label
-								// htmlFor='message'
+								htmlFor='message'
 								className='block text-sm font-medium text-pa-navy-4'>
 								Message
 							</label>

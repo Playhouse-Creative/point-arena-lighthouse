@@ -4,7 +4,7 @@ import Footer from './Footer'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import ContactForm from './sections/sectionComponents/ContactForm'
-import Script from 'next/script'
+
 
 type Props = {
 	title: string

@@ -22,6 +22,7 @@ export default function ContactForm() {
 				<div className='mt-12'>
 					<form
 						name='contact'
+						id='contact'
 						method='POST'
 						data-netlify='true'
 						netlify-honeypot='bot-field'

@@ -18,18 +18,40 @@ const spectral = Spectral({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<><form
-			name='contact'
-			method='POST'
-			data-netlify='true'
-			netlify-honeypot='bot-field'
-			
-		><input type='hidden' name='form-name' value='contact' /></form>
+		<>
 			<Hydrated>
 				<main className={` ${spectral.variable} ${livvic.variable}`}>
 					<Component {...pageProps} />
 				</main>
 			</Hydrated>
+			{/* form for netlify */}
+			<form
+				name='contact'
+				method='POST'
+				data-netlify='true'
+				netlify-honeypot='bot-field'
+				className='hidden'
+			><input type='hidden' name='form-name' value='contact' /><input
+					type='text'
+					name='first-name'
+					id='first-name'
+					autoComplete='given-name'
+				/><input
+					type='text'
+					name='last-name'
+					id='last-name'
+					autoComplete='family-name'
+				/><input
+					id='email'
+					name='email'
+					type='email'
+					autoComplete='email'
+				/><textarea
+					id='message'
+					name='message'
+					rows={4}
+					defaultValue={''}
+				/></form>
 		</>
 	)
 }

@@ -18,7 +18,13 @@ const spectral = Spectral({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<><input type='hidden' name='form-name' value='contact' />
+		<><form
+			name='contact'
+			method='POST'
+			data-netlify='true'
+			netlify-honeypot='bot-field'
+			
+		><input type='hidden' name='form-name' value='contact' /></form>
 			<Hydrated>
 				<main className={` ${spectral.variable} ${livvic.variable}`}>
 					<Component {...pageProps} />

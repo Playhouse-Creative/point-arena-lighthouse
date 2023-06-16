@@ -18,7 +18,7 @@ export default function ArticlesSection(props: Props) {
 		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId : null}`}>
 			{' '}
 			{(props.articleType === 'columnArticle') ? (
-				<ColumnArticle {...props} />
+				<><ColumnArticle {...props} />{console.log(props)}</>
 			) : (props.articleType === 'carouselArticle') ? (
 				<CarouselArticle {...props} />
 			)  : null}

@@ -32,12 +32,9 @@ const serializers = () => {
 				{children}
 			</a>
 		),
-		internalLink: ({ value, children }: any) => {
-			// const { slug = {} } = value
-			// const href = `/${slug.current}`
-			// return <Link href={href}><p className='underline text-pa-teal-4'>{children}</p></Link>
-			<p className='underline text-pa-teal-4'>{children}</p>
-		},
+		internalLink: ({ href, children }: any) => (
+			href && <Link href={href}><span className='underline text-pa-teal-4'>{children}{console.log(href, children)}</span></Link>
+		),
         highlight: ({ children }: any) => (
 			<p style={{backgroundColor: '#A98551', color: 'white'}}>{children}</p>
 		),

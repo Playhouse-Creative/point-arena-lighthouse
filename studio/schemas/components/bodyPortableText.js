@@ -1,3 +1,5 @@
+import { SparklesIcon } from '@sanity/icons'
+
 export default {
   name: 'bodyPortableText',
   type: 'array',
@@ -41,7 +43,9 @@ export default {
                 title: 'URL',
                 name: 'href',
                 type: 'url',
-                
+                validation: Rule => Rule.uri({
+                  scheme: ['http', 'https', 'mailto', 'tel']
+                })
               }
             ]
           },
@@ -49,16 +53,13 @@ export default {
             name: 'internalLink',
             type: 'object',
             title: 'Internal link',
+            icon: SparklesIcon,
             fields: [
               {
-                name: 'reference',
-                type: 'reference',
-                title: 'Reference',
-                to: [
-                  { type: 'linkId' },
-                  { type: 'post' },
-                  // other types you may want to link to
-                ]
+                name: 'href',
+                type: 'string',
+                title: 'URL',
+                description: 'Use relative path starting with /'
               }
             ]
           },

@@ -35,8 +35,8 @@ export default (S) =>
 									S.documentList('post')
 										.title('Published posts')
 										.menuItems(S.documentTypeList('post').getMenuItems())
-										// Only show posts with publish date earlier than now and that is not drafts
-										.filter('_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))')
+										// Only show posts that are not drafts
+										.filter('_type == "post" && !(_id in path("drafts.**"))')
 										.child((documentId) => S.document().documentId(documentId).schemaType('post'))
 								),
 							S.documentTypeListItem('post').title('All posts').icon(AllIcon),

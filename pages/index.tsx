@@ -11,8 +11,10 @@ const PreviewSections = lazy(() => import('../components/PreviewSections'))
 const query = `{
 	"pageSections": *[_type == "page" && id == "home"] 
 	{...,
-		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}}
+		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}},
+		
 	},
+
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
 {_id,
 _createdAt,

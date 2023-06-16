@@ -18,7 +18,7 @@ const spectral = Spectral({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<>
+		<><input type='hidden' name='form-name' value='contact' />
 			<Hydrated>
 				<main className={` ${spectral.variable} ${livvic.variable}`}>
 					<Component {...pageProps} />

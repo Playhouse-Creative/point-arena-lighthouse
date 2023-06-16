@@ -13,30 +13,27 @@ export default function ContactForm() {
 	return (
 		<div className='py-16 overflow-hidden'>
 			<div className='relative max-w-xl px-6 mx-auto'>
-				<div className='w-full text-center'>
-					<h2
-						className='mt-8 font-serif text-4xl font-semibold text-pa-navy-4'>
-						Get in Touch
-					</h2>
+				<div className='w-full text-center' id='contact'>
+					<h2 className='mt-8 font-serif text-4xl font-semibold text-pa-navy-4'>Get in Touch</h2>
 				</div>
 				<div className='mt-12'>
 					<form
 						name='contact'
-						id='contact'
 						method='POST'
-						data-netlify="true"
+						data-netlify='true'
 						// action="/"
 						netlify-honeypot='bot-field'
-						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'>
-						<input type="hidden" name="form-name" value="contact" />
-						<label className='hidden'>
-							Don’t fill this out if you’re human:
-							<input name='bot-field' />
-						</label>
+						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
+					>
+						<input type='hidden' name='form-name' value='contact' />
+						<p className='hidden'>
+							<label>
+								Don’t fill this out if you’re human:
+								<input name='bot-field' />
+							</label>
+						</p>
 						<div>
-							<label
-								htmlFor='first-name'
-								className='block text-sm font-medium text-pa-navy-4'>
+							<label htmlFor='first-name' className='block text-sm font-medium text-pa-navy-4'>
 								First name
 							</label>
 							<div className='mt-1'>
@@ -50,9 +47,7 @@ export default function ContactForm() {
 							</div>
 						</div>
 						<div>
-							<label
-								htmlFor='last-name'
-								className='block text-sm font-medium text-pa-navy-4'>
+							<label htmlFor='last-name' className='block text-sm font-medium text-pa-navy-4'>
 								Last name
 							</label>
 							<div className='mt-1'>
@@ -67,9 +62,7 @@ export default function ContactForm() {
 						</div>
 
 						<div className='sm:col-span-2'>
-							<label
-								htmlFor='email'
-								className='block text-sm font-medium text-pa-navy-4'>
+							<label htmlFor='email' className='block text-sm font-medium text-pa-navy-4'>
 								Email
 							</label>
 							<div className='mt-1'>
@@ -83,9 +76,7 @@ export default function ContactForm() {
 							</div>
 						</div>
 						<div className='sm:col-span-2'>
-							<label
-								htmlFor='message'
-								className='block text-sm font-medium text-pa-navy-4'>
+							<label htmlFor='message' className='block text-sm font-medium text-pa-navy-4'>
 								Message
 							</label>
 							<div className='mt-1'>
@@ -105,20 +96,15 @@ export default function ContactForm() {
 										checked={agreed}
 										onChange={setAgreed}
 										className={classNames(
-											agreed
-												? 'bg-pa-green-3'
-												: 'bg-gray-200',
+											agreed ? 'bg-pa-green-3' : 'bg-gray-200',
 											'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'
-										)}>
-										<span className='sr-only'>
-											Agree to policies
-										</span>
+										)}
+									>
+										<span className='sr-only'>Agree to policies</span>
 										<span
 											aria-hidden='true'
 											className={classNames(
-												agreed
-													? 'translate-x-5'
-													: 'translate-x-0',
+												agreed ? 'translate-x-5' : 'translate-x-0',
 												'inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
 											)}
 										/>
@@ -127,15 +113,11 @@ export default function ContactForm() {
 								<div className='ml-3'>
 									<p className='text-base text-gray-500'>
 										By selecting this, you agree to the{' '}
-										<Link
-											href='/policies#privacy'
-											className='font-medium underline text-pa-navy-4'>
+										<Link href='/policies#privacy' className='font-medium underline text-pa-navy-4'>
 											Privacy Policy
 										</Link>{' '}
 										and{' '}
-										<Link
-											href='/policies#cookies'
-											className='font-medium underline text-pa-navy-4'>
+										<Link href='/policies#cookies' className='font-medium underline text-pa-navy-4'>
 											Cookie Policy
 										</Link>
 										.
@@ -146,7 +128,8 @@ export default function ContactForm() {
 						<div className='sm:col-span-2'>
 							<button
 								type='submit'
-								className='inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-pa-blue-3 hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'>
+								className='inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-pa-blue-3 hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'
+							>
 								Let{`'`}s talk
 							</button>
 						</div>
@@ -162,12 +145,9 @@ export default function ContactForm() {
 						x='0px'
 						y='0px'
 						width='100%'
-						height='10px'>
-						<path
-							strokeWidth='6'
-							stroke='#A98551'
-							d='M0 0 l1120 0'
-						/>
+						height='10px'
+					>
+						<path strokeWidth='6' stroke='#A98551' d='M0 0 l1120 0' />
 					</svg>
 				</div>
 				<Img
@@ -184,12 +164,9 @@ export default function ContactForm() {
 						x='0px'
 						y='0px'
 						width='100%'
-						height='10px'>
-						<path
-							strokeWidth='6'
-							stroke='#A98551'
-							d='M0 0 l1120 0'
-						/>
+						height='10px'
+					>
+						<path strokeWidth='6' stroke='#A98551' d='M0 0 l1120 0' />
 					</svg>
 				</div>
 			</div>

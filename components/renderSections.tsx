@@ -16,7 +16,7 @@ function resolveSections(section: any) {
 		return Section
 	}
 	console.error('Cant find section', section) // eslint-disable-line no-console
-	return 'loading...'
+	return null
 }
 
 function RenderSections({pageData}: any) {
@@ -36,7 +36,9 @@ function RenderSections({pageData}: any) {
 		<>
 			{sections?.map((section: any, i: number) => {
 				const SectionComponent = resolveSections(section)
-				
+				if (!SectionComponent) {
+					return <div key={i}>Missing section {section._type}</div>
+				}
 				return (
 					
 						<div key={i}>

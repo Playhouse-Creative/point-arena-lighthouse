@@ -1,11 +1,18 @@
-import Img from 'next/image'
+import Image from 'next/image'
 import Cta from './sectionComponents/Cta'
 import { useNextSanityImage } from 'next-sanity-image'
 import { sanityClient } from '@/lib/sanity-server'
 import { CTA } from '../../lib/types'
+import { urlForImage } from '@/lib/sanity'
 
 interface HeroImage {
-	image?: any
+	image: JSX.Element
+	alt?: string
+	url?: string
+	asset?: {
+		_id: string
+		url: string
+	}
 }
 
 interface Props {
@@ -19,21 +26,17 @@ const HeroSection = ({
 	heading = 'Placeholder heading',
 	subheading = '',
 	cta = [],
-	heroImage = { image: '' },
+	heroImage = { alt: 'Placeholder alt', url: 'placeholder-image-url' } as HeroImage,
 }: Props) => {
-	const imageProps = useNextSanityImage(sanityClient, heroImage.image)
-	const imageSrc = (imageProps as any)?.src || ''
-	const imageLoader = (imageProps as any)?.loader || (() => {})
-
+	
 	return (
 		<>
 			<div>
 				<div className='relative z-0 mx-auto h-[50vh] md:h-[60vh] lg:h-[70vh] 2xl:h-[75vh]'>
 					{heroImage.image && (
-						<Img
+						<Image
 							alt={heading}
-							src={imageSrc}
-							loader={imageLoader}
+							src={urlForImage(heroImage.image as any)?.url() || 'placeholder-image-url'}
 							fill={true}
 							sizes='(max-width: 768px) 100vw,
                                 (max-width: 1200px) 100vw,

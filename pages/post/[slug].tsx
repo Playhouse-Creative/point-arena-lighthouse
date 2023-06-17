@@ -118,7 +118,7 @@ body,
 }
 `
 
-const previewQuery = `{"previews" :*[_type == "post"] | order(publishedAt desc)[0...3]
+const previewQuery = `{"previews" :*[_type == "post"] | order(publishedAt desc)[1...10]
 {	_id,
 _createdAt,
 title,

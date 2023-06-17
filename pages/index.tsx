@@ -15,7 +15,7 @@ const query = `{
 		
 	},
 
-"postData" :*[_type == "post"] | order(publishedAt desc)[0...3]
+"postData" :*[_type == "post"] | order(publishedAt desc)[0...10]
 {_id,
 _createdAt,
 title,

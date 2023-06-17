@@ -7,11 +7,28 @@ type Props = { posts: PostData[] }
 
 export default function BlogFeaturedPosts({ posts }: Props) {
 	const [selectedCategory, setSelectedCategory] = useState('all')
-	const firstEightPosts = posts.slice(0, 8)
+	// Filter out posts that are archived or past events
+	const filteredPosts = _.filter(posts, (post) => {
+		return post.category[0].title !== "Archived" && post.category[0].title !== "Past Events";
+	});
+	// We are separating the posts into two arrays, eventPosts and nonEventPosts so we can reverse the order of the eventPosts array.
+	// Client wanted the events to go from oldest to newest.
+	// The feed is served in the order that the posts were published and he doesn't always fill in the publish date though
+	// so in the end the post order will still probably be arbitrary.
+	// We could add an event date to the post schema and sort by that instead of the publish date but it's outside of the scope of this project.
+	const eventPosts = _.filter(filteredPosts, post => post.category[0].title === "Event");
+	const nonEventPosts = _.filter(filteredPosts, post => post.category[0].title !== "Event");
+
+	// Reverse the order of the eventPosts array
+	const reversedEventPosts = _.reverse([...eventPosts]);
+
+	// Merge the reversedEventPosts array and nonEventPosts array
+	const reorderedPosts = [...reversedEventPosts, ...nonEventPosts];
+	const firstEightPosts = reorderedPosts.slice(0, 8)
 	const uniqueCategories = _.uniqBy(
-		_.flatMap(posts, (post) => post.category[0]),
+		_.flatMap(reorderedPosts, (post) => post.category[0]),
 		'title'
-	)
+	);
 
 	return (
 		<div className='self-center w-full mx-4 md:w-6/12 md:self-start lg:w-4/12'>
@@ -86,9 +103,9 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 									</p>
 								</div>
 							</Link>))
-					: posts
-							.filter((posts: any) =>
-								posts.category.some(
+					: reorderedPosts
+							.filter((reorderedPosts: any) =>
+								reorderedPosts.category.some(
 									(category: { title: string }) =>
 										category.title === selectedCategory
 								)

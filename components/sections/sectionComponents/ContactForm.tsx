@@ -128,8 +128,9 @@ export default function ContactForm() {
 						<div className='sm:col-span-2'>
 							<button
 								type='submit'
-								className='inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-pa-blue-3 hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'
-							>
+								className={classNames(
+									agreed ? 'bg-pa-blue-3 hover:bg-pa-blue-4' : 'pointer-events-none bg-slate-400', 'inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-pa-blue-3 hover:bg-pa-blue-4 focus:outline-none focus:ring-2 focus:ring-pa-teal-3 focus:ring-offset-2'
+								)}>
 								Let{`'`}s talk
 							</button>
 						</div>

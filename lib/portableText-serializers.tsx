@@ -16,13 +16,13 @@ const serializers = () => {
 		),
 		p: ({ children }: any) => ( <p style={{lineHeight:'1.75rem'}} className='font-sans text-base'>{children}</p>),
 		ul: ({ children }: any) => (
-			<ul style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem' }}>{children}</ul>
+			<ul style={{listStyleType: 'disc', listStylePosition:'outside', lineHeight:'1.75rem' }}>{children}</ul>
 		),
 		ol: ({ children }: any) => (
-			<ol style={{listStyleType: 'decimal', listStylePosition:'inside', lineHeight:'1.75rem'}}>{children}</ol>
+			<ol style={{listStyleType: 'decimal', listStylePosition:'outside', lineHeight:'1.75rem'}}>{children}</ol>
 		),
 		li: ({ children }: any) => (
-			<li style={{listStyleType: 'disc', listStylePosition:'inside', lineHeight:'1.75rem', marginLeft: '12px' }}>{children}</li>
+			<li style={{listStyleType: 'disc', listStylePosition:'outside', lineHeight:'1.75rem', marginLeft: '12px' }}>{children}</li>
 		),
 		blockquote: ({ children }: any) => (
 			<blockquote style={{borderLeftStyle: 'solid', borderLeftWidth: '4px', borderColor: '#0088A7', paddingLeft: '4px'}} className='italic'>&quot;{children}&quot;</blockquote>

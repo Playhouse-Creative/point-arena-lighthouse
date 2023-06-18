@@ -9,6 +9,7 @@ import { lazy } from 'react'
 const PreviewSections = lazy(() => import('../components/PreviewSections'))
 
 const Visit = ({ preview, pageData }: { preview: boolean; pageData: PageData }) => {
+	
 	return (
 		<PageLayout title='Point Arena Lighthouse' description='Come stay at the Point Arena Lighthouse!'>
 			<main>

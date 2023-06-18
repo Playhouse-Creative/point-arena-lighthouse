@@ -1,4 +1,5 @@
-import { ReactNode, useCallback, useState, useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Head from 'next/head'
@@ -13,6 +14,21 @@ type Props = {
 }
 
 const PageLayout = (props: Props) => {
+	const router = useRouter();
+
+	useEffect(() => {
+		// Wait for the page to load
+		if (!router.isReady) return;
+
+		// Extract the hash from the URL (if any)
+		const hash = router.asPath.split('#')[1];
+
+		// If there's a hash, scroll to the element with that ID
+		if (hash) {
+			const element = document.getElementById(hash);
+			if (element) element.scrollIntoView();
+		}
+	}, [router.asPath, router.isReady]);
 	
 	return (
 		<>

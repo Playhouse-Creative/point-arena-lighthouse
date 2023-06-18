@@ -100,7 +100,7 @@ export default function Navbar() {
 									<form
 										action='https://www.paypal.com/cgi-bin/webscr'
 										method='post'
-										target='_top'>
+										target='_blank'>
 										<button
 											name='submit'
 											className='self-end px-6 py-2 font-serif text-xl font-medium tracking-wider text-white border border-transparent rounded-lg shadow-xl bg-pa-red-4 hover:bg-pa-red-3'>

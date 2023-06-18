@@ -18,7 +18,7 @@ export default function DonationsSection(props: Props) {
 			</h3>
 			<div className='relative mx-auto mb-12 max-w-[1400px] border border-pa-navy-4 bg-white text-center shadow-lg transition-colors group-focus-within:border-pa-navy-4 group-hover:border-gray-400 group-focus-within:group-hover:border-pa-navy-4'>
 				<div className='flex flex-col justify-around mx-2 my-8 sm:mx-12 sm:flex-row'>
-					<form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>
+					<form target='_blank' action='https://www.paypal.com/cgi-bin/webscr' method='post'>
 						<input type='hidden' name='cmd' value='_s-xclick' />
 						<input type='hidden' name='hosted_button_id' value='RNEJJEPWZJCRW' />
 						<table>
@@ -55,7 +55,7 @@ export default function DonationsSection(props: Props) {
 							<input type='hidden' name='currency_code' value='USD' />
 						</button>
 					</form>
-					<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+					<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_blank'>
 						<input type='hidden' name='cmd' value='_s-xclick' />
 						<input type='hidden' name='hosted_button_id' value='7EVY4Z4D8TSX2' />
 						<table>

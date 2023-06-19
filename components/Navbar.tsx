@@ -87,6 +87,8 @@ export default function Navbar() {
 										<a
 											key={item.name}
 											href={item.href}
+											target='_blank'
+											rel='noreferrer'
 											className='text-white hover:text-white'>
 											<span className='sr-only'>
 												{item.name}

@@ -13,7 +13,7 @@ export default {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      description: 'Some frontends will require a slug to be set to be able to show the post',
+      description: 'The slug is required to be able to show the post',
       validation: Rule => Rule.required().error('Please keep character count under 96'),
       options: {
         source: 'title',

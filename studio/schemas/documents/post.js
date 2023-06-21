@@ -14,6 +14,7 @@ export default {
       type: 'slug',
       title: 'Slug',
       description: 'Some frontends will require a slug to be set to be able to show the post',
+      validation: Rule => Rule.required().error('Please keep character count under 96'),
       options: {
         source: 'title',
         maxLength: 96,

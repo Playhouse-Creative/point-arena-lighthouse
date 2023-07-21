@@ -85,7 +85,7 @@ export default async function preview(
 	if (page) {if (page.slug === '/') redirectToPreview(res, `/`); else redirectToPreview(res, `/${page.slug}`);}
 
 		// If somehow we reach this return statement, prevent preview mode from being enabled
-		return res.status(401).send('Invalid slug')
+		// return res.status(401).send('Invalid slug')
 
 
 	}

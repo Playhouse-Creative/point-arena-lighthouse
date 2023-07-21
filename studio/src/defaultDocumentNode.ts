@@ -11,7 +11,7 @@ interface MySanityDocument extends SanityDocument {
 
 function getPreviewUrl(doc: MySanityDocument) {
   return doc?.slug?.current
-    ? `https://point-arena-light-house.netlify.app/${doc.slug.current}`
+    ? `https://point-arena-light-house.netlify.app/${doc.slug.current}?preview=true`
     : `${window.location.host}`
 }
 

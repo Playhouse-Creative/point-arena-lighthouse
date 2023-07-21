@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { urlForImage } from '@/lib/sanity'
+import { PortraitImage } from "../PortraitSection";
 
-type Props = { image?: { asset: { _id: string; url: string; }; }; name: string; title: string; 
-description?: string; _key?: string; _type?: string; _id?: string; key?: number;
-};
 
-const Portrait = (props: Props) => {
+
+const Portrait = (props: PortraitImage) => {
     return (
         <div className="flex flex-col items-center justify-center mx-auto mb-12 basis-1/3">
             <div className="relative w-[60vw] h-[80vw] md:w-[30vw] md:h-[40vw] lg:w-[15vw] lg:h-[20vw] border-2 border-gray-700">

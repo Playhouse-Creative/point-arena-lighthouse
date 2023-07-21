@@ -1,4 +1,4 @@
-import { SlugInput } from 'sanity-plugin-prefixed-slug';
+// import { SlugInput } from 'sanity-plugin-prefixed-slug';
 
 export default {
   name: 'linkId',
@@ -9,7 +9,7 @@ export default {
       name: 'slug',
       title: 'Link ID',
       type: 'slug',
-      components:{input: SlugInput},
+      // components:{input: SlugInput},
       urlPrefix: 'https://www.pointarenalighthouse.com/(page)#',
       options: {
         source: 'title',

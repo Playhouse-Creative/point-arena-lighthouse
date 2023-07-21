@@ -1,4 +1,4 @@
-import RoomCardsSectionIcon from '/static/roomCardsSectionIcon'
+import RoomCardsSectionIcon from '../../../studio/static/roomCardsSectionIcon'
 
 export default {
     type: 'object',

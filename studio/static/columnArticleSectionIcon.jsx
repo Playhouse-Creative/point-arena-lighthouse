@@ -37,8 +37,8 @@ export default function ColumnArticleSectionIcon() {
         height="28"
         fill="none"
         stroke="#afafaf"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </svg>
   )

@@ -1,14 +1,15 @@
-import Link from "next/link";
-import { usePreview } from "../lib/sanity.preview";
+// 
+import { pageQuery } from '@/lib/sanity.queries';
+import page from '@/studio/schemas/documents/page';
+import { useLiveQuery } from 'next-sanity/preview'
 import RenderSections from "./renderSections";
 
-export default function PreviewSections( {query} : {query: string}) {
-    const previewSections = usePreview(null, query);
+export default function PreviewSections( {pageData} :  any) {
+    const [previewSections] = useLiveQuery(pageData, pageQuery(pageData.pageSections.id));
 
     return (
     <>
-        <RenderSections pageData={previewSections} />
-        
+        <RenderSections pageData={previewSections || []} />
     </>
     );
 }

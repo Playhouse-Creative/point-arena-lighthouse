@@ -17,6 +17,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "^3.5.0",
     "@hookform/resolvers": "^3.1.0",
+    "@sanity/production-preview": "^2.35.3",
     "@sanity/vision": "^3.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,7 +27,6 @@
     "sanity": "^3.12.1",
     "sanity-plugin-iframe-pane": "^2.3.0",
     "sanity-plugin-media": "^2.0.5",
-    "sanity-plugin-prefixed-slug": "^2.0.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import  InfoRowsSectionIcon  from '/static/infoRowsSectionIcon'
+import InfoRowsSectionIcon from '../../../studio/static/infoRowsSectionIcon'
 
 export default {
 	type: 'object',

@@ -1,4 +1,4 @@
-import FunFactsSectionIcon from '/static/funFactsSectionIcon'
+import FunFactsSectionIcon from '../../../studio/static/funFactsSectionIcon'
 
 export default {
 	type: 'object',

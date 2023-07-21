@@ -1,5 +1,4 @@
-import ColumnArticleSectionIcon from '/static/columnArticleSectionIcon'
-import React from 'react';
+import ColumnArticleSectionIcon from '../../../studio/static/ColumnArticleSectionIcon';
 
 export default {
   type: 'object',

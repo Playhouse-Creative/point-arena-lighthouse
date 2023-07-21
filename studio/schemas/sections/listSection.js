@@ -1,4 +1,4 @@
-import ListSectionIcon from '/static/listSectionIcon'
+import ListSectionIcon from '../../../studio/static/listSectionIcon'
 
 export default {
 	type: 'object',

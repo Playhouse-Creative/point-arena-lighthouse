@@ -14,10 +14,11 @@ interface Image {
 	}
 }
 
-interface PortraitImage {
+export interface PortraitImage {
 	name: string
 	title: string
 	description: string
+	key: string
 	_key: string
 	_type: string
 	_id: string
@@ -27,7 +28,7 @@ interface PortraitImage {
 interface Props {
 	heading?: string
 	linkId?: LinkId
-	portraitImage?: (PortraitImage & { key: number })[] | null
+	portraitImage?: (PortraitImage)[] | null
 }
 
 const PortraitSection: React.FC<Props> = ({
@@ -48,9 +49,9 @@ const PortraitSection: React.FC<Props> = ({
 			</div>
 
 			<div className='flex flex-wrap justify-center w-full mx-auto mt-12 auto-rows-auto justify-items-center'>
-				{portraitImages?.map((portrait: PortraitImage & { key: number }) => (
+				{portraitImages?.map((portrait: PortraitImage ) => (
 					<Portrait
-						key={portrait.key}
+						key={portrait._key}
 						name={portrait.name}
 						title={portrait.title}
 						description={portrait.description}

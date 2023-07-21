@@ -1,4 +1,4 @@
-import PortraitSectionIcon from '/static/portraitSectionIcon'
+import PortraitSectionIcon from '../../../studio/static/portraitSectionIcon'
 
 export default {
   name: 'portraitSection',

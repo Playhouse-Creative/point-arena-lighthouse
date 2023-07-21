@@ -1,4 +1,4 @@
-import CTARowsSectionIcon from '/static/ctaRowsSectionIcon'
+import CTARowsSectionIcon from '../../../studio/static/ctaRowsSectionIcon'
 
 export default {
   type: 'object',

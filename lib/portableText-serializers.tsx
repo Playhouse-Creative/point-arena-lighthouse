@@ -33,7 +33,7 @@ const serializers = () => {
 			</a>
 		),
 		internalLink: ({ href, children }: any) => (
-			href && <Link href={href}><span className='underline text-pa-teal-4'>{children}{console.log(href, children)}</span></Link>
+			href && <Link href={href}><span className='underline text-pa-teal-4'>{children}</span></Link>
 		),
         highlight: ({ children }: any) => (
 			<p style={{backgroundColor: '#A98551', color: 'white'}}>{children}</p>

@@ -1,4 +1,4 @@
-import TableSectionIcon from '/static/tableSectionIcon'
+import TableSectionIcon from '../../../studio/static/tableSectionIcon'
 
 export default {
   type: 'object',

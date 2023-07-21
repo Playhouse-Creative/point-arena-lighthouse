@@ -23,8 +23,8 @@ export default function ListSectionIcon() {
         height="28"
         fill="none"
         stroke="#afafaf"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <rect x="18.71" y="13.95" width="4.29" height="1.02" fill="#afafaf" />
       <rect x="18.71" y="9.98" width="4.29" height="1.02" fill="#afafaf" />
@@ -43,7 +43,7 @@ export default function ListSectionIcon() {
         height="13"
         fill="none"
         stroke="#002c49"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
       />
     </svg>
   )

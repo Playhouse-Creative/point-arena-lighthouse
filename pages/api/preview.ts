@@ -1,13 +1,3 @@
-// import { NextApiRequest, NextApiResponse } from 'next'
-
-// export default function preview(req: NextApiRequest, res: NextApiResponse) {
-// 	if (req.query.preview) {
-// 		res.setPreviewData({})
-// 	}
-// 	res.writeHead(307, { Location: '/' })
-// 	res.end()
-// }
-
 import {
 	apiVersion,
 	dataset,

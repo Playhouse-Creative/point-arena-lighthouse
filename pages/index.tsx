@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 			preview: draftMode,
 			pageData,
 		},
-		revalidate: process.env.SANITY_REVALIDATE_SECRET ? undefined : 10,
+		
 	}
 }
 

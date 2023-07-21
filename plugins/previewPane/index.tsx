@@ -22,19 +22,6 @@ export const previewDocumentNode = ({
 }): DefaultDocumentNodeResolver => {
   return (S, { schemaType }) => {
     switch (schemaType) {
-      // case authorType.name:
-      //   return S.document().views([
-      //     S.view.form(),
-      //     S.view
-      //       .component(({ document }) => (
-      //         <AuthorAvatarPreviewPane
-      //           name={document.displayed.name as any}
-      //           picture={document.displayed.picture as any}
-      //         />
-      //       ))
-      //       .title('Preview'),
-      //   ])
-
       case postType.name:
         return S.document().views([
           S.view.form(),

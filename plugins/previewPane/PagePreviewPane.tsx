@@ -28,7 +28,8 @@ export default function PagePreviewPane(props: Props) {
         const timeout = setTimeout(
             () => startTransition(() => setSlug(props.slug)),
             3000
-        )
+        );
+        
         return () => clearTimeout(timeout)
     }, [props.slug])
 

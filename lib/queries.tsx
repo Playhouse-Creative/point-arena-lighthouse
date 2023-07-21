@@ -13,6 +13,7 @@ const pageFields = `
 _id,
 title, 
 content
+"slug": slug.current,
 `
 
 export const indexQuery = `
@@ -26,6 +27,12 @@ export const pageQuery = `
         ...${pageFields}
       }
 }`
+
+export const pageBySlugQuery = `
+*[_type == "page" && slug.current == $slug][0] {
+  ${pageFields}
+}
+`
 
 export const postPreviewsQuery = `
 {

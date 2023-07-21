@@ -62,7 +62,7 @@ export default async function revalidate(
   }
 }
 
-type StaleRoute = '/' | `/posts/${string}`
+type StaleRoute = '/' | `${string}` | `/post/${string}`
 
 async function queryStaleRoutes(
   body: Pick<ParseBody['body'], '_type' | '_id' | 'date' | 'slug'>
@@ -93,12 +93,10 @@ async function queryStaleRoutes(
   }
 
   switch (body._type) {
-    case 'author':
-      return await queryStaleAuthorRoutes(client, body._id)
+    case 'page':
+      return await queryStalePageRoutes(client, body._id)
     case 'post':
       return await queryStalePostRoutes(client, body._id)
-    case 'settings':
-      return await queryAllRoutes(client)
     default:
       throw new TypeError(`Unknown type: ${body._type}`)
   }
@@ -129,24 +127,17 @@ async function mergeWithMoreStories(
   return slugs
 }
 
-async function queryStaleAuthorRoutes(
+async function queryStalePageRoutes(
   client: SanityClient,
   id: string
 ): Promise<StaleRoute[]> {
   let slugs = await client.fetch(
-    groq`*[_type == "author" && _id == $id] {
-    "slug": *[_type == "post" && references(^._id)].slug.current
-  }["slug"][]`,
+    groq`*[_type == "page" && _id == $id].slug.current`,
     { id }
   )
-
-  if (slugs.length > 0) {
-    slugs = await mergeWithMoreStories(client, slugs)
-    return ['/', ...slugs.map((slug: string) => `/posts/${slug}`)]
+    return [`/${slugs[0]}`]
   }
 
-  return []
-}
 
 async function queryStalePostRoutes(
   client: SanityClient,

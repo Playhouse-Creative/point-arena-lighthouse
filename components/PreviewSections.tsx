@@ -10,6 +10,7 @@ export default function PreviewSections( {pageData} :  any) {
     return (
     <>
         <RenderSections pageData={previewSections || []} />
+        {console.log(previewSections.pageSections[0].content[0].heading)}
     </>
     );
 }

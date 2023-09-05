@@ -36,7 +36,7 @@ export default function CtaRow({bannerColor, title, body, cta, image}: Props) {
 								clipPath:
 									'polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, calc(0% + 10px) 50%, 0% 0%)',
 							}}>
-							<h2 className='font-serif text-xl font-semibold text-center text-white lg:text-2xl '>
+							<h2 className='font-serif text-xl text-center text-white lg:text-2xl '>
 								{displayTitle}
 							</h2>
 						</div>

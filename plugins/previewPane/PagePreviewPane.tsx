@@ -20,11 +20,14 @@ type Props = {
 }
 
 export default function PagePreviewPane(props: Props) {
+    console.log(`Rendering PostPreviewPane with slug: ${props.slug}`);
     const { previewSecretId, apiVersion } = props
     // Whenever the slug changes, wait 3 seconds for GROQ to reach eventual consistency.
     // This helps to prevent displaying "Invalid slug" or returning 404 errors while editing the slug manually.
     const [slug, setSlug] = useState(props.slug)
+    console.log(`Slug-state: ${slug}`)
     useEffect(() => {
+        console.log(`Slug updated: ${props.slug}`)
         const timeout = setTimeout(
             () => startTransition(() => setSlug(props.slug)),
             3000
@@ -38,7 +41,7 @@ export default function PagePreviewPane(props: Props) {
         return (
             <Card tone="primary" margin={5} padding={6}>
                 <Text align="center">
-                    Please add a slug to the post to see the preview!
+                    Please add a slug to the page to see the preview!
                 </Text>
             </Card>
         )
@@ -94,6 +97,8 @@ const Iframe = memo(function Iframe(
         // The secret fetch has a TTL of 1 minute, just to check if it's necessary to recreate the secret which has a TTL of 60 minutes
         { lifespan: 60000 }
     )
+
+    console.log(`Fetching Iframe with secret: ${secret}`)
 
     const url = new URL('/api/preview', location.origin)
     url.searchParams.set('slug', slug)

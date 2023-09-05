@@ -75,7 +75,7 @@ async function queryStaleRoutes(
     if (!exists) {
       let staleRoutes: StaleRoute[] = ['/']
       if ((body.slug as any)?.current) {
-        staleRoutes.push(`/posts/${(body.slug as any).current}`)
+        staleRoutes.push(`/post/${(body.slug as any).current}`)
       }
       // Assume that the post document was deleted. Query the datetime used to sort "More stories" to determine if the post was in the list.
       const moreStories = await client.fetch(
@@ -109,7 +109,7 @@ async function _queryAllRoutes(client: SanityClient): Promise<string[]> {
 async function queryAllRoutes(client: SanityClient): Promise<StaleRoute[]> {
   const slugs = await _queryAllRoutes(client)
 
-  return ['/', ...slugs.map((slug) => `/posts/${slug}` as StaleRoute)]
+  return ['/', ...slugs.map((slug) => `/post/${slug}` as StaleRoute)]
 }
 
 async function mergeWithMoreStories(
@@ -150,5 +150,5 @@ async function queryStalePostRoutes(
 
   slugs = await mergeWithMoreStories(client, slugs)
 
-  return ['/', ...slugs.map((slug: string) => `/posts/${slug}`)]
+  return ['/', ...slugs.map((slug: string) => `/post/${slug}`)]
 }

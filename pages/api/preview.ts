@@ -68,24 +68,26 @@ export default async function preview(
 	const post = await client.fetch(postBySlugQuery, {
 		slug: req.query.slug,
 	})
+	if (post) {
+		redirectToPreview(res, `/post/${post.slug}`);
+		return; // Stop execution if post is found
+	}
 
 	const page = {
 		slug: req.query.slug,
+	}
+
+	if (page) {
+		if (page.slug === '/') {
+			redirectToPreview(res, `/`);
+		} else {
+			redirectToPreview(res, `/${page.slug}`);
+		}
+		return; // Stop execution if page is found
 	}
 
 	// If the slug doesn't exist prevent preview mode from being enabled
 	if (!post && !page) {
 		return res.status(401).send('Invalid slug')
 	}
-
-	// Redirect to the path from the fetched post
-	// We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-	if (post) {redirectToPreview(res, `/post/${post.slug}`)}
-
-	if (page) {if (page.slug === '/') redirectToPreview(res, `/`); else redirectToPreview(res, `/${page.slug}`);}
-
-		// If somehow we reach this return statement, prevent preview mode from being enabled
-		// return res.status(401).send('Invalid slug')
-
-
-	}
+}

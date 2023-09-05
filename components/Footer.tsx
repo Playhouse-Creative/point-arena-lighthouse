@@ -6,62 +6,62 @@ export default function Footer({}: Props) {
 	return (
 		<div>
 			<div className="z-30 m-0 flex md:flex-row flex-col h-full w-screen py-12 bg-[url('/footer-circle-pattern.svg')] bg-cover bg-no-repeat p-0">
-				<div className='mx-10 md:ml-12 w-screen md:w-1/4'>
+				<div className='w-screen mx-10 md:ml-12 md:w-1/4'>
 					<h4 className='text-xl text-white underline underline-offset-2'>
 						Hours:
 					</h4>
-					<p className='md:text-lg text-sm text-white font-semibold'>Memorial Day through Labor Day</p>
-					<p className='md:text-lg text-sm text-white'>10am - 4:30pm</p>
-					<p className='md:text-lg text-sm text-white font-semibold'>Rest of the year</p>
-					<p className='md:text-lg text-sm text-white'>10am - 3:30pm</p>
-					<p className='md:text-lg text-sm text-white'>Closed Thanksgiving & Christmas Days</p>
-					<p className='md:text-lg text-sm text-white'>Closed at 1 p.m. Christmas Eve</p>
-					<h4 className=' mt-4 text-xl text-white underline underline-offset-2'>
+					<p className='text-sm font-semibold text-white md:text-lg'>Memorial Day through Labor Day</p>
+					<p className='text-sm text-white md:text-lg'>10am - 4:30pm</p>
+					<p className='text-sm font-semibold text-white md:text-lg'>Rest of the year</p>
+					<p className='text-sm text-white md:text-lg'>10am - 3:30pm</p>
+					<p className='text-sm text-white md:text-lg'>Closed Thanksgiving & Christmas Days</p>
+					<p className='text-sm text-white md:text-lg'>Closed at 1 p.m. Christmas Eve</p>
+					<h4 className='mt-4 text-xl text-white underline  underline-offset-2'>
 						Admission Prices:
 					</h4>
 					<p className='mt-2 text-lg text-white underline'>
 						Site Visit Fee
 					</p>
 					<div className='flex justify-between w-2/3'>
-						<p className='md:text-lg text-sm text-white'>Members and Children under 12</p>
-						<p className='md:text-lg text-sm text-white'>Free</p>
+						<p className='text-sm text-white md:text-lg'>Members and Children under 12</p>
+						<p className='text-sm text-white md:text-lg'>Free</p>
 					</div>
 					<div className='flex justify-between w-2/3'>
-						<p className='md:text-lg text-sm text-white'>12 and over</p>
-						<p className='md:text-lg text-sm text-white'>$5</p>
+						<p className='text-sm text-white md:text-lg'>12 and over</p>
+						<p className='text-sm text-white md:text-lg'>$5</p>
 					</div>
-					<p className='mt-2 md:text-lg text-sm text-white underline'>
+					<p className='mt-2 text-sm text-white underline md:text-lg'>
 						Tower Tour (in addition to site visit fee)
 					</p>
 					<div className='flex justify-between w-2/3'>
-						<p className='md:text-lg text-sm text-white'>6 and over</p>
-						<p className='md:text-lg text-sm text-white'>$5</p>
+						<p className='text-sm text-white md:text-lg'>4 and over</p>
+						<p className='text-sm text-white md:text-lg'>$5</p>
 					</div>
 				</div>
-				<div className='mx-10 md:ml-12 w-screen md:w-1/4 mt-10'>
+				<div className='w-screen mx-10 mt-10 md:ml-12 md:w-1/4'>
 					<h4 className='text-xl text-white underline underline-offset-2'>
 						Phone:
 					</h4>
 					<p className='mt-2 text-lg text-white'>
 						877-725-4448, ext. 1 or
 					</p>
-					<p className='md:text-lg text-sm text-white'>707-882-2809, ext. 1</p>
+					<p className='text-sm text-white md:text-lg'>707-882-2809, ext. 1</p>
 					<h4 className='mt-4 text-xl text-white underline underline-offset-2'>
 						Email:
 					</h4>
-					<p className='mt-2 md:text-lg text-sm text-white'>
+					<p className='mt-2 text-sm text-white md:text-lg'>
 						info.palight@gmail.com
 					</p>
-					<h4 className='mt-4 md:text-xl text-sm text-white underline underline-offset-2'>
+					<h4 className='mt-4 text-sm text-white underline md:text-xl underline-offset-2'>
 						Address:
 					</h4>
-					<p className='mt-2 md:text-lg text-sm text-white'>
+					<p className='mt-2 text-sm text-white md:text-lg'>
 						45500 Lighthouse Road
 					</p>
-					<p className='mt-2 md:text-lg text-sm text-white'>P. O. Box 11</p>
-					<p className=' md:text-lg text-sm text-white'>Point Arena, CA 95468</p>
+					<p className='mt-2 text-sm text-white md:text-lg'>P. O. Box 11</p>
+					<p className='text-sm text-white  md:text-lg'>Point Arena, CA 95468</p>
 				</div>
-				<div className='mx-10 md:ml-12 w-screen md:w-1/4 mt-10'>
+				<div className='w-screen mx-10 mt-10 md:ml-12 md:w-1/4'>
 					<Link href='/lodging'><h4 className='mb-4 text-xl text-white'>Lodging</h4></Link>
 					<Link href='/visit'><h4 className='mb-4 text-xl text-white'>Visit</h4></Link>
 					<Link href='/about'><h4 className='mb-4 text-xl text-white'>About</h4></Link>

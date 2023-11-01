@@ -13,7 +13,7 @@ export default defineType({
       name: 'slug',
       title: 'Link ID',
       type: 'slug',
-      urlPrefix: 'https://www.pointarenalighthouse.com/(page)#',
+      // urlPrefix: 'https://www.pointarenalighthouse.com/(page)#',
       options: {
         source: 'title',
         slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),

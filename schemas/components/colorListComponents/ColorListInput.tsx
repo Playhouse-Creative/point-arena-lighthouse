@@ -1,17 +1,17 @@
+import { Card, Inline, Stack, Text } from '@sanity/ui'
 import React, { useCallback, useState } from 'react'
 import {
+  ObjectInputProps,
   ObjectOptions,
   ObjectSchemaType,
-  ObjectInputProps,
-  set,
-  setIfMissing,
-  unset,
   PatchEvent,
+  set,
+  unset,
 } from 'sanity'
-import { Card, Inline, Stack, Text } from '@sanity/ui'
-import { BorderRadius, Color } from './Color'
+
 import { useColors } from '../hooks'
 import { isEqual } from '../utils'
+import { BorderRadius, Color } from './Color'
 
 export type StudioColorValue = {
   title: string
@@ -53,7 +53,7 @@ export const ColorListInput = (props: ColorInputProps) => {
     [currentColor, onChange]
   )
 
-  let content = null
+  let content = {}
 
   if (errors) {
     content = (

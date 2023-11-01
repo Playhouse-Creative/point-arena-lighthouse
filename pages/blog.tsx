@@ -4,10 +4,10 @@ import { getClient } from 'lib/sanity.client'
 import { blogPageQuery } from 'lib/sanity.queries'
 import { useLiveQuery } from 'next-sanity/preview'
 import { PagePayload } from 'types'
-import { HomePagePayload } from 'types'
+import { BlogPagePayload } from 'types'
 
 interface PageProps {
-    page: HomePagePayload
+    page: BlogPagePayload
     draftMode: boolean
     token: string | null
 }
@@ -18,7 +18,7 @@ interface Query {
 
 export default function Blog(props: PageProps) {
     const { page: initialPage, draftMode } = props
-    const [page, loading] = useLiveQuery<HomePagePayload | null>(
+    const [page, loading] = useLiveQuery<BlogPagePayload | null>(
         initialPage,
         blogPageQuery,
     )

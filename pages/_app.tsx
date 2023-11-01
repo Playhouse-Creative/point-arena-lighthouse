@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { Livvic, Spectral } from 'next/font/google'
 import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { lazy } from 'react'
 
 const livvic = Livvic({
@@ -19,13 +20,19 @@ const spectral = Spectral({
 
 const PreviewProvider = lazy(() => import('components/PreviewProvider'))
 
-function MyApp({ Component, pageProps }: AppProps) {
-	const { draftmode, token } = pageProps
+function MyApp({ 
+	Component,
+	pageProps,
+}: AppProps<{
+	draftMode: boolean
+	token: string
+}>) {
+	const { draftMode, token } = pageProps
 	return (
 		<>
 			<Hydrated>
 				<main className={` ${spectral.variable} ${livvic.variable}`}>
-					{draftmode ? (
+					{draftMode ? (
 						<PreviewProvider token={token}>
 							<Component {...pageProps} />
 						</PreviewProvider>

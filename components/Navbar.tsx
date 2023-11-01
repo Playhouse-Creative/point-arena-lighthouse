@@ -1,4 +1,3 @@
-'use client'
 import Link from 'next/link'
 import Img from 'next/image'
 import { Disclosure, Transition } from '@headlessui/react'

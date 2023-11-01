@@ -1,13 +1,11 @@
-import { sanityClient } from '@/lib/sanity-server'
 import RenderSections from '../components/renderSections'
 import PageLayout from '../components/PageLayout'
 import _ from 'lodash'
 import { PageData } from '@/lib/types'
 import { lazy } from 'react'
-import { getClient } from 'lib/sanity.client'
-import { readToken } from 'lib/sanity.api'
+import { sanityFetch, token } from '@/lib/sanity.fetch'
 import { pageQuery } from '@/lib/sanity.queries'
-import { GetStaticProps } from 'next'
+
 
 const PreviewSections = lazy(() => import('../components/PreviewSections'))
 
@@ -29,13 +27,13 @@ const Visit = ({ preview, pageData }: { preview: boolean; pageData: PageData }) 
 }
 
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-	const { draftMode = false } = ctx
-	const client = getClient(draftMode ? { token: readToken } : undefined)
-	const pageData = await client.fetch(pageQuery("visit"))
+export const getStaticProps = async ({ draftMode = false }: { draftMode: boolean }) => {
+	const query = pageQuery('visit')
+	const pageData = await sanityFetch({ draftMode, query })
 	return {
 		props: {
-			preview: draftMode,
+			draftMode,
+			token: draftMode ? token : '',
 			pageData,
 		},
 	}

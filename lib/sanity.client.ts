@@ -1,11 +1,13 @@
 import { createClient, type SanityClient } from 'next-sanity'
 
+import { apiVersion, dataset, projectId, useCdn } from './sanity.api'
+
 export function getClient(preview?: { token: string }): SanityClient {
     const client = createClient({
-        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
-        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
-        apiVersion: '2023-06-20',
-        useCdn: true,
+        projectId,
+        dataset,
+        apiVersion,
+        useCdn,
         perspective: 'published',
     })
     if (preview) {

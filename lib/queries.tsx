@@ -23,7 +23,7 @@ export const indexQuery = `
 
 export const pageQuery = `
 {
-    "page": *[_type == "page" && title == $title] {
+    "page": *[_type == "page" && title == '$title'] {
         ...${pageFields}
       }
 }`

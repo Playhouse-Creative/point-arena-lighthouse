@@ -21,7 +21,8 @@ export const pageQuery = (pageName: string) => groq`{
 	{...,
 		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}},
 		
-	},
+	}
+  ,
 
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...10]
 {_id,
@@ -35,7 +36,8 @@ excerpt,
 mainImage,
 description,
 body, 
-	}}`
+	}
+  }`
 
 
 export const settingsQuery = groq`*[_type == "settings"][0]`

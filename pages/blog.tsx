@@ -6,7 +6,6 @@ import { urlForImage } from '@/lib/sanity'
 import Img from 'next/image'
 import Link from 'next/link'
 import BlogFeaturedPosts from '@/components/sections/sectionComponents/BlogFeaturedPosts'
-import { Post } from '@/lib/types'
 import { PostData } from '../lib/types'
 
 const Blog = ({ postData }: PostData) => {

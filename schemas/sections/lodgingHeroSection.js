@@ -1,4 +1,4 @@
-import LodgingHeroSectionIcon from '../../../studio/static/lodgingHeroSectionIcon'
+import LodgingHeroSectionIcon from '../../studio/static/lodgingHeroSectionIcon'
 
 export default {
     type: 'object',

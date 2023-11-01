@@ -1,44 +1,54 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import RenderSections from '../components/renderSections'
-import PageLayout from '../components/PageLayout'
+import { HomePage } from 'components/pages/home/HomePage'
+import { readToken } from 'lib/sanity.api'
+import { getClient } from 'lib/sanity.client'
+import { homePageQuery, pagesBySlugQuery } from 'lib/sanity.queries'
 import { useLiveQuery } from 'next-sanity/preview'
-import _ from 'lodash'
-import { PageData } from '@/lib/types'
-import { pageQuery } from '@/lib/sanity.queries'
-import { readToken } from '@/lib/sanity.api'
-import { getClient } from '@/lib/sanity.client'
+import { PagePayload } from 'types'
+import { HomePagePayload } from 'types'
 
+interface PageProps {
+  page: HomePagePayload
+  draftMode: boolean
+  token: string | null
+}
 
+interface Query {
+  [key: string]: string
+}
 
-const Home = (props: InferGetStaticPropsType<typeof getStaticProps>,) => {
-	const query = pageQuery("home")
-	const [pageData] = useLiveQuery(props.pageData, query)
-	return (
-		<PageLayout title='Point Arena Lighthouse' description='Come stay at the Point Arena Lighthouse!'>
-			<main>
-				{/* <LiveQuery enabled={draftMode} query={query} initialData={[pageData]}> */}
-					<RenderSections pageData={pageData} />
-				{/* </LiveQuery> */}
-				
-			</main>
-		</PageLayout>
-	)
+export default function IndexPage(props: PageProps) {
+  const { page: initialPage, draftMode } = props
+  const [page, loading] = useLiveQuery<HomePagePayload | null>(
+    initialPage,
+    homePageQuery,
+  )
+
+  return (<>
+    <HomePage
+      preview={draftMode}
+      loading={loading}
+      page={page ?? initialPage}
+    />
+  </>
+  )
 }
 
 
-export const getStaticProps = async ({ draftMode= false }: { draftMode: boolean }) => {
-	const query = pageQuery("home")
-	const client = getClient(draftMode ? { token: readToken } : undefined)
-	const pageData = await client.fetch(query)
-	return {
-		props: {
-			draftMode,
-			token: draftMode ? readToken : '',
-			pageData,
-		},
-		
-	}
+
+export const getStaticProps = async (ctx: { draftMode?: false | undefined }) => {
+  const { draftMode = false } = ctx
+  const client = getClient(draftMode)
+
+  const page = await client.fetch<PagePayload | null>(pagesBySlugQuery, {
+    slug: "home",
+  })
+
+
+  return {
+    props: {
+      page,
+      draftMode,
+      token: draftMode ? readToken : null,
+    },
+  }
 }
-
-
-export default Home

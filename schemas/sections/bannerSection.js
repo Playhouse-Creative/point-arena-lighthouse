@@ -1,4 +1,4 @@
-import BannerSectionIcon from '../../../studio/static/bannerSectionIcon'
+import BannerSectionIcon from '../../studio/static/bannerSectionIcon'
 
 export default {
     type: 'object',

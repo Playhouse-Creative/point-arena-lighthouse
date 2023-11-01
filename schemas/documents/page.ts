@@ -1,49 +1,67 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { DocumentIcon } from '@sanity/icons'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
   name: 'page',
   title: 'Page',
-  // __experimental_actions: [
-  //   /* "create", "delete", */ "update", "publish"
-  // ],
+  readOnly: false,
+  icon: DocumentIcon,
   fields: [
-    {
-      name: 'title',
+    defineField({
       type: 'string',
-      title: 'Title'
-    },
-    {
-      name: 'slug',
+      name: 'title',
+      title: 'Title',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'string',
+      name: 'id',
+      title: 'ID',
+      hidden: true,
+    }),
+    defineField({
       type: 'slug',
-      title: 'Slug', 
-      hidden: true
-    },
-    {name: 'id',
-  type: 'string',
-  title: 'ID',
-  hidden: true
-},
-    {
+      name: 'slug',
+      title: 'Slug',
+      hidden: true,
+      options: {
+        source: 'title',
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'content',
-      type: 'array',
-      title: 'Page sections',
       description: 'Add, edit, and reorder sections',
+      title: 'Page Sections',
+      type: 'array',
       of: [
-        { type: 'articlesSection' },
-        { type: 'bannerSection' },
-        { type: 'heroSection' },
-        { type: 'infoRowsSection' },
-        { type: 'listSection'},
-        { type: 'tableSection'},
-        { type: 'portraitSection'},
-        { type: 'ctaRowSection' },
-        { type: 'funFactsSection'},
-        { type: 'blogPreviewSection' },
-        { type: 'lodgingHeroSection'},
-        { type: 'roomCardsSection'},
-        { type: 'donationsSection'},
-      ]
-    }
-  ]
+          { type: 'articlesSection' },
+          { type: 'bannerSection' },
+          { type: 'heroSection' },
+          { type: 'infoRowsSection' },
+          { type: 'listSection' },
+          { type: 'tableSection' },
+          { type: 'portraitSection' },
+          { type: 'ctaRowSection' },
+          { type: 'funFactsSection' },
+          { type: 'blogPreviewSection' },
+          { type: 'lodgingHeroSection' },
+          { type: 'roomCardsSection' },
+          { type: 'donationsSection' }
+      ],
+      
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare({ title }) {
+      return {
+        subtitle: 'Page',
+        title,
+      }
+    },
+  },
 })

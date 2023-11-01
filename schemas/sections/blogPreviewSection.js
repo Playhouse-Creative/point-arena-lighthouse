@@ -1,4 +1,4 @@
-import BlogPreviewSectionIcon from '../../../studio/static/blogPreviewSectionIcon'
+import BlogPreviewSectionIcon from '../../studio/static/blogPreviewSectionIcon'
 
 export default {
   type: 'object',

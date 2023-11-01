@@ -1,4 +1,4 @@
-import HeroSectionIcon from '../../../studio/static/heroSectionIcon'
+import HeroSectionIcon from '../../studio/static/heroSectionIcon'
 
 export default {
 	type: 'object',

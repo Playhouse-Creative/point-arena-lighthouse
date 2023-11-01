@@ -15,10 +15,12 @@
 
 # production
 /build
+/studio/dist
 
 # misc
 .DS_Store
 *.pem
+.vscode
 
 # debug
 npm-debug.log*
@@ -29,9 +31,16 @@ yarn-error.log*
 # local env files
 .env*.local
 
+#Intellij
+.idea
+*.iml
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# Env files created by scripts for working locally
+.env
+studio/.env.development

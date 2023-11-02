@@ -9,11 +9,13 @@ import { lazy } from 'react'
 
 const livvic = Livvic({
   weight: ['100', '200', '300', '400', '500', '600', '700', '900'],
+  display: 'swap',
   subsets: ['latin'],
   variable: '--font-livvic',
 })
 const spectral = Spectral({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
+  display: 'swap',
   subsets: ['latin'],
   variable: '--font-spectral',
 })

@@ -43,6 +43,7 @@
     "styled-components": "5.3.11"
   },
   "devDependencies": {
+    "@stackbit/cms-sanity": "^0.2.23",
     "@types/react": "18.2.29",
     "autoprefixer": "10.4.16",
     "eslint": "8.51.0",

@@ -46,5 +46,6 @@ export const getStaticProps = async (ctx: { draftMode?: false | undefined }) => 
             draftMode,
             token: draftMode ? readToken : null,
         },
+        revalidate: 10,
     }
 }

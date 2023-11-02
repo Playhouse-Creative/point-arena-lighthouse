@@ -1,14 +1,25 @@
+import { useForm, ValidationError } from "@formspree/react";
 import { Switch } from '@headlessui/react'
 import Img from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
 }
 
 export default function ContactForm() {
 	const [agreed, setAgreed] = useState(false)
+	const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || '');
+
+	if (state.succeeded) {
+		return <div className='py-16 overflow-hidden'>
+			<div className='relative max-w-xl px-6 mx-auto'>
+				<div className='w-full text-center' id='contact '>
+					<h2 className='mt-8 font-serif text-4xl font-semibold text-pa-navy-4'>Get in Touch</h2>
+				</div><p className="text-center text-2xl bg-pa-teal-1 rounded-lg shadow-lg py-12 mt-4">Thanks for your submission!</p>
+				</div>
+				</div>
+	}
 
 	return (
 		<div className='py-16 overflow-hidden'>
@@ -19,10 +30,7 @@ export default function ContactForm() {
 				<div className='mt-12'>
 					<form
 						name='contact'
-						method='POST'
-						data-netlify='true'
-						// action="/"
-						netlify-honeypot='bot-field'
+						onSubmit={handleSubmit}
 						className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
 					>
 						<input type='hidden' name='form-name' value='contact' />
@@ -44,6 +52,7 @@ export default function ContactForm() {
 									autoComplete='given-name'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 								/>
+								<ValidationError prefix="First Name" field="first-name" errors={state.errors} />
 							</div>
 						</div>
 						<div>
@@ -73,6 +82,7 @@ export default function ContactForm() {
 									autoComplete='email'
 									className='block w-full px-4 py-3 border-gray-300 rounded-md shadow-sm focus:border-pa-teal-3 focus:ring-pa-teal-3'
 								/>
+								<ValidationError prefix="Email" field="email" errors={state.errors} />
 							</div>
 						</div>
 						<div className='sm:col-span-2'>
@@ -133,6 +143,7 @@ export default function ContactForm() {
 								)}>
 								Let{`'`}s talk
 							</button>
+							<ValidationError errors={state.errors} />
 						</div>
 					</form>
 				</div>

@@ -8,9 +8,10 @@ type Props = { posts: PostData[] }
 
 export default function BlogFeaturedPosts({ posts }: Props) {
 	const [selectedCategory, setSelectedCategory] = useState('all')
-	// Filter out posts that are archived or past events
+	// Filter out posts that are archived
 	const filteredPosts = _.filter(posts, (post) => {
-		return post.category[0].title !== "Archived" && post.category[0].title !== "Past Events";
+		return post.category[0].title !== "Archived" 
+		// && post.category[0].title !== "Past Events";
 	});
 	// We are separating the posts into two arrays, eventPosts and nonEventPosts so we can reverse the order of the eventPosts array.
 	// Client wanted the events to go from oldest to newest.
@@ -25,7 +26,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 
 	// Merge the reversedEventPosts array and nonEventPosts array
 	const reorderedPosts = [...reversedEventPosts, ...nonEventPosts];
-	const firstEightPosts = reorderedPosts.slice(0, 8)
+	const firstTwelvePosts = reorderedPosts.slice(0, 12)
 	const uniqueCategories = _.uniqBy(
 		_.flatMap(reorderedPosts, (post) => post.category[0]),
 		'title'
@@ -35,7 +36,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 		<div className='self-center w-full mx-4 md:w-6/12 md:self-start lg:w-4/12'>
 			<div className='flex flex-col p-4 pb-2 bg-white border-b-2 border-b-pa-navy-3'>
 				<h2 className='mb-2 text-2xl'>Featured Posts</h2>
-				<div className='flex justify-start w-full -ml-2'>
+				<div className='flex justify-center w-full mx-auto'>
 					<button
 						className={`m-1 px-3 py-1 font-light sm:m-2  ${
 							selectedCategory === 'all'
@@ -67,7 +68,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 			</div>
 			<div className='flex flex-col w-full overflow-hidden bg-white divide-y '>
 				{selectedCategory === 'all'
-					? firstEightPosts.slice(1).map((post: any, i: number) => (
+					? firstTwelvePosts.slice(1).map((post: any, i: number) => (
 							<Link
 								href={`/post/${post.slug.current}`}
 								key={post._id}

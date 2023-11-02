@@ -19,7 +19,8 @@ export interface BlogPageProps {
 const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
     const posts = _.flatMap(page)
     const filteredPosts = _.filter(posts, (post) => {
-        return post.category[0].title !== "Archived" && post.category[0].title !== "Past Events";
+        return post.category[0].title !== "Archived" 
+        // && post.category[0].title !== "Past Events";
     });
     const firstThreePosts = filteredPosts.slice(1, 4)
 
@@ -28,8 +29,8 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
         <BlogPageHead page={page} />
         <Layout preview={preview} loading={loading}>
             <main>
-                <div className='mx-auto mb-24 flex max-w-[1600px] flex-col justify-center md:flex-row'>
-                    <div className='group w-full cursor-pointer bg-white p-4 pb-16 md:m-4 md:w-6/12 md:border-[2px] md:border-pa-navy-4 lg:m-12 lg:w-5/12 lg:p-10'>
+                <div className='mx-auto mb-24 flex max-w-[1600px] flex-col justify-center md:flex-row '>
+                    <div className='group w-full cursor-pointer bg-white p-4 pb-16 h-full md:m-4 md:w-6/12 md:border-[2px] md:border-pa-navy-4 lg:m-12 lg:w-5/12 lg:p-10'>
                         <Link href={`/post/${filteredPosts[0].slug.current}`} key={posts[0]._id}>
                             <div className='relative w-full aspect-square'>
                                     {filteredPosts[0].mainImage && (

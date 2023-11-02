@@ -6,7 +6,7 @@ interface LinkId {
 }
 
 interface Heading {
-	icon?: { asset: { _ref?: any } }
+	icon?: any
 	title?: string
 }
 
@@ -45,7 +45,7 @@ export default function GridListSection({
 							<div className='flex text-pa-navy-4'>
 								{listSection.heading?.icon ? (
 									<img
-										src={urlForImage(listSection.heading.icon.asset._ref || 'default-image-url')?.url()}
+										src={urlForImage(listSection.heading.icon)?.url()}
 										alt={listSection.heading?.title || 'Placeholder alt text'}
 										width={35}
 										height={35}

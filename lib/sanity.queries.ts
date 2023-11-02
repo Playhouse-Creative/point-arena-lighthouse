@@ -25,7 +25,7 @@ export const homePageQuery = groq`
     
   }
   ,
-    "postData" :*[_type == "post"] | order(publishedAt desc)[0...10]
+    "postData" :*[_type == "post"] | order(publishedAt desc)[0...20]
 {_id,
 _createdAt,
 title,
@@ -45,15 +45,16 @@ export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
 `
 
-export const pagesBySlugQuery = groq`*[_type == "page" && id == $slug][0]{
+export const pagesBySlugQuery = groq`
+  *[_type == "page" && slug.current == $slug][0] {
+  _id,
+  "slug": slug.current,
   "pageSections":  {
     ...,
 		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}},
     
   }
   ,
-  "slug": slug.current,
-
 "postData" :*[_type == "post"] | order(publishedAt desc)[0...20]
 {_id,
 _createdAt,
@@ -120,7 +121,7 @@ export const postPaths = groq`
 `
 
 export const pagePaths = groq`
-  *[_type == "page" && slug.current != null]{"slug": slug.current}
+  *[_type == "page" && slug.current != null ].slug.current
 `
 
 

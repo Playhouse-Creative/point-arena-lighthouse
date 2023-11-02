@@ -23,7 +23,7 @@ export default function Blog(props: PageProps) {
         blogPageQuery,
     )
 
-    return (<>{console.log(page)}
+    return (<>
         <BlogPage
             preview={draftMode}
             loading={loading}

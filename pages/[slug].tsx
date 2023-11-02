@@ -6,7 +6,6 @@ import {
   pagePaths,
   pagesBySlugQuery,
 } from 'lib/sanity.queries'
-import { GetStaticProps } from 'next'
 import { useLiveQuery } from 'next-sanity/preview'
 import { PagePayload } from 'types'
 
@@ -39,15 +38,11 @@ export default function PageSlugRoute(props: PageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
+export const getStaticProps = async (ctx) => {
   const { draftMode = false, params = {} } = ctx
   const client = getClient(draftMode)
 
-  const  page = await client.fetch<PagePayload | null>(pagesBySlugQuery, {
-      slug: params.slug,
-    })
-    
-  
+  const page = await client.fetch(pagesBySlugQuery, { slug: params.slug })
 
   if (!page) {
     return {
@@ -66,10 +61,10 @@ export const getStaticProps: GetStaticProps<PageProps, Query> = async (ctx) => {
 
 export const getStaticPaths = async () => {
   const client = getClient()
-  const paths = await client.fetch<string[]>(pagePaths)
+  const paths = await client.fetch<string[]>(pagePaths);
 
   return {
-    paths: paths?.map((slug) => resolveHref('page', slug)) || [],
+    paths: paths?.filter((slug) => slug !== '/').map((slug) => resolveHref('page', slug)) || [],
     fallback: false,
   }
 }

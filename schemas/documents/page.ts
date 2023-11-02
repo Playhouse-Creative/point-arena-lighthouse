@@ -24,7 +24,7 @@ export default defineType({
       type: 'slug',
       name: 'slug',
       title: 'Slug',
-      hidden: true,
+      // hidden: true,
       options: {
         source: 'title',
       },

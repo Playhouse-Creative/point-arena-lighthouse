@@ -1,7 +1,7 @@
 import { HomePage } from 'components/pages/home/HomePage'
 import { readToken } from 'lib/sanity.api'
 import { getClient } from 'lib/sanity.client'
-import { homePageQuery, pagesBySlugQuery } from 'lib/sanity.queries'
+import { homePageQuery } from 'lib/sanity.queries'
 import { useLiveQuery } from 'next-sanity/preview'
 import { PagePayload } from 'types'
 import { HomePagePayload } from 'types'
@@ -39,9 +39,7 @@ export const getStaticProps = async (ctx: { draftMode?: false | undefined }) => 
   const { draftMode = false } = ctx
   const client = getClient(draftMode)
 
-  const page = await client.fetch<PagePayload | null>(pagesBySlugQuery, {
-    slug: "home",
-  })
+  const page = await client.fetch<PagePayload | null>(homePageQuery)
 
 
   return {

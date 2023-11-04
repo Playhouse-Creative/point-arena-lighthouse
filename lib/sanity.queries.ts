@@ -7,7 +7,7 @@ export const blogPageQuery = groq`{"postData" :*[_type == "post"] | order(publis
 	title,
 	slug,
 	author->{name, image},
-    publishedAt,
+  publishedAt,
 	excerpt,
 	'category': categories[]-> { title, color },
 	mainImage,

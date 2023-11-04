@@ -71,12 +71,6 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
                                         />
                                     )}
                                 </div>
-                                {filteredPosts[0].author && (
-                                    <p className='mb-2 text-sm font-light'>
-                                        Blog post by <span className='text-pa-green-4'>{filteredPosts[0].author.name}</span> <br />
-                                        published at {new Date(filteredPosts[0].publishedAt).toLocaleString()}
-                                    </p>
-                                )}
                             </div>
                             <div>
                                 <p>{filteredPosts[0].excerpt}</p>

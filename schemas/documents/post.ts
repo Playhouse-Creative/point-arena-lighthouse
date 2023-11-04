@@ -32,7 +32,7 @@ export default defineType({
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
-      description: 'This can be used to schedule post for publishing',
+      description: 'This can be used to determine the order posts appear on the site',
     }),
     defineField({
       name: 'mainImage',

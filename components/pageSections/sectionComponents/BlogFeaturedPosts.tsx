@@ -15,7 +15,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 	});
 	// We are separating the posts into two arrays, eventPosts and nonEventPosts so we can reverse the order of the eventPosts array.
 	// Client wanted the events to go from oldest to newest.
-	// The feed is served in the order that the posts were published and he doesn't always fill in the publish date though
+	// The feed is served in the order that the posts were published and he doesn't always fill in the publish date when he creates a post
 	// so in the end the post order will still probably be arbitrary.
 	// We could add an event date to the post schema and sort by that instead of the publish date but it's outside of the scope of this project.
 	const eventPosts = _.filter(filteredPosts, post => post.category[0].title === "Event");

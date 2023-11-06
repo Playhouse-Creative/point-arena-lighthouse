@@ -28,7 +28,7 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
         <>
         <BlogPageHead page={page} />
         <Layout preview={preview} loading={loading}>
-            <main>
+            <main>{console.log(firstThreePosts)}
                 <div className='mx-auto mb-24 flex max-w-[1600px] flex-col justify-center md:flex-row '>
                     <div className='group w-full cursor-pointer bg-white p-4 pb-16 h-full md:m-4 md:w-6/12 md:border-[2px] md:border-pa-navy-4 lg:m-12 lg:w-5/12 lg:p-10'>
                         <Link href={`/post/${filteredPosts[0].slug.current}`} key={posts[0]._id}>

@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
   const paths = await client.fetch<string[]>(pagePaths);
 
   return {
-    paths: paths?.filter((slug) => slug !== '/' ).map((slug) => resolveHref('page', slug)) || [],
+    paths: paths?.filter((slug) => slug !== 'home' ).map((slug) => resolveHref('page', slug)) || [],
     fallback: false,
   }
 }

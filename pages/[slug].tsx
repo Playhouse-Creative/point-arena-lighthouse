@@ -15,9 +15,6 @@ interface PageProps {
   token: string | null
 }
 
-interface Query {
-  [key: string]: string
-}
 
 export default function PageSlugRoute(props: PageProps) {
   const { page: initialPage, draftMode } = props
@@ -65,7 +62,7 @@ export const getStaticPaths = async () => {
   const paths = await client.fetch<string[]>(pagePaths);
 
   return {
-    paths: paths?.filter((slug) => slug !== '/').map((slug) => resolveHref('page', slug)) || [],
+    paths: paths?.filter((slug) => slug !== '/' ).map((slug) => resolveHref('page', slug)) || [],
     fallback: false,
   }
 }

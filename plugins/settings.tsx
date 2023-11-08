@@ -36,7 +36,7 @@ export const singletonPlugin = (types: string[]) => {
 }
 
 // The StructureResolver is how we're changing the DeskTool structure to linking to document (named Singleton)
-// like how "Home" is handled.
+
 export const pageStructure = (
   typeDefArray: DocumentDefinition[],
 ): StructureResolver => {
@@ -71,7 +71,7 @@ export const pageStructure = (
     // The default root list items (except custom ones)
     const defaultListItems = S.documentTypeListItems().filter(
       (listItem) =>
-        listItem.getId() !== 'route'
+        listItem.getId() !== 'route' && listItem.getId() !== 'linkId'
     )
 
     return S.list()

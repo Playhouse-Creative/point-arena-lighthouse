@@ -4,7 +4,7 @@ import { defineField, defineType } from 'sanity'
 export default defineType({
   type: 'document',
   name: 'page',
-  title: 'Page',
+  title: 'Page Builder',
   readOnly: false,
   icon: DocumentIcon,
   fields: [
@@ -24,7 +24,7 @@ export default defineType({
       type: 'slug',
       name: 'slug',
       title: 'Slug',
-      // hidden: true,
+      hidden: true,
       options: {
         source: 'title',
       },

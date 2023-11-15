@@ -53,7 +53,7 @@ export const getStaticProps = async (ctx) => {
 			draftMode,
 			token: draftMode ? readToken : null,
 		},
-		revalidate: 60,
+		
 	}
 }
 
@@ -64,6 +64,6 @@ export const getStaticPaths = async () => {
 	
 	return {
 		paths: paths?.map((slug) => resolveHref('post', slug)) || [],
-		fallback: false,
+		fallback: 'blocking',
 	}
 }

@@ -15,7 +15,6 @@ export default function Footer({ }: Props) {
           <p className='md:text-lg text-sm text-white font-semibold'>Rest of the year</p>
           <p className='md:text-lg text-sm text-white'>10am - 3:30pm</p>
           <p className='md:text-lg text-sm text-white'>Closed Thanksgiving & Christmas Days</p>
-          <p className='md:text-lg text-sm text-white'>Closed at 1 p.m. Christmas Eve</p>
           <h4 className=' mt-4 text-xl text-white underline underline-offset-2'>
             Admission Prices:
           </h4>
@@ -34,7 +33,7 @@ export default function Footer({ }: Props) {
             Tower Tour (in addition to site visit fee)
           </p>
           <div className='flex justify-between w-2/3'>
-            <p className='md:text-lg text-sm text-white'>6 and over</p>
+            <p className='md:text-lg text-sm text-white'>4 and over</p>
             <p className='md:text-lg text-sm text-white'>$5</p>
           </div>
         </div>

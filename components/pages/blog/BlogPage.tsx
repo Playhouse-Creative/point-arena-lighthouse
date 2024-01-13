@@ -26,13 +26,15 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
     const eventPosts = _.filter(filteredPosts, post => post.category[0].title === "Event");
     const nonEventPosts = _.filter(filteredPosts, post => post.category[0].title !== "Event");
 
+    const postsOrderedByCreated = _.orderBy(filteredPosts, ['_createdAt'], ['desc']);
+
     // Reverse the order of the eventPosts array
     const reversedEventPosts = _.reverse([...eventPosts]);
 
     // Merge the reversedEventPosts array and nonEventPosts array
     const reorderedPosts = [...reversedEventPosts, ...nonEventPosts];
 
-    const firstThreePosts = reorderedPosts.slice(1, 4)
+    const firstThreePosts = postsOrderedByCreated.slice(1, 4)
 
     return (
         <>
@@ -41,21 +43,21 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
             <main>
                 <div className='mx-auto mb-24 flex max-w-[1600px] flex-col justify-center md:flex-row '>
                     <div className='group w-full cursor-pointer bg-white p-4 pb-16 h-full md:m-4 md:w-6/12 md:border-[2px] md:border-pa-navy-4 lg:m-12 lg:w-5/12 lg:p-10'>
-                        <Link href={`/post/${reorderedPosts[0].slug.current}`} key={posts[0]._id}>
+                        <Link href={`/post/${postsOrderedByCreated[0].slug.current}`} key={posts[0]._id}>
                             <div className='relative w-full aspect-square'>
-                                    {reorderedPosts[0].mainImage && (
+                                    {postsOrderedByCreated[0].mainImage && (
                                     <Image
-                                        src={urlForImage(reorderedPosts[0].mainImage)?.url() || ''}
-                                        alt={reorderedPosts[0].title}
+                                        src={urlForImage(postsOrderedByCreated[0].mainImage)?.url() || ''}
+                                        alt={postsOrderedByCreated[0].title}
                                         fill={true}
                                         style={{ objectFit: 'contain' }}
                                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw'
                                     />
                                 )}
                             </div>
-                            <h1 className='mt-10 mb-1 text-3xl group-hover:underline'>{reorderedPosts[0].title}</h1>
+                            <h1 className='mt-10 mb-1 text-3xl group-hover:underline'>{postsOrderedByCreated[0].title}</h1>
 
-                            {reorderedPosts[0].category.map((c: any, i: number) => (
+                            {postsOrderedByCreated[0].category.map((c: any, i: number) => (
                                 <p
                                     className='text-md'
                                     style={{
@@ -70,7 +72,7 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
                                 
                             </div>
                             <div>
-                                <p>{reorderedPosts[0].excerpt}</p>
+                                <p>{postsOrderedByCreated[0].excerpt}</p>
                             </div>
                             <p className='mt-2 underline text-pa-blue-4 underline-offset-2'>Read full story</p>
                         </Link>

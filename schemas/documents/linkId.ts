@@ -14,11 +14,11 @@ export default defineType({
       title: 'Link ID',
       type: 'slug',
       // urlPrefix: 'https://www.pointarenalighthouse.com/(page)#',
-      options: {
-        source: 'title',
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
-        maxLength: 200,
-      },
+      // options: {
+      //   source: 'title',
+      //   slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      //   maxLength: 200,
+      // },
     },),   
   ],
   preview: {

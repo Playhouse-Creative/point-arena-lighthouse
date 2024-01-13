@@ -4,7 +4,7 @@ export default {
 	type: 'object',
 	name: 'listSection',
 	title: 'List Section',
-icon: ListSectionIcon,
+	icon: ListSectionIcon,
 	fields: [
 		{
 			name: 'title',

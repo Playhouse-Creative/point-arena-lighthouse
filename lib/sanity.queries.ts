@@ -100,7 +100,7 @@ categories[]-> { title, color },
 mainImage,
 description,
 body,
-"previewPostData" :*[_type == "post"] | order(publishedAt desc)[0...20]
+"previewPostData" :*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0...20]
 {_id,
 _createdAt,
 title,

@@ -1,4 +1,4 @@
-export default {
+const tableColumn = {
 	type: 'object',
 	name: 'tableColumn',
 	title: 'Table Column',
@@ -28,4 +28,6 @@ export default {
 			],
 		},
 	],
-}
+};
+
+export default tableColumn;

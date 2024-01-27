@@ -1,4 +1,4 @@
-export default {
+const roomCard = {
   type: 'object',
   name: 'roomCard',
   title: 'Room Card',
@@ -8,7 +8,7 @@ export default {
       type: 'string',
       description: 'This is the title of the room. It must fit inside the ribbon',
       validatio: (Rule) =>
-        Rule.required().max(30).warning('Title must be short enough to fit in the ribbon'),
+        Rule.required().max(30).error('Title must be short enough to fit in the ribbon'),
     },
     {
       name: 'images',
@@ -35,4 +35,6 @@ export default {
       title: 'title',
     },
   },
-}
+};
+
+export default roomCard;

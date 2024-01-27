@@ -1,6 +1,6 @@
 import BlogPreviewSectionIcon from '../../studio/static/blogPreviewSectionIcon'
 
-export default {
+const blogPreviewSection = {
   type: 'object',
   name: 'blogPreviewSection',
   title: 'Blog Preview',
@@ -10,7 +10,8 @@ export default {
       type: 'string',
       name: 'title', 
       title: 'Section Title',
-      validation: Rule => Rule.required().max(100).warning('Shorter titles are usually better')
+      validation: Rule => [Rule.required().error('Title is required.'),
+      Rule.max(100).warning('Text should be less than 100 characters.')],
     },
     {
 			name: 'linkId',
@@ -32,3 +33,5 @@ export default {
     }
   ]
 }
+
+export default blogPreviewSection;

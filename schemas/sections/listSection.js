@@ -1,6 +1,6 @@
 import ListSectionIcon from '../../studio/static/listSectionIcon'
 
-export default {
+const listSection = {
 	type: 'object',
 	name: 'listSection',
 	title: 'List Section',
@@ -91,3 +91,5 @@ export default {
 		},
 	],
 }
+
+export default listSection;

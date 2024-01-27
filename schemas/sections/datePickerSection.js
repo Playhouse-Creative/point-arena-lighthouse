@@ -1,4 +1,4 @@
-export default {
+const datePickerSection = {
     type: 'object',
     name: 'datePickerSection',
     title: 'Date Picker Section',
@@ -7,7 +7,8 @@ export default {
         type: 'string',
         name: 'title',
         title: 'Section Title',
-        validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')
+        validation: Rule => [Rule.required().error('Title is required.'),
+        Rule.max(75).warning('Text should be less than 75 characters.')],
       },
       {
         name: 'linkId',
@@ -29,3 +30,5 @@ export default {
       }
     }
   }
+
+export default datePickerSection;

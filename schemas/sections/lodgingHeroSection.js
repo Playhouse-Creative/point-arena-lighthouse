@@ -1,6 +1,6 @@
 import LodgingHeroSectionIcon from '../../studio/static/lodgingHeroSectionIcon'
 
-export default {
+const lodgingHeroSection = {
     type: 'object',
     name: 'lodgingHeroSection',
     title: 'Lodging Hero',
@@ -10,7 +10,8 @@ export default {
         name: 'heading',
         type: 'string',
         title: 'Heading',
-        validation: (Rule) => Rule.required().max(75).warning('Shorter titles are usually better')
+        validation: Rule => [Rule.required().error('Heading text is required.'),
+        Rule.max(75).warning('Text should be less than 75 characters.')],
       },
       {
         name: 'heroImage',
@@ -40,5 +41,7 @@ export default {
         }
       }
     }
-  }
+}
+
+export default lodgingHeroSection;
   

@@ -1,6 +1,6 @@
 import { SparklesIcon } from '@sanity/icons'
 
-export default {
+const bodyPortableText = {
   name: 'bodyPortableText',
   type: 'array',
   title: 'Post body',
@@ -73,3 +73,5 @@ export default {
     
   ]
 }
+
+export default bodyPortableText;

@@ -1,4 +1,4 @@
-export default {
+const menuLink = {
   title: 'Menu Link',
   name: 'menuLink',
   type: 'object',
@@ -71,4 +71,6 @@ export default {
       }
     }
   }
-}
+};
+
+export default menuLink;

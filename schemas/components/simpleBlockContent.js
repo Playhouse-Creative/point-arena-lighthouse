@@ -1,4 +1,4 @@
-export default {
+const simpleBlockContent = {
   title: 'Simple Block Content',
   name: 'simpleBlockContent',
   type: 'array',
@@ -23,4 +23,6 @@ export default {
       }
     }
   ]
-}
+};
+
+export default simpleBlockContent;

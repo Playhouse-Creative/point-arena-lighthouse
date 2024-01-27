@@ -1,6 +1,6 @@
 import HeroSectionIcon from '../../studio/static/heroSectionIcon'
 
-export default {
+const heroSection = {
 	type: 'object',
 	name: 'heroSection',
 	title: 'Hero',
@@ -10,7 +10,8 @@ export default {
 			name: 'heading',
 			type: 'string',
 			title: 'Heading',
-			validation: Rule => Rule.required().max(75).warning('Shorter titles are usually better')
+			validation: Rule => [Rule.required().error('Heading text is required.'),
+			Rule.max(75).warning('Text should be less than 75 characters.')],
 		},
 		{ name: 'subheading', type: 'string', title: 'Subheading', validation: Rule => Rule.max(150) },
 		{
@@ -36,3 +37,5 @@ export default {
 		},
 	},
 }
+
+export default heroSection;

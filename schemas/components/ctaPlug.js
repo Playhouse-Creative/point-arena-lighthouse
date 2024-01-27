@@ -1,4 +1,4 @@
-export default {
+const ctaPlug = {
 	type: 'object',
 	name: 'ctaPlug',
 	title: 'Call to action',
@@ -37,3 +37,5 @@ export default {
 		},
 	},
 }
+
+export default ctaPlug;

@@ -1,4 +1,4 @@
-export default {
+const iconListItem = {
 	name: 'iconListItem',
 	type: 'object',
 	title: 'List Item',
@@ -6,5 +6,6 @@ export default {
 		{ name: 'title', type: 'string' },
 		{ name: 'icon', type: 'image' },
 	],
-    
-}
+};
+
+export default iconListItem;

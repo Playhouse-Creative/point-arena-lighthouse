@@ -1,4 +1,4 @@
-export default {
+const textWithIllustration = {
   type: 'object',
   name: 'textWithIllustration',
   title: 'Text With Illustration',
@@ -35,4 +35,6 @@ export default {
       }
     }
   ]
-}
+};
+
+export default textWithIllustration;

@@ -1,4 +1,4 @@
-export default {
+const reviewListItem = {
 	name: 'reviewListItem',
 	type: 'object',
 	title: 'Review List Item',
@@ -16,4 +16,6 @@ export default {
 		},
 		{ name: 'body', type: 'simpleBlockContent' },
 	],
-}
+};
+
+export default reviewListItem;

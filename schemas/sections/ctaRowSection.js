@@ -1,6 +1,6 @@
 import CTARowsSectionIcon from '../../studio/static/ctaRowsSectionIcon'
 
-export default {
+const ctaRowSection = {
   type: 'object',
   name: 'ctaRowSection',
   title: 'CTA Rows',
@@ -10,7 +10,8 @@ export default {
       type: 'string',
       name: 'title', 
       title: 'Section Title',
-      validation: Rule => Rule.required().max(100).error('The title must be short enough to fit in the ribbon.')
+      validation: Rule => [Rule.required().error('Title is required.'),
+      Rule.max(100).warning('Text should be short enough to fit in the ribbon box')],
     },
     {
       type: 'array',
@@ -29,3 +30,5 @@ export default {
     }
   }
 }
+
+export default ctaRowSection;

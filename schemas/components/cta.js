@@ -1,6 +1,6 @@
 
 
-export default {
+const cta = {
   title: 'Call to action',
   name: 'cta',
   type: 'object',
@@ -66,3 +66,5 @@ export default {
     }
   }
 }
+
+export default cta;

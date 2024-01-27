@@ -1,4 +1,4 @@
-export default {
+const excerptPortableText = {
   name: 'excerptPortableText',
   type: 'array',
   title: 'Excerpt',
@@ -21,3 +21,5 @@ export default {
     }
   ]
 }
+
+export default excerptPortableText;

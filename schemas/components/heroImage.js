@@ -1,4 +1,4 @@
-export default {
+const heroImage = {
   type: 'object',
   name: 'heroImage',
   title: 'Hero Image',
@@ -7,7 +7,7 @@ export default {
       title: 'Image',
       name: 'image',
       type: 'mainImage',
-      }
+    }
   ],
   preview: {
     select: {
@@ -26,4 +26,6 @@ export default {
       }
     }
   }
-}
+};
+
+export default heroImage;

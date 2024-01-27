@@ -1,6 +1,6 @@
 import InfoRowsSectionIcon from '../../studio/static/infoRowsSectionIcon'
 
-export default {
+const infoRowsSection = {
 	type: 'object',
 	name: 'infoRowsSection',
 	title: 'Info Rows',
@@ -10,7 +10,8 @@ export default {
 			type: 'string',
 			name: 'title',
 			title: 'Section Title',
-			validation: (Rule) => Rule.required().max(75).error('Shorter titles are usually better'),
+			validation: Rule => [Rule.required().error('Heading text is required.'),
+			Rule.max(75).warning('Text should be less than 75 characters.')],
 		},
 		{
 			name: 'linkId',
@@ -43,3 +44,5 @@ export default {
 		{ name: 'finePrint', type: 'simpleBlockContent', title: 'Fine Print'}
 	],
 }
+
+export default infoRowsSection;

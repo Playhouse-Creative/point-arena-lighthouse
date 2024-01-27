@@ -1,4 +1,4 @@
-export default {
+const route = {
   name: 'route',
   type: 'document',
   title: 'Landing page routes',
@@ -100,3 +100,5 @@ export default {
     }
   }
 }
+
+export default route;

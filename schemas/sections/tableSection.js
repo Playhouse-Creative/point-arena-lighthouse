@@ -1,6 +1,6 @@
 import TableSectionIcon from '../../studio/static/tableSectionIcon'
 
-export default {
+const tableSection = {
   type: 'object',
   name: 'tableSection',
   title: 'Table Section',
@@ -10,7 +10,8 @@ export default {
       type: 'string',
       name: 'title',
       title: 'Section Title',
-      validation: (Rule) => Rule.required().max(75).error('Shorter titles are usually better'),
+      validation: Rule => [Rule.required().error('Title is required.'),
+      Rule.max(75).warning('Text should be less than 75 characters.')],
     },
     {
       name: 'linkId',
@@ -40,3 +41,5 @@ export default {
     {name: 'finePrint', type: 'simpleBlockContent', title: 'Fine Print'},
   ],
 }
+
+export default tableSection;

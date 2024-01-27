@@ -1,6 +1,6 @@
 import FunFactsSectionIcon from '../../studio/static/funFactsSectionIcon'
 
-export default {
+const funFactsSection = {
 	type: 'object',
 	name: 'funFactsSection',
 	title: 'Fun Facts',
@@ -10,12 +10,13 @@ export default {
 			type: 'string',
 			name: 'title',
 			title: 'Section Title',
-			validation: (Rule) => Rule.required().max(100).warning('Shorter titles are usually better'),
+			validation: Rule => [Rule.required().error('Title is required.'),
+			Rule.max(100).warning('Text should be less than 100 characters.')],
 		},
 		{
 			name: 'linkId',
 			type: 'reference',
-      to: [{type: 'linkId'}],
+			to: [{ type: 'linkId' }],
 			title: 'Link ID',
 			description: 'This is the ID that will be used in the URL to link to this section. It must be unique.'
 		},
@@ -38,3 +39,5 @@ export default {
 		},
 	],
 }
+
+export default funFactsSection;

@@ -1,4 +1,4 @@
-export default {
+const authorReference = {
   name: 'authorReference',
   type: 'object',
   title: 'Author',
@@ -19,4 +19,6 @@ export default {
       media: 'author.image.asset'
     }
   }
-}
+};
+
+export default authorReference;

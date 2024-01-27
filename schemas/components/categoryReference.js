@@ -1,4 +1,4 @@
-export default {
+const categoryReference = {
     name: 'categoryReference',
     type: 'object',
     title: 'Category',
@@ -19,4 +19,6 @@ export default {
       }
     }
   }
+
+export default categoryReference;
   

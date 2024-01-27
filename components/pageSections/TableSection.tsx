@@ -80,9 +80,17 @@ export default function TableSection({ columns = {}, title = 'Placeholder Title'
 									)}
 								</td>
 								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
-									<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
-										{cellTwo?.heading}
-									</h3>
+									{cellTwo?.link ? (
+										<Link href={cellTwo.link.href}>
+											<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+												{cellTwo.heading}
+											</h3>
+										</Link>
+									) : (
+										<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
+											{cellTwo?.heading}
+										</h3>
+									)}
 									{cellTwo?.text ? (
 										<PortableText
 											content={cellTwo.text}

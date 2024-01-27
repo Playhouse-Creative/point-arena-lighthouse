@@ -1,4 +1,4 @@
-export default {
+const link = {
   type: 'object',
   name: 'link',
   title: 'URL',
@@ -9,4 +9,6 @@ export default {
       type: 'url'
     }
   ]
-}
+};
+
+export default link;

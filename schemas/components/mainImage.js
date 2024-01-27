@@ -1,4 +1,4 @@
-export default {
+const mainImage = {
   name: 'mainImage',
   type: 'image',
   title: 'Image',
@@ -11,7 +11,8 @@ export default {
       type: 'string',
       title: 'Alternative text',
       description: 'Important for SEO and accessibility.',
-      validation: Rule => Rule.error('You have to fill out the alternative text.').required(). max(75).warning('Shorter alt texts are usually better.'),
+      validation: Rule => [Rule.required().error('Alt text is required.'),
+    Rule.max(75).warning('Alt text should be less than 75 characters.')],
       
     }
   ],
@@ -21,4 +22,6 @@ export default {
       title: 'alt'
     }
   }
-}
+};
+
+export default mainImage;

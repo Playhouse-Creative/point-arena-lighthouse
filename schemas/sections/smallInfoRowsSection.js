@@ -1,4 +1,4 @@
-export default {
+const smallInfoRowsSection = {
   type: 'object',
   name: 'smallInfoRowsSection',
   title: 'Small Info Rows Section',
@@ -20,4 +20,6 @@ export default {
       of: [{ type: 'textWithIllustration' }]
     }
   ]
-}
+};
+
+export default smallInfoRowsSection;

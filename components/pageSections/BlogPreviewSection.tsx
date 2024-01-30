@@ -10,7 +10,8 @@ type Props = {
 
 const BlogPreviewSection = (props: Props) => {
 	const filteredPosts = _.filter(props.posts, (post) => {
-		return post.category[0].title !== "Past Events" && post.category[0].title !== "Archived"
+		return post.category ? post.category[0].title !== "Past Events" && post.category[0].title !== "Archived"
+		: null
 	});
 	const firstThreePosts = filteredPosts.slice(0,3)
 	return (

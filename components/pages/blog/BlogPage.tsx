@@ -19,7 +19,7 @@ export interface BlogPageProps {
 const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
     const posts = _.flatMap(page)
     const filteredPosts = _.filter(posts, (post) => {
-        return post.category[0].title !== "Archived" 
+        return post.category ? post.category[0].title !== "Archived" : null
         // && post.category[0].title !== "Past Events";
     });
 

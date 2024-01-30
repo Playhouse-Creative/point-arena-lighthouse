@@ -14,19 +14,19 @@ export default defineType({
       type: 'string',
       title: 'Title',
       description: 'Titles should be catchy, descriptive, and not too long',
-      validation: (rule) => rule.required(),
+      validation: Rule => Rule.required().error('This field is required.'),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       description: 'The slug is required to be able to show the post',
+      validation: Rule => Rule.required().error('This field is required.'),
       options: {
         source: 'title',
         maxLength: 96,
         isUnique: (value, context) => context.defaultIsUnique(value, context),
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'publishedAt',
@@ -38,7 +38,7 @@ export default defineType({
       name: 'mainImage',
       type: 'mainImage',
       title: 'Main image',
-      validation: (rule) => rule.required(),
+      validation: Rule => Rule.required().error('This field is required.'),
     }),
     defineField({
       name: 'excerpt',
@@ -68,6 +68,7 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'array',
+      validation: Rule => Rule.required().error('This field is required.'),
       of: [
         {
           name: 'category',

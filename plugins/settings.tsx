@@ -71,7 +71,7 @@ export const pageStructure = (
     // The default root list items (except custom ones)
     const defaultListItems = S.documentTypeListItems().filter(
       (listItem) =>
-        listItem.getId() !== 'route' && listItem.getId() !== 'linkId'
+        listItem.getId() !== 'route' && listItem.getId() !== 'linkId' && listItem.getId() !== 'media.tag'
     )
 
     return S.list()

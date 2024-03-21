@@ -40,6 +40,7 @@
     "sanity": "3.18.1",
     "sanity-plugin-asset-source-unsplash": "1.1.1",
     "sanity-plugin-iframe-pane": "2.6.0",
+    "sanity-plugin-media": "^2.2.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "5.3.11"
   },

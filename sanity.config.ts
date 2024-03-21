@@ -13,6 +13,7 @@ import {
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import { media } from 'sanity-plugin-media'
 import authorReference from 'schemas/components/authorReference'
 import bodyPortableText from 'schemas/components/bodyPortableText'
 import categoryReference from 'schemas/components/categoryReference'
@@ -176,5 +177,6 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     // visionTool({ defaultApiVersion: apiVersion }),
+    media(),
   ],
 })

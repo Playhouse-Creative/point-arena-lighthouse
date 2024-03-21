@@ -19,8 +19,12 @@ export interface BlogPageProps {
 const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
     const posts = _.flatMap(page)
     const filteredPosts = _.filter(posts, (post) => {
-        return post.category ? post.category[0].title !== "Archived" : null
+        return post.category && post.category[0].title !== "Archived"
         // && post.category[0].title !== "Past Events";
+    });
+
+    const filteredPreviewPosts = _.filter(posts, (post) => {
+        return post.category && post.category[0].title !== "Archived" && post.category[0].title !== "Past Events";
     });
 
     const eventPosts = _.filter(filteredPosts, post => post.category[0].title === "Event");
@@ -34,7 +38,8 @@ const BlogPage = ({ page, preview, loading }: BlogPageProps) => {
     // Merge the reversedEventPosts array and nonEventPosts array
     const reorderedPosts = [...reversedEventPosts, ...nonEventPosts];
 
-    const firstThreePosts = postsOrderedByCreated.slice(1, 4)
+    const previewPostsOrderedByCreated = _.orderBy(filteredPreviewPosts, ['_createdAt'], ['desc']);
+    const firstThreePosts = previewPostsOrderedByCreated.slice(1, 4)
 
     return (
         <>

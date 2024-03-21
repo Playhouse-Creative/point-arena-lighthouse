@@ -4,6 +4,9 @@ import type { Image } from 'sanity'
 
 
 export type PostData = {
+  [x: string]: any
+  category: any
+  category: any
   postData: PostData[]
   _id: string
   slug: Slug

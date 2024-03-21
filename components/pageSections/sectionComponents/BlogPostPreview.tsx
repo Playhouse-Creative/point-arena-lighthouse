@@ -22,14 +22,14 @@ const BlogPostPreview = (post: Post) => {
 						<div
 							className='absolute left-0 -bottom-5 w-11/12 py-[5px] '
 							style={{
-								backgroundColor: `${post.category[0].color.value}`,
+								backgroundColor: `${post.category && post.category[0].color.value}`,
 								boxShadow: '4px 4px 4px rgba(0, 0, 0, 0.25)',
 								clipPath:
 									'polygon(100% 0%, 96% 50%, 100% 100%, 0 100%, 0% 50%, 0 0)',
 							}}>
 							{' '}
 							<h3 className='font-serif text-2xl font-semibold text-white '>
-								{post.category[0].title}
+								{post.category && post.category[0].title}
 							</h3>
 						</div>
 					</div>

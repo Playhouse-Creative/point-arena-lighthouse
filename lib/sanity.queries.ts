@@ -51,7 +51,9 @@ export const pagesBySlugQuery = groq`
   "slug": slug.current,
   "pageSections":  {
     ...,
-		content[] {..., linkId->{..., linkId},rows[] {..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}},
+		content[] {..., linkId->{..., linkId}, rows[]{..., cta{..., anchorLink->{..., linkId}}}, cta[]{..., anchorLink->{..., linkId}}, images[]{..., linkUrl{..., anchorLink->{..., linkId}}}},
+
+
     
   }
   ,

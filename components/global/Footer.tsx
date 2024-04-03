@@ -10,7 +10,7 @@ export default function Footer({ }: Props) {
           <h4 className='text-xl text-white underline underline-offset-2'>
             Hours:
           </h4>
-          <p className='md:text-lg text-sm text-white font-semibold'>Memorial Day through Labor Day</p>
+          <p className='md:text-lg text-sm text-white font-semibold'>Memorial Day weekend through Labor Day</p>
           <p className='md:text-lg text-sm text-white'>10am - 4:30pm</p>
           <p className='md:text-lg text-sm text-white font-semibold'>Rest of the year</p>
           <p className='md:text-lg text-sm text-white'>10am - 3:30pm</p>

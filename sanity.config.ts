@@ -2,8 +2,7 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
-import { visionTool } from '@sanity/vision'
-import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
+import {  dataset, previewSecretId, projectId } from 'lib/sanity.api'
 import { pageStructure, singletonPlugin } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
@@ -26,6 +25,7 @@ import heroImage from 'schemas/components/heroImage'
 import iconListItem from 'schemas/components/iconListItem'
 import infoListItem from 'schemas/components/infoListItem'
 import link from 'schemas/components/link'
+import linkImage from 'schemas/components/linkImage'
 import mainImage from 'schemas/components/mainImage'
 import menuLink from 'schemas/components/menuLink'
 import portraitImage from 'schemas/components/portraitImage'
@@ -133,6 +133,7 @@ export default defineConfig({
       iconListItem,
       infoListItem,
       link,
+      linkImage,
       mainImage,
       menuLink,
       portraitImage,

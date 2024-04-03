@@ -1,3 +1,4 @@
+import ImageWithLink from 'components/shared/ImageWithLink'
 import Image from 'next/image'
 import React from 'react'
 import PortableText from 'react-portable-text'
@@ -7,7 +8,7 @@ import { urlForImage } from '../../../lib/sanity.image'
 
 type ImageProps = {
 	alt?: string
-	url?: string
+	linkUrl?: { route?: string; link?: string; anchorLink?: { slug?: { current?: string } } }
 	asset?: {
 		_id: string
 		url: string
@@ -47,15 +48,24 @@ export default function ColumnArticle({ title, heading, images, body, linkId }: 
 								key={i}
 								className='relative col-span-1 h-full min-h-[300px] w-[80vw] max-w-[700px] overflow-hidden sm:min-h-[500px] sm:w-[40vw] lg:w-[35vw]'
 							>
-								<Image
-									src={urlForImage(image as any)?.url() || 'placeholder-image-url'}
-									alt={image.alt || 'Placeholder alt'}
-									fill={true}
-									style={{ objectFit: 'contain' }}
-									sizes='(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            33vw'
-								/>
+								{image.linkUrl ? (
+									<ImageWithLink
+										image={image}
+										alt={image.alt || 'Placeholder alt'}
+										fill={true}
+										style={{ objectFit: 'contain' }}
+										sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+										linkUrl={image.linkUrl}
+									/>
+								) :
+									(<Image
+										src={urlForImage(image as any)?.url() || 'placeholder-image-url'}
+										alt={image.alt || 'Placeholder alt'}
+										fill={true}
+										style={{ objectFit: 'contain' }}
+										sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+									/>)
+								}
 							</div>
 						))
 					) : (

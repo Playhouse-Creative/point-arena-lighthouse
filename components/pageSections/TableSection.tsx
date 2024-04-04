@@ -10,6 +10,7 @@ type Column = {
 		heading: string
 		text: any
 		link?: {
+			route: string
 			href: string
 		}
 	}[]
@@ -60,11 +61,12 @@ export default function TableSection({ columns = {}, title = 'Placeholder Title'
 							<tr className='flex justify-start border-b-[1px] border-pa-blue-4 bg-white py-4'>
 								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
 									{cellOne?.link ? (
-										<Link href={cellOne.link.href}>
+										<Link href={cellOne.link.href || cellOne.link.route}>
 											<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 												{cellOne.heading}
 											</h3>
 										</Link>
+
 									) : (
 										<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 											{cellOne?.heading}
@@ -80,8 +82,8 @@ export default function TableSection({ columns = {}, title = 'Placeholder Title'
 									)}
 								</td>
 								<td className='flex flex-col flex-wrap w-1/2 mx-2 text-left sm:mx-10'>
-									{cellTwo?.link ? (
-										<Link href={cellTwo.link.href}>
+									{cellTwo?.link?.href ? (
+										<Link href={cellTwo.link.href || cellTwo.link.route}>
 											<h3 className='font-serif text-lg font-semibold text-pa-red-4'>
 												{cellTwo.heading}
 											</h3>

@@ -22,11 +22,9 @@ export function Page({
   return (
     <>
       <PageHead page={page} title={page.title}/>
-
       <Layout preview={preview} loading={loading}>
         <div>
           <RenderSections pageData={page} />
-
             {/* Workaround: scroll to top on route change */}
             <ScrollUp />
         </div>

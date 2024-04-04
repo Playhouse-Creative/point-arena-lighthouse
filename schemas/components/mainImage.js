@@ -18,6 +18,7 @@ const mainImage = {
       name: 'linkUrl',
       type: 'link',
       title: 'Link',
+      
     }
   ],
   preview: {

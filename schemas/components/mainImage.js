@@ -18,7 +18,7 @@ const mainImage = {
       name: 'linkUrl',
       type: 'link',
       title: 'Link',
-      
+      // hidden: ({ document }) => { console.log(document); return true; }
     }
   ],
   preview: {

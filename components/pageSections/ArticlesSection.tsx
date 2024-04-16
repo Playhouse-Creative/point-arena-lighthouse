@@ -11,12 +11,13 @@ type Props = {
 	heading: string
     images: any
     body: any
-	linkId: {slug: {current: string}}
+	linkId?: {slug: {current: string}}
 }
 
 export default function ArticlesSection(props: Props) {
+	const id = props.linkId?.slug?.current?.split('#')[1]
 	return (
-		<div className='scroll-mt-96' id={`${props.linkId ? props.linkId : null}`}>
+		<div className='scroll-mt-96' id={id}>
 			{' '}
 			{(props.articleType === 'columnArticle') ? (
 				<><ColumnArticle {...props} /></>

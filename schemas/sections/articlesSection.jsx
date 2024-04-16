@@ -54,7 +54,7 @@ const articlesSection = {
       type: 'array',
       name: 'images',
 
-      of: [{ type: 'mainImage' }],
+      of: [{ type: 'mainImage'}],
       validation: (Rule) =>
         Rule.optional().custom((field, context) => {
           if (

@@ -26,7 +26,7 @@ export function Page({
         <div>
           <RenderSections pageData={page} />
             {/* Workaround: scroll to top on route change */}
-            <ScrollUp />
+            {/* <ScrollUp /> */}
         </div>
       </Layout>
     </>

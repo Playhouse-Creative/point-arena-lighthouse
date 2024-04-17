@@ -3,7 +3,7 @@ const link = {
   type: 'object',
   name: 'link',
   title: 'URL',
-  description: 'Make the image a clickable link to an external page or an internal page',
+  description: 'Add a clickable link to an external page or an internal page',
   fieldsets: [
     {
       title: 'Link',

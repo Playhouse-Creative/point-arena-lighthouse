@@ -38,10 +38,7 @@ const BlogPostPreview = (post: Post) => {
 							{post.title}
 						</h2>
 						<div className='mb-1 text-sm text-gray-700 '>
-							{post.publishedAt &&
-								post.publishedAt
-									.replace(/-/g, '/')
-									.replace(/T.+/, '')}
+							{new Date(post.publishedAt).toLocaleDateString()}
 						</div>
 						<div>
 							<p className='text-sm md:text-base'>

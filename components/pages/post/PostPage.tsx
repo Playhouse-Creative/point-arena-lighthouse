@@ -50,6 +50,11 @@ export function PostPage({
                                     {category.title}
                                 </p>
                             ))}
+                        {post.publishedAt && <div className='mb-1 text-base text-gray-700 '>
+                            {post.publishedAt && <div className='mb-1 text-base text-gray-700 '>
+                                {new Date(post.publishedAt).toLocaleDateString()}
+                            </div>}
+                        </div>}
                         <div className='my-10'>
                             <PortableText
                                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

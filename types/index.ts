@@ -103,7 +103,7 @@ export interface PostPagePayload {
   client?: string
   title: string
   slug: Slug
-  publishedAt?: DatetimeDefinition
+  publishedAt?: string
   mainImage?: Image
   excerpt?: string
   author?: { name: string; image: any }

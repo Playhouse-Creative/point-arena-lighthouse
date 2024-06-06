@@ -92,7 +92,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										category.title === selectedCategory
 								)
 							)
-							.slice(0, 8)
+							.slice(0, 12)
 							.map((post: any) => (
 								<Link
 									href={`/post/${post.slug.current}`}

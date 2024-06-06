@@ -60,7 +60,6 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 									<h3 className='w-8/12 mb-3 text-xl group-hover:underline'>
 										{post.title}
 									</h3>
-								{console.log(new Date(post.publishedAt).toLocaleDateString())}
 									<div className='flex flex-col text-right'>
 										{post.category.map(
 											(c: any, i: number) => (
@@ -125,7 +124,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										)}
 										{post.publishedAt && (
 											<p className='text-sm text-gray-700'>
-												{(post.publishedAt).toLocaleDateString()}
+												{new Date(post.publishedAt).toLocaleDateString()}
 											</p>
 										)}
 										

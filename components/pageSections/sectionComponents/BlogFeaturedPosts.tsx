@@ -60,6 +60,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 									<h3 className='w-8/12 mb-3 text-xl group-hover:underline'>
 										{post.title}
 									</h3>
+								{console.log(new Date(post.publishedAt).toLocaleDateString())}
 									<div className='flex flex-col text-right'>
 										{post.category.map(
 											(c: any, i: number) => (
@@ -73,7 +74,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 											)
 										)}
 									</div>
-								</div>
+							</div>
 								<div className='flex justify-between w-full'>
 									{post.author && (
 										<p className='text-sm text-gray-700'>
@@ -81,10 +82,7 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										</p>
 									)}
 									<p className='text-sm text-gray-700'>
-										{post.publishedAt &&
-											post.publishedAt
-												.replace(/-/g, '/')
-												.replace(/T.+/, '')}
+									{new Date(post.publishedAt).toLocaleDateString()}
 									</p>
 								</div>
 							</Link>))
@@ -127,11 +125,10 @@ export default function BlogFeaturedPosts({ posts }: Props) {
 										)}
 										{post.publishedAt && (
 											<p className='text-sm text-gray-700'>
-												{post.publishedAt
-													.replace(/-/g, '/')
-													.replace(/T.+/, '')}
+												{(post.publishedAt).toLocaleDateString()}
 											</p>
 										)}
+										
 									</div>
 								</Link>
 							))}

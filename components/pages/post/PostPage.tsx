@@ -1,5 +1,4 @@
 import Layout from 'components/shared/Layout'
-import ScrollUp from 'components/shared/ScrollUp'
 import Image from 'next/image'
 import PortableText from 'react-portable-text'
 import type { PostPagePayload } from 'types'
@@ -68,9 +67,6 @@ export function PostPage({
                         You might also like...
                     </h2>
                     <BlogPreviewSection posts={post.previewPostData} title='' />
-
-                    {/* Workaround: scroll to top on route change */}
-                    <ScrollUp />
                 </div>
             </Layout>
         </>
